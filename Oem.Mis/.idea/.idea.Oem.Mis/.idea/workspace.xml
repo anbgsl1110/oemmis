@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Oem.Web/Program.cs" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e10b147-d3f9-4473-a003-a43ba14f7141" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Oem.Mis/.idea/contentModel.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Oem.Mis/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Oem.Mis/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Oem.Mis/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Oem.Mis/riderModule.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Oem.Web/WebApi/ValuesController.cs" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication1/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488800757525" expanded="true" signature="6:294" ph="..." />
+                <marker date="1488800757525" expanded="true" signature="321:1978" ph="{...}" />
+                <marker date="1488800757525" expanded="true" signature="348:1976" ph="{...}" />
+                <marker date="1488800757525" expanded="true" signature="402:1087" ph="{...}" />
+                <marker date="1488800757525" expanded="true" signature="742:984" ph="{...}" />
+                <marker date="1488800757525" expanded="true" signature="1313:1473" ph="{...}" />
+                <marker date="1488800757525" expanded="true" signature="1690:1970" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication1/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488800756493" expanded="true" signature="6:185" ph="..." />
+                <marker date="1488800756493" expanded="true" signature="212:586" ph="{...}" />
+                <marker date="1488800756493" expanded="true" signature="239:584" ph="{...}" />
+                <marker date="1488800756493" expanded="true" signature="292:578" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValuesController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebApplication1/Controllers/ValuesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding>
+                <marker date="1488800756484" expanded="true" signature="6:128" ph="..." />
+                <marker date="1488800756484" expanded="true" signature="167:923" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="248:921" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="339:415" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="504:552" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="648:668" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="779:799" ph="{...}" />
+                <marker date="1488800756484" expanded="true" signature="895:915" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValuesController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oem.Web/WebApi/ValuesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+              <folding>
+                <marker date="1488801555745" expanded="true" signature="6:65" ph="..." />
+                <marker date="1488801555745" expanded="true" signature="91:847" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="172:845" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="263:337" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="426:474" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="571:591" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="703:723" ph="{...}" />
+                <marker date="1488801555745" expanded="true" signature="819:839" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appsettings.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication1/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488800756490" expanded="true" signature="0:164" ph="{...}" />
+                <marker date="1488800756490" expanded="true" signature="15:162" ph="{...}" />
+                <marker date="1488800756490" expanded="true" signature="61:158" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="launchSettings.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication1/Properties/launchSettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488800757864" expanded="true" signature="0:664" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="19:193" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="112:189" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="209:662" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="230:422" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="359:416" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="447:658" ph="{...}" />
+                <marker date="1488800757864" expanded="true" signature="595:652" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="87" column="9" lean-forward="false" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+              <folding>
+                <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+                <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+                <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+                <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+                <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+                <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Oem.Web/WebApi/ValuesController.cs" />
+        <option value="$PROJECT_DIR$/Oem.Web/Startup.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>LossyEncoding</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oem.Mis (10 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oem.Mis (10 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oem.Web" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oem.Mis (10 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oem.Web" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="References" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="RunManager" selected=".NET Project.Oem.Web">
+    <configuration default="false" name="Oem.Web" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Oem.Web/Oem.Web.xproj" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v1.0" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Oem.Web/bin/Debug/netcoreapp1.0/Oem.Web.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oem.Web" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Oem.Web/Oem.Web.xproj" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v1.0" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Oem.Web/bin/Debug/netcoreapp1.0/Oem.Web.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oem.Web" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs>
+        <env name="ASPNETCORE_ENVIRONMENT" value="Production" />
+        <env name="ASPNETCORE_URLS" value="http://localhost:5000" />
+      </envs>
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+      <item index="1" class="java.lang.String" itemvalue=".NET Project.Oem.Web" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue=".NET Project.Oem.Web" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RuntimeDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e10b147-d3f9-4473-a003-a43ba14f7141" name="Default" comment="" />
+      <created>1488791245701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1488791245701</updated>
+      <workItem from="1488791248449" duration="483000" />
+      <workItem from="1488794111653" duration="284000" />
+      <workItem from="1488794801674" duration="199000" />
+      <workItem from="1488795619390" duration="501000" />
+      <workItem from="1488801060953" duration="711000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2178000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26074973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997923" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Oem.Web/Program.cs</url>
+          <line>13</line>
+          <properties startOffset="271" endOffset="499" documentPath="$PROJECT_DIR$/Oem.Web/Program.cs" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Oem.Web/Controllers/AccountController.cs</url>
+          <line>55</line>
+          <properties startOffset="1764" endOffset="1765" documentPath="$PROJECT_DIR$/Oem.Web/Controllers/AccountController.cs" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <marker date="1488791267943" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488791267943" expanded="true" signature="159:691" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="206:689" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="249:296" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="334:454" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="494:598" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="636:683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IProvidersTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1488795689170" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488795689170" expanded="true" signature="109:215" ph="{...}" />
+            <marker date="1488795689170" expanded="true" signature="158:209" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IServicesTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <marker date="1488795746957" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488795746957" expanded="true" signature="108:214" ph="{...}" />
+            <marker date="1488795746957" expanded="true" signature="157:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IServices/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1488795871580" expanded="true" signature="6:96" ph="..." />
+            <marker date="1488795871580" expanded="true" signature="147:159" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IProviders/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1488796059630" expanded="true" signature="6:96" ph="..." />
+            <marker date="1488796059630" expanded="true" signature="148:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+            <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+            <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.WebTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1488796117140" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488796117140" expanded="true" signature="102:208" ph="{...}" />
+            <marker date="1488796117140" expanded="true" signature="151:202" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488791267943" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488791267943" expanded="true" signature="159:691" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="206:689" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="249:296" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="334:454" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="494:598" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="636:683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+            <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+            <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <marker date="1488791267943" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488791267943" expanded="true" signature="159:691" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="206:689" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="249:296" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="334:454" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="494:598" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="636:683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+            <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+            <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.ServicesTest/Tests.cs" />
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/AccountController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <marker date="1488791267939" expanded="true" signature="6:401" ph="..." />
+            <marker date="1488791267939" expanded="true" signature="498:17811" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1047:1298" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1308:1341" ph="/* GET: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1444:1538" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1548:1582" ph="/* POST: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1755:3127" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1848:3016" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1879:2041" ph="/* This doesn't count login failures towards account lockout ... */" />
+            <marker date="1488791267939" expanded="true" signature="2242:2399" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2445:2628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2668:2819" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2840:3002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3137:3173" ph="/* GET: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3279:3373" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3383:3420" ph="/* POST: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3599:5017" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3692:4906" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3921:4857" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3960:4611" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="5027:5062" ph="/* POST: /Account/LogOff ... */" />
+            <marker date="1488791267939" expanded="true" signature="5166:5369" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5379:5421" ph="/* POST: /Account/ExternalLogin ... */" />
+            <marker date="1488791267939" expanded="true" signature="5585:5940" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5950:5999" ph="/* GET: /Account/ExternalLoginCallback ... */" />
+            <marker date="1488791267939" expanded="true" signature="6157:7770" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6204:6380" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6483:6567" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6868:7050" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7092:7208" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7244:7312" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7329:7760" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7780:7834" ph="/* POST: /Account/ExternalLoginConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="8059:9210" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8105:9120" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8317:8410" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8609:9071" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8744:9053" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9374:9814" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9432:9498" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9593:9659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9824:9866" ph="/* GET: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="9955:10002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10012:10055" ph="/* POST: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="10221:11447" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10267:11336" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10444:10628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10646:11322" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="11457:11511" ph="/* GET: /Account/ForgotPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="11612:11659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11669:11710" ph="/* GET: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="11816:11894" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11904:11946" ph="/* POST: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="12110:12850" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12157:12221" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12323:12517" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12649:12782" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12860:12913" ph="/* GET: /Account/ResetPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="13013:13060" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13070:13106" ph="/* GET: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="13248:13876" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13371:13437" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13727:13864" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13886:13923" ph="/* POST: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="14077:15254" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14124:14183" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14297:14363" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14560:14626" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14738:14883" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14939:15069" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15264:15302" ph="/* GET: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="15456:15874" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15678:15744" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15884:15923" ph="/* POST: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="16081:17064" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16128:16192" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16206:16457" ph="/* The following code protects for brute force attacks against the two factor codes. ... */" />
+            <marker date="1488791267939" expanded="true" signature="16644:16729" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16765:16900" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16917:17054" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17074:17805" ph="Helpers" />
+            <marker date="1488791267939" expanded="true" signature="17144:17316" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17203:17306" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17377:17461" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17526:17785" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17579:17651" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17668:17775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.ServicesTest/Properties/AssemblyInfo.cs" />
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <marker date="1488791267943" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488791267943" expanded="true" signature="159:691" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="206:689" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="249:296" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="334:454" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="494:598" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="636:683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+            <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/AccountController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <marker date="1488791267939" expanded="true" signature="6:401" ph="..." />
+            <marker date="1488791267939" expanded="true" signature="498:17811" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1047:1298" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1308:1341" ph="/* GET: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1444:1538" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1548:1582" ph="/* POST: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1755:3127" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1848:3016" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1879:2041" ph="/* This doesn't count login failures towards account lockout ... */" />
+            <marker date="1488791267939" expanded="true" signature="2242:2399" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2445:2628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2668:2819" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2840:3002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3137:3173" ph="/* GET: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3279:3373" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3383:3420" ph="/* POST: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3599:5017" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3692:4906" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3921:4857" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3960:4611" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="5027:5062" ph="/* POST: /Account/LogOff ... */" />
+            <marker date="1488791267939" expanded="true" signature="5166:5369" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5379:5421" ph="/* POST: /Account/ExternalLogin ... */" />
+            <marker date="1488791267939" expanded="true" signature="5585:5940" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5950:5999" ph="/* GET: /Account/ExternalLoginCallback ... */" />
+            <marker date="1488791267939" expanded="true" signature="6157:7770" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6204:6380" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6483:6567" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6868:7050" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7092:7208" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7244:7312" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7329:7760" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7780:7834" ph="/* POST: /Account/ExternalLoginConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="8059:9210" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8105:9120" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8317:8410" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8609:9071" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8744:9053" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9374:9814" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9432:9498" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9593:9659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9824:9866" ph="/* GET: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="9955:10002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10012:10055" ph="/* POST: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="10221:11447" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10267:11336" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10444:10628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10646:11322" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="11457:11511" ph="/* GET: /Account/ForgotPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="11612:11659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11669:11710" ph="/* GET: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="11816:11894" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11904:11946" ph="/* POST: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="12110:12850" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12157:12221" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12323:12517" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12649:12782" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12860:12913" ph="/* GET: /Account/ResetPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="13013:13060" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13070:13106" ph="/* GET: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="13248:13876" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13371:13437" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13727:13864" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13886:13923" ph="/* POST: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="14077:15254" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14124:14183" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14297:14363" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14560:14626" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14738:14883" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14939:15069" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15264:15302" ph="/* GET: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="15456:15874" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15678:15744" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15884:15923" ph="/* POST: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="16081:17064" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16128:16192" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16206:16457" ph="/* The following code protects for brute force attacks against the two factor codes. ... */" />
+            <marker date="1488791267939" expanded="true" signature="16644:16729" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16765:16900" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16917:17054" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17074:17805" ph="Helpers" />
+            <marker date="1488791267939" expanded="true" signature="17144:17316" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17203:17306" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17377:17461" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17526:17785" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17579:17651" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17668:17775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+            <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/WebApi/BaseController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.ServicesTest/Properties/AssemblyInfo.cs" />
+    <entry file="file://$PROJECT_DIR$/Oem.ServicesTest/Tests.cs" />
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/AccountController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <marker date="1488791267939" expanded="true" signature="6:401" ph="..." />
+            <marker date="1488791267939" expanded="true" signature="498:17811" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1047:1298" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1308:1341" ph="/* GET: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1444:1538" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1548:1582" ph="/* POST: /Account/Login ... */" />
+            <marker date="1488791267939" expanded="true" signature="1755:3127" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1848:3016" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="1879:2041" ph="/* This doesn't count login failures towards account lockout ... */" />
+            <marker date="1488791267939" expanded="true" signature="2242:2399" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2445:2628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2668:2819" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="2840:3002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3137:3173" ph="/* GET: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3279:3373" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3383:3420" ph="/* POST: /Account/Register ... */" />
+            <marker date="1488791267939" expanded="true" signature="3599:5017" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3692:4906" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3921:4857" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="3960:4611" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="5027:5062" ph="/* POST: /Account/LogOff ... */" />
+            <marker date="1488791267939" expanded="true" signature="5166:5369" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5379:5421" ph="/* POST: /Account/ExternalLogin ... */" />
+            <marker date="1488791267939" expanded="true" signature="5585:5940" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="5950:5999" ph="/* GET: /Account/ExternalLoginCallback ... */" />
+            <marker date="1488791267939" expanded="true" signature="6157:7770" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6204:6380" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6483:6567" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="6868:7050" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7092:7208" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7244:7312" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7329:7760" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="7780:7834" ph="/* POST: /Account/ExternalLoginConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="8059:9210" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8105:9120" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8317:8410" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8609:9071" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="8744:9053" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9374:9814" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9432:9498" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9593:9659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="9824:9866" ph="/* GET: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="9955:10002" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10012:10055" ph="/* POST: /Account/ForgotPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="10221:11447" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10267:11336" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10444:10628" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="10646:11322" ph="/* For more information on how to enable account confirmation and password reset please visit https://go.microsof ... */" />
+            <marker date="1488791267939" expanded="true" signature="11457:11511" ph="/* GET: /Account/ForgotPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="11612:11659" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11669:11710" ph="/* GET: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="11816:11894" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="11904:11946" ph="/* POST: /Account/ResetPassword ... */" />
+            <marker date="1488791267939" expanded="true" signature="12110:12850" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12157:12221" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12323:12517" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12649:12782" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="12860:12913" ph="/* GET: /Account/ResetPasswordConfirmation ... */" />
+            <marker date="1488791267939" expanded="true" signature="13013:13060" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13070:13106" ph="/* GET: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="13248:13876" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13371:13437" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13727:13864" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="13886:13923" ph="/* POST: /Account/SendCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="14077:15254" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14124:14183" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14297:14363" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14560:14626" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14738:14883" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="14939:15069" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15264:15302" ph="/* GET: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="15456:15874" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15678:15744" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="15884:15923" ph="/* POST: /Account/VerifyCode ... */" />
+            <marker date="1488791267939" expanded="true" signature="16081:17064" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16128:16192" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16206:16457" ph="/* The following code protects for brute force attacks against the two factor codes. ... */" />
+            <marker date="1488791267939" expanded="true" signature="16644:16729" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16765:16900" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="16917:17054" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17074:17805" ph="Helpers" />
+            <marker date="1488791267939" expanded="true" signature="17144:17316" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17203:17306" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17377:17461" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17526:17785" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17579:17651" ph="{...}" />
+            <marker date="1488791267939" expanded="true" signature="17668:17775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.ServicesTest/project.json" />
+    <entry file="file://$PROJECT_DIR$/Oem.IProvidersTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1488795689170" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488795689170" expanded="true" signature="109:215" ph="{...}" />
+            <marker date="1488795689170" expanded="true" signature="158:209" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IProviders/Tests.cs" />
+    <entry file="file://$PROJECT_DIR$/Oem.IServices/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1488795871580" expanded="true" signature="6:96" ph="..." />
+            <marker date="1488795871580" expanded="true" signature="147:159" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.WebTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1488796117140" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488796117140" expanded="true" signature="102:208" ph="{...}" />
+            <marker date="1488796117140" expanded="true" signature="151:202" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IProviders/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <marker date="1488796059630" expanded="true" signature="6:96" ph="..." />
+            <marker date="1488796059630" expanded="true" signature="148:160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.IServicesTest/Tests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <marker date="1488795746957" expanded="true" signature="6:36" ph="..." />
+            <marker date="1488795746957" expanded="true" signature="108:214" ph="{...}" />
+            <marker date="1488795746957" expanded="true" signature="157:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding>
+            <marker date="1488791267943" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488791267943" expanded="true" signature="159:691" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="206:689" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="249:296" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="334:454" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="494:598" ph="{...}" />
+            <marker date="1488791267943" expanded="true" signature="636:683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/wwwroot/lib/jquery/src/intro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488791840698" expanded="true" signature="0:255" ph="/* ! ... */" />
+            <marker date="1488791840698" expanded="true" signature="286:1067" ph="{...}" />
+            <marker date="1488791840698" expanded="true" signature="366:773" ph="/* For CommonJS and CommonJS-like environments where a proper `window` ... */" />
+            <marker date="1488791840698" expanded="true" signature="857:987" ph="{...}" />
+            <marker date="1488791840698" expanded="true" signature="1147:1375" ph="/* Support: Firefox 18+ ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/wwwroot/lib/jquery/src/outro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488791267962" expanded="true" signature="6:149" ph="..." />
+            <marker date="1488791267962" expanded="true" signature="168:542" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="195:540" ph="{...}" />
+            <marker date="1488791267962" expanded="true" signature="248:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/WebApi/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <marker date="1488801555745" expanded="true" signature="6:65" ph="..." />
+            <marker date="1488801555745" expanded="true" signature="91:847" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="172:845" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="263:337" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="426:474" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="571:591" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="703:723" ph="{...}" />
+            <marker date="1488801555745" expanded="true" signature="819:839" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication1/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488800756490" expanded="true" signature="0:164" ph="{...}" />
+            <marker date="1488800756490" expanded="true" signature="15:162" ph="{...}" />
+            <marker date="1488800756490" expanded="true" signature="61:158" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication1/Properties/launchSettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488800757864" expanded="true" signature="0:664" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="19:193" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="112:189" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="209:662" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="230:422" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="359:416" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="447:658" ph="{...}" />
+            <marker date="1488800757864" expanded="true" signature="595:652" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication1/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488800757525" expanded="true" signature="6:294" ph="..." />
+            <marker date="1488800757525" expanded="true" signature="321:1978" ph="{...}" />
+            <marker date="1488800757525" expanded="true" signature="348:1976" ph="{...}" />
+            <marker date="1488800757525" expanded="true" signature="402:1087" ph="{...}" />
+            <marker date="1488800757525" expanded="true" signature="742:984" ph="{...}" />
+            <marker date="1488800757525" expanded="true" signature="1313:1473" ph="{...}" />
+            <marker date="1488800757525" expanded="true" signature="1690:1970" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication1/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488800756493" expanded="true" signature="6:185" ph="..." />
+            <marker date="1488800756493" expanded="true" signature="212:586" ph="{...}" />
+            <marker date="1488800756493" expanded="true" signature="239:584" ph="{...}" />
+            <marker date="1488800756493" expanded="true" signature="292:578" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oem.Web/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="87" column="9" lean-forward="false" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+          <folding>
+            <marker date="1488801663942" expanded="true" signature="6:514" ph="..." />
+            <marker date="1488801663942" expanded="true" signature="533:3136" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="560:3134" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="614:1232" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="941:1129" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="1459:2067" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2285:3128" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2446:2605" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2622:2706" ph="{...}" />
+            <marker date="1488801663942" expanded="true" signature="2945:3116" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication1/Controllers/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <marker date="1488800756484" expanded="true" signature="6:128" ph="..." />
+            <marker date="1488800756484" expanded="true" signature="167:923" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="248:921" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="339:415" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="504:552" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="648:668" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="779:799" ph="{...}" />
+            <marker date="1488800756484" expanded="true" signature="895:915" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
