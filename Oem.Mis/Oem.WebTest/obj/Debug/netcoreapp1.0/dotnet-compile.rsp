@@ -142,5 +142,9 @@
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll
+--reference:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.Data\bin\Debug\netstandard1.6\Oem.Data.dll
+--reference:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IProviders\bin\Debug\netstandard1.6\Oem.IProviders.dll
+--reference:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.Providers\bin\Debug\netstandard1.6\Oem.Providers.dll
 F:\al2016\1_repos\OemMis\Oem.Mis\Oem.WebTest\DBFactoryTest.cs
+F:\al2016\1_repos\OemMis\Oem.Mis\Oem.WebTest\IProvider\Admin\UserProviderTest.cs
 F:\al2016\1_repos\OemMis\Oem.Mis\Oem.WebTest\Properties\AssemblyInfo.cs

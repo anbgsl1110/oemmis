@@ -1,15 +1,26 @@
 ﻿using System;
+using System.Linq;
+using Dapper;
 using NUnit.Framework;
+using Oem.Providers;
 
 namespace Oem.WebTest
 {
     [TestFixture]
     public class DbFactoryTest
     {
+        /// <summary>
+        /// 测试数据库连接
+        /// </summary>
         [Test]
         public void InitTest()
         {
-            Assert.True(true);
+            using (var dbConnection = DbFactory.GetNewConnection())
+            {
+                dbConnection.Open();
+                var count = dbConnection.Execute("insert into user values(null, '测试', 'http://www.cnblogs.com/linezero/', 18)");
+                Assert.IsNotNull(count);
+            }
         }
     }
 }

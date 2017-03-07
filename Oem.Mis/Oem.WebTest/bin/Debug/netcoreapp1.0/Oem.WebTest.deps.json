@@ -12,7 +12,9 @@
           "dotnet-test-nunit": "3.4.0-beta-2",
           "MySql.Data": "7.0.6-IR31",
           "MySql.Data.EntityFrameworkCore": "7.0.6-IR31",
-          "NUnit": "3.4.1"
+          "NUnit": "3.4.1",
+          "Oem.Data": "1.0.0",
+          "Oem.Providers": "1.0.0"
         },
         "runtime": {
           "Oem.WebTest.dll": {}
@@ -472,6 +474,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         }
+      },
+      "Oem.Data/1.0.0": {
+        "dependencies": {
+          "MySql.Data": "7.0.6-IR31",
+          "MySql.Data.EntityFrameworkCore": "7.0.6-IR31"
+        },
+        "runtime": {
+          "Oem.Data.dll": {}
+        }
+      },
+      "Oem.IProviders/1.0.0": {
+        "dependencies": {
+          "Oem.Data": "1.0.0"
+        },
+        "runtime": {
+          "Oem.IProviders.dll": {}
+        }
+      },
+      "Oem.Providers/1.0.0": {
+        "dependencies": {
+          "Dapper": "1.50.2",
+          "MySql.Data": "7.0.6-IR31",
+          "Oem.Data": "1.0.0",
+          "Oem.IProviders": "1.0.0"
+        },
+        "runtime": {
+          "Oem.Providers.dll": {}
+        }
       }
     }
   },
@@ -745,6 +775,21 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg=="
+    },
+    "Oem.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Oem.IProviders/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Oem.Providers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

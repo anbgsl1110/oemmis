@@ -1,4 +1,5 @@
 {
+  "locked": false,
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
@@ -231,9 +232,6 @@
       },
       "Microsoft.DiaSymReader.Native/1.4.0-rc2": {
         "type": "package",
-        "build": {
-          "build/Microsoft.DiaSymReader.Native.props": {}
-        },
         "runtimeTargets": {
           "runtimes/win-x64/native/Microsoft.DiaSymReader.Native.amd64.dll": {
             "assetType": "native",
@@ -783,7 +781,7 @@
           }
         }
       },
-      "MySql.Data/7.0.6-IR31": {
+      "MySql.Data/7.0.6-ir31": {
         "type": "package",
         "dependencies": {
           "Google.Protobuf": "3.0.0",
@@ -821,7 +819,7 @@
           "lib/netstandard1.6/MySql.Data.dll": {}
         }
       },
-      "MySql.Data.EntityFrameworkCore/7.0.6-IR31": {
+      "MySql.Data.EntityFrameworkCore/7.0.6-ir31": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "1.0.0",
@@ -3173,6 +3171,52 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+        }
+      },
+      "Oem.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "MySql.Data": "7.0.6-IR31",
+          "MySql.Data.EntityFrameworkCore": "7.0.6-IR31",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/Oem.Data.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/Oem.Data.dll": {}
+        }
+      },
+      "Oem.IProviders/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "Oem.Data": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/Oem.IProviders.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/Oem.IProviders.dll": {}
+        }
+      },
+      "Oem.Providers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Dapper": "1.50.2",
+          "MySql.Data": "7.0.6-IR31",
+          "NETStandard.Library": "1.6.0",
+          "Oem.Data": "1.0.0",
+          "Oem.IProviders": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/Oem.Providers.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/Oem.Providers.dll": {}
         }
       }
     }
@@ -8775,6 +8819,21 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "Oem.Data/1.0.0": {
+      "type": "project",
+      "path": "../Oem.Data/project.json",
+      "msbuildProject": "../Oem.Data/Oem.Data.xproj"
+    },
+    "Oem.IProviders/1.0.0": {
+      "type": "project",
+      "path": "../Oem.IProviders/project.json",
+      "msbuildProject": "../Oem.IProviders/Oem.IProviders.xproj"
+    },
+    "Oem.Providers/1.0.0": {
+      "type": "project",
+      "path": "../Oem.Providers/project.json",
+      "msbuildProject": "../Oem.Providers/Oem.Providers.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8783,47 +8842,14 @@
       "MySql.Data >= 7.0.6-IR31",
       "MySql.Data.EntityFrameworkCore >= 7.0.6-IR31",
       "NUnit >= 3.4.1",
+      "Oem.Data >= 1.0.0-*",
+      "Oem.Providers >= 1.0.0-*",
       "dotnet-test-nunit >= 3.4.0-beta-2"
     ],
     ".NETCoreApp,Version=v1.0": [
       "Microsoft.NETCore.App >= 1.0.0-*"
     ]
   },
-  "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "version": "1.0.0",
-    "restore": {
-      "projectUniqueName": "F:\\al2016\\1_repos\\OemMis\\Oem.Mis\\Oem.WebTest",
-      "projectName": "Oem",
-      "projectPath": "F:\\al2016\\1_repos\\OemMis\\Oem.Mis\\Oem.WebTest",
-      "projectJsonPath": "F:\\al2016\\1_repos\\OemMis\\Oem.Mis\\Oem.WebTest\\project.json",
-      "projectStyle": "ProjectJson"
-    },
-    "dependencies": {
-      "dotnet-test-nunit": "3.4.0-beta-2",
-      "MySql.Data": "7.0.6-IR31",
-      "MySql.Data.EntityFrameworkCore": "7.0.6-IR31",
-      "NUnit": "3.4.1",
-      "Dapper": {
-        "target": "Package",
-        "version": "[1.50.2, )"
-      }
-    },
-    "frameworks": {
-      "netcoreapp1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.App": {
-            "include": "Compile, Build, Analyzers",
-            "type": "MainReference,MainSource,MainExport,RuntimeComponent,BecomesNupkgDependency,SharedFramework",
-            "version": "1.0.0-*"
-          }
-        },
-        "imports": [
-          "portable-net45+win8"
-        ]
-      }
-    }
-  }
+  "tools": {},
+  "projectFileToolGroups": {}
 }
