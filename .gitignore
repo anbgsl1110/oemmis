@@ -234,4 +234,5 @@ pip-log.txt
 /OneCoursePlus.Crm.Cloud.Sdk/*.nupkg
 /set_xiaobao_apikey.bat
 	
-/Oem.Mis/Oem.Common/bin/Debug/netstandard1.6	
+/Oem.Mis/Oem.Common/bin/Debug/netstandard1.6
+.vs/
