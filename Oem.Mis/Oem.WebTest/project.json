@@ -9,6 +9,7 @@
     "MySql.Data": "7.0.6-IR31",
     "MySql.Data.EntityFrameworkCore": "7.0.6-IR31",
     "NUnit": "3.4.1",
+    "Oem.Common": "1.0.0-*",
     "Oem.Data": "1.0.0-*",
     "Oem.Providers": "1.0.0-*"
   },

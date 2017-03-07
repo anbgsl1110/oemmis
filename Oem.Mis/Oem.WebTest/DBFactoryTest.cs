@@ -18,7 +18,8 @@ namespace Oem.WebTest
             using (var dbConnection = DbFactory.GetNewConnection())
             {
                 dbConnection.Open();
-                var count = dbConnection.Execute("insert into user values(null, '测试', 'http://www.cnblogs.com/linezero/', 18)");
+                string sql = @"insert into user values(null, '测试', 'http://www.cnblogs.com/linezero/', 18)";
+                var count = dbConnection.Execute(sql);
                 Assert.IsNotNull(count);
             }
         }
