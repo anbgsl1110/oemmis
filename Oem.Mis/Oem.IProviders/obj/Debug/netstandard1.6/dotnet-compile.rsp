@@ -1,5 +1,5 @@
---temp-output:F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IProviders\obj\Debug\netstandard1.6\
---out:F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IProviders\bin\Debug\netstandard1.6\Oem.IProviders.dll
+--temp-output:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IProviders\obj\Debug\netstandard1.6\
+--out:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IProviders\bin\Debug\netstandard1.6\Oem.IProviders.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -56,5 +56,5 @@
 --reference:C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IProviders\Class1.cs
-F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IProviders\Properties\AssemblyInfo.cs
+F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IProviders\Class1.cs
+F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IProviders\Properties\AssemblyInfo.cs

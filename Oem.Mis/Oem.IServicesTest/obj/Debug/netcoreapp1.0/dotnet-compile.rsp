@@ -1,5 +1,5 @@
---temp-output:F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\obj\Debug\netcoreapp1.0\
---out:F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\bin\Debug\netcoreapp1.0\Oem.IServicesTest.dll
+--temp-output:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\obj\Debug\netcoreapp1.0\
+--out:F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\bin\Debug\netcoreapp1.0\Oem.IServicesTest.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -104,5 +104,5 @@
 --reference:C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\Tests.cs
-F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\Properties\AssemblyInfo.cs
+F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\Tests.cs
+F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\Properties\AssemblyInfo.cs

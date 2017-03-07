@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace Oem.WebTest
 {
     [TestFixture]
-    public class Tests
+    public class DbFactoryTest
     {
         [Test]
-        public void Test1()
+        public void InitTest()
         {
             Assert.True(true);
         }

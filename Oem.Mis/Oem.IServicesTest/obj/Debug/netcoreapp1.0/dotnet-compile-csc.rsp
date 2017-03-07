@@ -8,8 +8,8 @@
 -debug:portable
 -nostdlib
 -nologo
-"F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\bin\Debug\netcoreapp1.0\Oem.IServicesTest.dll"
+"F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\bin\Debug\netcoreapp1.0\Oem.IServicesTest.dll"
 -r:"C:\Users\Administrator\.nuget\packages\dotnet-test-nunit\3.4.0-beta-2\lib\netcoreapp1.0\dotnet-test-nunit.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.CSharp\4.0.1\ref\netstandard1.0\Microsoft.CSharp.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.DiaSymReader\1.0.8\lib\netstandard1.1\Microsoft.DiaSymReader.dll"
@@ -101,5 +101,5 @@
 -r:"C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\Tests.cs"
-"F:\al2016\1_repos\OEM-MIS\Oem.Mis\Oem.IServicesTest\Properties\AssemblyInfo.cs"
+"F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\Tests.cs"
+"F:\al2016\1_repos\OemMis\Oem.Mis\Oem.IServicesTest\Properties\AssemblyInfo.cs"
