@@ -1,18 +1,16 @@
-﻿using System;
-using System.Linq;
-using Dapper;
-using NUnit.Framework;
+﻿using Dapper;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Oem.Providers;
 
 namespace Oem.WebTest
 {
-    [TestFixture]
+    [TestClass]
     public class DbFactoryTest
     {
         /// <summary>
         /// 测试数据库连接
         /// </summary>
-        [Test]
+        [TestMethod]
         public void InitTest()
         {
             using (var dbConnection = DbFactory.GetNewConnection())
