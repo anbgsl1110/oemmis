@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
 using Oem.Data.Table;
 using Oem.IProviders.Admin;
 using Oem.Providers.Admin;
+using Xunit;
 
 namespace Oem.WebTest.IProvider.Admin
 {
@@ -18,7 +18,7 @@ namespace Oem.WebTest.IProvider.Admin
         /// 测试获取数据
         /// </summary>
         /// <returns></returns>
-        [Test]
+        [Fact]
         public void GetUserList()
         {
             List<UserRepo> userList = _provider.GetUserList();

@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using Oem.Common.Log;
+﻿using Oem.Common.Log;
+using Xunit;
 
 namespace Oem.WebTest.Common
 {
@@ -11,7 +11,7 @@ namespace Oem.WebTest.Common
         {
             _logHelper = new LogHelper();
         }
-        [Test]
+        [Fact]
         public void WriteLog()
         {
             _logHelper.WriteLog("LogHelper Unit Test");
