@@ -50,6 +50,7 @@
     <Content Include="wwwroot\Scripts\lib\bootstrap\grunt\configBridge.json" />
     <Content Include="wwwroot\Scripts\lib\bootstrap\less\.csscomb.json" />
     <Content Include="wwwroot\Scripts\lib\bootstrap\package.json" />
+    <Content Include="wwwroot\Scripts\lib\greedyint.dialog.js" />
     <Content Include="wwwroot\Scripts\lib\jquery-validation-unobtrusive\.bower.json" />
     <Content Include="wwwroot\Scripts\lib\jquery-validation-unobtrusive\bower.json" />
     <Content Include="wwwroot\Scripts\lib\jquery-validation\.bower.json" />
