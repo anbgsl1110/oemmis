@@ -236,3 +236,4 @@ pip-log.txt
 	
 /Oem.Mis/Oem.Common/bin/Debug/netstandard1.6
 .vs/
+/Oem.Dev/Oem.Web/wwwroot/lib/
