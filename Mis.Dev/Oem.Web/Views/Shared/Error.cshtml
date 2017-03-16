@@ -1,14 +1,25 @@
-@{
-    ViewData["Title"] = "Error";
+﻿@{
+    Layout = null;
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
-</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    @*iPad适配*@
+    <meta name="viewport" content="user-scalable=no"/>
+    <title></title>
+    @Html.RenderCss("/Content/css/error.css")
+</head>
+<body class="bodybg">
+    <div class="PageErrorWrap">
+        <div class="PageErrorTips1">
+            @(string.IsNullOrEmpty(ViewBag.Error) ? "抱歉，您查看的页面似乎出了点问题。" : ViewBag.Error)
+        </div>
+        <div class="PageErrorTips2">
+        </div>
+    </div>
+    <div style="display:none">
+        @ViewBag.ErrorInfo
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* SinglePage css --error page   from style_configure.css   {*/
+body, div, ul, ol, li, dl, dt, dd, input, button, a,p, img, h1, h2, h3, h4, h5, h6, form,pre{margin: 0;}
+ul, ol, li, dl, dt, dd, input, button{padding: 0;}
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html{font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+body{font-family: "Microsoft Yahei","Helvetica Neue","Heiti SC",Helvetica,Arial,sans-serif; font-size: 12px; line-height: 1.42857143; color: #444;}
+
+.bodybg{background:#ddd; text-align: center;}
+.PageErrorWrap{height:480px; width:960px; position:fixed; z-index:1; top:120px; left:50%; margin-left:-480px; background:url(../images/bg_tips6_1.png) no-repeat center top;}
+.PageErrorTips1{width:400px; margin:296px auto 62px; font-size:18px; color:#000;line-height:24px; min-height:24px;}
+.PageErrorTips2{color:#666; line-height:24px;}
+/*} SinglePage css --error page  */

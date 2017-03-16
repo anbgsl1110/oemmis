@@ -1,0 +1,78 @@
+@charset"UTF-8";
+/** 该文档包含所有框架与组件定位的样式 * Created by WenJun.Wang on 2016/7/10 19:30
+*/
+body, div, ul, ol, li, dl, dt, dd, input, button, a,p, img, h1, h2, h3, h4, h5, h6, form,pre{margin: 0;}
+ul, ol, li, dl, dt, dd, input, button{padding: 0;}
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.clearfix:before, .clearfix:after, .container:before, .container:after, .navbar-header:before, .navbar-header:after, .navbar-nav-left:before, .navbar-nav-left:after, .toolbar-right:before, .toolbar-right:after, .sidebar-tabs:before, .sidebar-tabs:after, .sidebar-tools:before, .sidebar-tools:after, .list-data:before, .list-data:after, .section-content:before, .section-content:after, .section-list:before, .section-list:after,.srction-select:before,.srction-select:after{content: " "; display: table;}
+.clearfix:after, .container:after, .sidebar-tools:after, .list-data:after, .section-content:before, .section-content:after, .section-list:before, .section-list:after{clear: both;}
+*:before, *:after{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.fl{float: left;}
+.fr{float: right;}
+.body-layout{padding-top: 70px; }
+.navbar-fixed-top{position: fixed; top: 0; right: 0; left: 0; z-index: 1030; min-height: 50px;}
+.container{margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; width: 960px;}
+.navbar-header{float: left; width: 200px;}
+.navbar-brand{display: table-cell; vertical-align: middle; height: 50px;}
+/* 使logo图片垂直居中显示 */
+.navbar-brand img{max-width: 200px;}
+.navbar-right{float: right; position: relative;}
+.navbar-nav-item{float: left; position: relative;}
+.navbar-nav-left, .navbar-nav-right{float: left; position: relative;}
+.navbar-dropdown-menu{position: absolute; top: 50px; left: 1px; right:0;}
+.navbar-nav-right .navbar-dropdown-menu{left: 0; width:120px;}
+.dropdown-account{position: absolute; top: 50px; left: -13px;}
+.toolbar-fixed-top{position: fixed; top: 50px; right: 0; left: 0; z-index: 1000; min-height: 60px; background: url("../images/bg_toolbar1.gif") repeat-x 0 61px;}
+.toolbar-left{float: left;}
+.toolbar-right{float: right;}
+.toolbar-left .btn-default + .btn-default{margin-left: 10px;}
+.form-group, .drop-button, .drop-button-s2{display: inline-block; vertical-align: middle;}
+.form-group{position: relative;}
+.toolbar-form .dropdown-list-s1{ display: inline-block; float: none;}
+.dropdown-list-s1 .dropdown-toggle{ background: #f1f1f1; line-height: 28px; border-color:#d1d1d1; border-radius: 3px 0 0 3px; padding-right: 13px;
+    padding-left: 9px;}
+.dropdown-list-s1 .menu-width-s2{width:55px; left: 6px;}
+.dropdown-list-s1 .menu-width-auto{top:30px;left: 6px;}
+.dropdown-list-s1 .dropdown-toggle .caret { position: absolute; top: 12px; right: 5px;}
+.dropdown-list-s1 .dropdown-menu{border-color:#d1d1d1;}
+/* siderbar{*/
+.sidebar{position: fixed; bottom: 5px; left: 50%; margin-left: -480px; z-index:999; display: block; overflow-x: hidden; overflow-y: hidden; background-color: #fff; width: 200px; border-radius: 3px; box-shadow: 1px 0 5px rgba(0, 0, 0, .2); padding-bottom: 150px;}
+.body-layout .sidebar{top: 130px;}
+.layout-s1 .sidebar{top: 70px;}
+.col-R{float: left; width: 740px; margin: 0 0 0 220px;}
+.layout-s1 .col-R{margin-top: -60px;}
+.nav-sidebar>li{position: relative; display: block; width: 80px; text-align: center;}
+.nav-sidebar>li>a{position: relative; display: block; padding: 10px 15px;}
+.sidebar-bottom{position: absolute; bottom: 0; left: 0; width: 100%;}
+.sidebar-mid{position: absolute; top: 0; bottom: 0; left: 0; width: 100%; overflow-x: hidden; overflow-y: auto;}
+.crm-col-L{width:700px; float: left;}
+.crm-col-R{width:240px; float: right;}
+.crm-col-L2{width:200px; float: left;}
+.crm-col-R2{width:740px; float: right;}
+/*} siderbar */
+/* 右侧版块样式{*/
+.section{background-color: #fff; border-radius: 3px; box-shadow: 0 0 3px rgba(0, 0, 0, .1); margin-bottom: 20px;}
+/*} 右侧版块样式 */
+/* 模态框与遮罩样式{*/
+.blur{-webkit-filter: blur(3px); /* Chrome, Opera */
+    -moz-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px); filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=false); /* IE6~IE9 */}
+/* 毛玻璃效果 <<<<浏览器兼容性待测试<<<< */
+.modal{position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1040; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; outline: 0;}
+.modal-backdrop{position: absolute; top: 0; right: 0; left: 0; min-height: 100%; background:rgba(0, 0, 0, .3);}
+.modal-dialog{position: relative; width: auto; margin: 20px auto;}
+.modal-content{position: relative; background: #fff; -webkit-background-clip: padding-box; background-clip: padding-box; border-radius: 6px; outline: 0; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .5); box-shadow: 0 0 10px rgba(0, 0, 0, .5);}
+.modal-arrow{position: absolute; top: -7px; right: 28px; width: 0; height: 0; border-right: 8px solid transparent; border-left: 8px solid transparent; border-bottom: 8px solid #fff;}
+.modal-dialog-ab{position: absolute; top: 50%; left: 50%;}
+.search-options-body{ max-height: 434px;}
+.search-options-body .search-options-box:last-child { border-bottom: 0;}
+.search-options{width: 960px; margin: 115px auto 10px;}
+.usual-xx-large{width: 840px; max-height: 600px; margin: -300px 0 0 -420px;}
+.usual-x-large{width: 740px; max-height: 600px; margin: -300px 0 0 -370px;}
+.usual-large{width: 540px; max-height: 600px; margin: -300px 0 0 -270px;}
+.usual-medium{width: 400px; max-height: 500px; margin: -250px 0 0 -200px;}
+.usual-small{width: 320px; max-height: 400px; margin: -200px 0 0 -160px;}
+/*} 模态框与遮罩样式*/
+/* 媒体查询 */
+@media (max-width: 969px){.sidebar{left: 0; margin-left: 0;} .body-layout, .body-layout2{overflow-x: hidden;} /* 当页面宽度小于970px时 禁用横向滚动条 防止浏览器窗口被拉伸到很小的时候右侧内容与左侧sidebar重叠 */}
+@media (max-height: 600px){/* 当浏览器高度小于等于600时，四种类型的弹框都按照下述方式显示。相对定位，距离顶部和底部各20的间隙。 */
+    .modal-dialog-ab{position: relative; top: auto; left: auto;} .usual-xx-large, .usual-x-large, .usual-large, .usual-medium, .usual-small{margin: 20px auto;}}

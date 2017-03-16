@@ -1,0 +1,203 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+    <title></title>
+    @Html.RenderCss("/Content/css/login.css")
+    @Html.RenderSciprt("/Scripts/app/libs/jquery/dist/jquery.min.js")
+    @if (Crm.Common.Util.ConfigHelper.GetConfigString("Dev") != "true")
+    {
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?259be06731626d7ddee4de80a292e1e8";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    }
+    <script type="text/javascript">
+        var org;
+        $.ajax({
+            dataType: "json",
+            url: "/api/OrgApi/GetCurrentOrg?school=" + document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1],
+            async: false,
+            success: function (response) {
+                org = response.data;
+                document.title = "登录 -" + org.name;
+            }
+        });
+        $(function () {
+            $("#bg").css("backgroundImage", "url(" + org.logos.login_1 + ")");
+            $("#logo2").attr("src", org.logos.login_2);
+        });   
+    </script>
+    @Html.RenderSciprt("/Scripts/app/libs/greedyint.dialog.js")
+    <script type="text/javascript">
+        function login() {
+            var school = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
+            var goto = location.search.match(/(\?|\&)goto=(.+)/);
+            goto = goto && goto.length > 2 ? decodeURIComponent(goto[2]) : null;
+            $.post('/api/UserApi/Login',
+                {
+                    Name: $("#txtName").val(),
+                    Password: $("#pwd").val(),
+                    OrgName: school
+                }, function (response) {
+                    if (response.status) {
+                        document.cookie = "school=" + school + ";path=/";
+                        if (response.data.userType == 12) {//管理员首页
+                            window.location = goto || '/home/Index#/crmrole';
+                        }
+                        else if (response.data.userType == 11) {//首页
+                            window.location = goto || '/home/Index#/index';
+                        }
+
+                    }
+                    else {
+                        if (response.type == 25001) {
+                            $("#lblErrorMsg").html("用户名或密码不正确！");
+                        } else if (response.type == 25002) {
+                            $("#lblErrorMsg").html("用户被禁用！");
+                        } else if (response.type == 25003) {
+                            $("#lblErrorMsg").html("请输入用户名！");
+                        } else if (response.type == 25004) {
+                            $("#lblErrorMsg").html("请输入密码！");
+                        }
+                        $("#ctnErrorMsg").show();
+                    }
+                }, "json");
+        }
+
+        $(function () {
+            $("#txtName").blur(function () {
+                if ($(this).val() == "") {
+                    $("#lblName").show();
+                }
+                else {
+                    $("#lblName").hide();
+                }
+            }).focus(function () {
+                $("#lblName").hide();
+            })
+            $("#lblName").click(function () {
+                $("#txtName").focus();
+            })
+            $("#pwd").blur(function () {
+                if ($(this).val() == "") {
+                    $("#lblPwd").show();
+                }
+                else {
+                    $("#lblPwd").hide();
+                }
+            }).focus(function () {
+                $("#lblPwd").hide();
+            })
+            $("#lblPwd").click(function () {
+                $("#pwd").focus();
+            })
+
+            $("#btnLogin").click(function () {
+                login();
+            });
+            $("#txtName,#pwd").keypress(function (e) {
+                if (e.which == 13)
+                    login();
+            });
+
+            /* 浏览器和缩放检测 */
+            try {
+                if (!(window.chrome && navigator.vendor == "Google Inc.")) {
+                    $('#alertMask,#alertBrowser').show().eq(1).find('button').click(function () { $('#alertMask,#alertBrowser').hide() });
+                }
+                else if ((function () {
+                    var screenCssPixelRatio = (window.outerWidth - 8) / window.innerWidth;
+                    return screenCssPixelRatio > 0 && (screenCssPixelRatio < 0.98 || screenCssPixelRatio > 1.02);
+                })()) {
+                    $('#alertMask,#alertZoom').show().eq(1).find('button').click(function () { $('#alertMask,#alertZoom').hide() });
+                }
+            }
+            catch (ex) { }
+            /* 浏览器和缩放检测 */
+
+        });
+    </script>
+</head>
+<body>
+    <div class="LoginBg" id="bg">
+    </div>
+    <div class="LoginOuter">
+        <div class="LoginInner">
+            <h1 class="Loginlogo">
+                <img id="logo2">
+            </h1>
+            <dl class="Loginbox">
+                <dd>
+                    <input type="text" id="txtName" class="LoginText">
+                    <span class="LoginTextTips" style="display: block;" id="lblName">用户名</span>
+                </dd>
+                <dd>
+                    <input type="password" id="pwd" class="LoginText">
+                    <span class="LoginTextTips" style="display: block;" id="lblPwd">密码</span>
+                </dd>
+                <!-- 注：1 文本框获得焦点时，value清空； 2 文本框失去焦点时若内容为空，value值复原； 3 密码输入文本框获得焦点输入的字符不直接显示，显示为圆点。 -->
+                <dt>
+                    <button class="LoginBtn" id="btnLogin">
+                        登录</button>
+                </dt>
+            </dl>
+            <div class="LoginErrorbox" id="ctnErrorMsg" style="display: none">
+                <em class="errorIco"></em><span id="lblErrorMsg">请输入用户名！</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    <div class="localMask" style="display: none" id="alertMask">
+    </div>
+    <div class="popupDialogBoxOuter popupDialogLayoutS1" style="display: none" id="alertBrowser">
+        <div class="popupDialogHead">
+            提醒</div>
+        <div class="popupDBTipsbox clearfix">
+            <em class="popupDBTipsIcon"></em>
+            <div class="popupDBTipsText">
+                建议下载使用chrome进入系统，使用其它浏览器可能会发生功能异常！
+            </div>
+        </div>
+        <dl class="popupDBTipsToolbox clearfix">
+            <dt>安装包</dt>
+            <dd>
+                <a href="http://res.greedyint.com/ChromeStandalone_Setup.exe" class="btn-download-s1" target="_blank">
+                    Win</a><a href="http://res.greedyint.com/googlechrome.dmg" class="btn-download-s1"
+                        target="_blank">Mac</a></dd>
+        </dl>
+        <dl class="popupDBTipsToolbox clearfix">
+            <dt>谷歌官网</dt>
+            <dd>
+                <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" class="btn-download-s2"
+                    target="_blank">官方下载</a></dd>
+        </dl>
+        <div class="popupDialogFoot clearfix">
+            <button class="btnNext">
+                关闭</button>
+        </div>
+    </div>
+    <div class="popupDialogBoxOuter popupDialogLayoutS1" style="display: none" id="alertZoom">
+        <div class="popupDialogHead">
+            提醒</div>
+        <div class="popupDBTipsbox clearfix">
+            <em class="popupDBTipsIcon"></em>
+            <div class="popupDBTipsText">
+                建议设置浏览器的缩放为100%，使用其它缩放比例可能会发生功能异常！
+            </div>
+        </div>
+        <div class="popupDialogFoot clearfix">
+            <button class="btnNext">
+                关闭</button>
+        </div>
+    </div>
+</body>
+</html>
