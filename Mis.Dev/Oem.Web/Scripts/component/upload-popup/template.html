@@ -1,0 +1,39 @@
+﻿<div class="modal" style="display:block;" ng-show="uploadConfig.showUpload">
+    <div class="modal-dialog-ab modal-content usual-x-large">
+        <div class="pop-up-title">
+            {{uploadConfig.uploadTitle}}({{uploadConfig.uploadFiles.files.length}}/{{uploadConfig.uploadFiles.allowedUploadNumber}})
+        </div>
+        <div class="pop-up-clue">
+            <div class="pop-up-tips clearfix">
+                <span class="fl">{{uploadConfig.uploadPrompt}}</span>
+            </div>
+
+            <div class="info-box1-upload-outer">
+                <div class="info-box1-upload">
+                    <!-- 上传按钮 {-->
+                     <div ng-repeat="files in uploadConfig.uploadFiles.files" style="float:left">
+                        <button type="button" title="删除此项" ng-click="deleteFile($index)">删除此项</button>
+                            <em class="file-type-pic doc" ng-if="(files.fileName | fileFormatJudge) ==0"></em>
+                            <em class="file-type-pic wps" ng-if="(files.fileName | fileFormatJudge) ==1"></em>
+                            <em class="file-type-pic jpg" ng-if="(files.fileName | fileFormatJudge) ==2"></em>
+                            <em class="file-type-pic pdf" ng-if="(files.fileName | fileFormatJudge) ==3"></em>
+                            <p class="file-name">{{files.fileName}}</p>
+                    </div>
+                    <div ng-if="uploadConfig.uploadFiles.files.length<9">
+                        <button type="button" class="btn-upload"  ng-click="showFileDialog()" nv-file-over="" nv-file-drop uploader="uploader">上传文件<em>可拖拽上传<br /></em></button>
+                        <input id="addFile"  style="display: none" type="file" nv-file-select="" uploader="uploader" multiple />
+                    </div>
+                            <!--} 上传按钮 -->
+                           
+                  </div>
+              </div>
+
+        </div>
+        <div class="popup-btn-box clearfix">
+            <div class="popup-btn-box clearfix">
+                <button type="button" class="btn-default btn-cancel" ng-click="dgCancel()">取消</button>
+                <button type="button" class="btn-default btn-sure" ng-click="dgConfirm()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>

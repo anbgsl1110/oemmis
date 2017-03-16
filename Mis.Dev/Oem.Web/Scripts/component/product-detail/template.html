@@ -1,0 +1,105 @@
+﻿<div class="info-box3 clearfix" ng-if="showType==1">
+    <p class="title">
+        签约课程
+        <span class="fr tips-span">报名课时合计：{{classHour}}小时</span>
+        <span class="fr tips-span">签约金额合计：{{amount}}</span>
+    </p>
+    <div class="info-box1-detail-outer">
+        <div class="info-box1-con" ng-repeat="item in listData">
+            <div class="info-con-top clearfix">
+                <div class="info-top-name"><span class="text-hide hide-w1" title="{{item.serial}}">{{item.serial}}</span>（<span class="text-hide hide-w2" title="{{item.name}}">{{item.name}}</span>）</div>
+            </div>
+            <dl class="info-con-ul clearfix">
+                <dd class="info-li-two-row">
+                    <span class="info-title">课程原价：</span>
+                    <span class="info-detail">{{item.price.toFixed(2)}}</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="info-title">签约金额：</span>
+                    <span class="info-detail">{{item.amount.toFixed(2)}}</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="info-title">总课时：</span>
+                    <span class="info-detail">{{item.classHour}}小时</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="info-title">报名课时：</span>
+                    <span class="info-detail">{{item.signClassHour}}小时</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="info-title">报名班型：</span>
+                    <span class="info-detail">{{item.typeName}}</span>
+                </dd>
+                <dd class="info-li-one-row">
+                    <span class="info-title">上课校区：</span>
+                    <span class="info-detail">{{item.schoolName}}</span>
+                </dd>
+                <dd class="info-li-one-row">
+                    <span class="info-title">预开班时间：</span>
+                    <span class="info-detail">{{item.beginDate =='/Date(-62135596800000)/' ?"" :(item.beginDate | formatJsonDate:'yyyy/MM/dd')}}</span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<li class="typeWhole" ng-if="showType==2">
+    <label>签约课程：</label>
+    <div class="info-box1-edit-outer">
+        <div class="info-box1-tips clearfix">
+            <span class="fr tips-span">报名课时合计：{{classHour}}</span>
+            <span class="fr tips-span">签约金额合计：{{amount.toFixed(2)}}</span>
+        </div>
+        <div class="info-box1-con" ng-repeat="item in listData">
+            <div class="info-con-top clearfix">
+                <div class="info-top-name"><span class="text-hide hide-w1" title="{{item.serial}}">{{item.serial}}</span>（<span class="text-hide hide-w2" title="{{item.name}}">{{item.name}}</span>）</div>
+                <div class="info-delete fr" ng-click="deleteItem($index)"></div>
+            </div>
+            <dl class="info-con-ul clearfix">
+                <dd class="info-li-two-row">
+                    <span class="info-title">课程原价：</span>
+                    <span class="info-detail">{{item.price.toFixed(2)}}</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="must-write">*</span>
+                    <span class="info-title">签约金额：</span>
+                    <input type="text" class="form-control" ng-model="item.amount" ng-blur="getAmountSum($index)" maxlength="9">
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="info-title">总课时：</span>
+                    <span class="info-detail">{{item.classHour}}小时</span>
+                </dd>
+                <dd class="info-li-two-row">
+                    <span class="must-write">*</span>
+                    <span class="info-title">报名课时：</span>
+                    <input type="text" class="form-control" ng-model="item.signClassHour" ng-blur="getClassHourSum($index)" maxlength="9">
+                </dd>
+                <dd class="info-li-one-row">
+                    <span class="info-title">报名班型：</span>
+                    <div class="dropdown-list">
+                        <select-box selected-data="item.classTypeData" select-list-data="classTypes" select-filed="name" when-selected-action="selectdClassType(item,data)"></select-box>
+                    </div>
+                </dd>
+                <dd class="info-li-one-row">
+                    <span class="must-write">*</span>
+                    <span class="info-title">上课校区：</span>
+                    <div class="dropdown-list">
+                        <select-box selected-data="item.schoolData" select-list-data="item.schoolTypes" select-filed="name" when-selected-action="selectdSchoolType(item,data)"></select-box>
+                    </div>
+                </dd>
+                <dd class="info-li-one-row">
+                    <span class="info-title">预开班时间：</span>
+                    <input type="text" class="WidthSearch" ng-model="item.beginDate" datepicker placeholder="请选择日期" dp-mindate="%y-%M-%d">
+                </dd>
+            </dl>
+        </div>
+        <div class="info-box1-add">
+            <div class="info-box1-add-inner">
+                <button type="button" class="add-button" ng-click="showProduct()"></button>
+            </div>
+        </div>
+    </div>
+
+</li>
+<!--转校组件-->
+<multiple-popup ng-if="productModalOptions" ng-show="showType==2" is-show="isShowProduct" data="productList" options="productModalOptions" is-manual-load="true" confirm-action="chooseProductCallBack(data)" cancle-action="cancleCallBack()">
+</multiple-popup>

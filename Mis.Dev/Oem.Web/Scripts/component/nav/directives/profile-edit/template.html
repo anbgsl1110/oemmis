@@ -1,0 +1,35 @@
+<div class="modal" ng-show='isShow'>
+    <div class="modal-backdrop" style="height:100%;"></div>
+    <div class="modal-dialog-ab modal-content usual-large">
+        <div class="pop-up-title">个人设置</div>
+        <div class="pop-up-content-s1 popup-content-minheight clearfix">
+            <dl class="StatisticsTab">
+                <dd class="StatisticsTabItem" ng-class="{'Current':!isChangePasswordTab}" ng-click='switchTab(0)'>更改头像</dd><dd class="StatisticsTabItem" ng-class="{'Current':isChangePasswordTab}" ng-click='switchTab(1)'>修改密码</dd>
+            </dl>
+            <div class="account-edit-pswd" ng-show='isChangePasswordTab'>
+                <div class="pop-up-loginbox" style="width:360px; margin:0 auto;">
+                    <div class="pop-up-logindiv">
+                        <label class="pop-up-column">原密码</label>
+                        <input type="password" class="popup-input-s pop-up-username" maxlength="50" ng-model='oldPwd'>
+                    </div>
+                    <div class="pop-up-logindiv">
+                        <label class="pop-up-column">新密码</label>
+                        <input type="password" class="popup-input-s pop-up-name" placeholder='最少6位，最多16位' maxlength="16" ng-model='newPwd'>
+                    </div>
+                    <div class="pop-up-logindiv ">
+                        <label class="pop-up-column">确认密码</label>
+                        <input type="password" class="popup-input-s pop-up-pswd" maxlength="16" ng-model='comparePwd'>
+                    </div>
+                </div>
+            </div>
+            <div ng-hide='isChangePasswordTab'>
+                <croper-photo image-url="headImgUrl" json-image-data="jsonImageData"></croper-photo>
+            </div>
+            
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click='cancle()'>取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click='confirm()'>确定</button>
+        </div>
+    </div>
+</div>

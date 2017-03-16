@@ -6,6 +6,14 @@
     "jquery": "2.2.3",
     "jquery-validation": "1.15.0",
     "jquery-validation-unobtrusive": "3.2.6",
-    "angular": "v1.6.4-build.5317+sha.0c3620b"
+    "angular": "v1.6.4-build.5317+sha.0c3620b",
+    "requirejs-text": "2.0.x",
+    "requirejs": "2.1.x",
+    "angular-loader": "v1.6.4-build.5315+sha.c80fa1c",
+    "angular-mocks": "v1.6.4-build.5317+sha.0c3620b",
+    "angular-ui-router": "0.2.13"
+  },
+  "resolutions": {
+    "angular": "1.6.4-build.5317+sha.0c3620b"
   }
 }

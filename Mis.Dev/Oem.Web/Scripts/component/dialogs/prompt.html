@@ -1,0 +1,17 @@
+﻿<!-- 模态框与遮罩-提醒修改密码 begin {-->
+<div class="modal" style="display:block;">
+    <div class="modal-backdrop" style="height:100%;"></div><!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content usual-medium">
+        <dl class="popupDialogInner5">
+            <dt class="popup-update-title">{{ngDialogData.mainTitle}}</dt>
+            <dd class="popup-update-routes">
+                {{ngDialogData.subTitle}}
+            </dd>
+        </dl>
+        <div class="block-bottom2 clearfix">
+            <button type="button" class="btn-default btn-sure" ng-click="closeThisDialog('Cancel')">{{ngDialogData.finish}}</button>
+        </div>
+    </div>
+    
+</div>
+<!--} 模态框与遮罩-提醒修改密码 end -->

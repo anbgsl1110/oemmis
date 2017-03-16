@@ -1,0 +1,13 @@
+<div class="section-page" ng-hide="Hide">
+    <a href="javascript:void(0)" ng-click="goPrev()" class="page-previous" ng-class="{'page-disabled':isDisablePrev()}">上一页</a>
+    <span class="page-line"></span>
+    <a href="javascript:void(0)" class="page-num" ng-repeat="Item in List" ng-click="Item.action()" ng-class="{'current':Item.value === page}">
+    	<span ng-bind="Item.value"></span>
+    </a>
+    <span class="page-line"></span>
+    <a href="javascript:void(0)" ng-click="goNext()" class="page-next" ng-class="{'page-disabled':isDisableNext()}">下一页</a>
+</div>
+<!-- <ul ng-hide="Hide" ng-class="ulClass">
+    <li title="{{Item.title}}" ng-class="Item.liClass" ng-click="Item.action()" ng-repeat="Item in List"> <span ng-bind="Item.value">
+</span>
+</ul> -->

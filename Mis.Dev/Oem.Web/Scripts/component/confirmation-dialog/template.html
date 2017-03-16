@@ -1,0 +1,13 @@
+﻿<!-- 重置密码 begin {-->
+<div class="modal-dialog-ab modal-content usual-medium" ng-show="dialogConfig.isShowDialog">
+
+    <div class="pop-up-title">{{dialogConfig.title}}</div>
+    <div class="pop-up-content2">
+        <div class="pop-up-item-box"><label class="pop-up-column">{{dialogConfig.prompt}}</label><input type="password" class="form-control" ng-model="newPassword" placeholder="{{dialogConfig.placeholder}}"></div>
+    </div>
+    <div class="popup-btn-box clearfix">
+        <button type="button" class="btn-default btn-cancel" ng-click="dgCancel()">取消</button>
+        <button type="button" class="btn-default btn-sure" ng-click="dgConfirm()">确定</button>
+    </div>
+</div>
+<!--}重置密码 end -->

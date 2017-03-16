@@ -1,0 +1,9 @@
+<div class="Tipsbox_ErrorWarp" ng-class="{'Tipsbox_Top':ngDialogData.isTop}">
+    <!--说明： 1、 一定时间后可自动消失;
+        2、当错误提示配合弹框出现的时候，将显示到顶部（浏览器窗口最上面的地方），代码为：<div class="Tipsbox_ErrorWarp Tipsbox_Top">
+    -->
+    <div class="Tipsbox_Error">
+        <a href="javascript:void(0)" class="Tipsbox_Close" ng-click='ngDialogData.close()'></a>
+        <em class="errorIco"></em><span>{{ngDialogData.message}}</span>
+    </div>
+</div>

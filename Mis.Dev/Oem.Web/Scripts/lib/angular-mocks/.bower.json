@@ -1,0 +1,20 @@
+{
+  "name": "angular-mocks",
+  "version": "1.6.4-build.5317+sha.0c3620b",
+  "license": "MIT",
+  "main": "./angular-mocks.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.6.4-build.5317+sha.0c3620b"
+  },
+  "homepage": "https://github.com/angular/bower-angular-mocks",
+  "_release": "1.6.4-build.5317+sha.0c3620b",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.6.4-build.5317+sha.0c3620b",
+    "commit": "f4dd2db1074bac186210cae727a63f386dde94b2"
+  },
+  "_source": "https://github.com/angular/bower-angular-mocks.git",
+  "_target": "v1.6.4-build.5317+sha.0c3620b",
+  "_originalSource": "angular-mocks"
+}

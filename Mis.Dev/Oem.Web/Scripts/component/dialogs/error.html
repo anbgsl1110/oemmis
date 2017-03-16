@@ -1,0 +1,11 @@
+<!--   显示弹框 增加样式：  fail-box-show  <div class="clue-fail-box fail-box-show">  -->
+<div class="clue-fail-box fail-box-show" >
+    <div class="text-box1">操作失败！</div>
+    <div class="text-box2">
+        {{dialogErrorData.message}}
+    </div>
+    <div class="clue-fail-btn-box">
+        <span id="dasdas">{{dialogErrorData.duration}}s关闭</span>
+        <button type="button" class="btn-copy" ng-click='dialogErrorData.close()'>知道了</button>
+    </div>
+</div>

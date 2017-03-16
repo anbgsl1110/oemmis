@@ -1,0 +1,20 @@
+{
+  "name": "angular-loader",
+  "version": "1.6.4-build.5315+sha.c80fa1c",
+  "license": "MIT",
+  "main": "./angular-loader.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.6.4-build.5315+sha.c80fa1c"
+  },
+  "homepage": "https://github.com/angular/bower-angular-loader",
+  "_release": "1.6.4-build.5315+sha.c80fa1c",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.6.4-build.5315+sha.c80fa1c",
+    "commit": "f768655456a0a6fceba240e90545c6f15d2097cb"
+  },
+  "_source": "https://github.com/angular/bower-angular-loader.git",
+  "_target": "v1.6.4-build.5315+sha.c80fa1c",
+  "_originalSource": "angular-loader"
+}

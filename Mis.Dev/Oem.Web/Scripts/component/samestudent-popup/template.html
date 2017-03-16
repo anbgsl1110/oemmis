@@ -1,0 +1,90 @@
+﻿<div class="modal" style="display: block;" ng-show="renderType!=0">
+
+    <div class="modal-backdrop" style="height:100%;"></div>
+    <div class="modal-dialog-ab modal-content usual-x-large">
+        <div class="pop-up-title">
+            {{renderType == 2 ? "发现同手机号学员":"选择已有学员"}}
+        </div>
+        <div class="pop-up-content">
+            <!-- 居中搜索 {-->
+            <div class="pop-up-upload-RBox limit-height" ng-show="step==1 && renderType==1">
+                <form class="form-group">
+                    <input type="text" class="form-control style-special" placeholder="输入完整的手机号码精确查找学员" ng-model="inputPhone">
+                    <button type="submit" class="search-submit style-special" title="点击搜索" ng-click="searchStudent()">搜索</button>
+                </form>
+            </div>
+            <!--} 居中搜索 -->
+            <!-- 搜索成功 {-->
+            <div ng-show="step==2 && renderType==1">
+                <form class="form-group style-special">
+                    <input type="text" class="form-control style-special" placeholder="输入完整的手机号码精确查找学员" ng-model="inputPhone">
+                    <button type="submit" class="search-submit style-special" title="点击搜索" ng-click="searchStudent()">搜索</button>
+                </form>
+                <div class="pop-up-list-box limit-height2">
+                    <div class="ListDateTable copyScroll">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <!-- 数据列表{-->
+                            <tr>
+                                <th></th>
+                                <th>学员姓名</th>
+                                <th>手机号码</th>
+                                <th>首次录入校区</th>
+                                <th>首次录入时间</th>
+                            </tr>
+                            <tr class="ListDate" ng-repeat="student in sameStudents" ng-click="chooseItem(student,$index)">
+                                <td class="blankbox"><span class="choice-text-icon" ng-class="{current:chooseIndex===$index}"></span></td>
+                                <td>{{student.name}}</td>
+                                <td>{{student.phone}}</td>
+                                <td>{{student.firstSchoolName}}</td>
+                                <td>{{student.createdAt | formatJsonDate:'yyyy/MM/dd HH:mm:ss'}}</td>
+                            </tr>
+                            <tr ng-show="sameStudents==null || sameStudents.length==0">
+                                <td colspan="5">
+                                    <div class="ListDateNoResult" style="padding-bottom: 0;">无搜索结果</div>
+                                </td>
+                            </tr>
+                            <!--}数据列表 -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="renderType==2">
+                <div class="pop-up-tips">
+                    提示：发现以下同手机号学员，请确定您当前录入的信息是否属于以下学员。
+                </div>
+                <div class="pop-up-list-box limit-height2">
+                    <div class="ListDateTable copyScroll">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <!-- 数据列表{-->
+                            <tr>
+                                <th></th>
+                                <th>学员姓名</th>
+                                <th>手机号码</th>
+                                <th>首次录入校区</th>
+                                <th>首次录入时间</th>
+                            </tr>
+                            <tr class="ListDate" ng-repeat="student in sameStudents" ng-click="chooseItem(student,$index)">
+                                <td class="blankbox"><span class="choice-text-icon" ng-class="{current:chooseIndex==$index}"></span></td>
+                                <td>{{student.name}}</td>
+                                <td>{{student.phone}}</td>
+                                <td>{{student.firstSchoolName}}</td>
+                                <td>{{student.createdAt | formatJsonDate:'yyyy/MM/dd HH:mm:ss'}}</td>
+                            </tr>
+                            <tr ng-show="sameStudents==null || sameStudents.length==0">
+                                <td colspan="5">
+                                    <div class="ListDateNoResult" style="padding-bottom: 0;">无搜索结果</div>
+                                </td>
+                            </tr>
+                            <!--}数据列表 -->
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click="cancel()">取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click="confirm()" ng-class="{'btn-disable':chooseIndex==undefined}" ng-disabled="chooseIndex===undefined">确定</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="modal" ng-show='isShow'>
+    <div class="modal-backdrop" style="height:100%;"></div>
+    <!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content {{options.layout || 'usual-large'}}">
+        <div class="pop-up-title">
+            {{options.title}}
+        </div>
+        <div class="pop-up-content">
+            <div class="btn-select-group clearfix">
+                <button type="button" class="btn-select" ng-class="{'btn-selected':tabItem.isActive}" ng-repeat='tabItem in options.tabs' ng-click='switchTab(tabItem)'>
+                    {{tabItem.title}}
+                </button>
+            </div>
+            <dl class="popup-list-date-s1 clearfix">
+                <dd ng-if='options.type != null' ng-repeat='(index,tags) in uiTags' ng-show='tags.isShow' class="popup-search-downlist">
+                    <div class="dropdown-list">
+                        <button type="button" class="dropdown-toggle menu-width-s2" ng-click='toggleDropdown(tags)' title="{{tags.selected.name}}">{{tags.selected.name}} <span class="caret"></span></button>
+                        <ul class="dropdown-menu menu-width-auto" role="menu" ng-show='tags.isActive'>
+                            <li ng-repeat='item in tags.items' ng-click='selectTag(index,item)' title="{{item.name}}">{{item.name}}</li>
+                        </ul>
+                    </div>
+                </dd>
+                <dd class="popup-search">
+                    <form class="popup-search-group">
+                        <input type="text" class="popup-search-input" placeholder="{{options.placeholder}}" ng-model='queryCondition.search' ng-keypress="onSearchKeyPress($event)" />
+                        <button class="popup-search-btn" ng-click='search()'></button>
+                    </form>
+                </dd>
+            </dl>
+            <div class="popup-list-table">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th class="blankbox"></th>
+                            <th limit='90px' ng-repeat='listItem in options.list'>
+                                {{listItem.title}}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="single-popup-data" class="popup-list popup-list-table copyScroll" gint-pagescroll>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="popup-ListDate" ng-repeat='item in queryResult.list' ng-class="{'active':item.isActive}" ng-click='clickItem($index)'>
+                            <td class="blankbox"><em class="popup-list-icon"></em></td>
+                            <td limit='90px' ng-repeat='listItem in options.list' title="{{item[listItem.field]}}" ng-if="options.list.length > 1">
+                                <span style="white-space: pre;width: 90px;display: inline-block;vertical-align: top;">{{listItem.isMerge ? (item[listItem.field].split(",").length==1?item[listItem.field]: item[listItem.field].split(",").length):item[listItem.field]}}</span>
+                            </td>
+                            <td  ng-repeat='listItem in options.list' title="{{item[listItem.field]}}" ng-if="options.list.length == 1">
+                                <span style="white-space: pre;display: inline-block;vertical-align: top;">{{listItem.isMerge ? (item[listItem.field].split(",").length==1?item[listItem.field]: item[listItem.field].split(",").length):item[listItem.field]}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="sidebar-list-loading" ng-show='isLoading'><em></em>正在载入中...</div>
+            </div>
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click='cancle()'>取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click='confirm()'>确定</button>
+        </div>
+    </div>
+</div>

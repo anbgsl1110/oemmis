@@ -1,0 +1,24 @@
+<dl class="account-head-left">
+    <dt>预览</dt>
+    <dd class="account-head-pic size1" style="width:120px;height:120px;"></dd>
+    <dd class="account-head-pic size2" style="width:60px;height:60px;"></dd>
+    <dd class="account-head-pic size3" style="width:40px;height:40px;"></dd>
+</dl>
+
+<dl class="account-head-right">
+    
+    <dd>拖动或调整方框，选择合适的图片区域。</dd>
+    <dd class="account-head-new-box">
+        <div id="_cropper-container" style="width:300px;height:200px;">
+            <img src="" />
+        </div>
+    </dd>
+    <dd>
+<!--        <input type="file" id="fileInput" name="upload" style="display:none;z-index:-888" onchange="angular.element(this).scope().fileNameChanged()" accept="image/bmp, image/jpg, image/jpeg,image/png">-->
+        <input type="file" id="fileInput" name="upload" style="display:none;z-index:-888"  accept="image/bmp, image/jpg, image/jpeg,image/png">
+
+        <button type="button" class="btn-default btn-re-do" ng-click="changeImage($event)">上传头像</button>
+        <span class="account-btn-text">支持JPEG、PNG，最大不超过4MB</span>
+        <!-- 上传图片后 代码变成 <button type="button" class="btn-default btn-re-do">重新选择</button>  -->
+    </dd>
+</dl>

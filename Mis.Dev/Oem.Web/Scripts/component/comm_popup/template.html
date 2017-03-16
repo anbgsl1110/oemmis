@@ -1,0 +1,24 @@
+<div class="modal" style="display:block;">
+    <div class="modal-backdrop" style="height:100%;"></div><!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content usual-medium">
+        <div class="pop-up-title">{{myTitle}}</div>
+        <div class="pop-up-content">
+            <div class="pop-up-loginbox">
+                <div ng-repeat="item in arrList" class="pop-up-logindiv">
+                    <div class="pop-up-item-box">
+                        <label class="pop-up-column">{{item.name}}</label>
+                        <input class="form-control" ng-if="item.type==1" type="text" class="popup-input-s pop-up-name" ng-model="commPoppuInput">
+                        <textarea class="info-box1-textArea copyScroll" ng-if="item.type==3" ng-model="commPoppuTextarea"></textarea>
+                        <input class="WidthSearch" type="text" ng-model="commPoppuTime" datepicker dp-placeholder="请选择开始时间" ng-if="item.type==2" />{{item.suffix}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-btn-box clearfix">
+        <button type="button" class="btn-default btn-cancel" ng-click="doCancel()">取消</button>
+        <button type="button" class="btn-default btn-sure" ng-click="doConfirm()">确定</button>
+    </div>
+
+</div>
+</div>

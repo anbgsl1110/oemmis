@@ -1,0 +1,13 @@
+<div class="modal-dialog-ab modal-content usual-small">
+    <div class="pop-up-title">{{ngDialogData.title}}</div>
+    <div class="pop-up-tips-box">
+        <em class="pop-up-tips-icon-s1"></em>
+        <span class="pop-up-tips-text-s1">
+                {{ngDialogData.message}}
+            </span>
+    </div>
+    <div class="popup-btn-box clearfix">
+        <button type="button" class="btn-default btn-cancel" ng-click="closeThisDialog('Cancel')" ng-show="ngDialogData.isShow">{{ngDialogData.cancel}}</button>
+        <button type="button" class="btn-default btn-sure" ng-click="confirm('Save')">{{ngDialogData.sure}}</button>
+    </div>
+</div>

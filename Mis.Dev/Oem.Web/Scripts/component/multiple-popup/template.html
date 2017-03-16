@@ -1,0 +1,131 @@
+<div class="modal" ng-show='isShow'>
+    <div class="modal-backdrop" style="height:100%;"></div>
+    <!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content" ng-class="{'usual-xx-large':taskTypes.length>0,'usual-x-large':taskTypes.length==0}">
+        <div class="pop-up-title">
+            <span ng-bind="options.title">{{taskTypes}}</span>
+        </div>
+        <div class="pop-up-content ">
+            <div class="pop-up-tips" ng-show="showtip">
+                提示：{{isShowTip}}！
+            </div>
+            <!-- 只是给线索合并用，没有扩展-->
+            <ul class="pop-up-text-box" ng-if="showfixation">
+                <li class="title">主体线索</li>
+                <li>学员姓名：<span>{{fixationObj.userName}}</span></li>
+                <li>手机号码：<span>{{fixationObj.phone}}</span></li>
+                <li>跟进人：<span>{{fixationObj.followUserName}}</span></li>
+                <li>校区：<span>{{fixationObj.schoolName}}</span></li>
+            </ul>
+        </div>
+        <div class="popup-list-box clearfix">
+            <div class="popup-main-list">
+                <div class="pop-up-content ">
+                    <div class="btn-select-group clearfix">
+                        <button type="button" class="btn-select" ng-class="{'btn-selected':tabItem.isActive}" ng-repeat='tabItem in options.tabs' ng-click='switchTab(tabItem)'>
+                            <span ng-bind="tabItem.title"></span>
+                        </button>
+                    </div>
+                    <dl class="popup-list-date-s1 clearfix" ng-class="{'popup-search-downlist-s':taskTypes.length>0}">
+                        <!--task增加的特别样式开始-->
+                        <dd class="popup-search-downlist" ng-if="taskTypes.length>0">
+                            <div class="dropdown-list">
+                                <button type="button" class="dropdown-toggle menu-width-s2" ng-click="changeTaskTypeShow()" title="{{taskTypeCName}}"><span ng-bind="taskTypeCName"></span><span class="caret"></span></button>
+                                <ul class="dropdown-menu menu-width-auto copyScroll" ng-show="isShowTaskTypeItem">
+                                    <li ng-repeat=" taskTypeItem in taskTypes" ng-click="changeTaskTypeAction(taskTypeItem.Id,taskTypeItem.CName)" title="{{taskTypeItem.CName}}"><span ng-bind="taskTypeItem.CName"></span></li>
+                                </ul>
+                            </div>
+                        </dd>
+                        <!--task增加的特别样式结束-->
+                        <dd ng-if='options.type != null' ng-repeat='(index,tags) in uiTags' ng-show='tags.isShow' class="popup-search-downlist">
+                            <span class="dropdown-icon" ng-show="$index!=0&&taskTypes.length>0"></span>
+                            <div class="dropdown-list">
+                                <button type="button" class="dropdown-toggle menu-width-s2" ng-click='toggleDropdown(tags)' title="{{tags.selected.name}}"><span ng-bind="tags.selected.name"></span><span class="caret"></span></button>
+                                <ul class="dropdown-menu menu-width-auto" role="menu" ng-show='tags.isActive'>
+                                    <li ng-repeat='item in tags.items' ng-click='selectTag(index,item)' title="{{item.name}}"><span ng-bind="item.name"></span></li>
+                                </ul>
+                            </div>
+                        </dd>
+                        <dd class="popup-search">
+                            <form class="popup-search-group">
+                                <input type="text" class="popup-search-input" placeholder="{{options.placeholder}}" ng-model='queryCondition.search' ng-keyup="onSearchKeyPress($event)" />
+                                <button class="popup-search-btn" ng-click='search()'></button>
+                            </form>
+                        </dd>
+                    </dl>
+                    <div class="popup-list-table">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th class="blankbox"></th>
+                                    <th limit='{{listItem.width||"90px"}}' ng-repeat='listItem in options.list'>
+                                        <span ng-bind="listItem.title"></span>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="multiple-popup-data" class="popup-list popup-list-table copyScroll" gint-pagescroll>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr class="popup-ListDate" ng-repeat='item in queryResult.list' ng-class="{'active':item.isActive}" ng-click='clickItem($index)'>
+                                    <td class="blankbox"><em class="popup-list-icon"></em></td>
+                                    <td limit='{{listItem.width||"90px"}}' ng-if="!listItem.type && options.list.length > 1" ng-repeat='listItem in options.list' title="{{item[listItem.field]}}">
+                                        <span ng-style="{width:(listItem.width||'90px')}" style="white-space: pre;width: 90px;display: inline-block;vertical-align: top;">{{listItem.isMerge ? (item[listItem.field].split(",").length==1?item[listItem.field]: item[listItem.field].split(",").length):item[listItem.field]}}</span>
+                                    </td>
+                                    <td ng-if="!listItem.type && options.list.length == 1" ng-repeat='listItem in options.list' title="{{item[listItem.field]}}">
+                                        <span style="white-space: pre;display: inline-block;vertical-align: top;">{{listItem.isMerge ? (item[listItem.field].split(",").length==1?item[listItem.field]: item[listItem.field].split(",").length):item[listItem.field]}}</span>
+                                    </td>
+                                    <!--CRM1.5 新增直播时间和直播状态显示 shaobo.wang-->
+                                    <td limit='{{listItem.width||"90px"}}' ng-if="listItem.type==='liveClassTime'" ng-repeat='listItem in options.list' title="{{item[listItem.field]}}">
+                                        <span style="white-space: pre;display: inline-block;vertical-align: top;">{{0|mergeDate:item.startTime:item.endTime}}</span>
+                                    </td>
+                                    <td limit='{{listItem.width||"90px"}}' ng-if="listItem.type==='liveClassState'" ng-repeat='listItem in options.list' title="{{item[listItem.field]}}">
+                                        <span style="white-space: pre;display: inline-block;vertical-align: top;">{{0|liveState:item.startTime:item.endTime}}</span>
+                                    </td>
+                                    <!--CRM1.5 新增直播时间和直播状态显示-->
+                                    <td limit='90px' ng-if="listItem.type=='link'" ng-repeat='listItem in options.list' title="{{item[listItem.field]}}">
+                                        <button class="popup-list-lookbutton" ng-click="openPreview(item)">预览</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="sidebar-list-loading" ng-show='isLoading'><em></em>正在载入中...</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 多选右侧显示区域 -->
+            <div class="popup-side-list">
+                <!--                <div class="popup-list-title-s2" ng-class="{'popup-list-title-s1':options.type == null}">已选择（<span>{{selectedResult.list.length}}</span>人）</div>-->
+                <!--                去掉文案 【人】 适配角色选择 by xp 2015年5月5日 14:47:40-->
+                <div class="popup-list-title-s2" ng-class="{'popup-list-title-s1':options.type == null}">已选择（<span ng-bind="selectedResult.list.length"></span>）</div>
+                <div class="popup-list-table">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th limit='70px' ng-repeat='listItem in options.selectedList'>
+                                    <span ng-bind="listItem.title"></span>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="popup-list popup-list-table copyScroll">
+                    <table border="0" cellpadding="0" cellspacing="0" rules="rows">
+                        <tbody>
+                            <tr class="popup-ListDate" ng-repeat='item in selectedResult.list track by $index' ng-click='clickSelectedItem($index)'>
+                                <td limit='70px' ng-repeat='listItem in options.selectedList track by $index' title="{{item[listItem.field]}}">
+                                    <span ng-bind="listItem.isMerge ? (item[listItem.field].split(',').length==1?item[listItem.field]: item[listItem.field].split(',').length):item[listItem.field]"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click='cancle()'>取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click='confirm()'>确定</button>
+        </div>
+    </div>
+</div>

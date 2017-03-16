@@ -1,0 +1,84 @@
+<div class="section-content4">
+    <!-- 列表页 tab{-->
+    <dl class="StatisticsTab">
+        <dd ng-repeat="tab in tabs" class="StatisticsTabItem" ng-class="{Current:currentIndex==tab.index}" ng-click="tabChange(tab.index)">{{tab.title}}</dd>
+        <!-- 注：1、多个dd间无空格； 2、当前tab的样式增加Current样式 -->
+    </dl>
+    
+    <!--} 列表页 tab-->
+    <div ng-show="currentIndex==1" class="StatisticsBox clearfix">
+        <div class="LeftBox">
+            <div class="LeftBoxTime">今日</div>
+            <div id="employeeRate" class="PieChart">
+            </div>
+            <div class="LeftBoxNumber">
+                <span title="无滞后学员的下属数" class="LeftBoxFont LeftBoxFontCurrent" ng-bind="uiModel.employee.currentNormalCount"></span>
+                <em>/</em>
+                <span title="直系下属数" class="LeftBoxFont" ng-bind="uiModel.employee.currentTotalCount"></span>
+            </div>
+        </div>
+        <div class="SeparatorLine">
+        </div>
+        <span class="StartDate" title="开始日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="employeeStartDate"
+                        datepicker dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'employee',newDate,employeeEndDate)" />
+                </span><span class="EndDate" title="结束日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="employeeEndDate" datepicker
+                        dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'employee',employeeStartDate,newDate)" />
+                </span>
+        <div ng-show="!uiModel.employee.isNoData" id="employeeHistory" class="ChartContent">
+        </div>
+        <div ng-show="uiModel.employee.isNoData" class="NoData NoDataMargin">
+            无数据</div>
+    </div>
+    <div ng-show="currentIndex==2" class="StatisticsBox clearfix">
+        <div class="LeftBox">
+            <div class="LeftBoxTime">今日</div>
+            <div id="studentRate" class="PieChart">
+            </div>
+            <div class="LeftBoxNumber">
+                <span title="进度正常学员数" class="LeftBoxFont LeftBoxFontCurrent" ng-bind="uiModel.student.currentNormalCount"></span>
+                <em>/</em>
+                <span title="跟进学员总数" class="LeftBoxFont" ng-bind="uiModel.student.currentTotalCount"></span>
+            </div>
+        </div>
+        <div class="SeparatorLine ">
+        </div>
+        <span class="StartDate" title="开始日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="studentStartDate" datepicker
+                        dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'student',newDate,studentEndDate)" />
+                </span><span class="EndDate" title="结束日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="studentEndDate" datepicker
+                        dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'student',studentStartDate,newDate)" />
+                </span>
+        <div ng-show="!uiModel.student.isNoData" id="studentHistory" class="ChartContent">
+        </div>
+        <div ng-show="uiModel.student.isNoData" class="NoData NoDataMargin">
+            无数据</div>
+    </div>
+    <div ng-show="currentIndex==3" class="StatisticsBox clearfix">
+        <div class="LeftBox">
+            <div class="LeftBoxTime">今日</div>
+            <div id="correctRate" class="PieChart">
+            </div>
+            <div class="LeftBoxNumber">
+                <span title="已批改数" class="LeftBoxFont LeftBoxFontCurrent" ng-bind="uiModel.correct.currentNormalCount"></span>
+                <em>/</em>
+                <span title="待批改总数" class="LeftBoxFont" ng-bind="uiModel.correct.currentTotalCount"></span>
+            </div>
+        </div>
+        <div class="SeparatorLine">
+        </div>
+        <span class="StartDate" title="开始日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="correctStartDate" datepicker
+                        dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'correct',newDate,correctEndDate)" />
+                </span><span class="EndDate" title="结束日期">
+                    <input class="boxRadiusS1 WidthSearch" type="text" ng-model="correctEndDate" datepicker
+                        dp-maxdate="{{maxDate}}" dp-isshowclear="false" need-changing-event="true" dp-changing="dateChange(oldDate,newDate,'correct',correctStartDate,newDate)" />
+                </span>
+        <div ng-show="!uiModel.correct.isNoData" id="correctHistory" class="ChartContent">
+        </div>
+        <div ng-show="uiModel.correct.isNoData" class="NoData NoDataMargin">
+            无数据</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿<!-- 模态框与遮罩-提示-创建成功 begin {-->
+<div class="modal" style="display: block;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog-ab modal-content usual-less-small">
+        <div class="popup-prompt-title title-bgColor2">{{ngDialogData.title}}</div>
+        <dl class="popupDialogInner5">
+            <dt class="popup-picIcon-box picIconColor2"><em class="picIcon"></em>{{ngDialogData.content1}}</dt>
+            <dd class="popup-describe-box">
+                {{ngDialogData.content2}}
+            </dd>
+        </dl>
+        <div class="block-bottom3 clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click="closeThisDialog('Cancel')">{{ngDialogData.btnContent}}</button>
+        </div>
+    </div>
+</div>
+<!--} 模态框与遮罩-提示-创建成功 end -->

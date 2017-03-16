@@ -1,0 +1,9 @@
+<div class="dropdown-list" ng-mouseleave="showlist = false" ng-show="!isDisabled" ng-class="{'form-focus-border':showlist}">
+    <button type="button" class="dropdown-toggle" ng-click="showlist = !showlist">{{selectedData[selectFiled]}}<span class="caret"></span></button>
+    <ul class="dropdown-menu copyScroll" ng-hide="!showlist || selectListData.length==0" ng-click="showlist = false">
+        <li ng-repeat="item in selectListData track by $index" ng-click="selectd($index)">{{item[selectFiled]}}</li>
+    </ul>
+</div>
+<div class="dropdown-list disabled" ng-mouseleave="showlist = false" ng-show="isDisabled">
+    <button type="button" class="dropdown-toggle" ng-click="showlist = !showlist">{{selectedData[selectFiled]}}<span class="caret"></span></button>
+</div>
