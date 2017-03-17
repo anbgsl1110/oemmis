@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Oem.Common.Util
+@{
     Layout = null;
 }
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,7 +8,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/login.css"/>
     <script src="/Scripts/lib/jquery/dist/jquery.min.js"></script>
-    @*@if (Crm.Common.Util.ConfigHelper.GetConfigString("Dev") != "true")
+    @*@if (!ConfigHelper.GetConfigString("EnvironmentConfig")["Name"].Equals("Dev"))
     {
         <script>
             var _hmt = _hmt || [];
@@ -16,8 +17,8 @@
                 hm.src = "//hm.baidu.com/hm.js?259be06731626d7ddee4de80a292e1e8";
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
-            })();*@
-        @*</script>
+            })();
+        </script>
     }*@
     <script type="text/javascript">
         var org;
@@ -31,8 +32,8 @@
             }
         });
         $(function () {
-            $("#bg").css("backgroundImage", "url(" + org.logos.login_1 + ")");
-            $("#logo2").attr("src", org.logos.login_2);
+            //$("#bg").css("backgroundImage", "url(" + org.logos.login_1 + ")");
+            //$("#logo2").attr("src", org.logos.login_2);
         });   
     </script>
     <script src="/Scripts/lib/greedyint.dialog.js"></script>
@@ -41,35 +42,36 @@
             var school = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
             var goto = location.search.match(/(\?|\&)goto=(.+)/);
             goto = goto && goto.length > 2 ? decodeURIComponent(goto[2]) : null;
-            $.post('/api/UserApi/Login',
-                {
-                    Name: $("#txtName").val(),
-                    Password: $("#pwd").val(),
-                    OrgName: school
-                }, function (response) {
-                    if (response.status) {
-                        document.cookie = "school=" + school + ";path=/";
-                        if (response.data.userType === 12) {//管理员首页
-                            window.location = goto || '/home/Index#/crmrole';
-                        }
-                        else if (response.data.userType === 11) {//首页
-                            window.location = goto || '/home/Index#/index';
-                        }
+            //$.post('/api/UserApi/Login',
+            //    {
+            //        Name: $("#txtName").val(),
+            //        Password: $("#pwd").val(),
+            //        OrgName: school
+            //    }, function (response) {
+            //        if (response.status) {
+            //            document.cookie = "school=" + school + ";path=/";
+            //            if (response.data.userType === 12) {//管理员首页
+            //                window.location = goto || '/home/Index#/crmrole';
+            //            }
+            //            else if (response.data.userType === 11) {//首页
+            //                window.location = goto || '/home/Index#/index';
+            //            }
 
-                    }
-                    else {
-                        if (response.type === 25001) {
-                            $("#lblErrorMsg").html("用户名或密码不正确！");
-                        } else if (response.type === 25002) {
-                            $("#lblErrorMsg").html("用户被禁用！");
-                        } else if (response.type === 25003) {
-                            $("#lblErrorMsg").html("请输入用户名！");
-                        } else if (response.type === 25004) {
-                            $("#lblErrorMsg").html("请输入密码！");
-                        }
-                        $("#ctnErrorMsg").show();
-                    }
-                }, "json");
+            //        }
+            //        else {
+            //            if (response.type === 25001) {
+            //                $("#lblErrorMsg").html("用户名或密码不正确！");
+            //            } else if (response.type === 25002) {
+            //                $("#lblErrorMsg").html("用户被禁用！");
+            //            } else if (response.type === 25003) {
+            //                $("#lblErrorMsg").html("请输入用户名！");
+            //            } else if (response.type === 25004) {
+            //                $("#lblErrorMsg").html("请输入密码！");
+            //            }
+            //            $("#ctnErrorMsg").show();
+            //        }
+            //    }, "json");
+            window.loction = goto || '/home/Index#/index';
         }
 
         $(function () {

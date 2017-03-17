@@ -81,31 +81,33 @@ require([
             cursorcolor: "rgba(0,0,0,0.3)",
             cursorwidth: "10px"
         });
-        var _hmt = _hmt || [];
         var hm = document.createElement("script");
         hm.src = "//hm.baidu.com/hm.js?c555cf20d924035b4d329df9e6bacd78";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
 
-        $.get('/api/UserApi/GetCurrentUser', function (result) {
+        $.get('/api/HomeApi', function (result) {
             currentUser = result.data;
             var temp = angular.module("BaseApp");
-            temp.run(['$rootScope', '$state', '$stateParams', 'currentUserService',
-                function ($rootScope, $state, $stateParams, currentUserService) {
+            temp.run([
+                '$rootScope', '$state', '$stateParams', 'currentUserService',
+                function($rootScope, $state, $stateParams, currentUserService) {
                     $rootScope.$state = $state;
                     $rootScope.$stateParams = $stateParams;
                     $rootScope.currentUser = currentUser;
                     currentUserService.setCurrentUser(currentUser);
                     //在全局作用域上添加一个本地时间与服务器时间的差值 by binhao
                     if (!window.dateDiff) {
-                        $.get("/api/LiveClassService/getTimeDvalue", {
-                            clientTime: new Date().getTime()
-                        }, function (data) {
-                            window.dateDiff = data.data;
-                        });
+                        $.get("/api/LiveClassService/getTimeDvalue",
+                            {
+                                clientTime: new Date().getTime()
+                            },
+                            function(data) {
+                                window.dateDiff = data.data;
+                            });
                     }
                 }
-            ])
+            ]);
             angular.bootstrap(document, ["BaseApp"]);
         });
         

@@ -1,7 +1,7 @@
 {
-  "name": "angular-loader",
+  "name": "angular-mocks",
   "version": "1.3.14",
-  "main": "./angular-loader.js",
+  "main": "./angular-mocks.js",
   "ignore": [],
   "dependencies": {
     "angular": "1.3.14"

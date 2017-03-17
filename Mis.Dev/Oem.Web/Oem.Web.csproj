@@ -36,6 +36,7 @@
     <Content Include="wwwroot\css\login.css" />
     <Content Include="wwwroot\css\statistics.css" />
     <Content Include="wwwroot\css\style.css" />
+    <Content Include="wwwroot\images\bg_tips6_1.png" />
     <Content Include="wwwroot\images\Tulips.jpg" />
     <Content Include="wwwroot\Scripts\app\require-exclude.json" />
     <Content Include="wwwroot\Scripts\lib\angular-loader\.bower.json" />

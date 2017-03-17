@@ -3,28 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title ng-bind="($state.current.title||dynamicTitle||$state.current.name)"></title>
-    @if (Oem.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
+    @if (Oem.Common.Util.ConfigHelper.GetConfigString("EnvironmentConfig")["Name"] == "Dev")
     {
-        @Html.RenderCss("/Content/css/layout.css")
-        @Html.RenderCss("/Content/css/style.css")
-        @Html.RenderCss("/Content/css/statistics.css")
+        <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/statistics.css" />
     }
     else
     {
-        @Html.RenderCss("/Content/css/gint.css")
+        <link rel="stylesheet" type="text/css" href="" />
     }
 
-    @if (Oem.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
+    @if (Oem.Common.Util.ConfigHelper.GetConfigString("EnvironmentConfig")["Name"] == "Dev")
     {
-        @Html.RenderCss("/Scripts/app/libs/ngDialog/css/ngDialog.css")
-        @Html.RenderCss("/Scripts/app/libs/fullcalendar/fullcalendar.css")
-        @Html.RenderCss("/Scripts/app/libs/fullcalendar/lib/cupertino/jquery-ui.min.css")
-        @Html.RenderCss("/Scripts/app/libs/cropper/dist/cropper.css")
-        @Html.RenderCss("/Content/css/dialog-theme-custom.css")
+        <link rel="stylesheet" type="text/css" href="/Scripts/lib/ngDialog/css/ngDialog.css" />
+        <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/fullcalendar.css" />
+        <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/lib/cupertino/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="/Scripts/lib/cropper/dist/cropper.css" />
+        <link rel="stylesheet" type="text/css" href="/css/dialog-theme-custom.css" />
     }
     else
     {
-        @Html.RenderCss("/Content/css/deps.css")
+        <link rel="stylesheet" type="text/css" href="" />
         <script>
             var _hmt = _hmt || [];
             (function() {
@@ -39,12 +39,14 @@
 <body ng-cloak ng-controller="BaseAppController" class="body-template">
     <div class="body-layout">
         <!--导航栏-->
-        <gint-nav></gint-nav>
         <div class="container">
             <div ui-view>
             </div>
         </div>
     </div>
-    @Html.RenderRequireScript("/Scripts/app/libs/requirejs/require.js", "/Scripts/app/main")
+    <script>
+            var require = { urlArgs: 'version=1.0', baseUrl:'/Scripts/app'};
+    </script>
+    <script src="/Scripts/lib/requirejs/require.js" type="text/javascript" data-main="/Scripts/app/main.js"></script>
 </body>
 </html>
