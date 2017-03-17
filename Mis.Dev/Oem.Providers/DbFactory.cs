@@ -6,7 +6,7 @@ namespace Oem.Providers
 {
     public static class DbFactory
     {
-        private static readonly string ConnectionString = ConfigHelper.GetConfigString("OemMisConn");
+        private static readonly string ConnectionString = ConfigHelper.GetConnectionString("OemMisConn");
         private static readonly IDbConnection DbConnection = new MySqlConnection(ConnectionString);
 
         public static IDbConnection GetNewConnection()

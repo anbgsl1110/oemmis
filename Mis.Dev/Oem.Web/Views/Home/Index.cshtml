@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title ng-bind="($state.current.title||dynamicTitle||$state.current.name)"></title>
-    @if (Crm.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
+    @if (Oem.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
     {
         @Html.RenderCss("/Content/css/layout.css")
         @Html.RenderCss("/Content/css/style.css")
@@ -14,7 +14,7 @@
         @Html.RenderCss("/Content/css/gint.css")
     }
 
-    @if (Crm.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
+    @if (Oem.Common.Util.ConfigHelper.GetConfigString("Dev") == "true")
     {
         @Html.RenderCss("/Scripts/app/libs/ngDialog/css/ngDialog.css")
         @Html.RenderCss("/Scripts/app/libs/fullcalendar/fullcalendar.css")
