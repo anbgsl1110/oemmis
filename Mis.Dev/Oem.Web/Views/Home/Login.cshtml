@@ -8,40 +8,20 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/login.css"/>
     <script src="/Scripts/lib/jquery/dist/jquery.min.js"></script>
-    @*@if (!ConfigHelper.GetConfigString("EnvironmentConfig")["Name"].Equals("Dev"))
-    {
-        <script>
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "//hm.baidu.com/hm.js?259be06731626d7ddee4de80a292e1e8";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-    }*@
-    <script type="text/javascript">
-        var org;
-        $.ajax({
-            dataType: "json",
-            url: "/api/OrgApi/GetCurrentOrg?school=" + document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1],
-            async: false,
-            success: function (response) {
-                org = response.data;
-                document.title = "登录 -" + org.name;
-            }
-        });
-        $(function () {
-            //$("#bg").css("backgroundImage", "url(" + org.logos.login_1 + ")");
-            //$("#logo2").attr("src", org.logos.login_2);
-        });   
-    </script>
     <script src="/Scripts/lib/greedyint.dialog.js"></script>
     <script type="text/javascript">
         function login() {
             var school = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
             var goto = location.search.match(/(\?|\&)goto=(.+)/);
             goto = goto && goto.length > 2 ? decodeURIComponent(goto[2]) : null;
+            var loginResqust = {
+                userName : 'asd',
+                password : "123"
+            }
+            $.post("/api/LoginApi/", loginResqust, function (response) {
+                alert(response.data.userName);
+                window.location = "http://www.baidu.com";
+            });
             //$.post('/api/UserApi/Login',
             //    {
             //        Name: $("#txtName").val(),
@@ -71,7 +51,6 @@
             //            $("#ctnErrorMsg").show();
             //        }
             //    }, "json");
-            window.loction = goto || '/home/Index#/index';
         }
 
         $(function () {

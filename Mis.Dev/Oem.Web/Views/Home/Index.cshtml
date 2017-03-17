@@ -3,38 +3,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title ng-bind="($state.current.title||dynamicTitle||$state.current.name)"></title>
-    @if (Oem.Common.Util.ConfigHelper.GetConfigString("EnvironmentConfig")["Name"] == "Dev")
-    {
-        <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="/css/statistics.css" />
-    }
-    else
-    {
-        <link rel="stylesheet" type="text/css" href="" />
-    }
+    <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/statistics.css" />
 
-    @if (Oem.Common.Util.ConfigHelper.GetConfigString("EnvironmentConfig")["Name"] == "Dev")
-    {
-        <link rel="stylesheet" type="text/css" href="/Scripts/lib/ngDialog/css/ngDialog.css" />
-        <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/fullcalendar.css" />
-        <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/lib/cupertino/jquery-ui.min.css" />
-        <link rel="stylesheet" type="text/css" href="/Scripts/lib/cropper/dist/cropper.css" />
-        <link rel="stylesheet" type="text/css" href="/css/dialog-theme-custom.css" />
-    }
-    else
-    {
-        <link rel="stylesheet" type="text/css" href="" />
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "//hm.baidu.com/hm.js?259be06731626d7ddee4de80a292e1e8";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-    }
+    <link rel="stylesheet" type="text/css" href="/Scripts/lib/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/lib/fullcalendar/lib/cupertino/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/lib/cropper/dist/cropper.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dialog-theme-custom.css" />
 </head>
 <body ng-cloak ng-controller="BaseAppController" class="body-template">
     <div class="body-layout">
