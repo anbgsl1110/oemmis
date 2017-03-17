@@ -1,0 +1,166 @@
+﻿.StatisticsTabItem:first-child
+{
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.StatisticsTabItem:last-child
+{
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.PieChart
+{
+    margin-top: 40px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.ChartContent
+{
+    float: left;
+    display: inline-block;
+    padding: 72px 0px 0px;
+}
+
+.ChartBox
+{
+    margin-top: 30px;
+}
+
+.TotalCountBox
+{
+    display: inline-block;
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.TotalCountItem
+{
+    height: 125px;
+}
+
+.TotalCountNumber
+{
+    font-size: 36px;
+    color: #ea2c5a;
+    font-family: Helvetica light;
+    margin-top: 10px;
+}
+.LeftBox
+{
+    float: left;
+    display: inline-block;
+}
+.SeparatorLine
+{
+    height: 268px;
+    width: 11px;
+    border-left: 1px #ccc solid;
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 11px;
+    margin-top: 60px;
+}
+
+.MarginL30
+{
+    margin-left: 30px;
+}
+.MarginT20
+{
+    margin-top: 20px;
+}
+
+.StartDate
+{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 314px;
+}
+
+.EndDate
+{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 450px;
+}
+
+.NoData
+{
+    background: url(../images/icon_bg12_3.png) no-repeat center center;
+    display: inline-block;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    width: 450px;
+    height: 250px;
+    text-align: center;
+    padding-top: 225px;
+    z-index: 0;
+}
+.NoDataMargin
+{
+    margin-top: 70px;
+}
+.StatisticsBox
+{
+    /*margin: 0 25px;*/
+    position: relative;
+    border-top: 1px #ccc solid;
+}
+.LeftBoxTime
+{
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    padding-top: 20px;
+    height:30px; line-height: 30px;
+}
+.LeftBoxNumber
+{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    font-family: Helvetica light;
+}
+.LeftBoxFont
+{
+    color: #ccc;
+    font-size: 21px;
+}
+.LeftBoxFontCurrent
+{
+    font-weight: bold;
+    color: #333;
+}
+.LeftBoxNumber em
+{
+    font-size: 21px;
+    margin: 0px 12px 0px 9px;
+    color: #ccc;
+}
+.NoPadding
+{
+    padding-top: 0px;
+}
+.NoMargin
+{
+    margin-top: 0px;
+}

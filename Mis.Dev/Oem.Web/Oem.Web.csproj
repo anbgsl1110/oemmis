@@ -30,8 +30,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\dialog-theme-custom.css" />
     <Content Include="wwwroot\css\error.css" />
     <Content Include="wwwroot\css\layout.css" />
+    <Content Include="wwwroot\css\login.css" />
+    <Content Include="wwwroot\css\statistics.css" />
     <Content Include="wwwroot\css\style.css" />
     <Content Include="wwwroot\Scripts\app\require-exclude.json" />
     <Content Include="wwwroot\Scripts\lib\angular-loader\.bower.json" />

@@ -1368,7 +1368,7 @@ a.chart-tab-item{padding: 0 15px;}
 .big-btn:hover{background-color: #61c854;}
 .button-info{color: #666;}
 .info-item-text{margin-top:-5px;text-align: center;font-size: 18px;color: #666;line-height: 1;}
-.big-num{font-size: 30px;color: #70bc67;font-weight: bold;}
+.big-num{font-size: 30px;color: #70bc67;font-weight: bold; vertical-align: text-bottom; margin-right: 2px;}
 .section-box3-title.special{font-weight: normal;margin:-10px 0 10px;}
 .info-box1 .width280{width: 280px;}
 .info-box1 .width60{width: 60px;}
@@ -1421,3 +1421,44 @@ a.chart-tab-item{padding: 0 15px;}
 .big-btn.disabled{background-color: #e6e6e6;color: #aaa;cursor: default;}
 
 /*} CRM1.5.1 样式-结束 by 冰清*/
+
+/* CRM1.6 样式-开始 by 冰清 {*/
+/* 线索页新增附件样式 */
+.clue-box3-innerBox-wrap{margin:8px 0;}
+.clue-box3-innerBox{width: 100%;border:2px solid #e1e2e7;background-color: #fafafa;}
+.box3-innerBox-head{width: 100%;height: 32px;padding-left: 15px; line-height: 32px;background-color: #e1e2e7;}
+.box3-innerBox-content{padding:14px 15px 17px;}
+.box3-innerBox-item + .box3-innerBox-item{margin-top: 18px;}
+.file-type-pic{display: inline-block;width: 32px;height: 33px;margin-right: 8px; background: url(../images/word.png) no-repeat center;background-size: auto 100%;}
+.jpg{background-image: url(../images/jpg.png);}
+.pdf{background-image: url(../images/PDF.png);}
+.wps{background-image: url(../images/wps.png);}
+.file-name{color: #666;}
+.box3-innerBox-link{line-height: 15px;}
+.box3-innerBox-link a{color: #70bc67;padding-right: 20px;}
+.box3-innerBox-link a:hover{text-decoration: underline;}
+
+.attachments-list li{position: relative;height: 30px;line-height: 30px;color: #666; }
+.btn-delete-s2{width:18px; height:18px; background:url(../images/icon_btn4.png) no-repeat; display: none; position: absolute; right:0; top:6px;cursor: pointer;}
+.attachments-list li:hover .btn-delete-s2{display: block;}
+.attachments-upload{padding:5px 0 8px;}
+.btn-upload3{min-width: 75px;height: 24px;padding:0 10px; line-height: 22px;color: #666;border:1px solid #aaa;border-radius: 3px;}
+.upload3-num-wrap{padding-left: 2px;}
+
+/* 签约页面新增签约凭证样式 */
+.info-box2-upload-outer{width: 800px; padding:20px 20px 45px 25px;overflow: hidden;border: #dcdcde 1px dashed;background-color: #f4f5f9;position: relative;}
+.info-box2-upload-info{color: #666;}
+.info-box2-upload-list{margin-left: -20px; font-size: 0;}
+.info-box2-upload-list li{display: inline-block;vertical-align: top; width: 100px;height: 85px;padding:10px 10px 0;margin:15px 0 0 20px; text-align: center; background-color: #fff;border:1px solid #ddd;border-radius: 3px;}
+.info-box2-upload-list li .file-type-pic{margin: 0;}
+.info-box2-upload-list li .file-name{ line-height: 15px;}
+.file-add-pic{display: inline-block; width: 80px;height: 63px; background: url(../images/file-add.png) no-repeat center;background-size: 30px;cursor:pointer;}
+.info-box2-upload-list li:last-child{width: auto; padding:0;text-align: left;line-height: 85px;border:none;background-color: transparent;}
+.file-num-wrap{font-size: 20px;color: #aaa;}
+.file-num{color: #666;}
+
+/* 弹出框新样式 */
+.pop-up-content2{padding:65px 0;text-align: center;}
+.pop-up-content2 .pop-up-column{width: auto;}
+.pop-up-content2 .form-control{width: 200px;}
+/*} CRM1.6 样式-结束 by 冰清 */

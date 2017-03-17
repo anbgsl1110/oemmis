@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Oem.Common\Oem.Common.csproj" />
     <ProjectReference Include="..\Oem.Data\Oem.Data.csproj" />
     <ProjectReference Include="..\Oem.IProviders\Oem.IProviders.csproj" />
   </ItemGroup>
