@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.ProjectModel.Resolution;
+using Oem.IServices;
+using Oem.IServices.Home;
 using Oem.Models.Item;
+using Oem.Services.Home;
 
 namespace Oem.Web.WebApi
 {
     [Route("api/[Controller]")]
     public class ApiBaseController : Controller
     {
+        protected readonly IHomeService HomeService;
+
+        public ApiBaseController()
+        {
+            HomeService = new HomeService();
+        }
+
+        /// <summary>
+        /// 登录用户信息
+        /// </summary>
+        /// <returns></returns>
         protected LoginUserInfo GetLoginUserInfo()
         {
             return new LoginUserInfo { UserId = 1110, UserName = "anbgsl1110" };

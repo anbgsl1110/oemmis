@@ -24,6 +24,6 @@
          "angularElastic",
          "angularFileUpload",
          "ngClip",
-         "libs/angular-mocks/mock-min"
+         "lib/angular-mocks/mock-min"
      ]
  }

@@ -2,33 +2,33 @@
 requirejs.config({
     paths: {
        
-        'jquery': "libs/jquery/dist/jquery.min",
-        'sortable': "libs/jquery/dist/jquery-ui-sortable-1.11.2.min",
-        'angular': "libs/angular/angular.min",
-        'angularMock': 'libs/angular-mocks/angular-mocks',
-        "angularResource": "libs/angular-resource/angular-resource.min",
-        "uiRouter": "libs/angular-ui-router/release/angular-ui-router.min",
-        "highcharts-ng": "libs/highcharts-ng/dist/highcharts-ng",
-        "highcharts": "libs/highcharts/highcharts",
-        "funnel": "libs/highcharts/modules/funnel",
-        "underscore": "libs/underscore/underscore",
-        'ngDialog': "libs/ngDialog/js/ngDialog",
-        "cropper": "libs/cropper/dist/cropper",
+        'jquery': "lib/jquery/dist/jquery.min",
+        'sortable': "lib/jquery/dist/jquery-ui-sortable-1.11.2.min",
+        'angular': "lib/angular/angular.min",
+        'angularMock': 'lib/angular-mocks/angular-mocks',
+        "angularResource": "lib/angular-resource/angular-resource.min",
+        "uiRouter": "lib/angular-ui-router/release/angular-ui-router.min",
+        "highcharts-ng": "lib/highcharts-ng/dist/highcharts-ng",
+        "highcharts": "lib/highcharts/highcharts",
+        "funnel": "lib/highcharts/modules/funnel",
+        "underscore": "lib/underscore/underscore",
+        'ngDialog': "lib/ngDialog/js/ngDialog",
+        "cropper": "lib/cropper/dist/cropper",
         'app': "modules/baseapp/app",
-        'fullCalendar': "libs/fullcalendar/fullcalendar.min",
-        'moment': "libs/fullcalendar/lib/moment.min.old",
-        'newMoment': "libs/fullcalendar/lib/moment.min",
-        'fullCalendarLang': "libs/fullcalendar/lang-all",
-        'fullCalendarCustom': "libs/fullcalendar/fullcalendar-custom",
-        'datePicker': "libs/My97DatePicker/WdatePicker",
+        'fullCalendar': "lib/fullcalendar/fullcalendar.min",
+        'moment': "lib/fullcalendar/lib/moment.min.old",
+        'newMoment': "lib/fullcalendar/lib/moment.min",
+        'fullCalendarLang': "lib/fullcalendar/lang-all",
+        'fullCalendarCustom': "lib/fullcalendar/fullcalendar-custom",
+        'datePicker': "lib/My97DatePicker/WdatePicker",
         'commonDirective': "directives/common",
-        'jqueryUI': "libs/fullcalendar/lib/jquery-ui-1.11.2.min",
-        'nicescroll': "libs/jquery-nicescroll/jquery.nicescroll.min",
-        'autosize': "libs/autosize/autosize.min",
-        'angularElastic': "libs/angular-elastic/elastic",
-        'angularFileUpload': "libs/angular-upload/angular-file-upload.min",
-        'zeroClipboard': "libs/wordscopy/ZeroClipboard",
-        'ngClip': "libs/ngClip/ng-clip.min"
+        'jqueryUI': "lib/fullcalendar/lib/jquery-ui-1.11.2.min",
+        'nicescroll': "lib/jquery-nicescroll/jquery.nicescroll.min",
+        'autosize': "lib/autosize/autosize.min",
+        'angularElastic': "lib/angular-elastic/elastic",
+        'angularFileUpload': "lib/angular-upload/angular-file-upload.min",
+        'zeroClipboard': "lib/wordscopy/ZeroClipboard",
+        'ngClip': "lib/ngClip/ng-clip.min"
     },
     shim: {
         angular: {
@@ -98,7 +98,7 @@ require([
                     currentUserService.setCurrentUser(currentUser);
                     //在全局作用域上添加一个本地时间与服务器时间的差值 by binhao
                     if (!window.dateDiff) {
-                        $.get("/api/LiveClassService/getTimeDvalue",
+                        $.get("/api/TimeDvalueApi",
                             {
                                 clientTime: new Date().getTime()
                             },
