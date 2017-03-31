@@ -1,5 +1,4 @@
-﻿@using Oem.Common.Util
-@{
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,8 +6,8 @@
 <head> 
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/login.css"/>
-    <script src="/Scripts/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/Scripts/lib/greedyint.dialog.js"></script>
+    <script src="/Scripts/app/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/Scripts/app/libs/greedyint.dialog.js"></script>
     <script type="text/javascript">
         function login() {
             var school = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
@@ -19,8 +18,7 @@
                 password : "123"
             }
             $.post("/api/LoginApi/", loginResqust, function (response) {
-                alert(response.data.userName);
-                window.location = "http://www.baidu.com";
+                window.location = '/home/Index#/index';
             });
             //$.post('/api/UserApi/Login',
             //    {
@@ -122,10 +120,11 @@
                     <input type="password" id="pwd" class="LoginText">
                     <span class="LoginTextTips" style="display: block;" id="lblPwd">密码</span>
                 </dd>
-                <!-- 注：1 文本框获得焦点时，value清空； 2 文本框失去焦点时若内容为空，value值复原； 3 密码输入文本框获得焦点输入的字符不直接显示，显示为圆点。 -->
+                <!-- 注：1 文本框获得焦点时，value清空；
+                2 文本框失去焦点时若内容为空，value值复原；
+                3 密码输入文本框获得焦点输入的字符不直接显示，显示为圆点。 -->
                 <dt>
-                    <button class="LoginBtn" id="btnLogin">
-                        登录</button>
+                    <button class="LoginBtn" id="btnLogin">登录</button>
                 </dt>
             </dl>
             <div class="LoginErrorbox" id="ctnErrorMsg" style="display: none">
@@ -160,13 +159,11 @@
                     target="_blank">官方下载</a></dd>
         </dl>
         <div class="popupDialogFoot clearfix">
-            <button class="btnNext">
-                关闭</button>
+            <button class="btnNext">关闭</button>
         </div>
     </div>
     <div class="popupDialogBoxOuter popupDialogLayoutS1" style="display: none" id="alertZoom">
-        <div class="popupDialogHead">
-            提醒</div>
+        <div class="popupDialogHead">提醒</div>
         <div class="popupDBTipsbox clearfix">
             <em class="popupDBTipsIcon"></em>
             <div class="popupDBTipsText">
@@ -174,8 +171,7 @@
             </div>
         </div>
         <div class="popupDialogFoot clearfix">
-            <button class="btnNext">
-                关闭</button>
+            <button class="btnNext">关闭</button>
         </div>
     </div>
 </body>

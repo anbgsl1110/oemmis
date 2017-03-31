@@ -4,8 +4,11 @@
 
 define(["angular"], function (angular) {
     return angular.module("services.base", [])
-        .service("baseService", [function () {
-            var service = {};
-            return service;
-        }])
+        .service("baseService",
+        [
+            function() {
+                var service = {};
+                return service;
+            }
+        ]);
 });
