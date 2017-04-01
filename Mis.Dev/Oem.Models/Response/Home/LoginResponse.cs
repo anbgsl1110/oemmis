@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oem.Models.Resonse.Home
+namespace Oem.Models.Response.Home
 {
     /// <summary>
     /// 登录响应对象

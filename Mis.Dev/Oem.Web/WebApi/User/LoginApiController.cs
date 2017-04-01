@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Oem.Data.Enum;
 using Oem.Data.Table;
 using Oem.Models.Request.Home;
-using Oem.Models.Resonse;
-using Oem.Models.Resonse.Home;
+using Oem.Models.Response;
+using Oem.Models.Response.Home;
 
 namespace Oem.Web.WebApi.User
 {

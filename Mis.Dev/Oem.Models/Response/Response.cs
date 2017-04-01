@@ -1,6 +1,6 @@
 ﻿using Oem.Data.Enum;
 
-namespace Oem.Models.Resonse
+namespace Oem.Models.Response
 {
     /// <summary>
     /// 泛型响应对象
