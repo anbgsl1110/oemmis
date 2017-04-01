@@ -1,156 +1,134 @@
-<!-- 顶部导航与logo begin {-->
-<div class="navbar navbar-fixed-top">
+﻿<div class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" ng-if="!studentLimit&&teacherLimit&&!scope.saLimits" ui-sref="index"><img ng-src="{{::logo }}"></a>
-            <a class="navbar-brand" ng-if="studentLimit" ui-sref="my-index"><img ng-src="{{::logo}}"></a>
+            <a class="navbar-brand"><img src="http://www.anbgsl1110-dms-aliang.space/img/ChinaFlag.png"></a>
         </div>
+        <!-- 功能菜单 begin {-->
         <div class="navbar-nav navbar-right">
-            <!--CRM系统-->
-            <ul class="navbar-nav-left" ng-hide="adminLimit">
+            <ul class="navbar-nav-left">
                 <li class="navbar-nav-item">
-                    <a ui-sref="index" ui-sref-opts="{reload: true}" ui-sref-active="active">首页</a>
-                    <ul class="navbar-dropdown-menu" style="display:none">
-                        <li class="navbar-dropitem">
-                            <a ui-sref="message" ui-sref-opts="{reload: true}" ui-sref-active="active">消息中心</a>
-                        </li>
-                    </ul>
+                    <a>首页</a>
                 </li>
-                <li class="navbar-nav-item" ng-show="productsLimit">
-                    <a ui-sref="products.list" ui-sref-opts="{reload: true}" ui-sref-active="active">产品库</a>
-                    <ul class="navbar-dropdown-menu" style="display:none">
-                        <li class="navbar-dropitem">
-                            <a ui-sref="products.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">产品详情</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a ui-sref="products.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">产品编辑</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar-nav-item" ng-show="toolLimit">
-                    <a>营销工具</a>
+                <li class="navbar-nav-item">
+                    <a>订单管理</a>
                     <ul class="navbar-dropdown-menu">
                         <li class="navbar-dropitem">
-                            <a ui-sref="market.list" ui-sref-opts="{reload: true}" ui-sref-active="active" ng-show="testLimit">入学测试</a>
+                            <a>定单管理</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a ui-sref="market.xbx" ui-sref-opts="{reload: true}" ui-sref-active="active" ng-show="xbxLimit">校宝秀</a>
+                            <a>申购管理</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a ui-sref="liveLesson.list" ui-sref-opts="{reload: true}" ui-sref-active="active" ng-show="liveLimit">直播课</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a ui-sref="market.details" ui-sref-opts="{reload: true}" ui-sref-active="active" style="display: none">营销工具详情</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a ui-sref="liveLesson.detail" ui-sref-opts="{reload: true}" ui-sref-active="active" style="display: none">直播课详情</a>
+                            <a>采购管理</a>
                         </li>
                     </ul>
                 </li>
-                <li class="navbar-nav-item" ng-show="channelLimit">
-                    <a ui-sref="channel.list" ui-sref-opts="{reload: true}" ui-sref-active="active">渠道</a>
-                    <!-- 导航里面的二级导航 begin {-->
-                    <ul class="navbar-dropdown-menu" style="display: none">
+                <li class="navbar-nav-item">
+                    <a>库存管理</a>
+                    <ul class="navbar-dropdown-menu">
                         <li class="navbar-dropitem">
-                            <a ui-sref="channel.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">渠道详情</a>
+                            <a>采购入库</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a ui-sref="channel.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">渠道编辑</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar-nav-item" ng-show="consultLimit">
-                    <a ui-sref="consult.list" ui-sref-opts="{reload: true}" ui-sref-active="active">咨询</a>
-                    <!-- 导航里面的二级导航 begin {-->
-                    <ul class="navbar-dropdown-menu" style="display:none">
-                        <li class="navbar-dropitem">
-                            <a ui-sref="consult.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">咨询详情</a>
+                            <a>领料出库</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a ui-sref="consult.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">咨询编辑</a>
+                            <a>碎料返库</a>
                         </li>
                     </ul>
                 </li>
-                <li class="navbar-nav-item" ng-show="clueLimit">
-                    <a ui-sref="clue.list" ui-sref-opts="{reload: true}" ui-sref-active="active">线索</a>
-                    <a ui-sref="clue.detail" ui-sref-opts="{reload: true}" ui-sref-active="active" style="display:none">线索详情</a>
-                    <a ui-sref="clue.edit" ui-sref-opts="{reload: true}" ui-sref-active="active" style="display:none">线索编辑</a>
-                </li>
-                <li class="navbar-nav-item" ng-show="employeeLimit">
-                    <a ui-sref-opts="{reload: true}" ui-sref-active="active" ui-sref="employee.list">员工</a>
-                    <!-- 导航里面的二级导航 begin {-->
-                    <ul class="navbar-dropdown-menu" style="display:none">
+                <li class="navbar-nav-item">
+                    <a>派工管理</a>
+                    <ul class="navbar-dropdown-menu">
                         <li class="navbar-dropitem">
-                            <a ui-sref="employee.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">员工编辑</a>
+                            <a>派工管理</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a ui-sref="employee.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">员工详情</a>
+                            <a>生产进度</a>
                         </li>
                     </ul>
                 </li>
-                <li class="navbar-nav-item" ng-show="statisticsLimit">
-                    <a ui-sref="statistics" ui-sref-opts="{reload: true}" ui-sref-active="active">统计分析</a>
+                <li class="navbar-nav-item">
+                    <a>辅助工具</a>
+                    <ul class="navbar-dropdown-menu">
+                        <li class="navbar-dropitem">
+                            <a>电脑扫码</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>工资计算</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>利用率计算</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>模拟订单</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="navbar-nav-item" ng-show="reportLimit">
-                    <a ui-sref="report" ui-sref-active="active" ui-sref-opts="{reload: true}">数据报表</a>
+                <li class="navbar-nav-item">
+                    <a>基础资料</a>
+                    <ul class="navbar-dropdown-menu">
+                        <li class="navbar-dropitem">
+                            <a>原材料信息</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>产品信息</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>供应商信息</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>仓库信息</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="navbar-current"></li>
-                <!-- 此处为当前项与hover项效果交互时顶部的红色边框滑动的效果，预留dom -->
+                <li class="navbar-nav-item">
+                    <a>系统设置</a>
+                    <ul class="navbar-dropdown-menu">
+                        <li class="navbar-dropitem">
+                            <a>角色管理</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>用户管理</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>组织结构</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>配置信息</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>日志管理</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-            <!--Admin CRM系统-->
-            <ul class="navbar-nav-left" ng-show="adminLimit">
-                <li class="navbar-nav-item">
-                    <a ui-sref="crmrole" ui-sref-active="active" ui-sref-opts="{reload: true}">CRM角色</a>
-                </li>
-                <li class="navbar-nav-item" ng-show="hasCourse">
-                    <a ui-sref="courserole" ui-sref-active="active" ui-sref-opts="{reload: true}">1Course角色</a>
-                </li>
-                <li class="navbar-nav-item" ng-show="hasCourse">
-                    <a ui-sref="account.list" ui-sref-active="active" ui-sref-opts="{reload: true}">账号管理</a>
-                    <ul class="navbar-dropdown-menu" style="display: none">
-                        <li class="navbar-dropitem">
-                            <a ui-sref="account.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">员工详情</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a ui-sref="account.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">员工编辑</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a ui-sref="account.merge" ui-sref-opts="{reload: true}" ui-sref-active="active">账号合并</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar-nav-item">
-                    <a ui-sref="organization" ui-sref-active="active" ui-sref-opts="{reload: true}">组织结构</a>
-                </li>
-                <li class="navbar-nav-item">
-                    <a ui-sref="parameter" ui-sref-active="active" ui-sref-opts="{reload: true}">系统参数</a>
-                </li>
-                <li class="navbar-current"></li>
-            </ul>
-
-            <!--} 导航里面的一级导航 end -->
-            <!-- 账号菜单 begin {-->
-            <div class="navbar-nav-right">
+            <!-- } 功能菜单 end-->
+            <!-- 个人中心 begin {-->
+            <ul class="navbar-nav-right">
                 <div class="navbar-account">
-                    <span class="navbar-account-head"><img ng-src="{{headImgUrl}}" class="face-radius"></span>
+                    <span class="navbar-account-head"><img class="face-radius" src="http://www.anbgsl1110-dms-aliang.space/img/jyl-head.png"></span>
                     <ul class="navbar-dropdown-menu">
-                        <li class="navbar-dropitem"><a href="javascript:void(0)" style="cursor: default;background-color: rgba(0,0,0,.1);" title='{{userName}}'><span ng-bind="userName"></span></a></li>
-                        <li class="navbar-dropitem"><a href="javascript:void(0)" ng-click='openDialog()'>个人设置</a></li>
-                        <li class="navbar-dropitem" ng-show="!adminLimit"><a ui-sref="message" ui-sref-active="active" ui-sref-opts="{reload: true}">消息中心</a></li>
-                        <li class="navbar-dropitem sub-navbar-dropitem stay-right" ng-show="!adminLimit && hasCourse && siteList.length!=0">
+                        <li class="navbar-dropitem">
+                            <a  style="cursor: default;background-color: rgba(0,0,0,.1);">
+                                <span>anbgsl1110</span>
+                            </a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a>个人设置</a>
+                        </li>
+                        <li class="navbar-dropitem sub-navbar-dropitem stay-right" style="display: none">
                             <!--  二级菜单 -->
-                            <a href="javascript:;">切换1Course</a>
+                            <a>二级菜单</a>
                             <ul class="navbar-dropdown-menu">
-                                <li class="navbar-dropitem" ng-click='openSite($index)' ng-repeat="site in siteList"><a style="cursor: pointer;" title="{{site.name}}">{{site.name}}</a></li>
+                                <li class="navbar-dropitem"><a>哈哈哈哈</a></li>
                             </ul>
                         </li>
-                        <li class="navbar-dropitem"><a href="javascript:;" ng-click='logout()'>注销</a></li>
+                        <li class="navbar-dropitem"><a>注销</a></li>
                     </ul>
                 </div>
-            </div>
-            <!--} 账号菜单 end -->
+            </ul>
+            <!-- } 个人中心 end-->
         </div>
     </div>
 </div>
-<div profile-edit-dialog is-show="isShow" change-img-action='changeImgAction(url)'></div>
-<!--} 顶部导航与logo end -->
