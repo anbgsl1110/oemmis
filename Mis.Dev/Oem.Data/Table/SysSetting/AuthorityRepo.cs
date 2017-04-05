@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oem.Data.Table.SysConfig
+namespace Oem.Data.Table.SysSetting
 {
     /// <summary>
     /// 权限对象

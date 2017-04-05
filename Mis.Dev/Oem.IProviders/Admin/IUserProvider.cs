@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Oem.Data.Table;
+using Oem.Data.Table.OrgUser;
 
 namespace Oem.IProviders.Admin
 {

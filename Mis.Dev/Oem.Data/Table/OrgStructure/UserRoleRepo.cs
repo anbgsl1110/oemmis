@@ -1,4 +1,4 @@
-﻿namespace Oem.Data.Table.OrgUser
+﻿namespace Oem.Data.Table.OrgStructure
 {
     /// <summary>
     /// 用户角色对象

@@ -1,28 +1,21 @@
-﻿using System;
-
-namespace Oem.Data.Table.SysConfig
+﻿namespace Oem.Data.Table.OrgStructure
 {
     /// <summary>
-    /// 角色权限
+    /// 用户权限对象
     /// </summary>
-    public class RoleAuthorityRepo
+    public class UserAuthorityRepo
     {
         /// <summary>
         /// 主键Id
         /// </summary>
         public long Id { get; set; }
         /// <summary>
-        /// 角色Id
+        /// 用户Id
         /// </summary>
-        /// <returns></returns>
-        public long RoleId { get; set; }
+        public long UserId { get; set; }
         /// <summary>
         /// 权限Id
         /// </summary>
         public long AuthorityId { get; set; }
-        /// <summary>
-        /// 机构Id
-        /// </summary>
-        public long OrgId { get; set; }
     }
 }

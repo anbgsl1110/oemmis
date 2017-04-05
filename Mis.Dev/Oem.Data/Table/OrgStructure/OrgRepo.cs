@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oem.Data.Table.OrgUser
+namespace Oem.Data.Table.OrgStructure
 {
     /// <summary>
     /// 机构对象
