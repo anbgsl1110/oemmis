@@ -10,10 +10,17 @@ namespace Oem.Data.Table.OrgUser
     /// </summary>
     public class UserRepo
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// 用户Id
+        /// </summary>
+        public long Id { get; set; }
+        /// <summary>
+        /// 用户名
+        /// </summary>
         public string UserName { get; set; }
-        public string Url { get; set; }
-        public int Age { get; set; }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
         public string Password { get; set; }
     }
 }

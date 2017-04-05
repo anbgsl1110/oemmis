@@ -5,7 +5,7 @@ namespace Oem.Data.Table.SysConfig
     /// <summary>
     /// 角色权限
     /// </summary>
-    public class RoleAuthority
+    public class RoleAuthorityRepo
     {
         /// <summary>
         /// 主键Id
@@ -24,13 +24,5 @@ namespace Oem.Data.Table.SysConfig
         /// 机构Id
         /// </summary>
         public long OrgId { get; set; }
-        /// <summary>
-        /// 添加时间
-        /// </summary>
-        public DateTime AddDate { get; set; }
-        /// <summary>
-        /// 添加用户Id
-        /// </summary>
-        public long AddUserId { get; set; }
     }
 }

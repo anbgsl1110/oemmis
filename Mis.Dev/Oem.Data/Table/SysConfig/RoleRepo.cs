@@ -23,13 +23,5 @@ namespace Oem.Data.Table.SysConfig
         /// 是否系统账户
         /// </summary>
         public Boolean IsSys { get; set; }
-        /// <summary>
-        /// 添加时间
-        /// </summary>
-        public DateTime AddDate { get; set; }
-        /// <summary>
-        /// 添加用户Id
-        /// </summary>
-        public long AddUserId { get; set; }
     }
 }

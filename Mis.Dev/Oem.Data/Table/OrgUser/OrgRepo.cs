@@ -16,14 +16,6 @@ namespace Oem.Data.Table.OrgUser
         /// </summary>
         public string OrgName { get; set; }
         /// <summary>
-        /// 添加用户Id
-        /// </summary>
-        public long UserId { get; set; }
-        /// <summary>
-        /// 添加时间
-        /// </summary>
-        public DateTime AddDate { get; set; }
-        /// <summary>
         /// 备注
         /// </summary>
         public string Remark { get; set; }

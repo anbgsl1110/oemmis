@@ -19,13 +19,5 @@ namespace Oem.Data.Table.SysConfig
         /// 权限名称
         /// </summary>
         public string AuthorityName { get; set; }
-        /// <summary>
-        /// 添加时间
-        /// </summary>
-        public DateTime AddDate { get; set; }
-        /// <summary>
-        /// 添加用户Id
-        /// </summary>
-        public string AddUserId { get; set; }
     }
 }
