@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Dapper;
-using Oem.Data.Table.OrgUser;
+using Oem.Data.Table.OrgStructure;
 using Oem.IProviders.Admin;
 
 namespace Oem.Providers.Admin

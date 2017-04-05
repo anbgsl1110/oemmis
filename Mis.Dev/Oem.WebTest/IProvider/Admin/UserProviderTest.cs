@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Oem.Data.Table.OrgUser;
+using Oem.Data.Table.OrgStructure;
 using Oem.IProviders.Admin;
 using Oem.Providers.Admin;
 using Xunit;

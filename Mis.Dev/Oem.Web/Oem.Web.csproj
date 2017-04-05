@@ -596,6 +596,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Oem.Common\Oem.Common.csproj" />
+    <ProjectReference Include="..\Oem.Common\Oem.Common.csproj">
+      <Project>{a8dc96e4-b078-4489-8477-c54791fd42e5}</Project>
+      <Name>Oem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Oem.Data\Oem.Data.csproj" />
     <ProjectReference Include="..\Oem.Models\Oem.Models.csproj" />
     <ProjectReference Include="..\Oem.Services\Oem.Services.csproj" />

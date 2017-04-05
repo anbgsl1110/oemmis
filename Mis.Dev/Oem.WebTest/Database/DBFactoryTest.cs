@@ -2,7 +2,7 @@
 using Oem.Providers;
 using Xunit;
 
-namespace Oem.WebTest
+namespace Oem.WebTest.Database
 {
     public class DbFactoryTest
     {

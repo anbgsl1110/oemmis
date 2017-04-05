@@ -9,8 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MySQL.Data.EntityFrameworkCore.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Oem.Common.Util;
 using Oem.Web.Data;
 using Oem.Web.Models;
 using Oem.Web.Services;
@@ -43,7 +45,7 @@ namespace Oem.Web
         {
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySQL(ConfigHelper.GetConnectionString("OemMisConn")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
