@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Oem.Data.Table
+namespace Oem.Data.Table.OrgUser
 {
     /// <summary>
-    /// 用户
+    /// 用户对象
     /// </summary>
     public class UserRepo
     {

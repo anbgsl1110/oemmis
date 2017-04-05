@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Oem.Data.Table;
+using Oem.Data.Table.OrgUser;
 
 namespace Oem.Web.WebApi.Home
 {
