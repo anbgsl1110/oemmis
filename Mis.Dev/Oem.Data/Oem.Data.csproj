@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Oem.Data</AssemblyName>
@@ -10,10 +9,8 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="7.0.6-IR31" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.6-IR31" />
   </ItemGroup>
-
 </Project>
