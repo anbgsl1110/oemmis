@@ -22,7 +22,7 @@ namespace Oem.Web.WebApi.User
         public Response<LoginResponse> Post(LoginRequest req)
         {
             return new Response<LoginResponse>(ErrorTypeEnum.NoError,
-                new LoginResponse {UserId = 2, UserName = "anbgsl1110"});
+                new LoginResponse {UserId = 1, UserName = "test"});
         }
     }
 }
