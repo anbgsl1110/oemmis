@@ -36,7 +36,12 @@ namespace Oem.Data.DataBase
             dbContext.User.Add(new UserRepo
             {
                 UserName = "test",
-                Password = "jyl"
+                Password = "abc123"
+            });
+            dbContext.Org.Add(new OrgRepo
+            {
+                OrgName = "Xdj",
+                Remark = "喜多见皮具加工厂"
             });
         }
     }
