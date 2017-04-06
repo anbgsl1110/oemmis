@@ -13,6 +13,7 @@ using MySQL.Data.EntityFrameworkCore.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Oem.Common.Util;
+using Oem.Data.DataBase;
 using Oem.Web.Data;
 using Oem.Web.Models;
 using Oem.Web.Services;
@@ -28,12 +29,6 @@ namespace Oem.Web
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-            if (env.IsDevelopment())
-            {
-                // For more details on using the user secret store see https://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
-            }
-
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -44,8 +39,8 @@ namespace Oem.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySQL(ConfigHelper.GetConnectionString("OemMisConn")));
+            services.AddDbContext<InitDbContext>(
+                options => options.UseMySQL(Configuration.GetConnectionString("OemMisConn")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
