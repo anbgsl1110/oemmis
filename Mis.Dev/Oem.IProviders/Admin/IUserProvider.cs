@@ -5,6 +5,10 @@ namespace Oem.IProviders.Admin
 {
     public interface IUserProvider
     {
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <returns></returns>
         List<UserRepo> GetUserList();
     }
 }

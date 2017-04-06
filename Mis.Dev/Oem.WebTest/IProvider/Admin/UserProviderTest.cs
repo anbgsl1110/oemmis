@@ -14,8 +14,9 @@ namespace Oem.WebTest.IProvider.Admin
         {
             _provider = new Userprovider();
         }
+
         /// <summary>
-        /// 测试获取数据
+        /// 获取用户列表单元测试
         /// </summary>
         /// <returns></returns>
         [Fact]

@@ -8,6 +8,10 @@ namespace Oem.Providers.Admin
 {
     public class Userprovider : IUserProvider
     {
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <returns></returns>
         public List<UserRepo> GetUserList()
         {
             using (var dbConnection = DbFactory.GetNewConnection())
