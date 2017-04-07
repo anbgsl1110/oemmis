@@ -13,7 +13,7 @@ namespace Oem.Web.WebApi.Home
     {
         public long Get(long clientTime)
         {
-            return HomeService.GetTimeDvalue(clientTime);
+            return HomeService.GetTimeDvalue(clientTime).Data;
         }
     }
 }

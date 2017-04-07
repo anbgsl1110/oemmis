@@ -1,4 +1,7 @@
-﻿namespace Oem.Services.IServices.Home
+﻿using Oem.Data.Enum;
+using Oem.Models.Service;
+
+namespace Oem.Services.IServices.Home
 {
     public interface IHomeService
     {
@@ -7,6 +10,6 @@
         /// </summary>
         /// <param name="clientTime">页面时间</param>
         /// <returns>时间差值</returns>
-        long GetTimeDvalue(long clientTime);
+        ServiceResult<ServiceStateEnum, long> GetTimeDvalue(long clientTime);
     }
 }

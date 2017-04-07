@@ -1,7 +1,26 @@
-﻿namespace Oem.Web.WebApi.User
+﻿using Oem.Models.Response.User;
+
+namespace Oem.Web.WebApi.User
 {
-    public class UserApiController
+    /// <summary>
+    /// 用户信息
+    /// </summary>
+    public class UserApiController : ApiBaseController
     {
-        
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public UserResponse Get(int userId)
+        {
+            var serviceResult = UserService.GetUser(userId).Data;
+            UserResponse userResponse = new UserResponse
+            {
+                Id = serviceResult.Id,
+                UserName = serviceResult.UserName
+            };
+            return userResponse;
+        }
     }
 }

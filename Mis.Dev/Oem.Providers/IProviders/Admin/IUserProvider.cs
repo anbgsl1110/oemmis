@@ -10,5 +10,12 @@ namespace Oem.Providers.IProviders.Admin
         /// </summary>
         /// <returns></returns>
         List<UserRepo> GetUserList();
+
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <returns></returns>
+        UserRepo GetUser(long userId);
     }
 }

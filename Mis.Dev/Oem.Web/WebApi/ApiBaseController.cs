@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.ProjectModel.Resolution;
-using Oem.IServices;
 using Oem.Models.Item;
 using Oem.Services.IServices.Home;
+using Oem.Services.IServices.User;
 using Oem.Services.Services.Home;
+using Oem.Services.Services.User;
 
 namespace Oem.Web.WebApi
 {
@@ -16,9 +18,12 @@ namespace Oem.Web.WebApi
     {
         protected readonly IHomeService HomeService;
 
+        protected readonly IUserService UserService;
+
         public ApiBaseController()
         {
             HomeService = new HomeService();
+            UserService = new UserService();
         }
 
         /// <summary>

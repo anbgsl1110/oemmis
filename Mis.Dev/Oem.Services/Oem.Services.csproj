@@ -10,10 +10,17 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Oem.IServices\Oem.IServices.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IServices" />
-    <Folder Include="Services" />
+    <ProjectReference Include="..\Oem.Data\Oem.Data.csproj">
+      <Project>{91A54CAD-4CD0-4627-8128-ABBC5FFD03AD}</Project>
+      <Name>Oem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oem.Models\Oem.Models.csproj">
+      <Project>{62BDB0FA-8C98-4D10-8C90-EA61862536B1}</Project>
+      <Name>Oem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Oem.Providers\Oem.Providers.csproj">
+      <Project>{BE073ABC-389B-4C22-B6BB-7BC6AC5C7DE0}</Project>
+      <Name>Oem.Providers</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

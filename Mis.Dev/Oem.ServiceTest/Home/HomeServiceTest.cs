@@ -22,7 +22,7 @@ namespace Oem.ServiceTest.Home
         public void GetTimeDvalue()
         {
             var result = _homeService.GetTimeDvalue(100);
-            Assert.Equal(result > 0,true);
+            Assert.Equal(result.Data > 0,true);
         }
     }
 }

@@ -50,7 +50,6 @@ define([
                                     if (typeof (requirejs) != "undefined") {
                                         urlArgs = requirejs.s.contexts._.config.urlArgs;
                                         baseUrl = requirejs.s.contexts._.config.baseUrl;
-
                                     }
                                     if (config.method == 'GET') {
                                         if (config.url.indexOf('.html') !== -1 || config.url.indexOf('.htm') !== -1) {
