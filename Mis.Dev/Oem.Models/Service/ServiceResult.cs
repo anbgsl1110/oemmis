@@ -1,7 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Newtonsoft.Json.Converters;
-
-namespace Oem.Common.ServiceModel
+﻿namespace Oem.Models.ServiceModel
 {
     /// <summary>
     /// ServiceResult帮助类

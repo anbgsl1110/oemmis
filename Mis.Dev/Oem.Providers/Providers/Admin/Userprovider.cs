@@ -2,9 +2,9 @@
 using System.Linq;
 using Dapper;
 using Oem.Data.Table.OrgStructure;
-using Oem.IProviders.Admin;
+using Oem.Providers.IProviders.Admin;
 
-namespace Oem.Providers.Admin
+namespace Oem.Providers.Providers.Admin
 {
     public class Userprovider : IUserProvider
     {

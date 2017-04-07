@@ -13,7 +13,7 @@ namespace Oem.WebTest.Common
         {
             var result = ConfigHelper.GetConfigString("EnvironmentConfig");
             string name = result["Name"];
-            Assert.Equal(name,"Dev");
+            Assert.Equal(name, "Dev");
         }
     }
 }

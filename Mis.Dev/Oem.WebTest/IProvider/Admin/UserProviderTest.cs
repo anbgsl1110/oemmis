@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Oem.Data.Table.OrgStructure;
-using Oem.IProviders.Admin;
-using Oem.Providers.Admin;
+using Oem.Providers.IProviders.Admin;
+using Oem.Providers.Providers.Admin;
 using Xunit;
 
 namespace Oem.WebTest.IProvider.Admin

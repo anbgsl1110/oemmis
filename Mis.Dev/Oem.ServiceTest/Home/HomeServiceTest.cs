@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Oem.IServices.Home;
-using Oem.Services.Home;
+using Oem.Services.IServices.Home;
+using Oem.Services.Services.Home;
 using Xunit;
 
 namespace Oem.ServiceTest.Home

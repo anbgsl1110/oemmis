@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Oem.Providers</AssemblyName>
@@ -10,16 +9,16 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Oem.Common\Oem.Common.csproj" />
     <ProjectReference Include="..\Oem.Data\Oem.Data.csproj" />
     <ProjectReference Include="..\Oem.IProviders\Oem.IProviders.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.2" />
     <PackageReference Include="MySql.Data" Version="7.0.6-IR31" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="IProviders" />
+  </ItemGroup>
 </Project>

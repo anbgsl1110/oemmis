@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Oem.IServices.Home;
+using Oem.Services.IServices.Home;
 
-namespace Oem.Services.Home
+namespace Oem.Services.Services.Home
 {
     public class HomeService : IHomeService
     {

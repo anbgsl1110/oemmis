@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Oem.Data.Table.OrgStructure;
 
-namespace Oem.IProviders.Admin
+namespace Oem.Providers.IProviders.Admin
 {
     public interface IUserProvider
     {

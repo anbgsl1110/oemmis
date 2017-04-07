@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.ProjectModel.Resolution;
 using Oem.IServices;
-using Oem.IServices.Home;
 using Oem.Models.Item;
-using Oem.Services.Home;
+using Oem.Services.IServices.Home;
+using Oem.Services.Services.Home;
 
 namespace Oem.Web.WebApi
 {

@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Oem.Services</AssemblyName>
@@ -10,9 +9,11 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Oem.IServices\Oem.IServices.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="IServices" />
+    <Folder Include="Services" />
+  </ItemGroup>
 </Project>
