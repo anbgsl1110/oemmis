@@ -1,4 +1,4 @@
-﻿using Oem.Common.Log;
+﻿using Oem.Common.LogHelper;
 using Xunit;
 
 namespace Oem.WebTest.Common
