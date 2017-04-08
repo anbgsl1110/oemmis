@@ -227,12 +227,6 @@ pip-log.txt
 [Ll]og
 [Ll]og[Dd]ata
 [Aa]pp_[Dd]ata
-/Crm.Web/avatar
-/.vs
-/Crm.Web/node_modules
-/OneCoursePlus.Crm.Cloud.Sdk/*.nupkg
-/set_xiaobao_apikey.bat
-	
-/Oem.Mis/Oem.Common/bin/Debug/netstandard1.6
+/node_modules
 .vs/
-/Oem.Dev/Oem.Web/wwwroot/lib/
+/lib

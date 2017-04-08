@@ -2,19 +2,21 @@
   "name": "Oem.Web",
   "private": true,
   "dependencies": {
-    "bootstrap": "3.3.6",
     "angular": "1.3.x",
-    "angular-loader": "1.3.x",
     "angular-mocks": "~1.3.x",
+    "angular-resource": "1.3.x",
+    "angular-ui-router": "0.2.13",
+    "jquery": "1.11.x",
+    "cropper": "~0.9.1",
     "requirejs-text": "2.0.x",
     "requirejs": "2.1.x",
-    "jquery": "1.11.x",
-    "angular-ui-router": "0.2.13",
+    "angular-loader": "1.3.x",
     "highcharts-ng": "0.0.8",
     "highcharts": "~4.1.4 ",
     "underscore": "~1.8.2",
     "ngDialog": "~0.3.12",
-    "cropper": "~0.9.1"
+    "ng-clip": "v0.2.5",
+    "zeroclipboard": "2.1.6"
   },
   "devDependencies": {
     "angular-resource": "~1.3.14"
