@@ -53,7 +53,7 @@ define([
                                     }
                                     if (config.method == 'GET') {
                                         if (config.url.indexOf('.html') !== -1 || config.url.indexOf('.htm') !== -1) {
-                                            baseUrl = '/Scripts/app/';
+                                            baseUrl = '';
                                             var separator = config.url.indexOf('?') === -1 ? '?' : '&';
                                             config.url = baseUrl + config.url + separator + urlArgs;
                                             //config.url = config.url + separator + urlArgs;

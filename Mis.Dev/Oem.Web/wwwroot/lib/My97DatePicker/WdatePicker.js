@@ -5,7 +5,7 @@
 var $dp,WdatePicker;(function(){var _={
 $wdate:false,
 //fix CDN problem  http://aliyun.com/mydata.js  ->  htpp://1course.com/Scripts/libs/My97DatePicker/mydate.html
-$dpPath:location.origin+"/Scripts/app/libs/My97DatePicker/",
+$dpPath:location.origin+"/lib/My97DatePicker/",
 $crossFrame:true,
 doubleCalendar:false,
 enableKeyboard:true,

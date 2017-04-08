@@ -2,11 +2,11 @@
 * Created by Han Xinwei on 2015/4/2.
 */
 
-define(['libs/angular-mocks/mock-min',
+define(['lib/angular-mocks/angular-mocks',
         'angular',
         'angularMock',
         'services/current-user-service'
-], function (Mock) {
+], function () {
     return angular.module('services.net.common', ['service.currentUser'])
         .factory('commonNetService', ['$timeout', '$http', '$q', 'currentUserService', function ($timeout, $http, $q, currentUserService) {
 

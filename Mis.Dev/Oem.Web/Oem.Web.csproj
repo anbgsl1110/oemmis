@@ -17,10 +17,10 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="wwwroot\lib\angular\**" />
-    <Content Remove="wwwroot\lib\angular\**" />
-    <EmbeddedResource Remove="wwwroot\lib\angular\**" />
-    <None Remove="wwwroot\lib\angular\**" />
+    <Compile Remove="wwwroot\Scripts\**" />
+    <Content Remove="wwwroot\Scripts\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\**" />
+    <None Remove="wwwroot\Scripts\**" />
   </ItemGroup>
   <ItemGroup>
     <None Remove=".gitignore" />
@@ -80,6 +80,16 @@
     <Content Include="wwwroot\directives\common.js" />
     <Content Include="wwwroot\filters\commonFilter.js" />
     <Content Include="wwwroot\images\bg_tips6_1.png" />
+    <Content Include="wwwroot\lib\angular\.bower.json" />
+    <Content Include="wwwroot\lib\angular\angular-csp.css" />
+    <Content Include="wwwroot\lib\angular\angular.js" />
+    <Content Include="wwwroot\lib\angular\angular.min.js" />
+    <Content Include="wwwroot\lib\angular\angular.min.js.gzip" />
+    <Content Include="wwwroot\lib\angular\angular.min.js.map" />
+    <Content Include="wwwroot\lib\angular\bower.json" />
+    <Content Include="wwwroot\lib\angular\index.js" />
+    <Content Include="wwwroot\lib\angular\package.json" />
+    <Content Include="wwwroot\lib\angular\README.md" />
     <Content Include="wwwroot\main.js" />
     <Content Include="wwwroot\modules\baseapp\app.js" />
     <Content Include="wwwroot\modules\baseapp\controller.js" />
@@ -89,7 +99,6 @@
     <Content Include="wwwroot\modules\index-app\index-temp.html" />
     <Content Include="wwwroot\modules\index-app\index.html" />
     <Content Include="wwwroot\require-exclude.json" />
-    <Content Include="wwwroot\Scripts\app\require-exclude.json" />
     <Content Include="wwwroot\services\base.js" />
     <Content Include="wwwroot\services\bounced.js" />
     <Content Include="wwwroot\services\commonService.js" />
