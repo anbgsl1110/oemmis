@@ -17,6 +17,12 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="wwwroot\lib\angular\**" />
+    <Content Remove="wwwroot\lib\angular\**" />
+    <EmbeddedResource Remove="wwwroot\lib\angular\**" />
+    <None Remove="wwwroot\lib\angular\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>

@@ -181,7 +181,6 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
-node_modules/
 orleans.codegen.cs
 
 # RIA/Silverlight projects
@@ -232,3 +231,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+node_modules/
+#/wwwroot/lib/
