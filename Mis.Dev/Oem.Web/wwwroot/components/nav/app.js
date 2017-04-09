@@ -17,7 +17,7 @@ define([
             'components.nav.filter',
             'components.nav.services',
             'components.nav.directive.profile',
-            'ui.router',
+            'ui.router'
         ])
         //建议自定义共用组件都增加版本号
         .value('version', '0.1');

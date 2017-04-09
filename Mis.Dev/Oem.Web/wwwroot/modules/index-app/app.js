@@ -16,8 +16,7 @@ define([
             "ui.router",
             "IndexApp.controllers",
             "highcharts-ng",
-            "CommonDirective",
-
+            "CommonDirective"
     ])
         .config([
             "$stateProvider",

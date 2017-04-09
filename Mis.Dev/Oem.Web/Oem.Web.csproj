@@ -80,16 +80,6 @@
     <Content Include="wwwroot\directives\common.js" />
     <Content Include="wwwroot\filters\commonFilter.js" />
     <Content Include="wwwroot\images\bg_tips6_1.png" />
-    <Content Include="wwwroot\lib\angular\.bower.json" />
-    <Content Include="wwwroot\lib\angular\angular-csp.css" />
-    <Content Include="wwwroot\lib\angular\angular.js" />
-    <Content Include="wwwroot\lib\angular\angular.min.js" />
-    <Content Include="wwwroot\lib\angular\angular.min.js.gzip" />
-    <Content Include="wwwroot\lib\angular\angular.min.js.map" />
-    <Content Include="wwwroot\lib\angular\bower.json" />
-    <Content Include="wwwroot\lib\angular\index.js" />
-    <Content Include="wwwroot\lib\angular\package.json" />
-    <Content Include="wwwroot\lib\angular\README.md" />
     <Content Include="wwwroot\main.js" />
     <Content Include="wwwroot\modules\baseapp\app.js" />
     <Content Include="wwwroot\modules\baseapp\controller.js" />
@@ -183,9 +173,7 @@
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot/lib.zip" />
-  </ItemGroup>
+
   <ItemGroup>
     <Content Update="Views\Home\Login.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
