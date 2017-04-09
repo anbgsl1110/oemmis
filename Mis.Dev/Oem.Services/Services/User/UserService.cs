@@ -10,16 +10,25 @@ namespace Oem.Services.Services.User
     /// </summary>
     public class UserService : BaseService,IUserService
     {
+        /// <summary>
+        /// 获取用户
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <returns></returns>
         public ServiceResult<ServiceStateEnum, UserDto> GetUser(long userId)
         {
             var user = UserProvider.GetUser(userId);
-            UserDto data = new UserDto
+            if (user != null)
             {
-                Id = user.Id,
-                UserName = user.UserName,
-                Password = user.Password
-            };
-            return ServiceResult.Create(ServiceStateEnum.Success,data);
+                UserDto data = new UserDto
+                {
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    Password = user.Password
+                };
+                return ServiceResult.Create(ServiceStateEnum.Success, data);
+            }
+            return ServiceResult.Create(false, ServiceStateEnum.Failed, new UserDto());
         }
     }
 }

@@ -80,6 +80,7 @@
     <Content Include="wwwroot\directives\common.js" />
     <Content Include="wwwroot\filters\commonFilter.js" />
     <Content Include="wwwroot\images\bg_tips6_1.png" />
+    <Content Include="wwwroot\lib\mock\mock-min.js" />
     <Content Include="wwwroot\main.js" />
     <Content Include="wwwroot\modules\baseapp\app.js" />
     <Content Include="wwwroot\modules\baseapp\controller.js" />

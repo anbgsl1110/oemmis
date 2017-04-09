@@ -30,7 +30,6 @@ namespace Oem.Providers.Providers.Admin
         {
             using (var dbConnection = DbFactory.GetNewConnection())
             {
-                dbConnection.Open();
                 string sql = string.Format(@"SELECT Id, UserName, Password FROM oemmis_dev.user WHERE Id = {0};"
                     ,userId);
                 return dbConnection.Query<UserRepo>(sql).SingleOrDefault();

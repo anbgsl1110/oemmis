@@ -2,7 +2,7 @@
 * Created by Han Xinwei on 2015/4/2.
 */
 
-define(['lib/angular-mocks/angular-mocks',
+define(['lib/mock/mock-min',
         'angular',
         'angularMock',
         'services/current-user-service'
