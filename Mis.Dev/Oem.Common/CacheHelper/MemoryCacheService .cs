@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Oem.Common.Util
+namespace Oem.Common.CacheHelper
 {
     /// <summary>
     /// MemoryCache缓存服务对象

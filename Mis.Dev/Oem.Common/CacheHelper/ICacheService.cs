@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Oem.Common.Util
+namespace Oem.Common.CacheHelper
 {
     /// <summary>
     /// 缓存服务接口
