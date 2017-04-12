@@ -9,7 +9,7 @@ define(["angular"], function () {
     return angular.module("BaseApp.controllers", [])
         .controller("BaseAppController", [
             "$scope", function ($scope) {
-                console.log("base"); //不要问我为什么注释了，每次console看到很不爽啊，我强迫症
+                console.log("hhhhhhh");
             }
         ]);
 });

@@ -13,14 +13,14 @@ define([
         "nicescroll",
 
         //挂载子模块
-        "modules/index-app/app"],
-    function () {
+        "modules/index-app/app"
+    ],
+    function() {
         return angular.module("BaseApp",
             [
                 "ui.router",
                 "BaseApp.controllers",
                 "components.nav",
-
                 "IndexApp"
             ])
             .config([
@@ -86,5 +86,4 @@ define([
                     ]);
                 }
             ]);
-    }
-);
+    });

@@ -2,10 +2,13 @@
 /**
  * Created by sue on 2015/3/30. 公用弹框
  */
-define(["angular"],function(angular){
-	return angular.module("Bounced.services",[])
-		.service('openBouncedService', ['$document','$compile','$rootScope', function($document,$compile,$rootScope){
-			var baseTemplate = '\
+define(["angular"],
+    function(angular) {
+        return angular.module("Bounced.services", [])
+            .service('openBouncedService',
+            [
+                '$document', '$compile', '$rootScope', function($document, $compile, $rootScope) {
+                    var baseTemplate = '\
 				<div class="modal" style="display:none;">\
 					<div class="modal-backdrop" style="height:100%;"></div>\
 					<div class="modal-dialog-ab modal-content usual-large" style="display: block;">\
@@ -16,118 +19,122 @@ define(["angular"],function(angular){
 				        </div>\
 				    </div>\
 				</div>',
-				baseContainer = null,
-				currentContainer = null,
-				callbacks = {
-					ok: [],
-					cancel: []
-				};
+                        baseContainer = null,
+                        currentContainer = null,
+                        callbacks = {
+                            ok: [],
+                            cancel: []
+                        };
 
-			function init(){
-				var head = angular.element('head');
+                    function init() {
+                        var head = angular.element('head');
 
-				var body = angular.element('body');
-				baseContainer = angular.element(baseTemplate);
+                        var body = angular.element('body');
+                        baseContainer = angular.element(baseTemplate);
 
-				body.attr('class','body-template');
-				body.append(baseContainer);
+                        body.attr('class', 'body-template');
+                        body.append(baseContainer);
 
-				baseContainer.find('#_bounced-box-cancel').click(function(ev){
-					for(var i = 0;i<callbacks.cancel.length;i++){
-						if(callbacks.cancel[i](ev || event) == false)
-							return;
-					}
-					_bouncedService.close();
-				});
+                        baseContainer.find('#_bounced-box-cancel').click(function(ev) {
+                            for (var i = 0; i < callbacks.cancel.length; i++) {
+                                if (callbacks.cancel[i](ev || event) == false)
+                                    return;
+                            }
+                            _bouncedService.close();
+                        });
 
-				baseContainer.find('#_bounced-box-ok').click(function(ev){
-					for(var i = 0;i<callbacks.ok.length;i++){
-						if(callbacks.ok[i](ev || event) == false)
-							return;
-					}
-					_bouncedService.close();
-				});
-			}
+                        baseContainer.find('#_bounced-box-ok').click(function(ev) {
+                            for (var i = 0; i < callbacks.ok.length; i++) {
+                                if (callbacks.ok[i](ev || event) == false)
+                                    return;
+                            }
+                            _bouncedService.close();
+                        });
+                    }
 
-			function update(config){
+                    function update(config) {
 
-				// check params
-				if(!config.template && !config.templateUrl){
-					console.error('Missing params: template');
-					return false;
-				}
+                        // check params
+                        if (!config.template && !config.templateUrl) {
+                            console.error('Missing params: template');
+                            return false;
+                        }
 
-				currentContainer = angular.element('<div></div>');
+                        currentContainer = angular.element('<div></div>');
 
-				// insert template
-				if(config.template){
-					currentContainer.append(config.template);
-				}else if(config.templateUrl){
-					currentContainer.attr('ng-include', '"' + config.templateUrl + '"');
-				}
+                        // insert template
+                        if (config.template) {
+                            currentContainer.append(config.template);
+                        } else if (config.templateUrl) {
+                            currentContainer.attr('ng-include', '"' + config.templateUrl + '"');
+                        }
 
-				// compile and insert template into the dom
-				$compile(currentContainer)(config.scope || $rootScope.$new());
-				baseContainer.find('#_bounced-title').html(config.title || '编辑头像').after(currentContainer);
+                        // compile and insert template into the dom
+                        $compile(currentContainer)(config.scope || $rootScope.$new());
+                        baseContainer.find('#_bounced-title').html(config.title || '编辑头像').after(currentContainer);
 
-				// save callback queue
-				if(config.callbacks){
-					if(config.callbacks.ok){
-						callbacks.ok.push(config.callbacks.ok);
-					}
-					if(config.callbacks.cancel)
-						callbacks.cancel.push(config.callbacks.cancel);
-				}
+                        // save callback queue
+                        if (config.callbacks) {
+                            if (config.callbacks.ok) {
+                                callbacks.ok.push(config.callbacks.ok);
+                            }
+                            if (config.callbacks.cancel)
+                                callbacks.cancel.push(config.callbacks.cancel);
+                        }
 
-				// set styles from config
-				if(config.css){
-					baseContainer.css(config.css);
-				}
+                        // set styles from config
+                        if (config.css) {
+                            baseContainer.css(config.css);
+                        }
 
-				return true;
-			}
+                        return true;
+                    }
 
-			var _bouncedService = {
-				init: function(config){
-					if(!baseContainer){
-						init();
-					}
+                    var _bouncedService = {
+                        init: function(config) {
+                            if (!baseContainer) {
+                                init();
+                            }
 
-					update(config);
+                            update(config);
 
-					return this;
-				},
-				open: function(){
-					baseContainer.fadeIn(200);
-					return this;
-				},
-				close: function (){
-					baseContainer.fadeOut(200);
-					callbacks = {
-						ok: [],
-						cancel: []
-					}
-					currentContainer && currentContainer.empty();
-					return this;
-				},
-				destroy: function(){
-					callbacks = {
-						ok: [],
-						cancel: []
-					}
-					currentContainer && currentContainer.empty();
-					return this;
-				}
+                            return this;
+                        },
+                        open: function() {
+                            baseContainer.fadeIn(200);
+                            return this;
+                        },
+                        close: function() {
+                            baseContainer.fadeOut(200);
+                            callbacks = {
+                                ok: [],
+                                cancel: []
+                            }
+                            currentContainer && currentContainer.empty();
+                            return this;
+                        },
+                        destroy: function() {
+                            callbacks = {
+                                ok: [],
+                                cancel: []
+                            }
+                            currentContainer && currentContainer.empty();
+                            return this;
+                        }
 
-			}
-
-
-			return _bouncedService;
+                    }
 
 
-		}])
-	    .service('errorPopService', ['$document', '$compile', '$rootScope', '$interval', function ($document, $compile, $rootScope, $interval) {
-	        var baseTemplate = '<div class="clue-fail-box" >\
+                    return _bouncedService;
+
+
+                }
+            ])
+            .service('errorPopService',
+            [
+                '$document', '$compile', '$rootScope', '$interval',
+                function($document, $compile, $rootScope, $interval) {
+                    var baseTemplate = '<div class="clue-fail-box" >\
                                     <div class="text-box1">操作失败！</div>\
                                     <div class="text-box2">{{dialogErrorData.message}}</div>\
                                     <div class="clue-fail-btn-box">\
@@ -135,110 +142,111 @@ define(["angular"],function(angular){
                                         <button type="button" class="btn-copy" ng-click="dialogErrorData.close()">知道了</button>\
                                     </div>\
                                 </div>',
-                baseContainer = null,
-                currentContainer = null,
-                callbacks = {
-                    ok: [],
-                    cancel: []
-                };
-	        function init(config) {
-	            var head = angular.element('head');
+                        baseContainer = null,
+                        currentContainer = null,
+                        callbacks = {
+                            ok: [],
+                            cancel: []
+                        };
 
-	            var body = angular.element('body');
-	            baseContainer = angular.element(baseTemplate);
-	            if (body.find(".clue-fail-box").length !=0) {
-	                angular.element(body.find(".clue-fail-box")[0]).remove();
-	            }
-	            body.append(baseContainer);
-                //知道了按钮
-	            baseContainer.find('.btn-copy').click(function (ev) {
-	                for (var i = 0; i < callbacks.ok.length; i++) {
-	                    if (callbacks.ok[i](ev || event) == false)
-	                        return;
-	                }
-	                _bouncedService.close();
-	            });
-	            config.scope.dialogErrorData = config;
-	            // compile and insert template into the dom
-	            $compile(baseContainer)(config.scope);
-	        }
+                    function init(config) {
+                        var head = angular.element('head');
 
-	        function update(config){
+                        var body = angular.element('body');
+                        baseContainer = angular.element(baseTemplate);
+                        if (body.find(".clue-fail-box").length != 0) {
+                            angular.element(body.find(".clue-fail-box")[0]).remove();
+                        }
+                        body.append(baseContainer);
+                        //知道了按钮
+                        baseContainer.find('.btn-copy').click(function(ev) {
+                            for (var i = 0; i < callbacks.ok.length; i++) {
+                                if (callbacks.ok[i](ev || event) == false)
+                                    return;
+                            }
+                            _bouncedService.close();
+                        });
+                        config.scope.dialogErrorData = config;
+                        // compile and insert template into the dom
+                        $compile(baseContainer)(config.scope);
+                    }
 
-
-
-
-	            // save callback queue
-	            if(config.callbacks){
-	                if(config.callbacks.ok){
-	                    callbacks.ok.push(config.callbacks.ok);
-	                }
-	                if(config.callbacks.cancel)
-	                    callbacks.cancel.push(config.callbacks.cancel);
-	            }
-	            // set styles from config
-	            if(config.css){
-	                baseContainer.css(config.css);
-	            }
-	        }
-
-	        var _bouncedService = {
-	            time: null,
-	            set: function (scope, message, duration) {
-	                this.init({ scope: scope, message: message, duration: duration })
-	                this.open();
-	            },
-	            init: function (config) {
-	                var _this = this;
-	         
-	                    init(config);
-	                
-	                if (this.time != null) {
-	                    $interval.cancel(this.time);
-	                }
-	                update(config);
-                    
-	                if (config.duration) {
-	                    this.time = $interval(function () {
-	                        if (config.duration-- <= 1) {
-	                            $interval.cancel(_this.time);
-	                            _this.close();
-	                        }
-	                    }, 1000)
-	                }
-	                return this;
-	            },
-	            open: function(){
-	                baseContainer.addClass("fail-box-show");
-	                return this;
-	            },
-	            close: function () {
-	                if (this.time != null) {
-	                    $interval.cancel(this.time);
-	                }
-	                if (baseContainer != null) {
-	                    baseContainer.removeClass("fail-box-show");
-	                }
-	                callbacks = {
-	                    ok: [],
-	                    cancel: []
-	                }
-	                return this;
-	            },
-	            destroy: function(){
-	                callbacks = {
-	                    ok: [],
-	                    cancel: []
-	                }
-	                return this;
-	            }
-
-	        }
+                    function update(config) {
 
 
-	        return _bouncedService;
+                        // save callback queue
+                        if (config.callbacks) {
+                            if (config.callbacks.ok) {
+                                callbacks.ok.push(config.callbacks.ok);
+                            }
+                            if (config.callbacks.cancel)
+                                callbacks.cancel.push(config.callbacks.cancel);
+                        }
+                        // set styles from config
+                        if (config.css) {
+                            baseContainer.css(config.css);
+                        }
+                    }
+
+                    var _bouncedService = {
+                        time: null,
+                        set: function(scope, message, duration) {
+                            this.init({ scope: scope, message: message, duration: duration })
+                            this.open();
+                        },
+                        init: function(config) {
+                            var _this = this;
+
+                            init(config);
+
+                            if (this.time != null) {
+                                $interval.cancel(this.time);
+                            }
+                            update(config);
+
+                            if (config.duration) {
+                                this.time = $interval(function() {
+                                        if (config.duration-- <= 1) {
+                                            $interval.cancel(_this.time);
+                                            _this.close();
+                                        }
+                                    },
+                                    1000)
+                            }
+                            return this;
+                        },
+                        open: function() {
+                            baseContainer.addClass("fail-box-show");
+                            return this;
+                        },
+                        close: function() {
+                            if (this.time != null) {
+                                $interval.cancel(this.time);
+                            }
+                            if (baseContainer != null) {
+                                baseContainer.removeClass("fail-box-show");
+                            }
+                            callbacks = {
+                                ok: [],
+                                cancel: []
+                            }
+                            return this;
+                        },
+                        destroy: function() {
+                            callbacks = {
+                                ok: [],
+                                cancel: []
+                            }
+                            return this;
+                        }
+
+                    }
 
 
-	    }]);
+                    return _bouncedService;
 
-})
+
+                }
+            ]);
+
+    });

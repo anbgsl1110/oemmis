@@ -1,6 +1,6 @@
 ﻿using Oem.Data.Enum;
-using Oem.Models.Service;
-using Oem.Models.Service.UserDto;
+using Oem.Data.Service;
+using Oem.Data.Service.UserDto;
 using Oem.Services.IServices.User;
 
 namespace Oem.Services.Services.User
@@ -24,6 +24,11 @@ namespace Oem.Services.Services.User
                 return ServiceResult.Create(ServiceStateEnum.Success, data);
             }
             return ServiceResult.Create(false, ServiceStateEnum.Failed, new UserDto());
+        }
+
+        public ServiceResult<ServiceStateEnum, FormsAuthTicketDto> DecryptCookie(string cookie)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

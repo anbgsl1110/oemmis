@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -16,6 +17,7 @@ using Oem.Common.Util;
 using Oem.Data.DataBase;
 using Oem.Web.Data;
 using Oem.Web.Models;
+using Oem.Web.Security;
 using Oem.Web.Services;
 
 namespace Oem.Web
@@ -26,8 +28,8 @@ namespace Oem.Web
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -76,11 +78,20 @@ namespace Oem.Web
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
+            //增加cookie相关设置
+            var cookieOptions = new CookieAuthenticationOptions
+            {
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                CookieName = "OemMis",
+                CookieDomain = "localhost",
+                TicketDataFormat = new FormsAuthTicketDataFormat("OemMis")
+            };
+            app.UseCookieAuthentication(cookieOptions);
+
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

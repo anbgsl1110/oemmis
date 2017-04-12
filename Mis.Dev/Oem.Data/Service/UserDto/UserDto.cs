@@ -1,4 +1,4 @@
-﻿namespace Oem.Models.Service.UserDto
+﻿namespace Oem.Data.Service.UserDto
 {
     /// <summary>
     /// 用户数据对象

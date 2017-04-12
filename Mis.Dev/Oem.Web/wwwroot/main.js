@@ -1,7 +1,6 @@
 ﻿
 requirejs.config({
     paths: {
-       
         'jquery': "lib/jquery/dist/jquery.min",
         'sortable': "lib/jquery-ui.sortable/jquery-ui-sortable",
         'angular': "lib/angular/angular.min",
@@ -52,7 +51,7 @@ requirejs.config({
             'exports': "_"
         },
         datePicker: {
-            init: function () {
+            init: function() {
                 //hack第一次点击无效果，因为第一次点击才去下载一些东西
                 WdatePicker({});
                 $dp.hide();
@@ -73,44 +72,46 @@ requirejs.config({
 
 require([
     "app"
-], function () {
-    angular.element(document).ready(function () {
-        //angular.bootstrap(document, ["BaseApp"]);
-        var currentUser;
-        $("body").niceScroll({
-            cursorcolor: "rgba(0,0,0,0.3)",
-            cursorwidth: "10px"
-        });
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?c555cf20d924035b4d329df9e6bacd78";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
+],
+    function() {
+        angular.element(document).ready(function() {
+            //angular.bootstrap(document, ["BaseApp"]);
+            var currentUser;
+            $("body").niceScroll({
+                cursorcolor: "rgba(0,0,0,0.3)",
+                cursorwidth: "10px"
+            });
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c555cf20d924035b4d329df9e6bacd78";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
 
-        $.get('/api/UserApi?userId = 1', function (result) {
-            currentUser = result.data;
-            var temp = angular.module("BaseApp");
-            temp.run([
-                '$rootScope', '$state', '$stateParams', 'currentUserService',
-                function($rootScope, $state, $stateParams, currentUserService) {
-                    $rootScope.$state = $state;
-                    $rootScope.$stateParams = $stateParams;
-                    $rootScope.currentUser = currentUser;
-                    currentUserService.setCurrentUser(currentUser);
-                    //在全局作用域上添加一个本地时间与服务器时间的差值 by binhao
-                    if (!window.dateDiff) {
-                        $.get("/api/TimeDvalueApi",
-                            {
-                                clientTime: new Date().getTime()
-                            },
-                            function(data) {
-                                window.dateDiff = data.data;
-                            });
-                    }
-                }
-            ]);
-            angular.bootstrap(document, ["BaseApp"]);
+            $.get('/api/UserApi?userId = 1',
+                function(result) {
+                    currentUser = result.data;
+                    var temp = angular.module("BaseApp");
+                    temp.run([
+                        '$rootScope', '$state', '$stateParams', 'currentUserService',
+                        function($rootScope, $state, $stateParams, currentUserService) {
+                            $rootScope.$state = $state;
+                            $rootScope.$stateParams = $stateParams;
+                            $rootScope.currentUser = currentUser;
+                            currentUserService.setCurrentUser(currentUser);
+                            //在全局作用域上添加一个本地时间与服务器时间的差值 by binhao
+                            if (!window.dateDiff) {
+                                $.get("/api/TimeDvalueApi",
+                                    {
+                                        clientTime: new Date().getTime()
+                                    },
+                                    function(data) {
+                                        window.dateDiff = data.data;
+                                    });
+                            }
+                        }
+                    ]);
+                    angular.bootstrap(document, ["BaseApp"]);
+                });
+
+
         });
-        
-        
     });
-});

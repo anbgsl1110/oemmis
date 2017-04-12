@@ -1,6 +1,6 @@
 ﻿using Oem.Data.Enum;
-using Oem.Models.Service;
-using Oem.Models.Service.UserDto;
+using Oem.Data.Service;
+using Oem.Data.Service.UserDto;
 
 namespace Oem.Services.IServices.User
 {
@@ -15,5 +15,7 @@ namespace Oem.Services.IServices.User
         /// <param name="userId">用户Id</param>
         /// <returns></returns>
         ServiceResult<ServiceStateEnum, UserDto> GetUser(long userId);
+
+        ServiceResult<ServiceStateEnum, FormsAuthTicketDto> DecryptCookie(string cookie);
     }
 }

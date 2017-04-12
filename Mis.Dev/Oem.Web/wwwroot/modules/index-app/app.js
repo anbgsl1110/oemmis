@@ -10,26 +10,29 @@ define([
     'commonDirective',
     "funnel",
     "components/selectBox/directive"
-], function (angular) {
+],
+    function(angular) {
 
-    return angular.module("IndexApp", [
-            "ui.router",
-            "IndexApp.controllers",
-            "highcharts-ng",
-            "CommonDirective"
-    ])
-        .config([
-            "$stateProvider",
-            function ($stateProvider) {
+        return angular.module("IndexApp",
+            [
+                "ui.router",
+                "IndexApp.controllers",
+                "highcharts-ng",
+                "CommonDirective"
+            ])
+            .config([
+                "$stateProvider",
+                function($stateProvider) {
 
-                $stateProvider
-                    .state("index", {
-                        parent: "base",
-                        url: "/index",
-                        templateUrl: "modules/index-app/index.html",
-                        controller: "IndexAppController",
-                        title: "首页"
-                    });
-            }
-        ]);
-});
+                    $stateProvider
+                        .state("index",
+                        {
+                            parent: "base",
+                            url: "/index",
+                            templateUrl: "modules/index-app/index.html",
+                            controller: "IndexAppController",
+                            title: "首页"
+                        });
+                }
+            ]);
+    });

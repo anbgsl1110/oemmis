@@ -12,7 +12,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Oem.Data\Oem.Data.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\User" />
-  </ItemGroup>
 </Project>
