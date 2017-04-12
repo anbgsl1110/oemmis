@@ -1,6 +1,6 @@
 ﻿using Oem.Data.Enum;
-using Oem.Data.Service;
-using Oem.Data.Service.UserDto;
+using Oem.Data.ServiceModel;
+using Oem.Data.ServiceModel.UserDto;
 using Oem.Services.IServices.User;
 
 namespace Oem.Services.Services.User

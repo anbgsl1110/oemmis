@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Oem.Data.Service.UserDto;
+using Oem.Data.ServiceModel.UserDto;
 using Oem.Services.Services.User;
 
 namespace Oem.Web.Security

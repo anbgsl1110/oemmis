@@ -1,6 +1,6 @@
 ﻿using System;
 using Oem.Data.Enum;
-using Oem.Data.Service;
+using Oem.Data.ServiceModel;
 using Oem.Services.IServices.Home;
 
 namespace Oem.Services.Services.Home

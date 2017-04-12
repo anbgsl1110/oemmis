@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oem.Data.Service.UserDto
+namespace Oem.Data.ServiceModel.UserDto
 {
     public class FormsAuthTicketDto
     {

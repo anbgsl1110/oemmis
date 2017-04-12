@@ -1,5 +1,5 @@
 ﻿using Oem.Data.Enum;
-using Oem.Data.Service;
+using Oem.Data.ServiceModel;
 
 namespace Oem.Services.IServices.Home
 {

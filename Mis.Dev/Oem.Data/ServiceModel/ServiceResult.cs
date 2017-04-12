@@ -1,4 +1,4 @@
-﻿namespace Oem.Data.Service
+﻿namespace Oem.Data.ServiceModel
 {
     /// <summary>
     /// ServiceResult帮助类
