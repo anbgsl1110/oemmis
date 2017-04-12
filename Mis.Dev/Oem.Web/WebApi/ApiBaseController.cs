@@ -32,7 +32,7 @@ namespace Oem.Web.WebApi
         /// <returns></returns>
         protected LoginUserInfo GetLoginUserInfo()
         {
-            return new LoginUserInfo { UserId = 1110, UserName = "anbgsl1110" };
+            return new LoginUserInfo { UserId = 1110, UserName = User.Identity.Name };
         }
 
         #region WebApi Restful例子
