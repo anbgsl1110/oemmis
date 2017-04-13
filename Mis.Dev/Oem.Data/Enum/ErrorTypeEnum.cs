@@ -7,8 +7,15 @@ using System.ComponentModel;
 
 namespace Oem.Data.Enum
 {
+    /// <summary>
+    /// 错误枚举
+    /// </summary>
     public enum ErrorTypeEnum
     {
+        /// <summary>
+        /// 正常
+        /// </summary>
+        [Description("正常")]
         NoError = 0
     }
 }

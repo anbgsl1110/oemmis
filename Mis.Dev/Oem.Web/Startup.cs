@@ -78,14 +78,15 @@ namespace Oem.Web
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
-            //增加cookie相关设置
+            //增加Identity和cookie相关设置
             var cookieOptions = new CookieAuthenticationOptions
             {
+                AuthenticationScheme = @"OemMis",
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
                 CookieName = "OemMis",
                 CookieDomain = "localhost",
-                TicketDataFormat = new FormsAuthTicketDataFormat("OemMis")
+                //TicketDataFormat = new FormsAuthTicketDataFormat("OemMis")
             };
             app.UseCookieAuthentication(cookieOptions);
 

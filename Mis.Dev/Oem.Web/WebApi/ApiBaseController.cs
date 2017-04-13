@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -10,29 +11,37 @@ using Oem.Services.IServices.Home;
 using Oem.Services.IServices.User;
 using Oem.Services.Services.Home;
 using Oem.Services.Services.User;
+using Oem.Web.Security;
 
 namespace Oem.Web.WebApi
 {
     [Route("api/[Controller]")]
     public class ApiBaseController : Controller
     {
+        protected readonly ICurrentUser CurrentUser;
+
         protected readonly IHomeService HomeService;
 
         protected readonly IUserService UserService;
 
         public ApiBaseController()
         {
+            if (HttpContext.User.Claims != null)
+            {
+                var x = User.Claims;
+                //解析cookie中当前用户信息
+                CurrentUser = new CurrentUser
+                {
+                    UserId = long.Parse(User.FindFirst(ClaimTypes.Sid).Value)
+                };
+            }
+            else
+            {
+                CurrentUser = new CurrentUser();
+            }
+
             HomeService = new HomeService();
             UserService = new UserService();
-        }
-
-        /// <summary>
-        /// 登录用户信息
-        /// </summary>
-        /// <returns></returns>
-        protected LoginUserInfo GetLoginUserInfo()
-        {
-            return new LoginUserInfo { UserId = 1110, UserName = User.Identity.Name };
         }
 
         #region WebApi Restful例子

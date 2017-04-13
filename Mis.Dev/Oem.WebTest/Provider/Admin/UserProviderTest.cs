@@ -4,7 +4,7 @@ using Oem.Providers.IProviders.Admin;
 using Oem.Providers.Providers.Admin;
 using Xunit;
 
-namespace Oem.WebTest.IProvider.Admin
+namespace Oem.WebTest.Provider.Admin
 {
     public class UserProviderTest
     {

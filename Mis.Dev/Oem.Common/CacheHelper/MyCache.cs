@@ -4,7 +4,7 @@ namespace Oem.Common.CacheHelper
 {
     public class MyCache : IMyCache
     {
-        public ICacheService Cache { get; set; };
+        public ICacheService Cache { get; set; }
         public readonly int SessionHour;
         public readonly string CookieDomain;
         public readonly string PreFix;
@@ -37,8 +37,14 @@ namespace Oem.Common.CacheHelper
         /// <param name="key"></param>
         public object this[string key]
         {
-            get => Get<object>(key);
-            set => Set(key, value);
+            get
+            {
+                return Get<object>(key);
+            }
+            set
+            {
+                Set(key, value);
+            }
         }
 
         public void Clear(string sessionId = null)
@@ -50,7 +56,7 @@ namespace Oem.Common.CacheHelper
         {
             try
             {
-                var httpCookie = @"";
+                var httpCookie = @"MySessionId";
                 if (string.IsNullOrWhiteSpace(httpCookie))
                 {
                     return httpCookie;
@@ -65,9 +71,21 @@ namespace Oem.Common.CacheHelper
             }
         }
 
+        /// <summary>
+        /// 第一次给MyseessionId赋值
+        /// </summary>
         private void SetSessionId()
         {
-
+            try
+            {
+                //var identity = new ClaimsIdentity("");
+            }
+            catch (Exception e)
+            {
+                LogHelper.LogHelper logHelper = new LogHelper.LogHelper();
+                logHelper.WriteLog(@"第一次给MysessionId设置值失败",e);
+                throw;
+            }
         }
     }
 }

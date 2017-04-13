@@ -18,6 +18,7 @@
                 password : "123"
             }
             $.post("/api/LoginApi/", loginResqust, function (response) {
+                var x = response.Data;
                 window.location = '/home/Index#/index';
             });
             //$.post('/api/UserApi/Login',
