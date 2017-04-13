@@ -12,7 +12,7 @@ namespace Oem.Providers
 
         public static IDbConnection GetNewConnection()
         {
-            var con = @"server=114.215.158.176;port=5002;database=oemmis_dev;uid=root;pwd=000000;SslMode=None";
+            var con = @"server=114.215.158.176;port=5002;database=oemmis_dev;uid=oemmis_dev;pwd=000000;SslMode=None";
             return new MySqlConnection(con);
             //return DbConnection;
         }
