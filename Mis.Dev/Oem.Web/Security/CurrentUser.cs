@@ -33,7 +33,7 @@ namespace Oem.Web.Security
             get
             {
                 return MyCache.Get<string>(@"OemMis-UserName");
-            };
+            }
         }
 
         public long OrgId
@@ -42,7 +42,7 @@ namespace Oem.Web.Security
             {
                 return MyCache.Get<long>(@"OemMis-OrgId");
 
-            };
+            }
         }
 
         public AuthorityEnum[] UserAuthority
@@ -50,7 +50,7 @@ namespace Oem.Web.Security
             get
             {
                 return MyCache.Get<AuthorityEnum[]>(@"OemMis-UserAuthority");
-            };
+            }
         }
 
         public RoleRepo[] UserRole
@@ -58,7 +58,7 @@ namespace Oem.Web.Security
             get
             {
                 return MyCache.Get<RoleRepo[]>(@"OemMis-UserRole");
-            };
+            }
         }
 
         public void SetCurrentUserInfo(long userId, string userName, long orgId, AuthorityEnum[] userAuthority,

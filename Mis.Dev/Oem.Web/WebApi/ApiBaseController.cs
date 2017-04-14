@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.ProjectModel.Resolution;
+using Oem.Common.CacheHelper;
 using Oem.Models.Item;
 using Oem.Services.IServices.Home;
 using Oem.Services.IServices.User;
@@ -26,7 +27,7 @@ namespace Oem.Web.WebApi
 
         public ApiBaseController()
         {
-            CurrentUser = new CurrentUser();
+            CurrentUser = new CurrentUser(new MyCache(new MemoryCacheService(null)));//TODO 增加CurrentUser配置
             HomeService = new HomeService();
             UserService = new UserService();
         }
