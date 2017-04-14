@@ -26,20 +26,7 @@ namespace Oem.Web.WebApi
 
         public ApiBaseController()
         {
-            if (HttpContext.User.Claims != null)
-            {
-                var x = User.Claims;
-                //解析cookie中当前用户信息
-                CurrentUser = new CurrentUser
-                {
-                    UserId = long.Parse(User.FindFirst(ClaimTypes.Sid).Value)
-                };
-            }
-            else
-            {
-                CurrentUser = new CurrentUser();
-            }
-
+            CurrentUser = new CurrentUser();
             HomeService = new HomeService();
             UserService = new UserService();
         }

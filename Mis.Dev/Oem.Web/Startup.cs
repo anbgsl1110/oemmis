@@ -74,7 +74,7 @@ namespace Oem.Web
 
             app.UseStaticFiles();
 
-            app.UseIdentity();
+            //app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
@@ -84,8 +84,10 @@ namespace Oem.Web
                 AuthenticationScheme = @"OemMis",
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
-                CookieName = "OemMis",
+                CookieHttpOnly = true,
+                CookieName = "OemMisCookie",
                 CookieDomain = "localhost",
+                LoginPath = "/api/LoginApi",
                 //TicketDataFormat = new FormsAuthTicketDataFormat("OemMis")
             };
             app.UseCookieAuthentication(cookieOptions);

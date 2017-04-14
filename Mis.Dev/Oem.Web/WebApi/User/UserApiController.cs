@@ -20,7 +20,6 @@ namespace Oem.Web.WebApi.User
                 Id = serviceResult.Id,
                 UserName = serviceResult.UserName
             };
-            var x = CurrentUser.UserId;
             return userResponse;
         }
     }

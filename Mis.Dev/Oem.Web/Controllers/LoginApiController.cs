@@ -27,11 +27,12 @@ namespace Oem.Web.Controllers
             identity.AddClaim(new Claim(ClaimTypes.Rsa, @"password"));
             identity.AddClaim(new Claim(ClaimTypes.Name, Convert.ToString(@"success")));
             var userClaimsPrincipal = new ClaimsPrincipal(identity);
-            await HttpContext.Authentication.SignInAsync("OemMis", userClaimsPrincipal,
-                new AuthenticationProperties {IsPersistent = true});
+            await HttpContext.Authentication.SignInAsync(@"OemMis", userClaimsPrincipal,
+                new AuthenticationProperties {IsPersistent = false});
 
             return new Response<LoginResponse>(ErrorTypeEnum.NoError,
                 new LoginResponse {UserId = 1, UserName = "anbgsl1110"});
         }
+
     }
 }

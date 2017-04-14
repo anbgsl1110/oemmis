@@ -9,27 +9,27 @@ namespace Oem.Web.Security
         /// <summary>
         /// 用户Id
         /// </summary>
-        long UserId { get; set; }
+        long UserId { get; }
 
         /// <summary>
         /// 用户名
         /// </summary>
-        string UserName { get; set; }
+        string UserName { get; }
 
         /// <summary>
         /// 机构Id
         /// </summary>
-        long OrgId { get; set; }
+        long OrgId { get; }
 
         /// <summary>
         /// 用户权限
         /// </summary>
-        AuthorityEnum[] UserAuthority { get; set; }
+        AuthorityEnum[] UserAuthority { get; }
 
         /// <summary>
         /// 用户角色
         /// </summary>
-        RoleRepo[] UserRole { get; set; }
+        RoleRepo[] UserRole { get; }
 
         /// <summary>
         /// 设置当前用户信息
@@ -39,7 +39,8 @@ namespace Oem.Web.Security
         /// <param name="orgId">机构ID</param>
         /// <param name="userAuthority">用户权限</param>
         /// <param name="userRole">用户角色</param>
-        void SetCurrentUserInfo(long userId, string userName, long orgId, AuthorityEnum[] userAuthority,RoleRepo[] userRole);
+        void SetCurrentUserInfo(long userId, string userName, long orgId, AuthorityEnum[] userAuthority,
+            RoleRepo[] userRole);
 
         /// <summary>
         /// 清除当前用户信息

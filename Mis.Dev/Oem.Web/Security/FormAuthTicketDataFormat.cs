@@ -24,8 +24,8 @@ namespace Oem.Web.Security
             DateTime expiration = formsAuthTicket.Expiration;
 
             //Create AuthenticationTicket
-            var claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, name) });
-            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+            var claimsIdentity = new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.Name, name) }, "Basic");
+            var claimsPrincipal = new System.Security.Claims.ClaimsPrincipal(claimsIdentity);
             var authProperties = new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
             {
                 IssuedUtc = issueDate,
