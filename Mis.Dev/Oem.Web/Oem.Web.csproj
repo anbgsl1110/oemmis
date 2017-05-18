@@ -179,4 +179,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\html\order" />
+    <Folder Include="wwwroot\html\system" />
+  </ItemGroup>
 </Project>
