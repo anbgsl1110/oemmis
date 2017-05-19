@@ -57,8 +57,7 @@
                         <input type="text" class="form-control" placeholder="请输入查询条件" />
                         <button type="submit" class="search-submit" title="点击搜索">搜索</button>
                     </form>
-                    <!--<button type="button" class="drop-button close">高级筛选条件<em class="btn-iconDrop2"></em></button>
-                    默认为收起来，点击展开，close样式改为open，同时显示高级筛选条件栏 -->
+
                 </div>
 
 
@@ -87,8 +86,8 @@
 
                 <div class="ListBar clearfix">
                     <label class="textL">全选</label>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconEdit"></em>修改</button>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconAdd"></em>新增</button>
+                    <button type="button" class="btn-default icon-button" onclick="window.open('useManagement-edit.html')"><em class="btn-iconEdit"></em>修改</button>
+                    <button type="button" class="btn-default icon-button" onclick="window.open('useManagement-add.html')"><em class="btn-iconAdd"></em>新增</button>
                     <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
 
                     <!--不可用按钮增加 btn-disable 样式 -->
@@ -113,11 +112,6 @@
                             <th>电子邮件</th>
                             <th>备注</th>
 
-                            <!-- 数字等右对齐内容放后面 -->
-                            <!--选择排序规则后,代码变为如下：
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-up"></em></div>
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-down"></em></div>
-                    -->
                         </tr>
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
                             <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>

@@ -76,9 +76,47 @@
             margin-left: 200px;
 
         }
+        #add-btn-boxss {
+            margin-left: 100px;
+         }
         .ListDate td {
             height:30px;
         }
+        .del-alarming {
+            position: fixed;
+            left: 40%;
+            top:30%;
+            width:300px;
+            height: 180px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+
+        }
+        .del-alarming i {
+            position: absolute;
+            top:4px;
+            right: 4px;
+            cursor: pointer;
+        }
+        .del-alarming h3 {
+            padding: 15px;
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+
+
+        }
+        .del-alarming p {
+            margin: 40px 0 40px 80px;
+            font-size: 14px;
+        }
+
+        #add-btn-boxs {
+            margin-left: 100px;
+        }
+
+
     </style>
 </head>
 <body class="body-template">
@@ -249,12 +287,20 @@
             <button type="button" class="btn-default btn-sure">确定</button>
         </div>
     </div>
+    <!--删除信息时页面弹出的警告框-->
+    <div class="del-alarming">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>操作提示</h3>
+        <p>确定要删除这条信息吗？</p>
+        <div class="btn-box" id="add-btn-boxss">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+                <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
 
 </div>
 <script src="../../lib/jquery/dist/jquery.min">
 </script>
-
-<!--用于切换拥有角色和部门权限两个板块-->
 <script>
 
 </script>

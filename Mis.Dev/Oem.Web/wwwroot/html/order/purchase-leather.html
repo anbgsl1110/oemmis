@@ -6,6 +6,45 @@
     <title>采购皮</title>
     <link href="../../css/layout.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .del-alarming {
+            position: fixed;
+            left: 40%;
+            top:30%;
+            width:300px;
+            height: 180px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+
+        }
+        .del-alarming i {
+            position: absolute;
+            top:4px;
+            right: 4px;
+            cursor: pointer;
+        }
+        .del-alarming h3 {
+            padding: 15px;
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+
+
+        }
+        .del-alarming p {
+            margin: 40px 0 40px 80px;
+            font-size: 14px;
+        }
+
+        #add-btn-boxs {
+            margin-left: 100px;
+        }
+
+
+    </style>
+
+
 </head>
 <body class="body-template">
 <div class="body-layout">
@@ -47,7 +86,8 @@
 
                 <div class="ListBar clearfix">
                     <label class="textL">全选</label>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconEdit"></em>修改</button>
+                    <button type="button" class="btn-default icon-button"><em class="btn-iconEdit" onclick="window.open('purchase-leather-edit.html')"
+                    ></em>修改</button>
                     <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
 
                     <!--不可用按钮增加 btn-disable 样式 -->
@@ -71,12 +111,6 @@
                             <th>预计交货日</th>
                             <th>系列号</th>
                             <th>采购皮合计</th>
-
-                            <!-- 数字等右对齐内容放后面 -->
-                            <!--选择排序规则后,代码变为如下：
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-up"></em></div>
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-down"></em></div>
-                    -->
                         </tr>
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
                             <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
@@ -119,8 +153,16 @@
         </div>
         <!--} 列表内容 -->
     </div>
-    <!--} 内容版块 end -->
-
+    <!--删除信息时页面弹出的警告框-->
+    <div class="del-alarming">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>操作提示</h3>
+        <p>确定要删除这条信息吗？</p>
+        <div class="btn-box" id="add-btn-boxs">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
 
 </div>
 </body>

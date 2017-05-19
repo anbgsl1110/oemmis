@@ -81,8 +81,9 @@
 
                 <div class="ListBar clearfix">
                     <label class="textL">全选</label>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconEdit"></em>修改</button>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconAdd"></em>新增</button>
+                    <button type="button" class="btn-default icon-button" onclick="window.open('Fuliao-Information-add.html')"><em class="btn-iconEdit"
+                    ></em>修改</button>
+                    <button type="button" class="btn-default icon-button" onclick="window.open('Fuliao-Information-add.html')"><em class="btn-iconAdd"></em>新增</button>
                     <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
 
                     <!--不可用按钮增加 btn-disable 样式 -->
@@ -106,12 +107,6 @@
                             <th>仓库名称</th>
                             <th>仓库编号</th>
                             <th>库存库位</th>
-
-                            <!-- 数字等右对齐内容放后面 -->
-                            <!--选择排序规则后,代码变为如下：
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-up"></em></div>
-                    <div class="list-sort">关联渠道<em class="icon-sort-normal icon-sort-down"></em></div>
-                    -->
                         </tr>
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
                             <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>

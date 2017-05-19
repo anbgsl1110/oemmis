@@ -22,7 +22,6 @@
             border: 1px solid transparent;
             border-radius: 3px;
             background: #ddd;
-
         }
         .btn-current {
             background: #70bc67;
@@ -32,7 +31,7 @@
 
             border: #ddd 1px solid !important;
         }
-        #changes,#change {
+        #changes,#change,#schange{
             background: #576477;
             border-radius: 3px;
         }
@@ -72,13 +71,46 @@
            display: inline-block;
            width: 20%;
          }
-         #add-btn-boxs,#add-btn-box {
+         #add-btn-boxs,#add-btn-box ,#add-btn-boxss{
            margin-left: 200px;
 
          }
          .ListDate td {
             height:30px;
           }
+        .del-alarming {
+            position: fixed;
+            left: 40%;
+            top:30%;
+            width:300px;
+            height: 180px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+
+        }
+        .del-alarming i {
+            position: absolute;
+            top:4px;
+            right: 4px;
+            cursor: pointer;
+        }
+        .del-alarming h3 {
+            padding: 15px;
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+
+
+        }
+        .del-alarming p {
+            margin: 40px 0 40px 80px;
+            font-size: 14px;
+        }
+
+        #add-btn-boxs {
+            margin-left: 100px;
+        }
     </style>
 </head>
 <body class="body-template">
@@ -128,7 +160,7 @@
                     <label class="textL">全选</label>
                     <button type="button" class="icon-button" id="changes"><em class="btn-iconEdit"></em>修改</button>
                     <button type="button" class="icon-button" id="change"><em class="btn-iconAdd"></em>新增</button>
-
+                    <button type="button" class="icon-button" id="schange"><em class="btn-iconDel"></em>删除</button>
                 </div>
                 <div class="tabs">
                     <table border="0" cellpadding="0" cellspacing="0" class="actors" >
@@ -212,7 +244,7 @@
              </div>
          </div>
          <!--增加订单的弹窗-->
-        <div class="add-win">
+        <div class="add-win" style="display:none;">
         <i><img src="../../images/icon_delete_1.png" /></i>
         <h3>添加项目</h3>
         <ul class="add-infor">
@@ -235,17 +267,26 @@
             </li>
         </ul>
 
-        <div class="btn-box" id="add-btn-boxs">
+        <div class="btn-box" id="add-btn-boxss">
             <button type="button" class="btn-default btn-cancel">取消</button>
             <button type="button" class="btn-default btn-sure">确定</button>
         </div>
     </div>
 
+    <!--删除信息时页面弹出的警告框-->
+    <div class="del-alarming">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>操作提示</h3>
+        <p>确定要删除这条信息吗？</p>
+        <div class="btn-box" id="add-btn-boxs">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
 </div>
 <script src="../../lib/jquery/dist/jquery.min">
 </script>
 
-<!--用于切换拥有角色和部门权限两个板块-->
 <script>
 
 </script>

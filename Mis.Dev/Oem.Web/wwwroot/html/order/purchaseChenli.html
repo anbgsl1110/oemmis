@@ -3,10 +3,46 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>产品及BOM>款号BOM信息</title>
+    <title>修改衬里</title>
     <link href="../../css/layout.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .del-alarming {
+            position: fixed;
+            left: 40%;
+            top:30%;
+            width:300px;
+            height: 180px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
 
+        }
+        .del-alarming i {
+            position: absolute;
+            top:4px;
+            right: 4px;
+            cursor: pointer;
+        }
+        .del-alarming h3 {
+            padding: 15px;
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+
+
+        }
+        .del-alarming p {
+            margin: 40px 0 40px 80px;
+            font-size: 14px;
+        }
+
+        #add-btn-boxs {
+            margin-left: 100px;
+        }
+
+
+    </style>
 </head>
 <body class="body-template">
 <div class="body-layout">
@@ -51,9 +87,8 @@
 
                 <div class="ListBar clearfix">
                     <label class="textL">全选</label>
-                    <button type="button" class="btn-default icon-button"  onclick="window.open('BOMInformation-edit.html')"><em class="btn-iconEdit"
-                    ></em>修改</button>
-
+                    <button type="button" class="btn-default icon-button"><em class="btn-iconEdit" onclick="window.open('purchaseChenli-edit.html')"></em>修改</button>
+                    <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
 
                     <!--不可用按钮增加 btn-disable 样式 -->
                 </div>
@@ -68,15 +103,25 @@
                         <!-- 数据列表{-->
                         <tbody><tr>
                             <th class="blankbox"><span class="checkboxStyle"></span></th>
-                            <th>系列号</th>
-                            <th>款号</th>
-                            <th>品名</th>
+                            <th>采购状态</th>
+                            <th>采购合同编号</th>
+                            <th>采购系统编号</th>
+                            <th>采购年月</th>
+                            <th>录入日期</th>
+                            <th>预计交货日</th>
+                            <th>采购衬里合计</th>
+                            <th>衬里已到货数量</th>
                         </tr>
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
                             <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
-                            <td>Y</td>
-                            <td>admin</td>
-                            <td>张三</td>
+                            <td>等待材料入库</td>
+                            <td>2016年</td>
+                            <td>DD20170412001</td>
+                            <td>PSY610</td>
+                            <td>JOIX大阪</td>
+                            <td>JOIX</td>
+                            <td>2017-04-12</td>
+                            <td>20：00</td>
                         </tr>
 
                         <!--}数据列表 -->
@@ -108,7 +153,17 @@
         </div>
         <!--} 列表内容 -->
     </div>
-
+    <!--} 内容版块 end -->
+    <!--删除信息时页面弹出的警告框-->
+    <div class="del-alarming">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>操作提示</h3>
+        <p>确定要删除这条信息吗？</p>
+        <div class="btn-box" id="add-btn-boxs">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
 
 </div>
 </body>
