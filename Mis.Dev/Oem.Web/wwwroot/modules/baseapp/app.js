@@ -62,15 +62,15 @@ define([
                                     return config;
                                 },
                                 responseError: function(response) {
-                                    var school = document.cookie.match(/\bschool=([^;]+)/)[1];
+                                    var org = document.cookie.match(/\borg=([^;]+)/)[1];
                                     switch (response.status) {
                                     case 497:
                                         alert("无权操作");
-                                        top.location.href = '/' + school + '/Login';
+                                        top.location.href = '/' + org + '/Login';
                                         break;
                                     case 498:
                                         alert("会话超时，请重新登录");
-                                        top.location.href = '/' + school + '/Login';
+                                        top.location.href = '/' + org + '/Login';
                                         break;
                                     case 499:
                                     case 500:
