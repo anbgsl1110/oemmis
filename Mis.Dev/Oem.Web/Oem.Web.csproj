@@ -182,5 +182,47 @@
   <ItemGroup>
     <Folder Include="wwwroot\html\order" />
     <Folder Include="wwwroot\html\system" />
+    <Folder Include="wwwroot\lib\angular" />
+    <Folder Include="wwwroot\lib\angular-loader" />
+    <Folder Include="wwwroot\lib\angular-mocks" />
+    <Folder Include="wwwroot\lib\angular-resource" />
+    <Folder Include="wwwroot\lib\angular-ui-router\api" />
+    <Folder Include="wwwroot\lib\angular-ui-router\release" />
+    <Folder Include="wwwroot\lib\angular-ui-router\src" />
+    <Folder Include="wwwroot\lib\cropper\dist" />
+    <Folder Include="wwwroot\lib\cropper\src\img" />
+    <Folder Include="wwwroot\lib\cropper\src\js" />
+    <Folder Include="wwwroot\lib\cropper\src\less" />
+    <Folder Include="wwwroot\lib\highcharts-ng\dist" />
+    <Folder Include="wwwroot\lib\highcharts-ng\example" />
+    <Folder Include="wwwroot\lib\highcharts-ng\src" />
+    <Folder Include="wwwroot\lib\highcharts-ng\test\spec" />
+    <Folder Include="wwwroot\lib\highcharts\adapters" />
+    <Folder Include="wwwroot\lib\highcharts\modules" />
+    <Folder Include="wwwroot\lib\highcharts\themes" />
+    <Folder Include="wwwroot\lib\jquery-ui.sortable" />
+    <Folder Include="wwwroot\lib\jquery\dist" />
+    <Folder Include="wwwroot\lib\jquery\src\ajax\var" />
+    <Folder Include="wwwroot\lib\jquery\src\attributes" />
+    <Folder Include="wwwroot\lib\jquery\src\core\var" />
+    <Folder Include="wwwroot\lib\jquery\src\css\var" />
+    <Folder Include="wwwroot\lib\jquery\src\data" />
+    <Folder Include="wwwroot\lib\jquery\src\effects" />
+    <Folder Include="wwwroot\lib\jquery\src\event" />
+    <Folder Include="wwwroot\lib\jquery\src\exports" />
+    <Folder Include="wwwroot\lib\jquery\src\manipulation\var" />
+    <Folder Include="wwwroot\lib\jquery\src\queue" />
+    <Folder Include="wwwroot\lib\jquery\src\sizzle\dist" />
+    <Folder Include="wwwroot\lib\jquery\src\traversing\var" />
+    <Folder Include="wwwroot\lib\jquery\src\var" />
+    <Folder Include="wwwroot\lib\ng-clip\dest" />
+    <Folder Include="wwwroot\lib\ng-clip\example" />
+    <Folder Include="wwwroot\lib\ng-clip\src" />
+    <Folder Include="wwwroot\lib\ngDialog\css" />
+    <Folder Include="wwwroot\lib\ngDialog\js" />
+    <Folder Include="wwwroot\lib\requirejs" />
+    <Folder Include="wwwroot\lib\requirejs-text" />
+    <Folder Include="wwwroot\lib\underscore" />
+    <Folder Include="wwwroot\lib\zeroclipboard\dist" />
   </ItemGroup>
 </Project>

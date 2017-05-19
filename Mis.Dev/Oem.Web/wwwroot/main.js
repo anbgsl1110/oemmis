@@ -86,7 +86,7 @@ require([
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
 
-            $.get('/api/UserApi?userId = 1',
+            $.get('/api/UserApi/1',
                 function(result) {
                     currentUser = result.data;
                     var temp = angular.module("BaseApp");

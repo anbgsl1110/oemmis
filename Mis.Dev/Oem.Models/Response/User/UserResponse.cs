@@ -1,4 +1,6 @@
-﻿namespace Oem.Models.Response.User
+﻿using Oem.Data.Enum;
+
+namespace Oem.Models.Response.User
 {
     /// <summary>
     /// 用户Response
@@ -13,5 +15,10 @@
         /// 用户名
         /// </summary>
         public string UserName { get; set; }
+        
+        /// <summary>
+        /// 用户权限
+        /// </summary>
+        public AuthorityEnum[] UserFunction { get; set; }
     }
 }
