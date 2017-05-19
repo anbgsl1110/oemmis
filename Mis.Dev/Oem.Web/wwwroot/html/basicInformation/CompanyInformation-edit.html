@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>公司信息-修改界面</title>
+    <link href="../../css/layout.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .tablist {
+            width: 100%;
+            height: 30px;
+            border-bottom: #ddd 1px solid;
+            margin-bottom: 10px;
+        }
+        .btn-actor, .btn-rights{
+            width: auto;
+            height: 30px;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: #ddd;
+
+        }
+        .btn-current {
+            background: #70bc67;
+
+        }
+        .tabs table td,.tabs table th{
+
+            border: #ddd 1px solid !important;
+        }
+        .ListDate td {
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="body-template">
+<div class="body-layout">
+    <!-- 内容版块 begin {-->
+    <div class="container">
+        <!-- 编辑 begin {-->
+        <div class="section">
+            <div class="section-content4 consult-content">
+                <div class="detail-title">公司信息修改</div>
+                <ul class="info-box1 clearfix info-edit">
+                    <li class="typeOne-third">
+                        <label>公司名称</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>公司地址</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>联系电话</label>
+                        <input type="text" class="form-control">
+
+                    </li>
+                    <li class="typeOne-third">
+                        <label>传真</label>
+                        <input type="text" class="form-control">
+                    </li>
+                </ul>
+                <!-- 表格切换-->
+                <div class="tablist">
+                    <button type="button" class=" btn-actor btn-current">子公司信息</button>
+                    <button type="button" class=" btn-rights ">联系人信息</button>
+                </div>
+                <div class="tabs">
+                    <table border="0" cellpadding="0" cellspacing="0" class="actors" >
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+                            <th>子公司名称</th>
+                            <th>公司名称</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>备注</th>
+                        </tr>
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                            <td>Y</td>
+                            <td>admin</td>
+                            <td>2017-5-12</td>
+                            <td>2017-5-13</td>
+                            <td>有效</td>
+                        </tr>
+
+                        <!--}数据列表 -->
+                        </tbody>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0"  class="rights" style="display:none;">
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+
+                            <th>联系人姓名</th>
+                            <th>职位</th>
+                            <th>电话</th>
+                            <th>手机</th>
+                            <th>地址</th>
+                            <th>创建时间</th>
+
+
+                        </tr>
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                            <td>IT部</td>
+                            <td>admin</td>
+                            <td>IT部</td>
+                            <td>admin</td>
+                            <td>IT部</td>
+                            <td>admin</td>
+
+                        </tr>
+
+                        <!--}数据列表 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-box">
+                    <button type="button" class="btn-default btn-cancel">取消</button>
+                    <button type="button" class="btn-default btn-sure">确定</button>
+                </div>
+            </div>
+        </div>
+        <!--} 编辑 end -->
+
+        <!-- 合并重名账号 begin {-->
+
+
+    </div>
+    <!--} 内容版块 end -->
+
+</div>
+<script src="../../lib/jquery/dist/jquery.min">
+</script>
+
+<!--用于切换拥有角色和部门权限两个板块-->
+<script>
+
+</script>
+</body>
+</html>

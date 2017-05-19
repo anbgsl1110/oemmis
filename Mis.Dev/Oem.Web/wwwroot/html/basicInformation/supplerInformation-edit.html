@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>供应商信息-修改界面</title>
+    <link href="../../css/layout.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .tablist {
+            width: 100%;
+            height: 30px;
+            border-bottom: #ddd 1px solid;
+            margin-bottom: 10px;
+        }
+        .stylelist{
+            width: auto;
+            height: 30px;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: #ddd;
+
+        }
+        .btn-current {
+            background: #70bc67;
+
+        }
+        .tabs table td,.tabs table th{
+
+            border: #ddd 1px solid !important;
+        }
+        #changes,#change ,#schange{
+            background: #576477;
+            border-radius: 3px;
+        }
+        .add-win,.edit-win {
+            position: fixed;
+            left: 50%;
+            top: 30%;
+            width: 400px;
+            height: 450px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .add-win i,.edit-win i {
+            position: absolute;
+            top:4px;
+            right: 4px;
+
+
+        }
+        .add-win h3,.edit-win h3 {
+            padding: 15px;
+            width: 370px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .add-infor {
+
+            margin-top: 25px;
+            padding-left: 15px;
+
+        }
+        .add-infor li {
+            margin-bottom: 20px;
+        }
+        .add-infor li label {
+            display: inline-block;
+            width: 20%;
+        }
+        #add-btn-boxs,#add-btn-box {
+            margin-left: 200px;
+
+        }
+        .ListDate td {
+            height:30px;
+        }
+    </style>
+</head>
+<body class="body-template">
+<div class="body-layout">
+    <!-- 内容版块 begin {-->
+    <div class="container">
+        <!-- 编辑 begin {-->
+        <div class="section">
+            <div class="section-content4 consult-content">
+                <div class="detail-title">供应商信息修改</div>
+                <ul class="info-box1 clearfix info-edit">
+                    <li class="typeOne-third">
+                        <label>供应商名称</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>地址</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>联系电话</label>
+                        <input type="text" class="form-control">
+
+                    </li>
+                    <li class="typeOne-third">
+                        <label>传真</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>备注</label>
+                        <input type="text" class="form-control">
+                    </li>
+                </ul>
+                <!-- 表格切换-->
+                <div class="tablist">
+                    <button type="button" class="stylelist btn-current">款号明细</button>
+                </div>
+                <div class="ListBar clearfix" style="margin-bottom: 10px;">
+                    <label class="textL">全选</label>
+                    <button type="button" class="icon-button" id="changes"><em class="btn-iconEdit"></em>修改</button>
+                    <button type="button" class="icon-button" id="change"><em class="btn-iconAdd"></em>新增</button>
+                    <button type="button" class="icon-button" id="schange"><em class="btn-iconDel"></em>删除</button>
+
+                </div>
+                <div class="tabs">
+                    <table border="0" cellpadding="0" cellspacing="0" class="actors" >
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+                            <th class="blankbox"><span class="checkboxStyle"></span></th>
+                            <th>联系人姓名</th>
+                            <th>职位</th>
+                            <th>电话</th>
+                            <th>手机</th>
+                            <th>地址</th>
+                            <th>创建时间</th>
+                            <th>备注</th>
+                        </tr>
+                        <tr class="ListDate">
+                            <td class="blankbox"><span class="checkboxStyle"></span></td>
+                            <td>XX</td>
+                            <td>XXXX</td>
+                            <td>XXXXXX</td>
+                            <td>XXXXXXXXXX</td>
+                            <td>XXXXX</td>
+                            <td>XXXXXXXXXX</td>
+                            <td>XXXXX</td>
+                        </tr>
+
+                        <!--}数据列表 -->
+                        </tbody>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0"  class="rights" style="display:none;">
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+
+                            <th>部门名称</th>
+                            <th>备注</th>
+
+                        </tr>
+                        <tr class="ListDate">
+
+                            <td>IT部</td>
+                            <td>admin</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-box">
+                    <button type="button" class="btn-default btn-cancel">取消</button>
+                    <button type="button" class="btn-default btn-sure">确定</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!--修改订单的弹窗-->
+    <div class="edit-win" style="display:none;">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>修改项目</h3>
+        <ul class="add-infor">
+            <li>
+                <label>订单号</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>系列号</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>子公司名称</label>
+                <input type="text" class="form-control">
+
+            </li>
+            <li>
+                <label>公司名称</label>
+                <input type="text" class="form-control">
+            </li>
+        </ul>
+
+        <div class="btn-box" id="add-btn-box">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
+    <!--增加订单的弹窗-->
+    <div class="add-win">
+        <i><img src="../../images/icon_delete_1.png" /></i>
+        <h3>添加供应商信息</h3>
+        <ul class="add-infor">
+            <li>
+                <label>供应商姓名</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>职位</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>电话</label>
+                <input type="text" class="form-control">
+
+            </li>
+            <li>
+                <label>手机</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>地址</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>创建时间</label>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <label>备注</label>
+                <input type="text" class="form-control">
+            </li>
+        </ul>
+
+        <div class="btn-box" id="add-btn-boxs">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+    </div>
+
+</div>
+<script src="../../lib/jquery/dist/jquery.min">
+</script>
+
+<!--用于切换拥有角色和部门权限两个板块-->
+<script>
+
+</script>
+</body>
+</html>
