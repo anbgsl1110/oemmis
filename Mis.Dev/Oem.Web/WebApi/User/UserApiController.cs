@@ -1,4 +1,7 @@
-﻿using Oem.Models.Response.User;
+﻿using Microsoft.AspNetCore.Mvc;
+using Oem.Data.Enum;
+using Oem.Models.Response;
+using Oem.Models.Response.User;
 
 namespace Oem.Web.WebApi.User
 {
@@ -10,17 +13,20 @@ namespace Oem.Web.WebApi.User
         /// <summary>
         /// 获取用户信息
         /// </summary>
-        /// <param name="userId"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public UserResponse Get(int userId)
+        [HttpGet("{id}")]
+        public Response<UserResponse> Get(int id)
         {
-            var serviceResult = UserService.GetUser(userId).Data;
+            var serviceResult = UserService.GetUser(id).Data;
+            var userFunctions = new[] {AuthorityEnum.Employee};
             UserResponse userResponse = new UserResponse
             {
                 Id = serviceResult.Id,
-                UserName = serviceResult.UserName
+                UserName = serviceResult.UserName,
+                UserFunction = userFunctions
             };
-            return userResponse;
+            return new Response<UserResponse>(userResponse);
         }
     }
 }
