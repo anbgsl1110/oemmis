@@ -17,8 +17,6 @@ define([
             [
                 "ui.router",
                 "IndexApp.controllers",
-                "highcharts-ng",
-                "CommonDirective"
             ])
             .config([
                 "$stateProvider",
@@ -27,7 +25,6 @@ define([
                     $stateProvider
                         .state("index",
                         {
-                            parent: "base",
                             url: "/index",
                             templateUrl: "modules/index-app/index.html",
                             controller: "IndexAppController",

@@ -47,8 +47,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                         var date = new Date();
                         var month = date.getMonth() + 1;
                         return date.getFullYear() + "-" + month + "-" + date.getDate() + " " + "00:00:00"
-                    }
-
+                    };
                     //得到下一天
                     function GetDateStr(AddDayCount) {
                         var dd = new Date();
@@ -57,8 +56,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                         var m = dd.getMonth() + 1; //获取当前月份的日期
                         var d = dd.getDate();
                         return y + "-" + m + "-" + d + " " + "00:00:00";
-                    }
-
+                    };
                     $scope.loadList = function() {
                         $scope.SelectedItems = [{ id: 0, name: "个人" }, { id: 1, name: "下属" }];
                         $scope.currentSelectedItem = $scope.SelectedItems[0];
@@ -160,7 +158,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             $scope.percentSales = $filter("changeTwoDecimal_f")($scope.percentSales, 2, 2);
                             //$scope.allClues == 0 ? $scope.percentClues = '0.00' : $scope.percentClues = parseFloat($scope.percentClues.toFixed(2));
                             //$scope.allSales == 0 ? $scope.percentSales = '0.00' : $scope.percentSales= parseFloat($scope.percentSales.toFixed(2));
-                        })
+                        });
                         //所在校区
                         commonNetService.getSchoolArea().then(function(result) {
                             $scope.schoolList = [];
@@ -170,98 +168,68 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             $scope.currentSelectedSchool2 = result.data.data.list[0];
                             $scope.currentSelectedSchool3 = result.data.data.list[0];
                         });
-                    }
-
-                    //消息忽略
-                    //$scope.selectedIgnore = function (id) {
-                    //    if (id != -1) {
-                    //        $scope.selectedIgnoreIds = [];
-                    //        $scope.selectedIgnoreIdspush(id);
-                    //    }
-                    //    if (id.length !== 0) {
-                    //        gintDialog.confirm('提醒', '确认忽略？')
-                    //            .then(function (result) {
-                    //                indexService.IgnoreMessages($scope.selectedIgnoreIds).success(function (result) {
-                    //                    $scope.queryData($scope.pageIdx);
-                    //                    if (result.status == 1) {
-                    //                        gintDialog.success('操作成功！');
-                    //                    } else {
-                    //                        gintDialog.error(result.message);
-                    //                    }
-                    //                });
-                    //            });
-                    //    }
-                    //}
-
-
+                    };
                     //更多
                     $scope.openMessage = function(index) {
                         var newwindow = window.open("");
                         newwindow.location.href = "#/index/message/" + index + "/";
                         //window.open("#/index/message/" + index + "/");
-                    }
-
-                    ///
-                    ///下拉点击事件
-                    ///
-
+                    };
                     //销售漏斗
                     $scope.switchShowOptions = function() {
                         $scope.showOptions = !$scope.showOptions;
-                    }
+                    };
                     $scope.changeSelected = function(index) {
                         $scope.showOptions = false;
                         $scope.currentSelectedItem = $scope.SelectedItems[index];
                         $scope.funnelDataUi($scope.currentSelectedItem.id, $scope.currentSelectedSchool.id);
-                    }
+                    };
                     $scope.switchShowSchoolOptions = function() {
                         $scope.showSchoolOptions = !$scope.showSchoolOptions;
-                    }
+                    };
                     $scope.changeSelectedSchool = function(index) {
                         $scope.showSchoolOptions = false;
                         $scope.currentSelectedSchool = $scope.schoolList[index];
                         $scope.funnelDataUi($scope.currentSelectedItem.id, $scope.currentSelectedSchool.id);
-                    }
-
+                    };
                     //销售统计
                     $scope.switchShowOptions2 = function() {
                         $scope.showOptions2 = !$scope.showOptions2;
-                    }
+                    };
                     $scope.changeSelected2 = function(index) {
                         $scope.showOptions2 = false;
                         $scope.currentSelectedItem2 = $scope.SelectedItems[index];
                         $scope.multipleDataUi($scope.SelectedIndex,
                             $scope.currentSelectedItem2.id,
                             $scope.currentSelectedSchool2.id);
-                    }
+                    };
                     $scope.switchShowSchoolOptions2 = function() {
                         $scope.showSchoolOptions2 = !$scope.showSchoolOptions2;
-                    }
+                    };
                     $scope.changeSelectedSchool2 = function(index) {
                         $scope.showSchoolOptions2 = false;
                         $scope.currentSelectedSchool2 = $scope.schoolList[index];
                         $scope.multipleDataUi($scope.SelectedIndex,
                             $scope.currentSelectedItem2.id,
                             $scope.currentSelectedSchool2.id);
-                    }
-
+                    };
                     //渠道分布
                     $scope.switchShowOptions3 = function() {
                         $scope.showOptions3 = !$scope.showOptions3;
-                    }
+                    };
                     $scope.changeSelected3 = function(index) {
                         $scope.showOptions3 = false;
                         $scope.currentSelectedItem3 = $scope.SelectedItems[index];
                         $scope.donutDataUi($scope.currentSelectedItem3.id, $scope.currentSelectedSchool3.id);
-                    }
+                    };
                     $scope.switchShowSchoolOptions3 = function() {
                         $scope.showSchoolOptions3 = !$scope.showSchoolOptions3;
-                    }
+                    };
                     $scope.changeSelectedSchool3 = function(index) {
                         $scope.showSchoolOptions3 = false;
                         $scope.currentSelectedSchool3 = $scope.schoolList[index];
                         $scope.donutDataUi($scope.currentSelectedItem3.id, $scope.currentSelectedSchool3.id);
-                    }
+                    };
                     //销售统计点击事件
                     $scope.selectSale = function(index) {
                         $scope.SelectedIndex = index;
@@ -287,8 +255,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                                 $scope.currentSelectedSchool2.id);
                         }
 
-                    }
-
+                    };
                     //漏斗图数据渲染
                     $scope.funnelDataUi = function(partId, schoolId) {
                         var req = {
@@ -313,12 +280,11 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                                 { color: '#72d07b', name: '跟进线索', data: $scope.funnel_followSell },
                                 { color: '#60b9f1', name: '到访线索', data: $scope.funnel_visitSell },
                                 { color: '#667fec', name: '签约线索', data: $scope.funnel_signingSell }
-                            ]
+                            ];
                             $scope.funnelUiData();
                         });
-                    }
-
-                    //销售统计数据渲染
+                    };
+                   //销售统计数据渲染
                     $scope.multipleDataUi = function(filter, partName, schoolName) {
                         var BeginDate, EndDate;
                         if (filter == 0) {
@@ -369,7 +335,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             $scope.avageArray = averagesvalues; //result.data.StatisticsData.Averages;
                             $scope.multipleUiData();
                         });
-                    }
+                    };
                     //饼图数据渲染
                     $scope.donutDataUi = function(partName, schoolName) {
                         var request = {
@@ -514,9 +480,8 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             $scope.donutUiData3();
                         })
 
-                    }
+                    };
                     var chart;
-
                     //漏斗图
                     $scope.funnelUiData = function() {
 
@@ -593,7 +558,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             ]
                         });
 
-                    }
+                    };
                     //销售统计渲染配置
                     $scope.multipleUiData = function() {
                         Highcharts.setOptions({
@@ -701,8 +666,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             ]
                         });
 
-                    }
-
+                    };
                     //渠道有效线索渲染配置
                     $scope.donutUiData = function() {
 
@@ -757,7 +721,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             ]
                         });
 
-                    }
+                    };
                     //渠道签约线索渲染配置
                     $scope.donutUiData2 = function() {
                         chart = new Highcharts.Chart({
@@ -810,8 +774,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             ]
                         });
 
-                    }
-
+                    };
                     //渠道销售额渲染配置
                     $scope.donutUiData3 = function() {
                         chart = new Highcharts.Chart({
@@ -864,7 +827,7 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             ]
                         });
 
-                    }
+                    };
                     var init = function() {
                         $scope.loadList();
                         $scope.funnelDataUi(0, 0);
@@ -879,14 +842,14 @@ define(["angular", "services/net/index", "components/fullcalendar/calendar", "co
                             var newWindow = window.open("");
                             newWindow.location.href = $location.absUrl().replace('index', 'clue/detail') + "/" + clueId;
                         }
-                    }
+                    };
                     $scope.followUpDetail = function(clueId) {
                         if (currentUserService.hasPermission([rolesService.crm_线索], false)) {
                             $scope.openState = 2;
                             var newWindow = window.open("");
                             newWindow.location.href = $location.absUrl().replace('index', 'clue/detail') + "/" + clueId;
                         }
-                    }
+                    };
                 }
             ]);
     });

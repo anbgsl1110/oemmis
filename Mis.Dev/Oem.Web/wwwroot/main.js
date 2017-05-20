@@ -53,7 +53,7 @@ requirejs.config({
         datePicker: {
             init: function() {
                 //hack第一次点击无效果，因为第一次点击才去下载一些东西
-                WdatePicker({});
+                //WdatePicker({});
                 $dp.hide();
             }
         },
