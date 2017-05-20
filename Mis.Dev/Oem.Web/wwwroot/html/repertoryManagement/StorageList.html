@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>采购入库>入库明细</title>
+    <link href="../../css/layout.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+  </head>
+<body class="body-template">
+<div class="body-layout">
+    <!-- 内容版块 begin {-->
+    <div class="container">
+        <!--列表内容 {-->
+        <div class="section">
+            <div class="section-box1">
+                <div class="normal-search">
+                    <form class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入查询条件" />
+                        <button type="submit" class="search-submit" title="点击搜索">搜索</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+            <div class="section-content4">
+
+                <div class="section-box3-head clearfix">
+                    <div class="chart-tab fl">
+                        <a href="#" class="chart-tab-item current">tab1</a><!-- current 为选中状态-->
+                        <a href="#" class="chart-tab-item">tab2</a>
+                        <a href="#" class="chart-tab-item">tab3</a>
+                        <a href="#" class="chart-tab-item">tab4</a>
+                    </div>
+                    <div class="chart-tab fr">
+                        <div class="dropdown-list chart-tab-item">
+                            <button type="button" class="dropdown-toggle">tab5<span class="caret"></span></button>
+                            <!--  <ul class="dropdown-menu copyScroll" >
+                                  <li>下属1</li>
+                                  <li>下属2</li>
+                                  <li>下属3</li>
+                              </ul>-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ListDateTable">
+
+                    <!-- 列表无数据时显示内容 {-->
+                    <div class="ListDateNoResult" style="display: none;">无数据</div>
+                    <!--} 列表无数据时显示内容 -->
+                    <div class="copyScroll" style="-ms-overflow-x: auto;">
+
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+
+                            <th>操作时间</th>
+                            <th>操作编号</th>
+                            <th>辅助编号</th>
+                            <th>操作年月</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>规格</th>
+                            <th>颜色</th>
+                        <!--    <th>数量</th>
+                            <th>经手人</th>
+                            <th>管理员</th>
+                            <th>操作类型</th>
+                            <th>仓库名称</th>
+                            <th>仓库类型</th>
+                            <th>材料类型</th>
+                            <th>系列号</th>-->
+
+
+                        </tr>
+                        <tr class="ListDate" onclick="window.open('StorageList-detail.html')"
+                        ><!-- 说明： 每页数据10条-->
+
+                            <td>Y</td>
+                            <td>admin</td>
+                            <td>张三</td>
+                            <td>IT部</td>
+                            <td>6666666666</td>
+                            <td>0571-66666666</td>
+                            <td>xxxxxx@163.com</td>
+                            <td>有效</td>
+                        </tr>
+
+                        <!--}数据列表 -->
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <!--} 列表 -->
+
+
+                <!-- 页码 {-->
+                <div class="section-page">
+                    <a href="#" class="page-previous page-disabled">上一页</a>
+                    <!-- 不可用的样式代码如下：<a href="#" class="page-previous page-disabled">上一页</a> -->
+                    <span class="page-line"></span>
+                    <a href="#" class="page-num">1</a>
+                    <a href="#" class="page-num current">2</a><!-- 当前页样式 增加 current 样式名 -->
+                    <a href="#" class="page-num">3</a>
+                    <a href="#" class="page-num">4</a>
+                    <span class="page-num-more">...</span>
+                    <a href="#" class="page-num">10</a>
+                    <span class="page-line"></span>
+                    <a href="#" class="page-next">下一页</a>
+                    <!-- 不可用的样式代码如下：<a href="#" class="page-next page-disabled">下一页</a> -->
+
+                </div>
+                <!--} 页码 -->
+
+            </div>
+        </div>
+        <!--} 列表内容 -->
+    </div>
+</div>
+</body>
+</html>

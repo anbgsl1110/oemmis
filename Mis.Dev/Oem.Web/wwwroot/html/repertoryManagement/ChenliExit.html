@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>领料出库>衬里出库</title>
+    <link href="../../css/layout.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .tablist {
+            width: 100%;
+            height: 30px;
+            border-bottom: #ddd 1px solid;
+        }
+        .btn-actor, .btn-rights{
+            width: auto;
+            height: 30px;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: #ddd;
+
+        }
+        .btn-current {
+            background: #70bc67;
+
+        }
+        .tabs table td,.tabs table th{
+
+            border: #ddd 1px solid !important;
+            text-align: center;
+            padding: 0 10px;
+        }
+        .ListDate td {
+            height: 30px;
+        }
+        .consult-content .btn-box {
+
+            border-top: 0px solid #fff;
+            padding-top: 0px;
+        }
+
+
+
+
+    </style>
+</head>
+<body class="body-template">
+<div class="body-layout">
+    <!-- 内容版块 begin {-->
+    <div class="container">
+        <!-- 编辑 begin {-->
+        <div class="section">
+            <div class="section-content4 consult-content">
+                <div class="detail-title">衬里出库单</div>
+                <ul class="info-box1 clearfix info-edit">
+                    <li class="typeOne-third">
+                        <label>派工编号</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>出库编号</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>出库年月</label>
+                        <input type="text" class="form-control">
+
+                    </li>
+                    <li class="typeOne-third">
+                        <label>仓库名称</label>
+                        <input type="text" class="form-control">
+                    </li>
+                    <li class="typeOne-third">
+                        <label>出库人</label>
+                        <input type="text" class="form-control">
+                    </li>
+
+
+                </ul>
+                <div class="btn-box">
+                    <button type="button" class="btn-default btn-cancel">取消</button>
+                    <button type="button" class="btn-default btn-sure">确定</button>
+                </div>
+                <!-- 表格切换-->
+                <div class="tablist">
+                    <!-- <button type="button" class=" btn-actor btn-current">拥有角色</button>
+                     <button type="button" class=" btn-rights ">部门权限</button>-->
+                </div>
+                <div class="tabs">
+                    <table border="0" cellpadding="0" cellspacing="0" class="actors" >
+                        <!-- 数据列表{-->
+                        <tbody><tr>
+                            <th>库位号</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>色号</th>
+                            <th>建议领用量</th>
+                            <th>实际领用量</th>
+                            <th>返库数量</th>
+                            <th>出库数量</th>
+                            <th>碎料出库数量</th>
+                            <th>备注</th>
+
+
+                        </tr>
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                            <td>Y</td>
+                            <td>admin</td>
+                            <td>2017-5-12</td>
+                            <td>2017-5-13</td>
+                            <td>有效</td>
+                            <td>Y</td>
+                            <td>admin</td>
+                            <td>2017-5-12</td>
+                            <td>2017-5-13</td>
+                            <td>有效</td>
+
+                        </tr>
+
+                        <!--}数据列表 -->
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+        <!--} 编辑 end -->
+
+
+
+
+    </div>
+    <!--} 内容版块 end -->
+
+</div>
+<script src="../../lib/jquery/dist/jquery.min">
+</script>
+
+<script>
+
+</script>
+</body>
+</html>
