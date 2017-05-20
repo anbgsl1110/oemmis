@@ -141,11 +141,26 @@
     <!--} 内容版块 end -->
 
 </div>
-<script src="">
-</script>
 
 <!--用于切换拥有角色和部门权限两个板块-->
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+
 <script>
+/*两个表格名称以及表格之间的切换*/
+    $(".tablist>button").click(function() {
+        $(this).addClass("btn-current").siblings().removeClass("btn-current");
+        if ($(".btn-actor").hasClass("btn-current")) {
+            $(".tabs").find("table:eq(0)").show().siblings().hide();
+
+
+        } else {
+
+            $(".tabs").find("table:eq(1)").show().siblings().hide();
+        }
+    });
+
+
 
 </script>
 </body>

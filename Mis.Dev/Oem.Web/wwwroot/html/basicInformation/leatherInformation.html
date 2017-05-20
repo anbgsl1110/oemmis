@@ -80,11 +80,11 @@
                 </div>
 
                 <div class="ListBar clearfix">
-                    <label class="textL">全选</label>
+
                     <button type="button" class="btn-default icon-button" onclick="window.open('leatherInformation-add.html')"><em class="btn-iconEdit"
                     ></em>修改</button>
                     <button type="button" class="btn-default icon-button" onclick="window.open('leatherInformation-add.html')"><em class="btn-iconAdd"></em>新增</button>
-                    <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
+                    <button type="button" class="btn-default icon-button delInfor"><em class="btn-iconDel"></em>删除</button>
 
                     <!--不可用按钮增加 btn-disable 样式 -->
                 </div>
@@ -98,7 +98,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <!-- 数据列表{-->
                         <tbody><tr>
-                            <th class="blankbox"><span class="checkboxStyle"></span></th>
+                            <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                             <th>名称</th>
                             <th>类型 </th>
                             <th>颜色</th>
@@ -107,8 +107,6 @@
                             <th>仓库名称</th>
                             <th>仓库编号</th>
                             <th>库存库位</th>
-
-
                         </tr>
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
                             <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
@@ -149,12 +147,12 @@
             </div>
         </div>
         <!--删除时页面弹出的警告框-->
-        <div class="del-alarming">
+        <div class="del-alarming" style="display:none;">
             <i><img src="../../images/icon_delete_1.png" /></i>
             <h3>操作提示</h3>
             <p>确定要删除这条信息吗？</p>
             <div class="btn-box" id="add-btn-boxs">
-                <button type="button" class="btn-default btn-cancel">取消</button>
+                <button type="button" class="btn-default btn-cancel del-alarm">取消</button>
                 <button type="button" class="btn-default btn-sure">确定</button>
             </div>
         </div>
@@ -165,5 +163,54 @@
 
 
 </div>
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+
+<script>
+    /*点击删除按钮，删除警示框出现*/
+    $(".delInfor").click(function() {
+        $(".del-alarming").show();
+    });
+
+    /*点击X和取消，删除警告弹框消失*/
+    $(".del-alarming>i").click(function() {
+        $(this).parent().hide();
+    });
+    $(".del-alarm").click(function() {
+        $(".del-alarming").hide();
+    });
+/*点击全选，点击全不选*/
+    $("#Selall>span").click(function() {
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+            $(".checkboxStyle").removeClass("checkboxChecked");
+        } else {
+
+            $(".checkboxStyle").addClass("checkboxChecked");
+        }
+    });
+    /*点击复选框的动画效果*/
+    $(".blankbox>span").not("#Selall>span").click(function() {
+
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+        } else{
+            $(this).addClass("checkboxChecked");
+        }
+    });
+    /*表头上的tab切换*/
+    $(".chart-tab>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+
+</script>
+
+
 </body>
 </html>

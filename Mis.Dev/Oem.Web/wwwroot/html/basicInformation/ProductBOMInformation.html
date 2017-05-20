@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="ListBar clearfix">
-                    <label class="textL">全选</label>
+
                     <button type="button" class="btn-default icon-button" onclick="window.open('ProductBOMInformation-edit.html')"
                     ><em class="btn-iconEdit"></em>修改</button>
 
@@ -63,7 +63,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <!-- 数据列表{-->
                         <tbody><tr>
-                            <th class="blankbox"><span class="checkboxStyle"></span></th>
+                            <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                             <th>系列</th>
                             <th>款式号</th>
                             <th>品名</th>
@@ -117,5 +117,40 @@
 
 
 </div>
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+
+<script>
+    /*点击全选，点击全不选*/
+    $("#Selall>span").click(function() {
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+            $(".checkboxStyle").removeClass("checkboxChecked");
+        } else {
+
+            $(".checkboxStyle").addClass("checkboxChecked");
+        }
+    });
+    /*点击复选框的动画效果*/
+    $(".blankbox>span").not("#Selall>span").click(function() {
+
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+        } else{
+            $(this).addClass("checkboxChecked");
+        }
+    });
+/*表头上的tab切换*/
+    $(".chart-tab>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+</script>
+
 </body>
 </html>

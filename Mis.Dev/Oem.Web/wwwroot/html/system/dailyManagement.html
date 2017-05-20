@@ -28,6 +28,24 @@
             </div>
 
             <div class="section-content4">
+                <div class="section-box3-head clearfix">
+                    <div class="chart-tab fl">
+                        <a href="#" class="chart-tab-item current">tab1</a><!-- current 为选中状态-->
+                        <a href="#" class="chart-tab-item">tab2</a>
+                        <a href="#" class="chart-tab-item">tab3</a>
+                        <a href="#" class="chart-tab-item">tab4</a>
+                    </div>
+                    <div class="chart-tab fr">
+                        <div class="dropdown-list chart-tab-item">
+                            <button type="button" class="dropdown-toggle">tab5<span class="caret"></span></button>
+                            <!--  <ul class="dropdown-menu copyScroll" >
+                                  <li>下属1</li>
+                                  <li>下属2</li>
+                                  <li>下属3</li>
+                              </ul>-->
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 列表 { -->
                 <div class="ListDateTable">
@@ -96,5 +114,21 @@
 
 
 </div>
+
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+<script>
+    /*表头上的tab切换*/
+    $(".chart-tab>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    })
+</script>
+
 </body>
 </html>

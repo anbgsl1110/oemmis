@@ -113,5 +113,23 @@
 
 
 </div>
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+
+<script src="../../lib/jquery/dist/jquery.min.js">
+</script>
+<script>
+    /*表头上的tab切换*/
+    $(".chart-tab>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    })
+</script>
+
 </body>
 </html>
