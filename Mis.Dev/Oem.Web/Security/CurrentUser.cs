@@ -12,20 +12,20 @@ namespace Oem.Web.Security
         /// <summary>
         /// 缓存对象
         /// </summary>
-        public IMyCache MyCache { get; }
+        public ICacheService MyCache { get; }
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="myCache"></param>
-        public CurrentUser(IMyCache myCache)
+        public CurrentUser(ICacheService myCache)
         {
             MyCache = myCache;
         }
 
         public long UserId
         {
-            get { return MyCache.Get<long>(@"OemMis-UseId"); }
+            get { return long.Parse(MyCache.Get(@"OemMis-UseId").ToString()); }
         }
 
         public string UserName
@@ -40,7 +40,7 @@ namespace Oem.Web.Security
         {
             get
             {
-                return MyCache.Get<long>(@"OemMis-OrgId");
+                return long.Parse(MyCache.Get(@"OemMis-OrgId").ToString());
 
             }
         }
@@ -64,20 +64,20 @@ namespace Oem.Web.Security
         public void SetCurrentUserInfo(long userId, string userName, long orgId, AuthorityEnum[] userAuthority,
             RoleRepo[] userRole)
         {
-            MyCache.Set(@"OemMis-UseId", userId);
-            MyCache.Set(@"OemMis-UserName", userName);
-            MyCache.Set(@"OemMis-OrgId", orgId);
-            MyCache.Set(@"OemMis-UserAuthority", userAuthority);
-            MyCache.Set(@"OemMis-UserRole", userRole);
+            MyCache.Add(@"OemMis-UseId", userId);
+            MyCache.Add(@"OemMis-UserName", userName);
+            MyCache.Add(@"OemMis-OrgId", orgId);
+            MyCache.Add(@"OemMis-UserAuthority", userAuthority);
+            MyCache.Add(@"OemMis-UserRole", userRole);
         }
 
         public void ClearCurrentUserInfo()
         {
-            MyCache[@"OemMis-UseId"] = null;
-            MyCache[@"OemMis-UserName"] = null;
-            MyCache[@"OemMis-OrgId"] = null;
-            MyCache[@"OemMis-UserAuthority"] = null;
-            MyCache[@"OemMis-UserRole"] = null;
+            MyCache.RemoveAll(new []
+            {
+                @"OemMis-UseId", @"OemMis-UserName",@"OemMis-OrgId",@"OemMis-UserAuthority",@"OemMis-UserRole"
+                
+            });
         }
     }
 }

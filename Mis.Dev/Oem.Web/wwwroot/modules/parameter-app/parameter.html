@@ -1,0 +1,75 @@
+﻿<div class="container">
+
+    <div class="section">
+        <div class="section-content4 manage-content">
+            <div class="detail-title">参数设置</div>
+
+            <!--<div class="manage-box1">
+                <div class="clearfix">
+                    <label class="name">线索查重区间</label>
+                    <div class="dropdown-list">
+                        <button type="button" class="dropdown-toggle" ng-click="isShowCheckRangeTime=!isShowCheckRangeTime">{{parameterData.autoMergeTime==0 ? "始终查重":parameterData.autoMergeTime}}<span class="caret"></span></button>
+                        <ul class="dropdown-menu copyScroll" ng-show="isShowCheckRangeTime">
+                            <li ng-repeat="data in checkRange" ng-click="changeCheckRangeTime(data)">{{ data ==0? "始终查重":data}}</li>
+                        </ul>
+                    </div>
+                    <label class="name">月</label>
+                </div>
+                <div class="manage-text-box">
+                    温馨提示：线索录入时，系统只校验线索查重时间区间内，是否已存在相同手机号码的线索。
+                </div>
+            </div>-->
+
+            <div class="manage-box1">
+                <div class="clearfix">
+                    <label class="name">线索跟进时间提示</label>
+                    <div class="dropdown-list">
+                        <button type="button" class="dropdown-toggle icon-dropdown" ng-click="isShowOrangeTime=!isShowOrangeTime"><span class="icon-clock2 orange"></span>{{parameterData.orangeTime==0 ? "永不提醒":parameterData.orangeTime}}<span class="caret"></span></button>
+                        <ul class="dropdown-menu copyScroll" ng-show="isShowOrangeTime">
+                            <li ng-repeat="data in orangeData" ng-click="changeOrangeTime(data)">{{data ==0? "永不提醒":data}}</li>
+                        </ul>
+                    </div>
+                    <label class="name">小时</label>
+                    <div class="dropdown-list">
+                        <button type="button" class="dropdown-toggle icon-dropdown" ng-click="isShowRedTime=!isShowRedTime"><span class="icon-clock2 red"></span>{{parameterData.redTime==1 ? "永不提醒":parameterData.redTime}}<span class="caret"></span></button>
+                        <ul class="dropdown-menu copyScroll" ng-show="isShowRedTime">
+                            <li ng-repeat="data in redData" ng-click="changeRedTime(data)">{{data ==1? "永不提醒":data}}</li>
+                        </ul>
+                    </div>
+                    <label class="name">小时</label>
+                </div>
+                <div class="manage-text-box">
+                    温馨提示：线索未跟进时间在橙色提醒时间以内时，线索列表不显示提醒样式；线索未跟进时间在橙色和红色提醒时间以内时，线索列表显示橙色提醒样式；线索未跟进时间超过了红色提醒时间时，线索列表显示红色提醒样式。
+                </div>
+            </div>
+
+            <div class="manage-box1">
+                <label class="name">类别设置</label>
+                <div class="manage-inner1" ng-repeat="data in parameterData.Labels">
+                    <div class="item-row">
+                        <div class="item-box1">{{data.Name}}</div>
+                        <div class="item-box2">
+                            <div ng-if="!data1.isDelete" class="info-box1-name could-delete" ng-repeat="data1 in data.ChildLabels">
+                                <span>{{data1.Name}}</span>
+                                <div ng-show="!data1.isFixed">
+                                <button type="button" class="btn-delete-s1" title="删除此项" ng-click="deleteLabel(data1,data)"></button>
+                                </div>
+                            </div>
+                            <button type="button" class="info-btn-add" title="添加" ng-click="addLabel(data.Name)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-box">
+                <button type="button" class="btn-default btn-cancel" ng-click="cancel()">取消</button>
+                <button type="button" class="btn-default btn-sure" ng-click="save()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="addLabelHtml">
+        <text-popup my-cancel="cancelLabel()" mycallback="checkLabel(data)" father-name="fatherName"></text-popup>
+    </div>
+
+</div>

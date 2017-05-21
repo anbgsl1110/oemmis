@@ -1,0 +1,112 @@
+﻿<!-- 工具栏-可操作区 begin {-->
+    <!-- 列表可操作项与搜索 begin {-->
+    <div class="container">
+        <div class="section organize-wrap clearfix">
+            <div class="organize-subBar">
+                <h3 class="sub-header">组织结构</h3>
+                <div class="tree-body">
+                    <tree-view ng-cloak tree-data="TreeData" ul-width="treeWidth" text-field="name" value-field='id' item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" selected-item="selectedItem"></tree-view>
+                </div>
+            </div>
+            <div class="organize-RBox" ng-hide="treeType!=0">
+                <div class="organize-content">
+                    <div class="detail-title">部门详情</div>
+                    <div class="detail-body">
+                        <div class="detail-row">
+                            <span class="d-row-name">部门名称</span>
+                            <div class="d-row-box">
+                                <span class="d-row-con">{{selectedItem.name}}</span>
+                            </div>
+                        </div>
+                        <div class="detail-row" ng-show="selectedItem.parentId!==0">
+                            <span class="d-row-name">上级部门</span>
+                            <div class="d-row-box">
+                                <span class="d-row-con">{{selectedItem.parentName}}</span>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <span class="d-row-name">校区权限</span>
+                            <div class="d-row-box  copyScroll" style="max-height:300px;">
+                                <span ng-repeat="schoole in selectedItem.schools" class="d-row-con">{{schoole.schoolName||schoole.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-btn-box clearfix">
+                        <button type="button" class="btn-default icon-button" ng-click="treeType = 1;addSubName='';tempSchoolIds = [] "><em class="btn-iconAdd"></em>添加下级部门</button>
+                        <button ng-click="editSelected()" type="button" class="btn-default icon-button"><em class="btn-iconEdit"></em>编辑当前部门</button>
+                        <button ng-click="delDep()" ng-class="{'btn-disable':selectedItem.parentId==0}" type="button" class="btn-default icon-button "><em class="btn-iconDel"></em>删除当前部门</button>
+                    </div>
+                </div>
+            </div>
+            <div class="organize-RBox" ng-hide="treeType!=2">
+                <div class="organize-content">
+                    <div class="detail-title">编辑部门</div>
+                    <div class="edit-body">
+                        <div class="edit-item">
+                            <label class="e-item-label">部门名称</label>
+                            <input class="e-item-input" type="text" ng-model="editItemName" placeholder="请输入部门名称" />
+                        </div>
+                        <div class="edit-item" ng-hide="selectedItem.parentId==0">
+                            <label class="e-item-label">上级部门</label>
+                            <input class="e-item-input" readonly="readonly" ng-model="selectedItem.parentName" type="text" />
+                        </div>
+                        <div class="edit-item ">
+                            <label class="e-item-label">校区权限</label>
+                            <div class="edit-power-body copyScroll" style="max-height: 300px;">
+                                <div class="info-box1-name could-delete"ng-repeat="schoole in tempSchoolIds">
+                                    <span >{{schoole.schoolName||schoole.name}}</span>
+                                    <button type="button" class="btn-delete-s1" ng-click="delShool(schoole)" title="删除此项"></button>
+                                </div>
+                                <button type="button" class="info-btn-add" ng-click="showSchool()"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="organize-btn-box">
+                    <button type="button" ng-click="treeType=0;tempSchoolIds=[]" class="btn-default btn-cancel">取消</button>
+                    <button type="button" ng-click="saveEditDep()" ng-disabled="canDo" class="btn-default btn-sure">保存</button>
+                </div>
+            </div>
+            <div class="organize-RBox" ng-hide="treeType!=1">
+                <div class="organize-content">
+                    <div class="detail-title">添加下级部门</div>
+                    <div class="edit-body">
+                        <div class="edit-item">
+                            <label class="e-item-label">部门名称</label>
+                            <input class="e-item-input" type="text" ng-model="addSubName" placeholder="请输入部门名称" />
+                        </div>
+                        <div class="edit-item">
+                            <label class="e-item-label">上级部门</label>
+                            <input class="e-item-input" readonly="readonly" ng-model="selectedItem.name" type="text" />
+                        </div>
+                        <div class="edit-item">
+                            <label class="e-item-label">校区权限</label>
+                            <div class="edit-power-body">
+                                <div class="info-box1-name could-delete" ng-repeat="schoole in tempSchoolIds">
+                                    <span>{{schoole.schoolName||schoole.name}}</span>
+                                    <button type="button" class="btn-delete-s1" ng-click="delShool(schoole)" title="删除此项"></button>
+                                </div>
+                                <button type="button" class="info-btn-add" ng-click="showSchool()"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="organize-btn-box">
+                    <button type="button" ng-click="treeType=0;tempSchoolIds=[]" class="btn-default btn-cancel">取消</button>
+                    <button type="button" ng-click="saveSub()" ng-disabled="canDo" class="btn-default btn-sure">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 列表可操作项与搜索 end -->
+
+<!--加载中样式 begin {-->
+<div class="modal" ng-show="isLoading">
+    <div class="modal-backdrop" style="height:100%;"></div>
+    <div class="section-loading"></div>
+</div>
+<!-- }加载中样式 end -->
+<!--添加校区弹窗-->
+<multiple-popup is-show='isShowSchoolModal' is-manual-load="true" data='schoolList' options='schoolModalOptions' cancle-action="shoolCancleCallback()" confirm-action='shoolConfirmCallback(data)'></multiple-popup>

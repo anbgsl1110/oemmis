@@ -1,0 +1,177 @@
+﻿<!-- 内容版块 begin {-->
+<div class="container">
+    <div class="section">
+        <div class="section-box1">
+            <div class="normal-search clearfix">
+                <form class="form-group fl">
+                    <input type="text" class="form-control" ng-model="searchKey" placeholder="{{searchKeyRemind}}" />
+                    <button type="submit" class="search-submit" title="点击搜索" ng-click="searchMsg()">搜索</button>
+                </form>
+                <div class="advanced_search_item fl">
+                    <label>时间范围</label>
+                    <input type="text" class="WidthSearch" datepicker placeholder="请选择开始时间" dp-maxdate="{{endTime}}" ng-model="startTime">
+                    <span class="WidthSearch-icon"><em></em></span>
+                    <input type="text" class="WidthSearch" datepicker placeholder="请选择结束时间" dp-mindate="{{startTime}}" ng-model="endTime">
+                </div>
+
+            </div>
+            
+
+        <div class="section-content4">
+            <div class="section-box3-head clearfix">
+                <div class="chart-tab fl">
+                    <a class="chart-tab-item" ng-click="preview(0)" ng-class="{current:msgIndex==0}" style="cursor: pointer">预约</a>
+                    <a class="chart-tab-item" ng-click="preview(3)" ng-class="{current:msgIndex==3}" style="cursor: pointer">跟进</a>
+                    <a class="chart-tab-item" ng-click="preview(1)" ng-class="{current:msgIndex==1}" style="cursor: pointer">消息</a>
+                    <a class="chart-tab-item" ng-click="preview(2)" ng-class="{current:msgIndex==2}" style="cursor: pointer">任务</a><!-- current 为选中状态-->
+                </div>
+                <!--<div class="chart-tab fr" ng-show="msgIndex==1">
+                    <div class="dropdown-list chart-tab-item">
+                        <select-box selected-data="currentSelectedItem" select-list-data="SelectedItems" select-filed="name" when-selected-action="changeSelected(data)"></select-box>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class="ListBar clearfix" >
+                <div class="textR" ng-show="msgIndex==0">共<span>{{total}}</span>个预约</div>
+                <div class="textR" ng-show="msgIndex==1">共<span>{{total}}</span>个消息</div>
+                <div class="textR" ng-show="msgIndex==2">共<span>{{total}}</span>个任务</div>
+                <div class="textR" ng-show="msgIndex==3">共<span>{{total}}</span>个跟进</div>
+            </div>
+            <!-- 列表 { -->
+            <div class="ListDateTable">
+
+                
+
+                <table border="0" cellpadding="0" cellspacing="0" class="message-center">
+                    <!-- 数据列表{-->
+                    <tbody>
+                        <!--预约列表-->
+                        <tr ng-show="msgIndex==0">
+
+                            <th>学员姓名</th>
+                            <th><div class="list-sort">预约到访时间<em class="icon-sort-normal" ng-click="sort(0)" ng-class="{'icon-sort-up':isMsgAsc,'icon-sort-down':!isMsgAsc}"></em></div></th>
+                            <th>预估签约金额</th>
+                            <th>预估签约概率</th>
+                            <th>拟沟通内容</th>
+                        </tr>
+                        <tr class="ListDate" ng-repeat="rowData in reserves" ng-show="msgIndex==0">
+
+                            <td limit="120px" style="width: 160px;">
+                                <span ng-bind="rowData.userName" title="{{rowData.userName}}"></span>
+                            </td>
+                            <td limit="120px">
+                                <span ng-bind="rowData.visitTime | formatJsonDate:'yyyy/MM/dd HH:mm' "></span>
+                            </td>
+                            <td limit="80px">
+                                <span ng-bind="rowData.amount|toFixed:2"></span>
+                            </td>
+                            <td limit="80px">
+                                <span ng-bind="rowData.pobability?rowData.pobability+'%':''"></span>
+                            </td>
+                            <td limit="160px" title="{{rowData.content}}" style="width: 160px;">
+                                <span ng-bind="rowData.content"></span>
+                            </td>
+
+                        </tr>
+                        <!--预约列表end-->
+                        <!--消息列表-->
+                        <tr ng-show="msgIndex==1">
+                            <!--<th class="blankbox"><span class="checkboxStyle" ng-class="{'checkboxChecked':isAllSelected}" ng-click="selectAllItem()"></span></th>-->
+                            <th>学员姓名</th>
+                            <th><div class="list-sort">提醒时间<em class="icon-sort-normal" ng-click="sort(1)" ng-class="{'icon-sort-up':isMsgAsc,'icon-sort-down':!isMsgAsc}"></em></div></th>
+                            <th>操作类型</th>
+                            <th>操作人</th>
+
+                        </tr>
+                        <tr class="ListDate" ng-repeat="rowData in messages" ng-show="msgIndex==1">
+                            <!--<td class="blankbox">
+                    <span class="checkboxStyle" ng-class="{'checkboxChecked':selectedKeys[rowData.id]}" ng-click="selectItem(rowData.id)"></span>
+                </td>-->
+                            <td limit="160px" style="width: 180px;">
+                                <span ng-bind="rowData.studentName" title="{{rowData.studentName}}"></span>
+                            </td>
+                            <td limit="120px">
+                                <span ng-bind="rowData.createdAt | formatJsonDate:'yyyy/MM/dd HH:MM:ss' "></span>
+                            </td>
+                            <td limit="80px" ng-click="selectedIgnore(rowData.id,$index)">
+                                <span ng-show="rowData.type==1">线索合并</span>
+                                <span ng-show="rowData.type==2">学员转校</span>
+                                <span ng-show="rowData.type==3">收到转校</span>
+                                <span ng-show="rowData.type==4">收到分配线索</span>
+                                <span ng-show="rowData.type==5">线索被分配</span>
+                                <span ng-show="rowData.type==6">签约线索</span>
+                            </td>
+                            <td limit="80px">
+                                <span ng-bind="rowData.formUserName"></span>
+                            </td>
+
+                        </tr>
+                        <!--消息列表end-->
+                        <!--任务列表-->
+                        <tr ng-show="msgIndex==2">
+                            <!--<th>提醒日期</th>-->
+                            <th><div class="list-sort">提醒日期<em class="icon-sort-normal" ng-click="sort(2)" ng-class="{'icon-sort-up':isMsgAsc,'icon-sort-down':!isMsgAsc}"></em></div></th>
+                            <th>布置人</th>
+                            <th>任务名称</th>
+                            <th>任务描述</th>
+                        </tr>
+                        <tr class="ListDate" ng-repeat="rowData in tasks" ng-show="msgIndex==2">
+
+                            <td limit="100px">
+                                <span ng-bind="rowData.datetime | formatJsonDate:'yyyy/MM/dd' "></span>
+                            </td>
+                            <td limit="80px">
+                                <span ng-bind="rowData.createName"></span>
+                            </td>
+                            <td limit="120px">
+                                <span ng-bind="rowData.name" title="{{rowData.name}}"></span>
+                            </td>
+                            <td limit="340px" title="{{rowData.content}}" style="width: 360px;">
+                                <span ng-bind="rowData.content"></span>
+                            </td>
+
+                        </tr>
+                    <!--任务列表end-->
+                        <!--跟进列表-->
+                        <tr ng-show="msgIndex==3">
+                            <!--<th>提醒日期</th>-->
+                            <th>学员姓名</th>
+                            <th><div class="list-sort">下次跟进时间<em class="icon-sort-normal" ng-click="sort(3)" ng-class="{'icon-sort-up':isMsgAsc,'icon-sort-down':!isMsgAsc}"></em></div></th>
+                            <th>下次跟进方式</th>
+                        </tr>
+                        <tr class="ListDate" ng-repeat="rowData in fullowUp" ng-show="msgIndex==3">
+
+                            <td limit="80px">
+                                <span ng-bind="rowData.studnetName" title="{{rowData.studnetName}}"></span>
+                            </td>
+                            <td limit="120px">
+                                <span ng-bind="rowData.nextFollowUpAt | formatJsonDate:'yyyy/MM/dd HH:mm' "></span>
+                            </td>
+                            <td limit="340px" title="{{rowData.nextFollowUpTypeName}}" style="width: 360px;">
+                                <span ng-bind="rowData.nextFollowUpTypeName"></span>
+                            </td>
+
+                        </tr>
+                        <!--跟进列表end-->
+                        <!-- 以下是数据举例，不做参考 {-->
+                        <!--} 以下是数据举例，不做参考 -->
+                        <!--}数据列表 -->
+                    </tbody>
+                </table>
+                <!-- 列表无数据时显示内容 {-->
+                <div class="ListDateNoResult" ng-show="total==0">无数据</div>
+                <!--} 列表无数据时显示内容 -->
+            </div>
+            <!--} 列表 -->
+            <!-- 页码 {-->
+            <div hide-if-empty="true" paging page="currentPage" page-size="pageSize" total="total" paging-action="changePage(page)">
+
+            </div>
+            <!--} 页码 -->
+
+        </div>
+    </div>
+</div>
+<!--} 内容版块 end -->
+

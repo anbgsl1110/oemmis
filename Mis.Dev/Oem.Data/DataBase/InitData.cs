@@ -32,10 +32,15 @@ namespace Oem.Data.DataBase
         /// </summary>
         /// <param name="dbContext"></param>
         public void Seed(InitDbContext dbContext)
-        {
+        {  
             dbContext.User.Add(new UserRepo
             {
                 UserName = "test",
+                Password = "abc123"
+            });
+            dbContext.User.Add(new UserRepo
+            {
+                UserName = "admin",
                 Password = "abc123"
             });
             dbContext.Org.Add(new OrgRepo

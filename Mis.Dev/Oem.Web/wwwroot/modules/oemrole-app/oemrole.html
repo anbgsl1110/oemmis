@@ -1,0 +1,158 @@
+﻿<!-- 工具栏-可操作区 begin {-->
+<div class="toolbar toolbar-fixed-top">
+    <!-- 列表可操作项与搜索 begin {-->
+    <div class="container">
+        <div class="toolbar-left">
+            <button type="button" class="btn-default icon-button" ng-class="{'btn-disable':btnDisable||showData}" ng-click="btnDisable ? false:addRole()"><em class="btn-iconAdd"></em>添加</button>
+            <button type="button" class="btn-default icon-button" ng-class="{'btn-disable':btnDisable||btnDisable1}" ng-click="(btnDisable||btnDisable1) ? false:deleteRole()"><em class="btn-iconDel"></em>删除</button>
+            <button type="button" class="btn-default icon-button" ng-class="{'btn-disable':btnDisable||btnDisable1}" ng-click="(btnDisable||btnDisable1) ? false:addEmployee()"><em class="btn-iconMan"></em>员工</button>
+        </div>
+
+        <div class="toolbar-form toolbar-right">
+            <form class="form-group">
+                <input type="text" class="form-control" placeholder="角色名" ng-keydown="_search($event)" ng-model="searchText">
+                <button type="button" class="search-submit" title="点击搜索" ng-click="searchByName()">搜索</button>
+            </form>
+        </div>
+
+    </div>
+    <!--} 列表可操作项与搜索 end -->
+</div>
+<!--} 工具栏-可操作区 end -->
+<!-- 内容版块 begin {-->
+<div class="container manage-content" ng-cloak>
+    <!--增加超管页面样式名　-->
+    <!-- 左侧列表 begin {-->
+    <div class="sidebar">
+        <!-- 排序与多选开关 begin {-->
+        <div class="sidebar-tools">
+            <div class="sidebar-tools-left">
+                <button class="btn-sort" ng-click="orderByCreatedAt()" title="排序">
+                    时间
+                    <em class="icon-sort-normal" ng-class="{'icon-sort-up':roleListConfig.order.asc,'icon-sort-down':!roleListConfig.order.asc}"></em>
+                </button>
+            </div>
+        </div>
+        <!--} 排序与多选开关 end -->
+        <!-- 数据列表 {-->
+        <div class="sidebar-mid sidebar-list sidebar-tabs-more sidebar-noTabs" gint-pagescroll>
+            <!--left-List模板开始-->
+            <div class="list-data list-data-style2" ng-class="{'active':item.id==selected.id}" ng-repeat="item in roleList" ng-click="onItemClick(item)">
+                <dl class="data-col3">
+                    <dt><strong>{{item.roleName}}</strong></dt>
+                    <dd>
+                        <!--人数：<span>13</span>人-->
+                        人数： {{item.bandCount}}人
+                        <span class="list-text-right">{{item.createdAt|formatJsonDate:'yyyy/MM/dd'  }}</span>
+                    </dd>
+                </dl>
+
+            </div>
+            <!--left-List模板结束-->
+            <div class="sidebar-list-loading" ng-show="isLoading"><em></em>正在载入中...</div>
+        </div>
+        <div class="sidebar-nodata" ng-show="!isLoading && roleList.length==0">
+            {{ isSearch ? "没有搜到您要的信息哦":"无数据"  }}
+        </div>
+        <!--} 数据列表 end -->
+
+
+        <div class="sidebar-bottom sidebar-total">共<span>{{ totalCount }}</span>个角色</div>
+
+
+    </div>
+    <!--} 左侧列表 end -->
+    <!-- 右侧内容版块 begin {-->
+    <div class="col-R">
+
+        <!-- 角色管理 begin {-->
+        <div class="section" style=" display:block;" ng-show="roleList.length||showData" ng-cloak>
+            <div class="section-box section-box-s1">
+                <div class="block-header">
+                    <input type="text" class="inputbox inputbox-s1" placeholder="请输入角色名" ng-model="uiModel.name">
+                </div>
+
+                <div class="block-content">
+                    <dl>
+                        <dd class="leveltitle-s1">
+                            <span class="leveltitle-power">权限</span>
+                            <span class="leveltitle-text">描述</span>
+                        </dd>
+                    </dl>
+                    <dl ng-repeat=" functionGroup in uiModel.functionGroupList track by $index">
+                        <dd class="level1-s1">
+                            <em class="level-icon " ng-class="{'level-icon-current' :getFirstLevelisRight(functionGroup)}" ng-click="isRightAll(functionGroup)"></em>
+                            <span class="level1-title">{{functionGroup.name}}</span>
+                            <span class="level1-text" ng-click="functionGroup.isHide = !functionGroup.isHide"> {{functionGroup.description}}</span>
+                            <span class="level1-more" ng-click="functionGroup.isHide = !functionGroup.isHide"><em ng-init="functionGroup.isHide = false" ng-class="{'caret-down': !functionGroup.isHide, 'caret-up': functionGroup.isHide}" ng-show="functionGroup.children.length||functionGroup.threeFuctionList.length"></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd ng-hide="functionGroup.isHide">
+                            <!--level2-icon为默认样式，level2-icon-current为选中后样式-->
+                            <!--一、二、三级渲染-->
+                            <dl class="level2-box" ng-repeat=" fun in functionGroup.children  track by $index">
+                                <dd class="level2-s1">
+                                    <em class="level-icon" ng-class="{'level-icon-current':fun.isRight}" ng-click="clickSecondLevel(fun)"></em>
+                                    <span class="level2-text">{{fun.name}}</span>
+                                </dd>
+                                <dd class="level3-s1" ng-repeat="childfun in fun.children track by $index">
+                                    <span class="level3-text">
+                                        <em class="levelbtn-icon " ng-class="{'levelbtn-icon-current':childfun.isRight}" ng-click="changeThreeLevel({father:fun,functionModel:childfun})"></em>{{childfun.name}}
+                                    </span>
+                                    <span class="level3-text">  {{childfun.description}}</span>
+                                </dd>
+                            </dl>
+                            <!--没有二级，一、三级渲染-->
+                            <dl class="level2-box" ng-repeat=" fun in functionGroup.threeFuctionList track by $index">
+                                <!--<dd class="level2-s1"><em class="level-icon" ></em><span class="level2-text">lalalla</span>-->
+                                <!--</dd>-->
+                                <dd class="level3-s1">
+                                    <span class="level3-text"><em class="levelbtn-icon " ng-class="{'levelbtn-icon-current':fun.isRight}" ng-click="changeThreeLevel({father:functionGroup,functionModel:fun})"></em>{{fun.name}}</span>
+                                </dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="block-bottom clearfix">
+                <button type="button" class="btn-default btn-cancel" ng-click="cancelSubmit()">取消</button>
+                <button type="button" class="btn-default btn-sure" ng-click="submitRole()">确定</button>
+            </div>
+        </div>
+
+        <div class="section" ng-show="!(roleList.length||showData)">
+            <div class="section-box-nodata">
+                <div class="nodata-content">
+                    <p class="nodata-text">Hi，您目前搜索关键字 “ <em class="nodata-keywords">{{roleListConfig.filter.RoleName}}</em> ”，共找到 0 个内容。</p>
+                </div>
+            </div>
+        </div>
+
+        <!--} 角色管理 end -->
+
+    </div>
+    <!--} 右侧内容版块 begin -->
+</div>
+<!--} 内容版块 end -->
+
+
+
+<div class="modal" style="display:block" ng-show="isShowQuickAdditions" ng-init="isShowQuickAdditions = false">
+    <div class="modal-backdrop" style="height:100%;"></div><!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content usual-medium">
+        <div class="pop-up-title">
+            添加员工
+        </div>
+        <div class="pop-up-content">
+            <div class="pop-up-loginbox">
+                <div class="pop-up-logindiv"><label class="pop-up-column">用户名</label><input type="text" ng-model="quickAdditions.LoginName" class="popup-input-s pop-up-username ng-pristine ng-untouched ng-valid"></div>
+                <div class="pop-up-logindiv"><label class="pop-up-column">姓名</label><input type="text" ng-model="quickAdditions.Name" class="popup-input-s pop-up-name ng-pristine ng-untouched ng-valid"></div>
+                <div class="pop-up-logindiv "><label class="pop-up-column">密码</label><input type="password" ng-model="quickAdditions.Password" class="popup-input-s pop-up-pswd ng-pristine ng-untouched ng-valid"></div>
+            </div>
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click="quickAdditionsCancel()">取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click="quickAdditionsSure()">确定</button>
+        </div>
+
+    </div>
+</div>

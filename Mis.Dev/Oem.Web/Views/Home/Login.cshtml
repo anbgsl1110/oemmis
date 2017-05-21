@@ -10,46 +10,47 @@
     <script src="/lib/greedyint.dialog.js"></script>
     <script type="text/javascript">
         function login() {
-            var school = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
+            var org = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
             var goto = location.search.match(/(\?|\&)goto=(.+)/);
             goto = goto && goto.length > 2 ? decodeURIComponent(goto[2]) : null;
-            var loginResqust = {
-                userName : 'asd',
-                password : "123"
+            var loginRequest = {
+                UserName : $("#txtName").val(),
+                Password : $("#pwd").val()
             }
-            $.post("/api/LoginApi/", loginResqust, function (response) {
-                var x = response.Data;
-                window.location = '/home/Index#/index';
-            });
-            //$.post('/api/UserApi/Login',
-            //    {
-            //        Name: $("#txtName").val(),
-            //        Password: $("#pwd").val(),
-            //        OrgName: school
-            //    }, function (response) {
-            //        if (response.status) {
-            //            document.cookie = "school=" + school + ";path=/";
-            //            if (response.data.userType === 12) {//管理员首页
-            //                window.location = goto || '/home/Index#/crmrole';
-            //            }
-            //            else if (response.data.userType === 11) {//首页
-            //                window.location = goto || '/home/Index#/index';
-            //            }
-
-            //        }
-            //        else {
-            //            if (response.type === 25001) {
-            //                $("#lblErrorMsg").html("用户名或密码不正确！");
-            //            } else if (response.type === 25002) {
-            //                $("#lblErrorMsg").html("用户被禁用！");
-            //            } else if (response.type === 25003) {
-            //                $("#lblErrorMsg").html("请输入用户名！");
-            //            } else if (response.type === 25004) {
-            //                $("#lblErrorMsg").html("请输入密码！");
-            //            }
-            //            $("#ctnErrorMsg").show();
-            //        }
-            //    }, "json");
+            var ajax = {
+                url: "/api/LoginApi/",
+                data: loginRequest,
+                type: 'Post',
+                cache: false,
+                success: function (response) {
+                    if (response.status) {
+                        document.cookie = "org=" + org + ";path=/";
+                        if (response.data.userId === 1) {//管理员首页
+                            window.location = goto || '/home/Index#/oemmrole';
+                        }
+                        else if (response.data.userId > 1) {//首页
+                            window.location = goto || '/home/Index#/index';
+                        }
+                    }
+                    else {
+                        if (response.type === 0) {
+                            $("#lblErrorMsg").html("用户名或密码不正确！");
+                        } else if (response.type === 25002) {
+                            $("#lblErrorMsg").html("用户被禁用！");
+                        } else if (response.type === 25003) {
+                            $("#lblErrorMsg").html("请输入用户名！");
+                        } else if (response.type === 25004) {
+                            $("#lblErrorMsg").html("请输入密码！");
+                        }
+                        $("#ctnErrorMsg").show();
+                    }
+                },
+                error: function () {
+                    alert('请求失败,请查看网络状态');
+                    return;
+                }
+            }
+            $.ajax(ajax);
         }
 
         $(function () {

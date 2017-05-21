@@ -68,8 +68,6 @@ define([
                     $("ul.navbar-nav-left").mouseleave(mouseLeaveAction);
                 }
 
-
-
                 return {
                     restrict: 'EA',
                     scope: {
@@ -78,26 +76,18 @@ define([
                         countData: "="
                     },
                     templateUrl: 'components/nav/nav.html',
-                    link: function (scope, iElement, iAttr) {
+                    link: function (scope, iElement, iAttr) {  
                         //导航权限后台还是员工
-                        scope.adminLimit = currentUserService.hasPermission([rolesService.crm_超级管理员], false);
-                        scope.productsLimit = currentUserService.hasPermission([rolesService.crm_产品库], false);
-                        scope.consultLimit = currentUserService.hasPermission([rolesService.crm_咨询], false);
-                        scope.channelLimit = currentUserService.hasPermission([rolesService.crm_渠道], false);
-                        scope.clueLimit = currentUserService.hasPermission([rolesService.crm_线索], false);
-                        scope.employeeLimit = currentUserService.hasPermission([rolesService.crm_员工管理], false);
-                        scope.statisticsLimit = currentUserService.hasPermission([rolesService.crm_统计分析], false);
-                        scope.toolLimit = currentUserService.hasPermission([rolesService.crm_营销工具], false);
-                        scope.testLimit = currentUserService.hasPermission([rolesService.crm_入学测试], false);
-                        scope.xbxLimit = currentUserService.hasPermission([rolesService.crm_校宝秀], false);
-                        scope.liveLimit = currentUserService.hasPermission([rolesService.crm_直播课], false);
-                        scope.reportLimit = currentUserService.hasPermission([rolesService.crm_数据报表], false);
+                        scope.businessLimit = true;
+                        scope.adminLimit = false;
+                        /*scope.businessLimit = currentUserService.hasPermission([rolesService.业务管理], true);//导航权限后台还是员工
+                        scope.adminLimit = currentUserService.hasPermission([rolesService.后台管理], false);//导航权限后台还是员工*/
                         var currentUser = currentUserService.getCurrentUser();
                         scope.siteList = [];
                         if (currentUser.orgBaseInfos) {
                             for (var i = 0, l = currentUser.orgBaseInfos.length; i < l; i++) {
                                 if (currentUser.orgBaseInfos[i].state) {
-                                    scope.siteList.push(currentUser.orgBaseInfos[i])
+                                    scope.siteList.push(currentUser.orgBaseInfos[i]);
                                 }
                             }
                         }

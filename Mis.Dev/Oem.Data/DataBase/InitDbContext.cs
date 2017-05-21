@@ -20,8 +20,7 @@ namespace Oem.Data.DataBase
             //OrgRepo
             builder.Entity<OrgRepo>().HasKey(p => new {p.Id});
             builder.Entity<OrgRepo>().Property(p => p.OrgName).HasMaxLength(50);
-            builder.Entity<OrgRepo>().Property(p => p.Remark).HasMaxLength(50);
-
+            builder.Entity<OrgRepo>().Property(p => p.Remark).HasMaxLength(50);            
             //UserAuthorityRepo
             builder.Entity<UserAuthorityRepo>().HasKey(p => p.Id);
 

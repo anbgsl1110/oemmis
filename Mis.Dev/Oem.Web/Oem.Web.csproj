@@ -54,7 +54,6 @@
     <Content Include="wwwroot\components\nav\directives\profile-edit\directive.js" />
     <Content Include="wwwroot\components\nav\directives\profile-edit\template.html" />
     <Content Include="wwwroot\components\nav\filter.js" />
-    <Content Include="wwwroot\components\nav\nav-html.html" />
     <Content Include="wwwroot\components\nav\nav-temp.html" />
     <Content Include="wwwroot\components\nav\nav.html" />
     <Content Include="wwwroot\components\nav\service.js" />
@@ -178,9 +177,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\css\font-awesome-4.7.0\css" />
+    <Folder Include="wwwroot\css\font-awesome-4.7.0\fonts" />
+    <Folder Include="wwwroot\css\font-awesome-4.7.0\less" />
+    <Folder Include="wwwroot\css\font-awesome-4.7.0\scss" />
     <Folder Include="wwwroot\html\AssistImplement" />
     <Folder Include="wwwroot\html\basicInformation" />
     <Folder Include="wwwroot\html\order" />
+    <Folder Include="wwwroot\html\repertoryManagement" />
+    <Folder Include="wwwroot\html\SendOrderManagement" />
     <Folder Include="wwwroot\html\system" />
     <Folder Include="wwwroot\lib\angular" />
     <Folder Include="wwwroot\lib\angular" />
@@ -282,5 +287,23 @@
     <Folder Include="wwwroot\lib\wordscopy" />
     <Folder Include="wwwroot\lib\zeroclipboard\dist" />
     <Folder Include="wwwroot\lib\zeroclipboard\dist" />
+    <Folder Include="wwwroot\modules\message-app" />
+    <Folder Include="wwwroot\modules\organization-app\directive" />
+    <Folder Include="wwwroot\modules\parameter-app" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\components\nav\directives.js___jb_tmp___" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\modules\admin-app\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="wwwroot\modules\admin-app\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="wwwroot\modules\admin-app\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\services\net\crmrole.js" />
   </ItemGroup>
 </Project>

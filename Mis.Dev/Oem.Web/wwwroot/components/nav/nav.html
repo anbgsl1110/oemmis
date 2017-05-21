@@ -5,7 +5,7 @@
         </div>
         <!-- 功能菜单 begin {-->
         <div class="navbar-nav navbar-right">
-            <ul class="navbar-nav-left">
+            <ul class="navbar-nav-left" ng-show="businessLimit">
                 <li class="navbar-nav-item">
                     <a>首页</a>
                 </li>
@@ -54,15 +54,6 @@
                         <li class="navbar-dropitem">
                             <a>电脑扫码</a>
                         </li>
-                        <li class="navbar-dropitem">
-                            <a>工资计算</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>利用率计算</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>模拟订单</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="navbar-nav-item">
@@ -75,35 +66,47 @@
                             <a>产品信息</a>
                         </li>
                         <li class="navbar-dropitem">
+                            <a>仓库信息</a>
+                        </li>
+                        <li class="navbar-dropitem">
                             <a>供应商信息</a>
                         </li>
                         <li class="navbar-dropitem">
-                            <a>仓库信息</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar-nav-item">
-                    <a>系统设置</a>
-                    <ul class="navbar-dropdown-menu">
-                        <li class="navbar-dropitem">
-                            <a>角色管理</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>用户管理</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>组织结构</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>配置信息</a>
-                        </li>
-                        <li class="navbar-dropitem">
-                            <a>日志管理</a>
+                            <a>公司信息</a>
                         </li>
                     </ul>
                 </li>
             </ul>
-            <!-- } 功能菜单 end-->
+            <!--Admin 系统-->
+            <ul class="navbar-nav-left" ng-show="adminLimit">
+                <li class="navbar-nav-item">
+                    <a ui-sref="crmrole" ui-sref-active="active" ui-sref-opts="{reload: true}">OEM角色</a>
+                </li>
+                <li class="navbar-nav-item" ng-show="hasCourse">
+                    <a ui-sref="account.list" ui-sref-active="active" ui-sref-opts="{reload: true}">账号管理</a>
+                    <ul class="navbar-dropdown-menu" style="display: none">
+                        <li class="navbar-dropitem">
+                            <a ui-sref="account.detail" ui-sref-opts="{reload: true}" ui-sref-active="active">员工详情</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a ui-sref="account.edit" ui-sref-opts="{reload: true}" ui-sref-active="active">员工编辑</a>
+                        </li>
+                        <li class="navbar-dropitem">
+                            <a ui-sref="account.merge" ui-sref-opts="{reload: true}" ui-sref-active="active">账号合并</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar-nav-item">
+                    <a ui-sref="organization" ui-sref-active="active" ui-sref-opts="{reload: true}">组织结构</a>
+                </li>
+                <li class="navbar-nav-item">
+                    <a ui-sref="parameter" ui-sref-active="active" ui-sref-opts="{reload: true}">系统参数</a>
+                </li>
+                <li class="navbar-nav-item">
+                    <a ui-sref="parameter" ui-sref-active="active" ui-sref-opts="{reload: true}">日志管理</a>
+                </li>
+                <li class="navbar-current"></li>
+            </ul>
             <!-- 个人中心 begin {-->
             <ul class="navbar-nav-right">
                 <div class="navbar-account">
@@ -117,18 +120,19 @@
                         <li class="navbar-dropitem">
                             <a>个人设置</a>
                         </li>
-                        <li class="navbar-dropitem sub-navbar-dropitem stay-right" style="display: none">
+                        <li class="navbar-dropitem sub-navbar-dropitem stay-right" style="">
                             <!--  二级菜单 -->
                             <a>二级菜单</a>
                             <ul class="navbar-dropdown-menu">
-                                <li class="navbar-dropitem"><a>哈哈哈哈</a></li>
+                                <li class="navbar-dropitem"><a href="/home/login">切换账号</a></li>                             
                             </ul>
                         </li>
-                        <li class="navbar-dropitem"><a>注销</a></li>
+                        <li class="navbar-dropitem"><a>注销</a></li>                   
                     </ul>
                 </div>
             </ul>
             <!-- } 个人中心 end-->
         </div>
+        <!-- } 功能菜单 end-->     
     </div>
 </div>

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder.Internal;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.ProjectModel.Resolution;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Oem.Common.CacheHelper;
-using Oem.Models.Item;
+using Oem.Models.Response;
 using Oem.Services.IServices.Home;
 using Oem.Services.IServices.User;
 using Oem.Services.Services.Home;
@@ -19,6 +13,8 @@ namespace Oem.Web.WebApi
     [Route("api/[Controller]")]
     public class ApiBaseController : Controller
     {
+        public readonly ICacheService CacheService;
+        
         protected readonly ICurrentUser CurrentUser;
 
         protected readonly IHomeService HomeService;
@@ -26,10 +22,19 @@ namespace Oem.Web.WebApi
         protected readonly IUserService UserService;
 
         public ApiBaseController()
-        {
-            CurrentUser = new CurrentUser(new MyCache(new MemoryCacheService(null)));//TODO 增加CurrentUser配置
+        {   
+            CurrentUser = new CurrentUser(CacheService);
             HomeService = new HomeService();
             UserService = new UserService();
+        }
+
+        /// <summary>
+        /// 当前用户
+        /// </summary>
+        /// <returns></returns>
+        public Response<ICurrentUser> Get()
+        {
+            return new Response<ICurrentUser>(CurrentUser);
         }
 
         #region WebApi Restful例子

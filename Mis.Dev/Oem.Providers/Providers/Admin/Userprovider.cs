@@ -21,9 +21,19 @@ namespace Oem.Providers.Providers.Admin
         {
             using (var dbConnection = DbFactory.GetNewConnection())
             {
-                string sql = string.Format(@"SELECT Id, UserName, Password FROM oemmis_dev.user WHERE Id = {0};"
+                string sql = string.Format(@"SELECT Id, UserName, Password FROM user WHERE Id = {0};"
                     ,userId);
                 return dbConnection.Query<UserRepo>(sql).SingleOrDefault();
+            }
+        }
+
+        public UserRepo Login(string userName,string password)
+        {
+            using (var dbConnection = DbFactory.GetNewConnection())
+            {
+                string sql = @"SELECT Id, UserName FROM user 
+                                  WHERE Id > 0 AND UserName = @UserName AND Password = @Password;";
+                return dbConnection.Query<UserRepo>(sql,new {UserName = userName,Password = password}).SingleOrDefault();
             }
         }
     }

@@ -16,6 +16,12 @@ namespace Oem.Data.Enum
         /// 正常
         /// </summary>
         [Description("正常")]
-        NoError = 0
+        NoError = 1,
+        
+        /// <summary>
+        /// 错误
+        /// </summary>
+        [Description("错误")]
+        Error = 0
     }
 }

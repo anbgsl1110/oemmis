@@ -17,5 +17,13 @@ namespace Oem.Providers.IProviders.Admin
         /// <param name="userId">用户Id</param>
         /// <returns></returns>
         UserRepo GetUser(long userId);
+
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        UserRepo Login(string userName, string password);
     }
 }

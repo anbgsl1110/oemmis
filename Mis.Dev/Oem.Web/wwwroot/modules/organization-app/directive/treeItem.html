@@ -1,0 +1,14 @@
+﻿
+<span ng-click="itemExpended(item, $event);" ng-hide="item.isDelete && !item.children.length" 
+   ng-class="{'tree_icon hide': !isLeaf(item)&& item.$$isExpend, ' tree_icon show': !isLeaf(item)&&!item.$$isExpend, 'fa-leaf': isLeaf(item)}">
+<i></i>
+</span>
+<span title="{{item[textField]}}" class='tree_item' ng-hide="item.isDelete" ng-class="{'current':isSelected(item)}" ng-click="warpCallback('itemClicked', item, $event);"><span>{{item[textField]}}</span></span>
+
+
+<!--<input id="checkItem" type="checkbox" ng-model="item.$$isChecked" class="check-box" ng-if="canChecked" ng-change="warpCallback('itemCheckedChanged', item, $event)">-->
+<ul ng-if="!isLeaf(item)" ng-show="item.$$isExpend">
+    <li  ng-repeat="item in item.children track by $index" ng-include="'modules/organization-app/directive/treeItem.html'">
+    </li>
+</ul>
+
