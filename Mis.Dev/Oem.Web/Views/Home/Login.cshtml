@@ -10,6 +10,18 @@
     <script src="/lib/greedyint.dialog.js"></script>
     <script type="text/javascript">
         function login() {
+            var userName = $("#txtName").val();
+            var password = $("#pwd").val();
+            if (userName === "") {
+                $("#lblErrorMsg").html("请输入用户名！");
+                $("#ctnErrorMsg").show();
+                return;
+            }
+            if (password === "") {
+                $("#lblErrorMsg").html("请输入密码！");
+                $("#ctnErrorMsg").show();
+                return;
+            }
             var org = document.location.pathname.toLowerCase().match(/\/(.+)\/login/)[1];
             var goto = location.search.match(/(\?|\&)goto=(.+)/);
             goto = goto && goto.length > 2 ? decodeURIComponent(goto[2]) : null;
@@ -33,7 +45,7 @@
                         }
                     }
                     else {
-                        if (response.type === 0) {
+                        if (response.type === 25001) {
                             $("#lblErrorMsg").html("用户名或密码不正确！");
                         } else if (response.type === 25002) {
                             $("#lblErrorMsg").html("用户被禁用！");

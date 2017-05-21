@@ -11,12 +11,12 @@ namespace Oem.Data.Enum
         /// 请求成功
         /// </summary>
         [Description("成功")]
-        Success = 1,
+        Success = 0,
 
         /// <summary>
         /// 请求失败
         /// </summary>
         [Description("失败")]
-        Failed = 0
+        Failed = 1
     }
 }

@@ -18,6 +18,8 @@ using Newtonsoft.Json.Serialization;
 using Oem.Common.CacheHelper;
 using Oem.Common.Util;
 using Oem.Data.DataBase;
+using Oem.Services.IServices.User;
+using Oem.Services.Services.User;
 using Oem.Web.Data;
 using Oem.Web.Models;
 using Oem.Web.Security;
@@ -66,6 +68,9 @@ namespace Oem.Web
                 return cache;
             });
             services.AddSingleton<ICacheService, MemoryCacheService>();
+            
+            //注册用户服务
+            services.AddSingleton<IUserService>(new UserService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

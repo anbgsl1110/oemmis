@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyModel.Resolution;
 using Oem.Common.CacheHelper;
 using Oem.Models.Response;
 using Oem.Services.IServices.Home;
@@ -13,19 +15,17 @@ namespace Oem.Web.WebApi
     [Route("api/[Controller]")]
     public class ApiBaseController : Controller
     {
+        public readonly IHomeService HomeService;        
+        
         public readonly ICacheService CacheService;
         
-        protected readonly ICurrentUser CurrentUser;
+        public readonly ICurrentUser CurrentUser;
 
-        protected readonly IHomeService HomeService;
-
-        protected readonly IUserService UserService;
-
-        public ApiBaseController()
-        {   
-            CurrentUser = new CurrentUser(CacheService);
+        public ApiBaseController(ICacheService cacheService)
+        {
             HomeService = new HomeService();
-            UserService = new UserService();
+            CacheService = cacheService;
+            CurrentUser = new CurrentUser(CacheService);
         }
 
         /// <summary>

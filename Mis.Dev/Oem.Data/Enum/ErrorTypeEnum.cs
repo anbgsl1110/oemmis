@@ -22,6 +22,17 @@ namespace Oem.Data.Enum
         /// 错误
         /// </summary>
         [Description("错误")]
-        Error = 0
+        Error = 0,
+
+        #region 登录
+
+        /// <summary>
+        /// 用户名或密码错误
+        /// </summary>
+        [Description("用户名或密码错误")]
+        LoginError = 25001
+
+        #endregion
+        
     }
 }

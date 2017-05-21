@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
  using Oem.Models.Request.Home;
 using Oem.Models.Response;
 using Oem.Models.Response.Home;
+ using Oem.Services.IServices.User;
  using Oem.Services.Services.User;
  using Oem.Web.Security;
  using Oem.Web.WebApi;
@@ -19,6 +20,11 @@ namespace Oem.Web.Controllers
     public class LoginApiController : ApiBaseController
     {
         /// <summary>
+        /// 用户服务
+        /// </summary>
+        public IUserService UserService{get; set; }
+        
+        /// <summary>
         /// 登录
         /// </summary>
         /// <param name="req"></param>
@@ -27,9 +33,12 @@ namespace Oem.Web.Controllers
         public async Task<Response<LoginResponse>> Post(LoginRequest req)
         {
             //验证并获取登录用户信息
-            UserService userService = new UserService();
-            var loginUser = userService.Login(req.UserName, req.Password).Data;            
-            
+            var loginUserResult = UserService.Login(req.UserName, req.Password);
+            if (!loginUserResult.Success)
+            {
+                return new Response<LoginResponse>(ErrorTypeEnum.LoginError,null);
+            }
+          
             //设置Identity
             var identity = new ClaimsIdentity(@"OemMis");
             identity.AddClaim(new Claim(ClaimTypes.Sid, @"1110"));
@@ -40,25 +49,25 @@ namespace Oem.Web.Controllers
                 new AuthenticationProperties {IsPersistent = false});
 
             //把登录数据放入缓存
-            CurrentUser currentUser = new CurrentUser(CacheService);
-
-            if (loginUser != null)
-            {
-                loginUser.OrgId = 1;
-                loginUser.UserAuthority = new[]{AuthorityEnum.Employee};
-                loginUser.UserRole = new []{new RoleRepo()};
-                currentUser.SetCurrentUserInfo(loginUser.UserId, loginUser.UserName, loginUser.OrgId,
-                    loginUser.UserAuthority, loginUser.UserRole);
+            var loginUser = loginUserResult.Data;
+            loginUser.OrgId = 1;
+            loginUser.UserAuthority = new[]{AuthorityEnum.Employee};
+            loginUser.UserRole = new []{new RoleRepo()};
+            CurrentUser.SetCurrentUserInfo(loginUser.UserId, loginUser.UserName, loginUser.OrgId,
+                loginUser.UserAuthority, loginUser.UserRole);
                 
-                return new Response<LoginResponse>(ErrorTypeEnum.NoError,
-                    new LoginResponse
-                    {
-                        UserId = loginUser.UserId, 
-                        UserName = loginUser.UserName
-                    });
-            }
-            return new Response<LoginResponse>(ErrorTypeEnum.Error,null);
+            return new Response<LoginResponse>(ErrorTypeEnum.NoError,
+                new LoginResponse
+                {
+                    UserId = loginUser.UserId, 
+                    UserName = loginUser.UserName
+                });
         }
 
+        public LoginApiController(ICacheService cacheService,
+            [FromServices] IUserService userService) : base(cacheService)
+        {
+            UserService = userService;
+        }
     }
 }
