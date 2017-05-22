@@ -2,10 +2,10 @@
 
 
 
-define(["angular", "services/net/index", "components/fullcalendar/calendar", "commonDirective", "services/net/common"],
+define(["angular", "services/net/index", "components/fullcalendar/calendar",  "services/net/common"],
     function(angular) {
         return angular.module("IndexApp.controllers",
-                ["services.net.index", "ui.calendar", "CommonDirective", 'services.net.common', 'service.currentUser'])
+                ["services.net.index", "ui.calendar", 'services.net.common', 'service.currentUser'])
             .controller("IndexAppController",
             [
                 "$scope", "$rootScope", "indexService", "$filter", 'commonNetService', 'currentUserService',

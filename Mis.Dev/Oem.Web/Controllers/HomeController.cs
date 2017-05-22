@@ -22,5 +22,10 @@ namespace Oem.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Home()
+        {
+            return View();
+        }
     }
 }

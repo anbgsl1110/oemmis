@@ -7,7 +7,6 @@ define([
     'uiRouter',
     "modules/index-app/controller",
     "highcharts-ng",
-    'commonDirective',
     "funnel",
     "components/selectBox/directive"
 ],

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-    <title></title>
+    <title>登录</title>
     <link rel="stylesheet" type="text/css" href="/css/login.css"/>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/greedyint.dialog.js"></script>
@@ -38,10 +38,10 @@
                     if (response.status) {
                         document.cookie = "org=" + org + ";path=/";
                         if (response.data.userId === 1) {//管理员首页
-                            window.location = goto || '/home/Index#/oemmrole';
+                            window.location = goto || '/system/oemrole';
                         }
                         else if (response.data.userId > 1) {//首页
-                            window.location = goto || '/home/Index#/index';
+                            window.location = goto || '/home/home';
                         }
                     }
                     else {

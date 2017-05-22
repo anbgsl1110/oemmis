@@ -1,0 +1,100 @@
+
+@{
+    ViewBag.Title = "日志";
+}
+
+<!-- 内容版块 begin {-->
+<div class="container">
+    <!--列表内容 {-->
+    <div class="section">
+        <div class="section-box1">
+            <div class="normal-search">
+                <form class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入查询条件" />
+                    <button type="submit" class="search-submit" title="点击搜索">搜索</button>
+                </form>
+                <!--<button type="button" class="drop-button close">高级筛选条件<em class="btn-iconDrop2"></em></button>
+                默认为收起来，点击展开，close样式改为open，同时显示高级筛选条件栏 -->
+            </div>
+
+
+        </div>
+
+        <div class="section-content4">
+            <!-- 列表 { -->
+            <div class="ListDateTable">
+
+                <!-- 列表无数据时显示内容 {-->
+                <div class="ListDateNoResult" style="display: none;">无数据</div>
+                <!--} 列表无数据时显示内容 -->
+
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <!-- 数据列表{-->
+                    <tbody><tr>
+
+                        <th>用户ID</th>
+                        <th>用户名</th>
+                        <th>主机</th>
+                        <th>MAC地址</th>
+                        <th>对象</th>
+                        <th>对象ID</th>
+                        <th>操作</th>
+                        <th>时间</th>
+
+
+                    </tr>
+                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                        <td>admin</td>
+                        <td>admin</td>
+                        <td>Lenovo-PC</td>
+                        <td>AC:D1：B6：XXXXX</td>
+                        <td>XXX</td>
+                        <td>XXXX</td>
+                        <td>系统登录</td>
+                        <td>2017-5-19 9:47</td>
+                    </tr>
+
+                    <!--}数据列表 -->
+                    </tbody>
+                </table>
+            </div>
+            <!--} 列表 -->
+
+
+            <!-- 页码 {-->
+            <div class="section-page">
+                <a href="#" class="page-previous page-disabled">上一页</a>
+                <!-- 不可用的样式代码如下：<a href="#" class="page-previous page-disabled">上一页</a> -->
+                <span class="page-line"></span>
+                <a href="#" class="page-num">1</a>
+                <a href="#" class="page-num current">2</a><!-- 当前页样式 增加 current 样式名 -->
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num">4</a>
+                <span class="page-num-more">...</span>
+                <a href="#" class="page-num">10</a>
+                <span class="page-line"></span>
+                <a href="#" class="page-next">下一页</a>
+                <!-- 不可用的样式代码如下：<a href="#" class="page-next page-disabled">下一页</a> -->
+
+            </div>
+            <!--} 页码 -->
+
+        </div>
+    </div>
+    <!--} 列表内容 -->
+</div>
+<!--} 内容版块 end -->
+
+<script>
+    /*表头上的tab切换*/
+    $(".chart-tab>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    })
+</script>

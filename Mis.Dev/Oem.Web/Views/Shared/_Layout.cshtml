@@ -1,0 +1,211 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title ng-bind="($state.current.title||dynamicTitle||$state.current.name)"></title>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/statistics.css" />
+
+    <link rel="stylesheet" type="text/css" href="/lib/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/fullcalendar/lib/cupertino/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/cropper/dist/cropper.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dialog-theme-custom.css" />
+    
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body ng-cloak ng-controller="BaseAppController" class="body-template">
+<div class="body-layout">
+    <!--导航栏-->
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand"><img src=""></a>
+            </div>
+            <!-- 功能菜单 begin {-->
+            <div class="navbar-nav navbar-right">
+                <ul class="navbar-nav-left" id="businessLimit">
+                    <li class="navbar-nav-item">
+                        <a>首页</a>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a>订单管理</a>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a>定单管理</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>申购管理</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>采购管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a>仓库管理</a>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a>采购入库</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>领料出库</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>碎料返库</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a>派工管理</a>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a>派工管理</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>生产进度</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a>辅助工具</a>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a>电脑扫码</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a>基础资料</a>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a>原材料信息</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>产品信息</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>仓库信息</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>供应商信息</a>
+                            </li>
+                            <li class="navbar-dropitem">
+                                <a>公司信息</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-current"></li>
+                </ul>
+                <!--Admin 系统-->
+                <ul class="navbar-nav-left" id="adminLimit" style="display: none">
+                    <li class="navbar-nav-item">
+                        <a href="/system/oemrole">角色</a>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a href="/system/usermanagement">用户</a>
+                    </li>
+                    <li class="navbar-nav-item">
+                        <a href="/system/log">日志</a>
+                    </li>
+                    @*<li class="navbar-current"></li>*@
+                </ul>
+                <!-- 个人中心 begin {-->
+                <div class="navbar-nav-right">
+                    <div class="navbar-account">
+                        <span class="navbar-account-head"><img class="face-radius" src="http://www.anbgsl1110-dms-aliang.space/img/jyl-head.png"></span>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropitem">
+                                <a  style="cursor: default;background-color: rgba(0,0,0,.1);">
+                                    <span id="currentUser_userName">张三</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropitem sub-navbar-dropitem stay-right" style="">
+                                <!--  二级菜单 -->
+                                <a>二级菜单</a>
+                                <ul class="navbar-dropdown-menu">
+                                    <li class="navbar-dropitem"><a href="/home/login">切换账号</a></li>                             
+                                </ul>
+                            </li>
+                            <li class="navbar-dropitem"><a OnClick="">注销</a></li>                   
+                        </ul>
+                    </div>
+                </div>
+                <!-- } 个人中心 end-->
+            </div>
+            <!-- } 功能菜单 end-->     
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+</div>
+<script>
+    function moveToActive(left,width) {
+        $("li.navbar-current").stop(true, true).animate({
+            left: left,
+            width: width
+        }, 'fast');
+    }
+
+    function mouseEnterAction() {
+        var left = $(this).position().left;
+        var width = $(this).width();
+        moveToActive(left, width);
+    }
+
+    function mouseLeaveAction() {
+        var navItems = $('ul.navbar-nav-left li.navbar-nav-item');
+        for (var i = 0, length = navItems.length; i < length; i++) {
+            if ($(navItems[i]).find('.active').length > 0) {
+                var position = $(navItems[i]).position();
+                var left = position ? position.left : 0;
+                var width = $(navItems[i]).width();
+                moveToActive(left, width);
+                return;
+            }
+        };
+    }
+
+    function navDownAction() {
+        var navItems = $('ul.navbar-nav-left li.navbar-nav-item li.navbar-dropitem');
+        //点击导航栏的时候将滚动条置顶
+        $("body").getNiceScroll(0).doScrollTop(0);
+        for (var i = 0, length = navItems.length; i < length; i++) {
+            if ($(navItems[i]).find('.active').length > 0) {
+                $(navItems[i]).addClass('dropitem-current');
+            } else {
+                $(navItems[i]).removeClass('dropitem-current');
+            }
+        }
+    }
+
+    function init(scope) {
+        $rootScope.$on('$stateChangeSuccess', function () {
+            //TOFIX
+            $timeout(mouseLeaveAction);
+            $timeout(navDownAction);
+        });
+        $('ul.navbar-nav-left li.navbar-nav-item').mouseenter(mouseEnterAction);
+        $("ul.navbar-nav-left").mouseleave(mouseLeaveAction);
+    }
+    $(function($) {
+        $.get('/api/ApiBase',
+            function(result) {
+                var currentUser = result.data;
+                //导航功能是后台还是员工
+                if (currentUser.userId === 1) {
+                    $("#businessLimit").hide();
+                    $("#adminLimit").show();
+                }
+                $("#currentUser_userName").text(currentUser.userName);
+            });
+    });
+</script>
+</body>
+</html>

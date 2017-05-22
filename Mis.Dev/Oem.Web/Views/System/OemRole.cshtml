@@ -1,0 +1,220 @@
+
+@{
+    ViewBag.Title = "角色";
+}
+
+<!-- 工具栏-可操作区 begin {-->
+<div class="toolbar toolbar-fixed-top">
+    <!-- 列表可操作项与搜索 begin {-->
+    <div class="container">
+        <div class="toolbar-left">
+            <button type="button" class="btn-default icon-button"><em class="btn-iconAdd"></em>添加</button>
+            <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
+        </div>
+
+        <div class="toolbar-form toolbar-right">
+            <form class="form-group">
+                <input type="text" class="form-control" placeholder="角色名" ng-keydown="_search($event)" ng-model="searchText">
+                <button type="button" class="search-submit" title="点击搜索" ng-click="searchByName()">搜索</button>
+            </form>
+        </div>
+
+    </div>
+    <!--} 列表可操作项与搜索 end -->
+</div>
+<!--} 工具栏-可操作区 end -->
+<!-- 内容版块 begin {-->
+<div class="container manage-content" ng-cloak>
+    <!--增加超管页面样式名　-->
+    <!-- 左侧列表 begin {-->
+    <div class="sidebar">
+        <!-- 排序与多选开关 begin {-->
+        <div class="sidebar-tools">
+            <div class="sidebar-tools-left">
+                <button class="btn-sort" title="排序">
+                    时间
+                    <em class="icon-sort-normal"></em>
+                </button>
+            </div>
+        </div>
+        <!--} 排序与多选开关 end -->
+        <!-- 数据列表 {-->
+        <div class="sidebar-mid sidebar-list sidebar-tabs-more sidebar-noTabs" gint-pagescroll>
+            <!--left-List模板开始-->
+            <div class="list-data list-data-style2">
+                <dl class="data-col3">
+                    <dt><strong>管理员</strong></dt>
+                    <dd>
+                        <!--人数：<span>13</span>人-->
+                        人数： 10人
+                        <span class="list-text-right">2017-05-21</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-data list-data-style2">
+                <dl class="data-col3">
+                    <dt><strong>输出入部</strong></dt>
+                    <dd>
+                        <!--人数：<span>13</span>人-->
+                        人数： 10人
+                        <span class="list-text-right">2017-05-21</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-data list-data-style2">
+                <dl class="data-col3">
+                    <dt><strong>仓库部</strong></dt>
+                    <dd>
+                        <!--人数：<span>13</span>人-->
+                        人数： 10人
+                        <span class="list-text-right">2017-05-21</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-data list-data-style2">
+                <dl class="data-col3">
+                    <dt><strong>派工部</strong></dt>
+                    <dd>
+                        <!--人数：<span>13</span>人-->
+                        人数： 10人
+                        <span class="list-text-right">2017-05-21</span>
+                    </dd>
+                </dl>
+            </div>
+                <!--left-List模板结束-->
+                <div class="sidebar-list-loading" style="display: none"><em></em>正在载入中...
+                </div>
+            </div>
+        <div class="sidebar-nodata" style="display: none">
+            {{ isSearch ? "没有搜到您要的信息哦":"无数据"  }}
+        </div>
+        <!--} 数据列表 end -->
+
+
+        <div class="sidebar-bottom sidebar-total">共<span>4</span>个角色</div>
+
+
+    </div>
+    <!--} 左侧列表 end -->
+    <!-- 右侧内容版块 begin {-->
+    <div class="col-R">
+
+        <!-- 角色管理 begin {-->
+        <div class="section" style=" display:block;" ng-show="roleList.length||showData" ng-cloak>
+            <div class="section-box section-box-s1">
+                <div class="block-header">
+                    <input type="text" class="inputbox inputbox-s1" placeholder="请输入角色名" ng-model="uiModel.name">
+                </div>
+
+                <div class="block-content">
+                    <dl>
+                        <dd class="leveltitle-s1">
+                            <span class="leveltitle-power">权限</span>
+                            <span class="leveltitle-text">描述</span>
+                        </dd>
+                    </dl>
+                    <dl ng-repeat=" functionGroup in uiModel.functionGroupList track by $index">
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">订单管理</span>
+                            <span class="level1-text"> 订单模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd>
+                            <!--level2-icon为默认样式，level2-icon-current为选中后样式-->
+                            <!--一、二、三级渲染-->
+                            <dl class="level2-box">
+                                <dd class="level2-s1">
+                                    <em class="level-icon"></em>
+                                    <span class="level2-text">定单管理</span>
+                                </dd>
+                            </dl>
+                            <dl class="level2-box">
+                                <dd class="level2-s1">
+                                    <em class="level-icon"></em>
+                                    <span class="level2-text">申购管理</span>
+                                </dd>
+                            </dl>
+                            <dl class="level2-box">
+                                <dd class="level2-s1">
+                                    <em class="level-icon"></em>
+                                    <span class="level2-text">采购管理</span>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">仓库管理</span>
+                            <span class="level1-text">仓库模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">派工管理</span>
+                            <span class="level1-text"> 派工模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">辅助工具</span>
+                            <span class="level1-text"> 辅助模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">基础资料</span>
+                            <span class="level1-text"> 基础模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                        <dd class="level1-s1">
+                            <em class="level-icon "></em>
+                            <span class="level1-title">系统设置</span>
+                            <span class="level1-text"> 系统模块</span>
+                            <span class="level1-more"><em></em></span><!--caret-down为展开样式，caret-up为收起样式。-->
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="block-bottom clearfix">
+                <button type="button" class="btn-default btn-cancel" ng-click="cancelSubmit()">取消</button>
+                <button type="button" class="btn-default btn-sure" ng-click="submitRole()">确定</button>
+            </div>
+        </div>
+
+        <div class="section" style="display: none">
+            <div class="section-box-nodata">
+                <div class="nodata-content">
+                    <p class="nodata-text">Hi，您目前搜索关键字 “ <em class="nodata-keywords">{{roleListConfig.filter.RoleName}}</em> ”，共找到 0 个内容。</p>
+                </div>
+            </div>
+        </div>
+
+        <!--} 角色管理 end -->
+
+    </div>
+    <!--} 右侧内容版块 begin -->
+</div>
+<!--} 内容版块 end -->
+
+
+
+<div class="modal" style="display:none">
+    <div class="modal-backdrop" style="height:100%;"></div><!-- 当由于弹框内容过长显示纵向滚动条时，此处高度需要计算获得。height= search-options的高度+ search-options的上下margin的和-->
+    <div class="modal-dialog-ab modal-content usual-medium">
+        <div class="pop-up-title">
+            添加员工
+        </div>
+        <div class="pop-up-content">
+            <div class="pop-up-loginbox">
+                <div class="pop-up-logindiv"><label class="pop-up-column">用户名</label><input type="text"></div>
+                <div class="pop-up-logindiv"><label class="pop-up-column">姓名</label><input type="text"></div>
+                <div class="pop-up-logindiv "><label class="pop-up-column">密码</label><input type="password"></div>
+            </div>
+        </div>
+        <div class="popup-btn-box clearfix">
+            <button type="button" class="btn-default btn-cancel" ng-click="quickAdditionsCancel()">取消</button>
+            <button type="button" class="btn-default btn-sure" ng-click="quickAdditionsSure()">确定</button>
+        </div>
+
+    </div>
+</div>

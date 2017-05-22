@@ -1,0 +1,133 @@
+
+@{
+    ViewBag.Title = "员工首页";
+}
+
+<!-- 内容版块 begin {-->
+<div class="container clearfix">
+    <!-- 左侧版块 {-->
+    <div class="crm-col-L2">
+        <div class="section">
+            <div  ng-click='openMessage(0)' style="cursor:pointer" class="clue-box4-head">今日派工消息<span class="fr head-tips" title="今日派工数量" ng-bind='0'></span></div>
+            <div class="clue-list-content">
+                <ul class="item-list-content ul-icon1" ng-repeat='item in fullowUp'>
+                    <li limit="160px" title="{{item.nextFollowUpAt |  formatJsonDate:'HH:mm'}} {{item.nextFollowUpTypeName}} {{item.studnetName}}" ng-click="followUpDetail(item.clueId)" ng-style="clickStyle">
+                        <span class="time-tips" ng-bind="item.nextFollowUpAt |  formatJsonDate:'HH:mm' " style="margin-right:0px"></span>
+                        <span class="tel-tips" ng-bind="item.nextFollowUpTypeName " style="margin-right:0px"></span>
+                        <span class="user-tips" ng-bind="item.studnetName "></span>
+                    </li>
+                </ul>
+                <div class="nodata-list" ng-show='fullowUpCount == 0'>无派工</div>
+            </div>
+            <div class="clue-box4-foot" ng-show='fullowUpCount > 5'>
+                <span class="See-more" ng-click='openMessage(3)'>更多派工 ></span>
+            </div>
+        </div>
+        <div class="section">
+            <div  ng-click='openMessage(1)' style="cursor:pointer" class="clue-box4-head">生产进度消息 <span class="fr head-tips" title="生产进度数量" ng-bind='0'></span></div>
+            <div class="clue-list-content">
+                <ul class="item-list-content ul-icon3" ng-repeat='item in tasks'>
+
+                    <li limit="160px" title="{{item.createName}}提醒你{{item.datetime |  formatJsonDate:'yyyy/MM/dd'}}{{item.name}}">
+                        <span ng-bind="item.datetime |  formatJsonDate:'yyyy/MM/dd' "></span>
+                    </li>
+                </ul>
+                <div class="nodata-list" ng-show='tasksCount == 0'>无生产进度</div>
+            </div>
+            <div class="clue-box4-foot" ng-show='tasksCount > 5' >
+                <span class="See-more" ng-click='openMessage(2)'>更多生产进度 ></span>
+            </div>
+        </div>
+        <div class="section">
+            <div  ng-click='openMessage(2)' style="cursor:pointer" class="clue-box4-head">系统消息<span class="fr head-tips" title="消息数量" ng-bind="messagesCount > 99 ? '99+':messagesCount"></span></div>
+            <div class="clue-list-content">
+                <ul class="item-list-content ul-icon2" ng-repeat='item in messages'>
+                    <li limit="160px" title="{{item.content}}"><span class="message-tips" ng-bind="item.content"></span></li>
+                </ul>
+                <div class="nodata-list" ng-show='messagesCount == 0'>无消息</div>
+            </div>
+            <div class="clue-box4-foot" ng-show='messagesCount > 5' >
+                <span class="See-more" ng-click='openMessage(1)'>更多消息 ></span>
+            </div>
+        </div>
+    </div>
+    <!--} 左侧版块 -->
+    <!-- 右侧版块 {-->
+    <div class="crm-col-R2">
+        <div class="section">
+            <div class="section-content4 stat-analysis">
+                <div class="target-head" ng-show="hasGoal">
+                    <h3 class="target-head-title">生产情况</h3>
+                    <div class="Progress-bar">
+                        <div class="clearfix">
+                            <div class="bar-font fl">定单总数<span class="bar-font-number">(9999)</span></div>
+                            <div class="bar-number-color1 fr"><em>48</em>%</div>
+                        </div>
+                        <div class="tips-box special-tips">
+                            <div class="bar-content" title="已完成定单数：3456">
+                                <div class="bar-bg bg-color1" style="width:48%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="Progress-bar">
+                        <div class="clearfix">
+                            <div class="bar-font fl">派工总数<span class="bar-font-number">(9999)</span></div>
+                            <div class="bar-number-color2 fr"><em>66</em>%</div>
+                        </div>
+                        <div class="bar-content" title="已完成派工：6666">
+                            <div class="bar-bg bg-color2" style="width:66%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-box3-title">定单统计</div>
+                <div class="section-box3">
+                    <div class="section-box3-head clearfix">
+                        <div class="chart-tab fl">
+                            <a class="chart-tab-item" style="cursor:pointer;">最近7天</a>
+                            <a class="chart-tab-item " style="cursor:pointer;">最近15天</a>
+                            <a class="chart-tab-item" style="cursor:pointer;">最近30天</a>
+                        </div>
+
+                        <div class="chart-tab fr" >
+                            <div class="dropdown-list chart-tab-item" >
+
+                            </div>
+                        </div>
+                        <div class="chart-tab fr">
+                            <div class="dropdown-list chart-tab-item">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-box3-inner" id="container2">
+                        <div class="ListDateNoResult3">无数据</div>
+                    </div>
+                </div>
+                <div class="section-box3-title">派工统计</div>
+                <div class="section-box3">
+                    <div class="section-box3-head clearfix">
+
+                        <div class="chart-tab fr">
+                            <div class="dropdown-list chart-tab-item" >
+
+                            </div>
+                        </div>
+                        <div class="chart-tab fr">
+                            <div class="dropdown-list chart-tab-item">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-box3-inner" >
+                        <div class="svg-content clearfix">
+                            <div class="ListDateNoResult3">无数据</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 右侧版块 -->
+</div>
+<!--} 内容版块 end -->

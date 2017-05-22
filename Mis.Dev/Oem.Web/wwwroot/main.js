@@ -19,8 +19,8 @@ requirejs.config({
         'newMoment': "lib/fullcalendar/lib/moment.min",
         'fullCalendarLang': "lib/fullcalendar/lang-all",
         'fullCalendarCustom': "lib/fullcalendar/fullcalendar-custom",
-        'datePicker': "lib/My97DatePicker/WdatePicker",
-        'commonDirective': "directives/common",
+        /*'datePicker': "lib/My97DatePicker/WdatePicker",*/
+        //'commonDirective': "directives/common",
         'jqueryUI': "lib/fullcalendar/lib/jquery-ui-1.11.2.min",
         'nicescroll': "lib/jquery-nicescroll/jquery.nicescroll.min",
         'autosize': "lib/autosize/autosize.min",
@@ -50,14 +50,14 @@ requirejs.config({
         underscore: {
             'exports': "_"
         },
-        datePicker: {
+        /*datePicker: {
             init: function() {
                 //hack第一次点击无效果，因为第一次点击才去下载一些东西
                 //WdatePicker({});
                 $dp.hide();
             }
-        },
-        commonDirective: ['angular', 'sortable', 'datePicker'],
+        },*/
+        //commonDirective: ['angular', 'sortable', 'datePicker'],
         jqueryUI: ["jquery"],
         fullCalendar: ["jqueryUI", "moment"],
         fullCalendarCustom: ["fullCalendar"],
@@ -75,7 +75,7 @@ require([
 ],
     function() {
         angular.element(document).ready(function() {
-            //angular.bootstrap(document, ["BaseApp"]);
+            angular.bootstrap(document, ["BaseApp"]);
             var currentUser;
             $("body").niceScroll({
                 cursorcolor: "rgba(0,0,0,0.3)",
