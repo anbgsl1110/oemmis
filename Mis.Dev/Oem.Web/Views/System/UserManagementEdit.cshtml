@@ -1,0 +1,153 @@
+
+@{
+    ViewBag.Title = "用户编辑";
+}
+
+<style>
+    .tablist {
+        width: 100%;
+        height: 30px;
+        border-bottom: #ddd 1px solid;
+        margin-bottom: 10px;
+    }
+    .btn-actor, .btn-rights{
+        width: auto;
+        height: 30px;
+        padding: 0 10px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background: #ddd;
+
+    }
+    .btn-current {
+        background: #70bc67;
+
+    }
+    .tabs table td,.tabs table th{
+
+        border: #ddd 1px solid !important;
+    }
+</style>
+
+<!-- 内容版块 begin {-->
+<div class="container">
+    <!-- 编辑 begin {-->
+    <div class="section">
+        <div class="section-content4 consult-content">
+            <div class="detail-title">用户修改页面</div>
+            <ul class="info-box1 clearfix info-edit">
+                <li class="typeOne-third">
+                    <label>是否有效</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>用户名</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>姓名</label>
+                    <input type="text" class="form-control">
+
+                </li>
+                <li class="typeOne-third">
+                    <label>所在部门</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>部门ID</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>联系电话</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>移动电话</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>电子邮件</label>
+                    <input type="text" class="form-control">
+                </li>
+                <li class="typeOne-third">
+                    <label>备注</label>
+                    <input type="text" class="form-control">
+                </li>
+            </ul>
+            <!-- 表格切换-->
+            <div class="tablist">
+                <button type="button" class=" btn-actor btn-current">拥有角色</button>
+                <button type="button" class=" btn-rights ">部门权限</button>
+            </div>
+            <div class="tabs">
+                <table border="0" cellpadding="0" cellspacing="0" class="actors" >
+                    <!-- 数据列表{-->
+                    <tbody><tr>
+                        <th>是否有效</th>
+                        <th>角色</th>
+                        <th>启用时间</th>
+                        <th>终止时间</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                        <td>Y</td>
+                        <td>admin</td>
+                        <td>2017-5-12</td>
+                        <td>2017-5-13</td>
+                        <td>有效</td>
+                    </tr>
+
+                    <!--}数据列表 -->
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0"  class="rights" style="display:none;">
+                    <!-- 数据列表{-->
+                    <tbody><tr>
+
+                        <th>部门名称</th>
+                        <th>备注</th>
+
+                    </tr>
+                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
+
+                        <td>IT部</td>
+                        <td>admin</td>
+
+                    </tr>
+
+                    <!--}数据列表 -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn-default btn-cancel">取消</button>
+                <button type="button" class="btn-default btn-sure">确定</button>
+            </div>
+        </div>
+    </div>
+    <!--} 编辑 end -->
+
+
+
+</div>
+<!--} 内容版块 end -->
+
+<script>
+/*两个表格名称以及表格之间的切换*/
+    $(".tablist>button").click(function() {
+        $(this).addClass("btn-current").siblings().removeClass("btn-current");
+        if ($(".btn-actor").hasClass("btn-current")) {
+            $(".tabs").find("table:eq(0)").show().siblings().hide();
+
+
+        } else {
+
+            $(".tabs").find("table:eq(1)").show().siblings().hide();
+        }
+    });
+
+</script>

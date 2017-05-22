@@ -7,6 +7,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title ng-bind="($state.current.title||dynamicTitle||$state.current.name)"></title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/statistics.css" />
@@ -31,19 +32,19 @@
             <div class="navbar-nav navbar-right">
                 <ul class="navbar-nav-left" id="businessLimit">
                     <li class="navbar-nav-item">
-                        <a>首页</a>
+                        <a href="/home/home">首页</a>
                     </li>
                     <li class="navbar-nav-item">
                         <a>订单管理</a>
                         <ul class="navbar-dropdown-menu">
                             <li class="navbar-dropitem">
-                                <a>定单管理</a>
+                                <a href="/order/order">定单管理</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>申购管理</a>
+                                <a href="/order/applypurchase/">申购管理</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>采购管理</a>
+                                <a href="/order/purchaseleather">采购管理</a>
                             </li>
                         </ul>
                     </li>
@@ -100,7 +101,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="navbar-current"></li>
+                    @*<li class="navbar-current"></li>*@
                 </ul>
                 <!--Admin 系统-->
                 <ul class="navbar-nav-left" id="adminLimit" style="display: none">
