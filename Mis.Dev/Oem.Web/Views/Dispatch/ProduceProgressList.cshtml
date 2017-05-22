@@ -1,7 +1,6 @@
 
-
 @{
-    ViewBag.Title = "领料出库";
+    ViewBag.Title = "生产进度";
 }
 
 <!--列表内容 {-->
@@ -19,62 +18,46 @@
         <div class="section-box3-head clearfix">
             <div class="chart-tab fl">
                 <a href="#" class="chart-tab-item current">全部</a><!-- current 为选中状态-->
-                <a href="#" class="chart-tab-item">下料皮</a>
+                <a href="#" class="chart-tab-item">下料皮度</a>
                 <a href="#" class="chart-tab-item">下料衬里</a>
+                <a href="#" class="chart-tab-item">小机器</a>
+                <a href="#" class="chart-tab-item">生产小组</a>
             </div>
         </div>
-        
-        <div class="ListBar clearfix">
-            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/repertory/exportrepertoryadd'">
-                <em class="btn-iconAdd"></em>下料皮出库
-            </button>
-            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/repertory/exportrepertoryadd'">
-                <em class="btn-iconAdd"></em>下料衬里出库
-            </button>
-        </div>
-
+        <div></div>
+        <!-- 列表 { -->
         <div class="ListDateTable">
             <!-- 列表无数据时显示内容 {-->
             <div class="ListDateNoResult" style="display: none;">无数据</div>
             <!--} 列表无数据时显示内容 -->
-            <div class="copyScroll" style="-ms-overflow-x: auto;">
-                <table border="0" cellpadding="0" cellspacing="0">
-                    <!-- 数据列表{-->
-                    <tbody><tr>
-                        <th>操作时间</th>
-                        <th>操作编号</th>
-                        <th>辅助编号</th>
-                        <th>操作年月</th>
-                        <th>名称</th>
-                        <th>类型</th>
-                        <th>规格</th>
-                        <th>颜色</th>
-                        <!--    <th>数量</th>
-                        <th>经手人</th>
-                        <th>管理员</th>
-                        <th>操作类型</th>
-                        <th>仓库名称</th>
-                        <th>仓库类型</th>
-                        <th>材料类型</th>
-                        <th>系列号</th>-->
-                    </tr>
-                    <tr class="ListDate" onclick="window.location.href = '/repertory/exportrepertorylistdetail'"
-                    ><!-- 说明： 每页数据10条-->
+            <table border="0" cellpadding="0" cellspacing="0">
+                <!-- 数据列表{-->
+                <tbody><tr>
 
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>
-                    </tr>
+                    <th>生产状态</th>
+                    <th>合同日期</th>
+                    <th>派工单号</th>
+                    <th>系列号</th>
+                    <th>款号</th>
+                    <th>品名</th>
+                    <th>颜色</th>
+                    <th>派工数量</th>
+                </tr>
+                <tr class="ListDate" onclick="window.location.href = '/dispatch/ProduceProgressDetail'">
+                    <!-- 说明： 每页数据10条-->
+                    <td>Y</td>
+                    <td>admin</td>
+                    <td>张三</td>
+                    <td>IT部</td>
+                    <td>6666666666</td>
+                    <td>0571-66666666</td>
+                    <td>xxxxxx@163.com</td>
+                    <td>有效</td>
+                </tr>
 
-                    <!--}数据列表 -->
-                    </tbody>
-                </table>
-            </div>
+                <!--}数据列表 -->
+                </tbody>
+            </table>
         </div>
         <!--} 列表 -->
 
@@ -92,6 +75,7 @@
             <span class="page-line"></span>
             <a href="#" class="page-next">下一页</a>
             <!-- 不可用的样式代码如下：<a href="#" class="page-next page-disabled">下一页</a> -->
+
         </div>
         <!--} 页码 -->
 

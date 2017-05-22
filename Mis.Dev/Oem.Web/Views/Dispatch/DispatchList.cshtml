@@ -1,6 +1,6 @@
 
 @{
-    ViewBag.Title = "采购入库";
+    ViewBag.Title = "派工管理";
 }
 
 <!--列表内容 {-->
@@ -11,7 +11,6 @@
                 <input type="text" class="form-control" placeholder="请输入查询条件" />
                 <button type="submit" class="search-submit" title="点击搜索">搜索</button>
             </form>
-
         </div>
     </div>
 
@@ -20,21 +19,25 @@
         <div class="section-box3-head clearfix">
             <div class="chart-tab fl">
                 <a href="#" class="chart-tab-item current">全部</a><!-- current 为选中状态-->
-                <a href="#" class="chart-tab-item">采购皮</a>
-                <a href="#" class="chart-tab-item">采购衬里</a>
-                <a href="#" class="chart-tab-item">采购辅料</a>
+                <a href="#" class="chart-tab-item">下料皮</a>
+                <a href="#" class="chart-tab-item">下料衬里</a>
+                <a href="#" class="chart-tab-item">小机器</a>
+                <a href="#" class="chart-tab-item">生产小组</a>
             </div>
         </div>
-
+        
         <div class="ListBar clearfix">
-            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/repertory/importrepertoryleatheradd'">
-                <em class="btn-iconAdd"></em>采购皮入库
+            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/dispatch/LeatherDispatchAdd'">
+                <em class="btn-iconAdd"></em>下料皮派工
             </button>
-            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/repertory/importrepertorychenliadd'">
-                <em class="btn-iconAdd"></em>采购衬里入库
+            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/dispatch/ChenliDispatchAdd'">
+                <em class="btn-iconAdd"></em>下料衬里派工
             </button>
-            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/repertory/importrepertoryfuliaoadd'">
-                <em class="btn-iconAdd"></em>采购辅料入库
+            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/dispatch/MachineDispatchAdd'">
+                <em class="btn-iconAdd"></em>小机器派工
+            </button>
+            <button type="button" class="btn-default icon-button" onclick="window.location.href = '/dispatch/GroupDispatchAdd'">
+                <em class="btn-iconAdd"></em>生产小组派工
             </button>
         </div>
         
@@ -48,15 +51,14 @@
                 <table border="0" cellpadding="0" cellspacing="0">
                     <!-- 数据列表{-->
                     <tbody><tr>
-
-                        <th>操作时间</th>
-                        <th>操作编号</th>
-                        <th>辅助编号</th>
-                        <th>操作年月</th>
-                        <th>名称</th>
-                        <th>类型</th>
+                        <th>派工单号</th>
+                        <th>派工日期</th>
+                        <th>派工人员</th>
+                        <th>派工人</th>
+                        <th>派工类型</th>
+                        <!--   <th>类型</th>
                         <th>规格</th>
-                        <th>颜色</th>
+                        <th>颜色</th>-->
                         <!--    <th>数量</th>
                         <th>经手人</th>
                         <th>管理员</th>
@@ -65,20 +67,18 @@
                         <th>仓库类型</th>
                         <th>材料类型</th>
                         <th>系列号</th>-->
-
-
                     </tr>
-                    <tr class="ListDate" onclick="window.location.href = '/repertory/importrepertorylistdetail'"
-                    ><!-- 说明： 每页数据10条-->
+                    <tr class="ListDate" onclick="window.location.href = '/dispatch/DispatchListDetail'">
+                        <!-- 说明： 每页数据10条-->
 
                         <td>Y</td>
                         <td>admin</td>
                         <td>张三</td>
                         <td>IT部</td>
                         <td>6666666666</td>
-                        <td>0571-66666666</td>
+                        <!-- <td>0571-66666666</td>
                         <td>xxxxxx@163.com</td>
-                        <td>有效</td>
+                        <td>有效</td>-->
                     </tr>
 
                     <!--}数据列表 -->
