@@ -62,10 +62,10 @@
             <div class="ListBar clearfix">
                 <label class="textL">全选</label>
                 <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/orderadd'">
-                    <em class="btn-iconEdit"></em>修改
+                    <em class="btn-iconAdd"></em>新增
                 </button>
                 <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/orderadd'">
-                    <em class="btn-iconAdd"></em>新增
+                    <em class="btn-iconEdit"></em>修改
                 </button>
                 <button type="button" class="btn-default icon-button delInfor"><em class="btn-iconDel"></em>删除</button>
 
@@ -156,6 +156,16 @@
     });
     $(".del-alarm").click(function() {
         $(".del-alarming").hide();
+    });
+    /*点击全选，点击全不选*/
+    $("#Selall>span").click(function() {
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+            $(".checkboxStyle").removeClass("checkboxChecked");
+        } else {
+
+            $(".checkboxStyle").addClass("checkboxChecked");
+        }
     });
     /*点击复选框的动画效果*/
     $(".blankbox>span").not("#Selall>span").click(function() {

@@ -1,0 +1,133 @@
+
+@{
+    ViewBag.Title = "入库皮增加";
+}
+
+<style>
+    .tablist {
+        width: 100%;
+        height: 30px;
+        border-bottom: #ddd 1px solid;
+    }
+    .btn-actor, .btn-rights{
+        width: auto;
+        height: 30px;
+        padding: 0 10px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background: #ddd;
+    }
+    .btn-current {
+        background: #70bc67;
+
+    }
+    .tabs table td,.tabs table th{
+
+        border: #ddd 1px solid !important;
+        text-align: center;
+        padding: 0 10px;
+    }
+    .ListDate td {
+        height: 30px;
+    }
+    .consult-content .btn-box {
+
+        border-top: 0px solid #fff;
+        padding-top: 0px;
+    }
+</style>
+
+<!-- 编辑 begin {-->
+<div class="section">
+    <div class="section-content4 consult-content">
+        <div class="detail-title">皮入库单</div>
+        <ul class="info-box1 clearfix info-edit">
+            <li class="typeOne-third">
+                <label>采购编号</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>采购系统编号</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>入库编号</label>
+                <input type="text" class="form-control">
+
+            </li>
+            <li class="typeOne-third">
+                <label>入库年月</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>仓库名称</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>联系电话</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>移动电话</label>
+                <input type="text" class="form-control">
+            </li>
+            <li class="typeOne-third">
+                <label>经手人</label>
+                <input type="text" class="form-control">
+            </li>
+
+        </ul>
+        <div class="btn-box">
+            <button type="button" class="btn-default btn-cancel">取消</button>
+            <button type="button" class="btn-default btn-sure">确定</button>
+        </div>
+        <!-- 表格切换-->
+        <div class="tablist">
+            <!-- <button type="button" class=" btn-actor btn-current">拥有角色</button>
+            <button type="button" class=" btn-rights ">部门权限</button>-->
+        </div>
+        <div class="tabs">
+            <table border="0" cellpadding="0" cellspacing="0" class="actors" >
+                <!-- 数据列表{-->
+                <tbody><tr>
+                    <th>采购编号</th>
+                    <th>采购系统编号</th>
+                    <th>库位号</th>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>色号</th>
+                    <th>采购合计</th>
+                    <th>已到货数量</th>
+                    <th>未到货数量</th>
+                    <th>入库数量</th>
+                    <th>系列号备注</th>
+                    <th>备注</th>
+
+                </tr>
+                <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                    <td>Y</td>
+                    <td>admin</td>
+                    <td>2017-5-12</td>
+                    <td>2017-5-13</td>
+                    <td>有效</td>
+                    <td>Y</td>
+                    <td>admin</td>
+                    <td>2017-5-12</td>
+                    <td>2017-5-13</td>
+                    <td>有效</td>
+                    <td>2017-5-13</td>
+                    <td>有效</td>
+                </tr>
+                <!--}数据列表 -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!--} 编辑 end -->
+
+

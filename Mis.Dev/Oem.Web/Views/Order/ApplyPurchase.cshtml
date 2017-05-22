@@ -37,6 +37,7 @@
             <table border="0" cellpadding="0" cellspacing="0">
                 <!-- 数据列表{-->
                 <tbody><tr>
+                    <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                     <th>申购状态</th>
                     <th>申购编号</th>
                     <th>申购年月</th>
@@ -45,9 +46,9 @@
                     <th>申购辅料合计数量</th>
                     <th>辅料已到货数量</th>
                     <th>辅料未到货数量</th>
-
                 </tr>
                 <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                    <td class="blankbox"><span class="checkboxStyle"></span></td>
                     <td>已提交申购</td>
                     <td>XXXXXXX</td>
                     <td>XXXXXXXXXXX</td>
@@ -56,7 +57,6 @@
                     <td>500</td>
                     <td>xxxxxx</td>
                     <td>ffffff</td>
-
                 </tr>
 
                 <!--}数据列表 -->
@@ -93,6 +93,25 @@
     $(".chart-tab>a").click(function() {
         $(this).addClass("current").siblings().removeClass("current");
 
+    });
+    /*点击全选，点击全不选*/
+    $("#Selall>span").click(function() {
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+            $(".checkboxStyle").removeClass("checkboxChecked");
+        } else {
+
+            $(".checkboxStyle").addClass("checkboxChecked");
+        }
+    });
+    /*点击复选框的动画效果*/
+    $(".blankbox>span").not("#Selall>span").click(function() {
+
+        if ($(this).hasClass("checkboxChecked")) {
+            $(this).removeClass("checkboxChecked");
+        } else{
+            $(this).addClass("checkboxChecked");
+        }
     });
     /*页码切换*/
     $(".section-page>a").click(function() {

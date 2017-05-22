@@ -29,7 +29,7 @@
             </div>
             <!-- 功能菜单 begin {-->
             <div class="navbar-nav navbar-right">
-                <ul class="navbar-nav-left" id="businessLimit">
+                <ul class="navbar-nav-left" id="businessLimit" style="display: none">
                     <li class="navbar-nav-item">
                         <a href="/home/home">首页</a>
                     </li>
@@ -54,13 +54,13 @@
                         <a>仓库管理</a>
                         <ul class="navbar-dropdown-menu">
                             <li class="navbar-dropitem">
-                                <a>采购入库</a>
+                                <a href="/repertory/importrepertorylist">采购入库</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>领料出库</a>
+                                <a href="/repertory/exportrepertorylist">领料出库</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>碎料返库</a>
+                                <a href="/repertory/returnrepertorylist">碎料返库</a>
                             </li>
                         </ul>
                     </li>
@@ -203,8 +203,10 @@
                 var currentUser = result.data;
                 //导航功能是后台还是员工
                 if (currentUser.userId === 1) {
-                    $("#businessLimit").hide();
                     $("#adminLimit").show();
+                }
+                if (currentUser.userId > 1) {
+                    $("#businessLimit").show();
                 }
                 $("#currentUser_userName").text(currentUser.userName);
             });
