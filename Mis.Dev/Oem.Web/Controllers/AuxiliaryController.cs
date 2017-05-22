@@ -22,5 +22,14 @@ namespace Oem.Web.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 扫码详情
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult ScanListDetail()
+        {
+            return View();
+        }
     }
 }

@@ -87,19 +87,19 @@
                         <a>基础资料</a>
                         <ul class="navbar-dropdown-menu">
                             <li class="navbar-dropitem">
-                                <a>原材料信息</a>
+                                <a href="/baseinfo/SeriesInfoList">原材料信息</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>产品信息</a>
+                                <a href="/baseinfo/ProductInfoList">产品信息</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>仓库信息</a>
+                                <a href="/baseinfo/WarehouseInfoList">仓库信息</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>供应商信息</a>
+                                <a href="/baseinfo/SupplerInfoList">供应商信息</a>
                             </li>
                             <li class="navbar-dropitem">
-                                <a>公司信息</a>
+                                <a href="/baseinfo/CompanyInfoList">公司信息</a>
                             </li>
                         </ul>
                     </li>
@@ -135,7 +135,7 @@
                                     <li class="navbar-dropitem"><a href="/home/login">切换账号</a></li>                             
                                 </ul>
                             </li>
-                            <li class="navbar-dropitem"><a OnClick="">注销</a></li>                   
+                            <li class="navbar-dropitem"><a onclick="exit()">注销</a></li>                   
                         </ul>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
             }
         }
     }
-
+    //初始化
     function init(scope) {
         $rootScope.$on('$stateChangeSuccess', function () {
             //TOFIX
@@ -197,6 +197,19 @@
         $('ul.navbar-nav-left li.navbar-nav-item').mouseenter(mouseEnterAction);
         $("ul.navbar-nav-left").mouseleave(mouseLeaveAction);
     }
+    //注销
+    function exit() {
+        var userAgent = navigator.userAgent;
+        if (userAgent.indexOf("Firefox") != -1
+            || userAgent.indexOf("Chrome") != -1) {
+            window.location.href = "about:blank";
+        } else {
+            window.opener = null;
+            window.open("", "_self");
+            window.close();
+        }
+    }
+    
     $(function($) {
         $.get('/api/ApiBase',
             function(result) {
