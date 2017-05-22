@@ -5,8 +5,8 @@
  * description: crm角色设置 控制器
  */
 
-define(["angular", "services/net/oemmrole", 'services/dialogService', 'services/commonService', 'commonDirective', 'modules/oemrole-app/services'], function (angular) {
-    return angular.module("CrmroleApp.controllers", ["services.net.crmrole", "Dialog.services", 'Common.services', 'CommonDirective', 'CrmRoleApp.services'])
+define(["angular", "services/net/oemrole", 'services/dialogService', 'services/commonService', 'modules/oemrole-app/services'], function (angular) {
+    return angular.module("CrmroleApp.controllers", ["services.net.crmrole", "Dialog.services", 'Common.services', 'CrmRoleApp.services'])
         .controller("OemroleAppController", [
             "$scope", "$q", "$rootScope", "$state", "$timeout", "$http", "oemRoleNetService", "gintDialog", 'singleThreadedNetService', 'verifyEmployeeService', 'oemroleService',"messages",
             function ($scope, $q, $rootScope, $state, $timeout, $http, crmRoleNetService, gintDialog, singleThreadedNetService, verifyEmployeeService, crmRoleService, messages) {

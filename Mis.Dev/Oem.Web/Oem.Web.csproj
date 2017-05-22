@@ -272,7 +272,6 @@
     <Folder Include="wwwroot\lib\ng-clip\example" />
     <Folder Include="wwwroot\lib\ng-clip\src" />
     <Folder Include="wwwroot\lib\ng-clip\src" />
-    <Folder Include="wwwroot\lib\ngClip" />
     <Folder Include="wwwroot\lib\ngDialog\css" />
     <Folder Include="wwwroot\lib\ngDialog\css" />
     <Folder Include="wwwroot\lib\ngDialog\js" />
@@ -284,7 +283,6 @@
     <Folder Include="wwwroot\lib\select2" />
     <Folder Include="wwwroot\lib\underscore" />
     <Folder Include="wwwroot\lib\underscore" />
-    <Folder Include="wwwroot\lib\wordscopy" />
     <Folder Include="wwwroot\lib\zeroclipboard\dist" />
     <Folder Include="wwwroot\lib\zeroclipboard\dist" />
     <Folder Include="wwwroot\modules\message-app" />

@@ -90,8 +90,7 @@ require([
                 function(result) {
                     currentUser = result.data;
                     var temp = angular.module("BaseApp");
-                    temp.run([
-                        '$rootScope', '$state', '$stateParams', 'currentUserService',
+                    temp.run(['$rootScope', '$state', '$stateParams', 'currentUserService',
                         function($rootScope, $state, $stateParams, currentUserService) {
                             $rootScope.$state = $state;
                             $rootScope.$stateParams = $stateParams;

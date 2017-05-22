@@ -25,6 +25,7 @@ define([
                     $stateProvider
                         .state("index",
                         {
+                            parent: "base",
                             url: "/index",
                             templateUrl: "modules/index-app/index.html",
                             controller: "IndexAppController",

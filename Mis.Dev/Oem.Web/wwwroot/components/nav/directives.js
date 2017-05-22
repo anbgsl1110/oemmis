@@ -76,43 +76,27 @@ define([
                         countData: "="
                     },
                     templateUrl: 'components/nav/nav.html',
-                    link: function (scope, iElement, iAttr) {  
+                    link: function (scope) {  
                         //导航权限后台还是员工
-                        scope.businessLimit = true;
+                        scope.businessLimit = false;
                         scope.adminLimit = false;
-                        /*scope.businessLimit = currentUserService.hasPermission([rolesService.业务管理], true);//导航权限后台还是员工
-                        scope.adminLimit = currentUserService.hasPermission([rolesService.后台管理], false);//导航权限后台还是员工*/
                         var currentUser = currentUserService.getCurrentUser();
-                        scope.siteList = [];
-                        if (currentUser.orgBaseInfos) {
-                            for (var i = 0, l = currentUser.orgBaseInfos.length; i < l; i++) {
-                                if (currentUser.orgBaseInfos[i].state) {
-                                    scope.siteList.push(currentUser.orgBaseInfos[i]);
-                                }
-                            }
+                        if (currentUser.userId === 1) {
+                            scope.adminLimit = true;
                         }
-                        //scope.logo = currentUser.Org.OrganConfig.Logos.nav_1;
-                        scope.headImgUrl = currentUser.userHeadImg;
+                        if (currentUser.userId > 1){
+                            scope.businessLimit = true;
+                        }
                         scope.userName = currentUser.userName;
-                        scope.hasCourse = currentUser.hasCourse;
                         init(scope);
                         scope.isShow = false;
 
-                        scope.openDialog = function () {
-                            scope.isShow = true;
-                            $(".account-head-pic img", iElement).attr("src", currentUser.userHeadImg)
-                        };
-
-                        scope.changeImgAction = function (url) {
-                            scope.headImgUrl = url;
-                        };
-
                         scope.logout = function () {
                             navNetService.logout().then(function (result) {
-                                    var school = document.cookie.match(/\bschool=([^;]+)/);
-                                    school = school && school.length > 1 ? school[1] : null;
-                                    if (school)
-                                        window.location = '/' + school + '/login';
+                                    var org = document.cookie.match(/\bschool=([^;]+)/);
+                                    org = org && org.length > 1 ? org[1] : null;
+                                    if (org)
+                                        window.location = '/' + org + '/login';
                                     else
                                         window.location = '/';
                                 })
@@ -120,27 +104,6 @@ define([
                                     window.location = '/';
                                 });
                         };
-
-                        scope.openSite = function (idx) {
-                            $.ajax({
-                                url: '/api/UserApi//RedirectToCourse',
-                                data: {
-                                    orgId: scope.siteList[idx].id
-                                },
-                                type: 'POST',
-                                dataType: 'text',
-                                async: false,
-                                cache: false,
-                                success: function (result) {
-                                    var newwindow = window.open("");
-                                    newwindow.location.href = JSON.parse(result).data;
-                                }
-                            });
-                            //navNetService.openSite({ orgId: scope.siteList[idx].id }).then(function (result) {
-                            //    var newwindow = window.open("");
-                            //    newwindow.location.href = result;
-                            //});
-                        }
                     }
                 };
             }

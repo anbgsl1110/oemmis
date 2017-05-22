@@ -13,7 +13,8 @@ define([
         "nicescroll",
 
         //挂载子模块
-        "modules/index-app/app"
+        "modules/index-app/app",
+        "modules/oemrole-app/app"
     ],
     function() {
         return angular.module("BaseApp",
@@ -21,7 +22,8 @@ define([
                 "ui.router",
                 "BaseApp.controllers",
                 "components.nav",
-                "IndexApp"
+                "IndexApp",
+                "OemroleApp"
             ])
             .config([
                 "$urlRouterProvider", function($urlRouterProvider) {
