@@ -1,6 +1,6 @@
 
 @{
-    ViewBag.Title = "用户管理";
+    ViewBag.Title = "采购衬里";
 }
 
 <style>
@@ -37,10 +37,7 @@
     #add-btn-boxs {
         margin-left: 100px;
     }
-
-
 </style>
-
 
 <!-- 内容版块 begin {-->
 <div class="container">
@@ -52,20 +49,23 @@
                     <input type="text" class="form-control" placeholder="请输入查询条件" />
                     <button type="submit" class="search-submit" title="点击搜索">搜索</button>
                 </form>
-
+                <!--<button type="button" class="drop-button close">高级筛选条件<em class="btn-iconDrop2"></em></button>
+                默认为收起来，点击展开，close样式改为open，同时显示高级筛选条件栏 -->
             </div>
+
+
         </div>
 
         <div class="section-content4">
             <div class="ListBar clearfix">
-                <!-- <label class="textL">全选</label>-->
-                <button type="button" class="btn-default icon-button" onclick="window.location = '/System/UserManagementAdd'">
-                    <em class="btn-iconAdd"></em>新增
+                <label class="textL">全选</label>
+                <button type="button" class="btn-default icon-button" onclick="window.location = '/order/purchasechenliadd'">
+                    <em class="btn-iconAdd"></em>新增采购衬里
                 </button>
-                <button type="button" class="btn-default icon-button" onclick="window.location = '/System/UserManagementAdd'">
+                <button type="button" class="btn-default icon-button" onclick="window.location = '/order/purchasechenliadd'">
                     <em class="btn-iconEdit"></em>修改
                 </button>
-                <button type="button" class="btn-default icon-button  delInfor"><em class="btn-iconDel"></em>删除</button>
+                <button type="button" class="btn-default icon-button delInfor"><em class="btn-iconDel"></em>删除</button>
 
                 <!--不可用按钮增加 btn-disable 样式 -->
             </div>
@@ -80,37 +80,25 @@
                     <!-- 数据列表{-->
                     <tbody><tr>
                         <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
-                        <th>是否有效</th>
-                        <th>用户名</th>
-                        <th>姓名</th>
-                        <th>所在部门</th>
-                        <th>联系电话</th>
-                        <th>移动电话</th>
-                        <th>电子邮件</th>
-                        <th>备注</th>
-
+                        <th>采购状态</th>
+                        <th>采购合同编号</th>
+                        <th>采购系统编号</th>
+                        <th>采购年月</th>
+                        <th>录入日期</th>
+                        <th>预计交货日</th>
+                        <th>采购衬里合计</th>
+                        <th>衬里已到货数量</th>
                     </tr>
                     <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle"></span></td>
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>
-                    </tr>
-                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle "></span></td>
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>
+                        <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
+                        <td>等待材料入库</td>
+                        <td>2016年</td>
+                        <td>DD20170412001</td>
+                        <td>PSY610</td>
+                        <td>JOIX大阪</td>
+                        <td>JOIX</td>
+                        <td>2017-04-12</td>
+                        <td>20：00</td>
                     </tr>
 
                     <!--}数据列表 -->
@@ -142,9 +130,10 @@
     </div>
     <!--} 列表内容 -->
 </div>
-<!--删除时页面弹出的警告框-->
+<!--} 内容版块 end -->
+<!--删除信息时页面弹出的警告框-->
 <div class="del-alarming" style="display:none;">
-    <i ><img src="/images/icon_delete_1.png" /></i>
+    <i><img src="/images/icon_delete_1.png" /></i>
     <h3>操作提示</h3>
     <p>确定要删除这条信息吗？</p>
     <div class="btn-box" id="add-btn-boxs">
@@ -173,6 +162,7 @@
             $(this).removeClass("checkboxChecked");
             $(".checkboxStyle").removeClass("checkboxChecked");
         } else {
+
             $(".checkboxStyle").addClass("checkboxChecked");
         }
     });
@@ -193,6 +183,6 @@
     /*页码切换*/
     $(".section-page>a").click(function() {
         $(this).addClass("current").siblings().removeClass("current");
-
     });
+
 </script>

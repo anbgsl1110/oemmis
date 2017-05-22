@@ -1,6 +1,6 @@
 
 @{
-    ViewBag.Title = "用户编辑";
+    ViewBag.Title = "申购增加";
 }
 
 <style>
@@ -27,8 +27,12 @@
 
     }
     .tabs table td,.tabs table th{
-
+        padding: 0 10px !important;
         border: #ddd 1px solid !important;
+    }
+    .ListDate td {
+        height: 30px;
+
     }
 </style>
 
@@ -37,68 +41,65 @@
     <!-- 编辑 begin {-->
     <div class="section">
         <div class="section-content4 consult-content">
-            <div class="detail-title">用户修改页面</div>
+            <div class="detail-title">申购信息增加</div>
             <ul class="info-box1 clearfix info-edit">
                 <li class="typeOne-third">
-                    <label>是否有效</label>
+                    <label>申购编号</label>
                     <input type="text" class="form-control">
                 </li>
                 <li class="typeOne-third">
-                    <label>用户名</label>
+                    <label>申购日期</label>
                     <input type="text" class="form-control">
                 </li>
                 <li class="typeOne-third">
-                    <label>姓名</label>
+                    <label>申购年月</label>
                     <input type="text" class="form-control">
 
                 </li>
                 <li class="typeOne-third">
-                    <label>所在部门</label>
+                    <label>子公司名称</label>
                     <input type="text" class="form-control">
                 </li>
                 <li class="typeOne-third">
-                    <label>部门ID</label>
+                    <label>系列号</label>
                     <input type="text" class="form-control">
                 </li>
                 <li class="typeOne-third">
-                    <label>联系电话</label>
+                    <label>经手人</label>
                     <input type="text" class="form-control">
                 </li>
-                <li class="typeOne-third">
-                    <label>移动电话</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
-                    <label>电子邮件</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
-                    <label>备注</label>
-                    <input type="text" class="form-control">
-                </li>
+
             </ul>
             <!-- 表格切换-->
             <div class="tablist">
-                <button type="button" class=" btn-actor btn-current">拥有角色</button>
-                <button type="button" class=" btn-rights ">部门权限</button>
+                <button type="button" class=" btn-actor btn-current">未申购订单信息</button>
+                <button type="button" class=" btn-rights ">申购皮信息</button>
             </div>
             <div class="tabs">
                 <table border="0" cellpadding="0" cellspacing="0" class="actors" >
                     <!-- 数据列表{-->
                     <tbody><tr>
-                        <th>是否有效</th>
-                        <th>角色</th>
-                        <th>启用时间</th>
-                        <th>终止时间</th>
-                        <th>备注</th>
+                        <th>合同日期</th>
+                        <th>系列号</th>
+                        <th>子公司名称</th>
+                        <th>公司名称</th>
+                        <th>订货日期</th>
+                        <th>合计数量</th>
+                        <th>订单状态</th>
+                        <th>订单号</th>
+
                     </tr>
                     <tr class="ListDate"><!-- 说明： 每页数据10条-->
 
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>2017-5-12</td>
-                        <td>2017-5-13</td>
-                        <td>有效</td>
+                        <td>2016年01月</td>
+                        <td>pwd110</td>
+                        <td>TPSS</td>
+                        <td>TPSS</td>
+                        <td>2016-12-22</td>
+                        <td>12:00</td>
+                        <td>订单已经废弃</td>
+                        <td>XXXXXX</td>
+
                     </tr>
 
                     <!--}数据列表 -->
@@ -107,15 +108,32 @@
                 <table border="0" cellpadding="0" cellspacing="0"  class="rights" style="display:none;">
                     <!-- 数据列表{-->
                     <tbody><tr>
-
-                        <th>部门名称</th>
-                        <th>备注</th>
-
+                        <th>系列号</th>
+                        <th>合同年月</th>
+                        <th>子公司名称</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>颜色</th>
+                        <th>计算残量</th>
+                        <th>追加手配</th>
+                        <th>采购数量合计</th>
+                        <th>申购数量合计</th>
+                        <th>利用率</th>
                     </tr>
                     <tr class="ListDate"><!-- 说明： 每页数据10条-->
 
-                        <td>IT部</td>
-                        <td>admin</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
 
                     </tr>
 
@@ -129,15 +147,13 @@
             </div>
         </div>
     </div>
-    <!--} 编辑 end -->
-
 
 
 </div>
 <!--} 内容版块 end -->
 
 <script>
-/*两个表格名称以及表格之间的切换*/
+    /*两个表格名称以及表格之间的切换*/
     $(".tablist>button").click(function() {
         $(this).addClass("btn-current").siblings().removeClass("btn-current");
         if ($(".btn-actor").hasClass("btn-current")) {

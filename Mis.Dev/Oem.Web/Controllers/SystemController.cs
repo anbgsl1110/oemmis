@@ -37,15 +37,6 @@ namespace Oem.Web.Controllers
             return View();
         }
 
-        /// <summary>
-        /// 用户管理编辑
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult UserManagementEdit()
-        {
-            return View();
-        }        
-
         #endregion
 
         #region 日志
