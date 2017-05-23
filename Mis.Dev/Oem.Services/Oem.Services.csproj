@@ -24,12 +24,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IServices\Auxiliary" />
     <Folder Include="IServices\Dispatch" />
     <Folder Include="IServices\Order" />
     <Folder Include="IServices\OrgStructure" />
     <Folder Include="IServices\Repertory" />
-    <Folder Include="Services\Auxiliary" />
     <Folder Include="Services\Dispatch" />
     <Folder Include="Services\Order" />
     <Folder Include="Services\OrgStructure" />
