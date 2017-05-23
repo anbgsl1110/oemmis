@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Repertory
 
 @{
     ViewBag.Title = "碎料返库";
+    List<WarehouseOprationRepo> list= ViewBag.List as List<WarehouseOprationRepo>;
 }
 
 <!--列表内容 {-->
@@ -31,37 +33,25 @@
                 <table border="0" cellpadding="0" cellspacing="0">
                     <!-- 数据列表{-->
                     <tbody><tr>
-
-                        <th>操作时间</th>
-                        <th>操作编号</th>
-                        <th>辅助编号</th>
-                        <th>操作年月</th>
-                        <th>名称</th>
-                        <th>类型</th>
-                        <th>规格</th>
-                        <th>颜色</th>
-                        <!--    <th>数量</th>
-                        <th>经手人</th>
-                        <th>管理员</th>
-                        <th>操作类型</th>
-                        <th>仓库名称</th>
-                        <th>仓库类型</th>
-                        <th>材料类型</th>
-                        <th>系列号</th>-->
-                    </tr>
-                    <tr class="ListDate" onclick="window.location.href = '/repertory/returnrepertorylistdetail'"
-                    ><!-- 说明： 每页数据10条-->
-
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>
-                    </tr>
-
+                    <th>操作时间</th>
+                    <th>操作编号</th>
+                    <th>辅助编号</th>
+                    <th>仓库Id</th>
+                    <th>总数</th>
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate" onclick="window.location.href = '/repertory/exportrepertorylistdetail'"
+                            ><!-- 说明： 每页数据10条-->
+                                <td>@item.OperattionTime</td>
+                                <td>@item.OperationNumber</td>
+                                <td>@item.AuxiliaryNumber</td>
+                                <td>@item.WarehouseId</td>
+                                <td>@item.TotalAmount</td>
+                            </tr>
+                        }
+                    }
                     <!--}数据列表 -->
                     </tbody>
                 </table>
