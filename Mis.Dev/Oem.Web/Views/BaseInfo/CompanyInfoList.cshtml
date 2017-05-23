@@ -1,6 +1,8 @@
+@using Oem.Data.Table.BaseInfo
 
 @{
     ViewBag.Title = "公司管理";
+    List<CompanyRepo> list= ViewBag.List as List<CompanyRepo>;
 }
 
 <style>
@@ -56,19 +58,23 @@
             <table border="0" cellpadding="0" cellspacing="0">
                 <!-- 数据列表{-->
                 <tbody><tr>
-                    <th>公司编号</th>
                     <th>公司名称</th>
                     <th>公司地址</th>
                     <th>联系电话</th>
-                    <th>传真</th>
+                    <th>备注</th>
                 </tr>
-                <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                    <td>Y</td>
-                    <td>admin</td>
-                    <td>张三</td>
-                    <td>IT部</td>
-                    <td>6666666666</td>
-                </tr>
+                @if (list != null && list.Count > 0)
+                {
+                    foreach (var item in list)
+                    {
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                            <td>@item.CompanyName</td>
+                            <td>@item.Address</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Remark</td>
+                        </tr>
+                    }
+                }
                 <!--}数据列表 -->
                 </tbody>
             </table>

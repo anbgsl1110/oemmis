@@ -1,6 +1,8 @@
+@using Oem.Data.Table.BaseInfo
 
 @{
     ViewBag.Title = "产品管理";
+    List<ProductRepo> list= ViewBag.List as List<ProductRepo>;
 }
 
 <style>
@@ -80,22 +82,22 @@
                         <th>款式号</th>
                         <th>品名</th>
                         <th>颜色</th>
-                        <th>刀模配用情况</th>
-                        <th>日期</th>
-                        <th>样品负责人</th>
-                        <th>刀模管理人</th>
+                        <th>备注</th>
                     </tr>
-                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                                <td class="blankbox"><span class="checkboxStyle"></span></td>
+                                <td>@item.SerialNumber</td>
+                                <td>@item.StyleNumber</td>
+                                <td>@item.BrandName</td>
+                                <td>@item.Color</td>
+                                <td>@item.Remark</td>
+                            </tr>
+                        }
+                    }
                     <!--}数据列表 -->
                     </tbody>
                 </table>

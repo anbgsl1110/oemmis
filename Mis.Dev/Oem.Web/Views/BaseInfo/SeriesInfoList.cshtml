@@ -1,6 +1,8 @@
+@using Oem.Data.Table.BaseInfo
 
 @{
     ViewBag.Title = "原材料管理";
+    List<OriginalMaterialsRepo> list= ViewBag.List as List<OriginalMaterialsRepo>;
 }
 
 <style>
@@ -79,23 +81,27 @@
                         <th>名称</th>
                         <th>类型 </th>
                         <th>颜色</th>
+                        <th>规格</th>
                         <th>单位</th>
-                        <th>利用率</th>
+                        <th>分类</th>
                         <th>仓库名称</th>
-                        <th>仓库编号</th>
-                        <th>库存库位</th>
                     </tr>
-                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>
-                    </tr>
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                                <td class="blankbox"><span class="checkboxStyle"></span></td>
+                                <td>@item.Name</td>
+                                <td>@item.Type</td>
+                                <td>@item.Color</td>
+                                <td>@item.Format</td>
+                                <td>@item.Unit</td>
+                                <td>@item.Sort</td>
+                                <td>@item.WarehouseName</td>
+                            </tr>
+                        }
+                    }   
                     <!--}数据列表 -->
                     </tbody>
                 </table>
