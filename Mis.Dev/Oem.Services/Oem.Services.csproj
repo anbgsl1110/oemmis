@@ -24,13 +24,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IServices\Dispatch" />
-    <Folder Include="IServices\Order" />
     <Folder Include="IServices\OrgStructure" />
-    <Folder Include="IServices\Repertory" />
-    <Folder Include="Services\Dispatch" />
-    <Folder Include="Services\Order" />
     <Folder Include="Services\OrgStructure" />
-    <Folder Include="Services\Repertory" />
   </ItemGroup>
 </Project>
