@@ -43,41 +43,20 @@
             <div class="detail-title">用户信息增加</div>
             <ul class="info-box1 clearfix info-edit">
                 <li class="typeOne-third">
-                    <label>是否有效</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
                     <label>用户名</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
-                    <label>姓名</label>
-                    <input type="text" class="form-control">
-
-                </li>
-                <li class="typeOne-third">
-                    <label>所在部门</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
-                    <label>部门ID</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="user_UserName">
                 </li>
                 <li class="typeOne-third">
                     <label>联系电话</label>
-                    <input type="text" class="form-control">
-                </li>
-                <li class="typeOne-third">
-                    <label>移动电话</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="user_Phone">
                 </li>
                 <li class="typeOne-third">
                     <label>电子邮件</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="user_Email">
                 </li>
                 <li class="typeOne-third">
                     <label>备注</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="user_Remark">
                 </li>
             </ul>
             <!-- 表格切换-->
@@ -96,39 +75,32 @@
                         <th>备注</th>
                     </tr>
                     <tr class="ListDate"><!-- 说明： 每页数据10条-->
-
                         <td>Y</td>
                         <td>admin</td>
                         <td>2017-5-12</td>
                         <td>2017-5-13</td>
                         <td>有效</td>
                     </tr>
-
                     <!--}数据列表 -->
                     </tbody>
                 </table>
                 <table border="0" cellpadding="0" cellspacing="0"  class="rights" style="display:none;">
                     <!-- 数据列表{-->
                     <tbody><tr>
-
                         <th>部门名称</th>
                         <th>备注</th>
-
                     </tr>
                     <tr class="ListDate"><!-- 说明： 每页数据10条-->
-
                         <td>IT部</td>
                         <td>admin</td>
-
                     </tr>
-
                     <!--}数据列表 -->
                     </tbody>
                 </table>
             </div>
             <div class="btn-box">
-                <button type="button" class="btn-default btn-cancel">取消</button>
-                <button type="button" class="btn-default btn-sure">确定</button>
+                <button type="button" class="btn-default btn-cancel" onclick="window.location.href = '/system/usermanagement'">取消</button>
+                <button type="button" class="btn-default btn-sure" id="usermanagement_add">确定</button>
             </div>
         </div>
     </div>
@@ -146,6 +118,29 @@
         } else {
             $(".tabs").find("table:eq(1)").show().siblings().hide();
         }
+    });
+    /*新增*/
+    $('#usermanagement_add').click(function() {
+        var user = {
+            UserName: $("#user_UserName").val(),
+            Phone: $("#user_Phone").val(),
+            Email: $("#user_Email").val(),
+            Remark: $("#user_Remark").val()
+        }
+        var ajax = {
+            url: "/system/AddUserManagement",
+            data: user,
+            type: 'Post',
+            success: function () {
+                alert('新增成功');
+                window.location.href = '/system/usermanagement';
+            },
+            error: function () {
+                alert('新增失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
     });
 </script>
 

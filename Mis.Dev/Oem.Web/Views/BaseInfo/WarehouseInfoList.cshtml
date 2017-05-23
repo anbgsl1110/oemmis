@@ -1,6 +1,8 @@
+@using Oem.Data.Table.BaseInfo
 
 @{
     ViewBag.Title = "仓库管理";
+    List<WarehouseRepo> list = ViewBag.List as List<WarehouseRepo>;
 }
 
 <style>
@@ -58,23 +60,29 @@
             <table border="0" cellpadding="0" cellspacing="0">
                 <!-- 数据列表{-->
                 <tbody><tr>
-                    <th>仓库信息</th>
                     <th>仓库编号</th>
+                    <th>仓库名称</th>
                     <th>仓库地址</th>
-                    <th>库管理</th>
+                    <th>库管员</th>
                     <th>仓库类型</th>
                     <th>材料类型</th>
                     <th>备注</th>
                 </tr>
-                <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                    <td>Y</td>
-                    <td>admin</td>
-                    <td>张三</td>
-                    <td>IT部</td>
-                    <td>6666666666</td>
-                    <td>0571-66666666</td>
-                    <td>xxxxxx@163.com</td>
-                </tr>
+                @if (list != null && list.Count > 0)
+                {
+                    foreach (var item in list)
+                    {
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                            <td>@item.WarehouseNumber</td>
+                            <td>@item.WarehouseName</td>
+                            <td>@item.Address</td>
+                            <td>@item.WarehouseManager</td>
+                            <td>@item.WarehouseType</td>
+                            <td>@item.MaterialsType</td>                 
+                            <td>@item.Remark</td>
+                        </tr>
+                    }
+                }            
                 <!--}数据列表 -->
                 </tbody>
             </table>
@@ -86,8 +94,8 @@
             <a href="#" class="page-previous page-disabled">上一页</a>
             <!-- 不可用的样式代码如下：<a href="#" class="page-previous page-disabled">上一页</a> -->
             <span class="page-line"></span>
-            <a href="#" class="page-num">1</a>
-            <a href="#" class="page-num current">2</a><!-- 当前页样式 增加 current 样式名 -->
+            <a href="#" class="page-num current">1</a>
+            <a href="#" class="page-num">2</a><!-- 当前页样式 增加 current 样式名 -->
             <a href="#" class="page-num">3</a>
             <a href="#" class="page-num">4</a>
             <span class="page-num-more">...</span>
@@ -100,4 +108,12 @@
     </div>
 </div>
 <!--} 列表内容 -->
+
+<script>
+    /*页码切换*/
+    $(".section-page>a").click(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+
+    });
+</script>
 

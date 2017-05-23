@@ -1,4 +1,7 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Data.Table.Order;
+using Oem.Services.Services.Order;
 
 namespace Oem.Web.Controllers
 {
@@ -12,6 +15,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult Order()
         {
+            OrderService service = new OrderService();
+            var result = service.Select(new 
+                OrderRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -34,6 +43,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ApplyPurchase()
         {
+            RequisitionService service = new RequisitionService();
+            var result = service.Select(new 
+                RequisitionRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -55,7 +70,7 @@ namespace Oem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         public IActionResult PurchaseAdd()
-        {
+        {   
             return View();
         }
 
@@ -65,6 +80,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult PurchaseLeather()
         {
+            PurchaseService service = new PurchaseService();
+            var result = service.Select(new 
+                PurchaseRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -83,6 +104,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult PurchaseChenli()
         {
+            PurchaseService service = new PurchaseService();
+            var result = service.Select(new 
+                PurchaseRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 

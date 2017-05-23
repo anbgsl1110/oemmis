@@ -36,7 +36,7 @@ namespace Oem.Services.Services
         protected readonly WarehouseManagerDetailProvider WarehouseManagerDetailProvider;
         protected readonly WarehouseOprationProvider WarehouseOprationProvider;
         
-        protected readonly IUserProvider UserProvider;
+        protected readonly Userprovider UserProvider;
         protected readonly RoleProvider RoleProvider;
         protected readonly LogProvider LogProvider;
         

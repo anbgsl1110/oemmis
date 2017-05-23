@@ -59,7 +59,7 @@ namespace Oem.Data.DataBase
         /// <param name="dbContext"></param>
         private void BaseInfoSeed(ref InitDbContext dbContext)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 15; i++)
             {
                 
                 dbContext.OriginalMaterials.Add(new OriginalMaterialsRepo
@@ -293,15 +293,6 @@ namespace Oem.Data.DataBase
         {
             for (int i = 0; i < 5; i++)
             {
-                dbContext.User.Add(new UserRepo
-                {
-                    UserName = "test" + i,
-                    Password = "abc123",
-                    Phone = "18800000000",
-                    Email = "123@ss.space",
-                    Remark = "初始化时创建的员工用户"
-                });
-                
                 dbContext.Log.Add(new LogRepo
                 {
                     UserId = i,
@@ -320,6 +311,14 @@ namespace Oem.Data.DataBase
                 Email = "anbgsl1110@gmail.com",
                 Remark = "初始化时创建的admin用户"
             });
+            dbContext.User.Add(new UserRepo
+            {
+                UserName = "test",
+                Password = "abc123",
+                Phone = "18800000000",
+                Email = "123@ss.space",
+                Remark = "初始化时创建的员工用户"
+            }); 
             dbContext.Org.Add(new OrgRepo
             {
                 OrgName = "Xdj",

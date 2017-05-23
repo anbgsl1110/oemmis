@@ -1,4 +1,5 @@
-﻿using Oem.Data.Enum;
+﻿using System.Collections.Generic;
+using Oem.Data.Enum;
 using Oem.Data.ServiceModel;
 using Oem.Data.ServiceModel.UserDto;
 using Oem.Models.Item.Home;
@@ -46,6 +47,60 @@ namespace Oem.Services.Services.User
                 return ServiceResult.Create(ServiceStateEnum.Success, data);
             }
             return ServiceResult.Create(false, ServiceStateEnum.Failed, new LoginUserInfo());
+        }
+        
+        public ServiceResult<ServiceStateEnum, T> Select<T>(T t, long id)
+        {
+            var result = UserProvider.Select(t, id);
+            return new ServiceResult<ServiceStateEnum, T> {State = ServiceStateEnum.Success, Data = result};
+        }
+
+        public ServiceResult<ServiceStateEnum, IEnumerable<T>> Select<T>(T t, long pageIndex, long pageSize)
+        {
+            var result = UserProvider.Select(t, pageIndex, pageSize);
+            return new ServiceResult<ServiceStateEnum, IEnumerable<T>>
+            {
+                State = ServiceStateEnum.Success,
+                Data = result
+            };
+        }
+
+        public ServiceResult<ServiceStateEnum, IEnumerable<T>> Select<T>(IDictionary<string, object> parameters)
+        {
+            var result = UserProvider.Select<T>(parameters);
+            return new ServiceResult<ServiceStateEnum, IEnumerable<T>>
+            {
+                State = ServiceStateEnum.Success,
+                Data = result
+            };
+        }
+
+        public ServiceResult<ServiceStateEnum> Insert<T>(T t)
+        {
+            UserProvider.Insert(t);
+            return new ServiceResult<ServiceStateEnum>();
+        }
+
+        public ServiceResult<ServiceStateEnum, int> InsertWithIdentity<T>(T t)
+        {
+            var result = UserProvider.InsertWithIdentity(t);
+            return new ServiceResult<ServiceStateEnum, int>
+            {
+                State = ServiceStateEnum.Success,
+                Data = result
+            };
+        }
+
+        public ServiceResult<ServiceStateEnum> Delete<T>(T t, long id)
+        {
+            UserProvider.Delete(t,id);
+            return new ServiceResult<ServiceStateEnum>();
+        }
+
+        public ServiceResult<ServiceStateEnum> Update<T>(T t)
+        {
+            UserProvider.Update(t);
+            return new ServiceResult<ServiceStateEnum>();
         }
     }
 }

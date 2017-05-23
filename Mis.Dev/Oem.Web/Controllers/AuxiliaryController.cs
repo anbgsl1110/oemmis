@@ -1,5 +1,8 @@
 
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Data.Table.Auxiliary;
+using Oem.Services.Services.Auxiliary;
 
 namespace Oem.Web.Controllers
 {
@@ -11,6 +14,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ScanList()
         {
+            ScanCodeService service = new ScanCodeService();
+            var result = service.Select(new 
+                ScanCodeRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 

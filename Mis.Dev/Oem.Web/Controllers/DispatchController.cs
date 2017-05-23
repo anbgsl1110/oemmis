@@ -1,5 +1,8 @@
 
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Data.Table.Dispatch;
+using Oem.Services.Services.Dispatch;
 
 namespace Oem.Web.Controllers
 {
@@ -11,6 +14,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult DispatchList()
         {
+            DispatchService service = new DispatchService();
+            var result = service.Select(new 
+                DispatchRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -65,6 +74,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ProduceProgressList()
         {
+            DispatchDetailService service = new DispatchDetailService();
+            var result = service.Select(new 
+                DispatchDetailRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 

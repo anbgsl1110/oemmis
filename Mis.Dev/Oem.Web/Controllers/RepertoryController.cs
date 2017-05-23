@@ -1,5 +1,8 @@
 
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Data.Table.Repertory;
+using Oem.Services.Services.Repertory;
 
 namespace Oem.Web.Controllers
 {
@@ -13,6 +16,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ImportRepertoryList()
         {
+            WarehouseOprationService service = new WarehouseOprationService();
+            var result = service.Select(new 
+                WarehouseOprationRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -62,6 +71,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ExportRepertoryList()
         {
+            WarehouseOprationService service = new WarehouseOprationService();
+            var result = service.Select(new 
+                WarehouseOprationRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 
@@ -79,7 +94,7 @@ namespace Oem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         public IActionResult ExportRepertoryListDetail()
-        {
+        {   
             return View();
         }
 
@@ -93,6 +108,12 @@ namespace Oem.Web.Controllers
         /// <returns></returns>
         public IActionResult ReturnRepertoryList()
         {
+            WarehouseOprationService service = new WarehouseOprationService();
+            var result = service.Select(new 
+                WarehouseOprationRepo(),0,1000).Data.ToList();
+            var list = result.Where(p => p.Id > 0).Take(10).ToList();
+            ViewBag.List = list;
+            
             return View();
         }
 

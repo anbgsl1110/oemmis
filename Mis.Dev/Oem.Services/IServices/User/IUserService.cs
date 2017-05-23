@@ -8,7 +8,7 @@ namespace Oem.Services.IServices.User
     /// <summary>
     /// 用户服务接口
     /// </summary>
-    public interface IUserService
+    public interface IUserService : IBaseService
     {
         /// <summary>
         /// 获取用户信息

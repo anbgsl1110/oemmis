@@ -7,14 +7,14 @@
 <div class="toolbar toolbar-fixed-top">
     <!-- 列表可操作项与搜索 begin {-->
     <div class="container">
-        <div class="toolbar-left">
+        @*<div class="toolbar-left">
             <button type="button" class="btn-default icon-button"><em class="btn-iconAdd"></em>添加</button>
             <button type="button" class="btn-default icon-button"><em class="btn-iconDel"></em>删除</button>
-        </div>
+        </div>*@
 
-        <div class="toolbar-form toolbar-right">
+        <div class="toolbar-form toolbar-right" style="float:left">
             <form class="form-group">
-                <input type="text" class="form-control" placeholder="角色名" ng-keydown="_search($event)" ng-model="searchText">
+                <input type="text" class="form-control" placeholder="角色名">
                 <button type="button" class="search-submit" title="点击搜索" ng-click="searchByName()">搜索</button>
             </form>
         </div>
