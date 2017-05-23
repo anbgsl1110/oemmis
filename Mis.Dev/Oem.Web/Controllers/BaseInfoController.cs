@@ -40,12 +40,26 @@ namespace Oem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult AddUserManagement(OriginalMaterialsRepo originalMaterialsRepo)
+        public JsonResult AddOriginalMaterials(OriginalMaterialsRepo originalMaterialsRepo)
         {     
             OriginalMaterialsService service = new OriginalMaterialsService();
             var result = service.Insert(originalMaterialsRepo);
 
             return Json(result);
+        }
+        
+        /// <summary>
+        /// 删除原材料
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteOriginalMaterials(long[] ids)
+        {       
+            foreach (var id in ids)
+            {
+                OriginalMaterialsService.Delete(new ProductRepo(), id);
+            }
+            return Json(@"删除成功");
         }
 
         #endregion

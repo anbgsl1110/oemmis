@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Order
 
 @{
     ViewBag.Title = "申购";
+    List<RequisitionRepo> list= ViewBag.List as List<RequisitionRepo>;
 }
 
 <!--列表内容 {-->
@@ -22,7 +24,6 @@
             <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/applypurchaseadd'">
                 <em class="btn-iconAdd"></em>新增
             </button>
-
             <!--不可用按钮增加 btn-disable 样式 -->
         </div>
         <!-- 列表 { -->
@@ -38,25 +39,24 @@
                     <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                     <th>申购状态</th>
                     <th>申购编号</th>
-                    <th>申购年月</th>
-                    <th>申购日期</th>
-                    <th>经手人</th>
-                    <th>申购辅料合计数量</th>
-                    <th>辅料已到货数量</th>
-                    <th>辅料未到货数量</th>
+                    <th>申购时间</th>
+                    <th>录入时间</th>
+                    <th>经手人Id</th>
                 </tr>
-                <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                    <td class="blankbox"><span class="checkboxStyle"></span></td>
-                    <td>已提交申购</td>
-                    <td>XXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXxx</td>
-                    <td>admin</td>
-                    <td>500</td>
-                    <td>xxxxxx</td>
-                    <td>ffffff</td>
-                </tr>
-
+                @if (list != null && list.Count > 0)
+                {
+                    foreach (var item in list)
+                    {
+                        <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                            <td class="blankbox"><span class="checkboxStyle"></span></td>
+                            <td>@item.RequisitionStatus</td>
+                            <td>@item.RequisitionNumber</td>
+                            <td>@item.RequisitionDate.ToString("yyyy-MM-dd")</td>
+                            <td>@item.CreateTime</td>
+                            <td>@item.Operator</td>
+                        </tr>
+                    }
+                }                
                 <!--}数据列表 -->
                 </tbody>
             </table>

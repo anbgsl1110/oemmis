@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Order
 
 @{
     ViewBag.Title = "定单";
+    List<OrderRepo> list= ViewBag.List as List<OrderRepo>;
 }
 
 <style>
@@ -64,9 +66,6 @@
                 <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/orderadd'">
                     <em class="btn-iconAdd"></em>新增
                 </button>
-                <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/orderadd'">
-                    <em class="btn-iconEdit"></em>修改
-                </button>
                 <button type="button" class="btn-default icon-button delInfor"><em class="btn-iconDel"></em>删除</button>
 
                 <!--不可用按钮增加 btn-disable 样式 -->
@@ -82,27 +81,30 @@
                     <!-- 数据列表{-->
                     <tbody><tr>
                         <th class="blankbox"><span class="checkboxStyle"></span></th>
-                        <th>订单状态</th>
-                        <th>合同日期</th>
+                        <th>定单状态</th>
+                        <th>定单日期</th>
                         <th>订单号</th>
                         <th>系列号</th>
-                        <th>子公司名称</th>
-                        <th>公司名称</th>
-                        <th>订货日期</th>
+                        <th>公司Id</th>
+                        <th>录入时间</th>
                         <th>合计数量</th>
                     </tr>
-                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
-                        <td>等待材料入库</td>
-                        <td>2016年</td>
-                        <td>DD20170412001</td>
-                        <td>PSY610</td>
-                        <td>JOIX大阪</td>
-                        <td>JOIX</td>
-                        <td>2017-04-12</td>
-                        <td>20：00</td>
-                    </tr>
-
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                                <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
+                                <td>@item.OrderStatus</td>
+                                <td>@item.OrderDate</td>
+                                <td>@item.OrderNumber</td>
+                                <td>@item.SerialNumber</td>
+                                <td>@item.CompanyId</td>
+                                <td>@item.CreateTime</td>
+                                <td>@item.TotalAmount</td>
+                            </tr>
+                        }
+                    }
                     <!--}数据列表 -->
                     </tbody>
                 </table>

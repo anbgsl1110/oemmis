@@ -143,13 +143,6 @@
         }
         $(".del-alarming").show();
     });
-    /*点击X和取消，删除警告弹框消失*/
-    $(".del-alarming>i").click(function() {
-        $(this).parent().hide();
-    });
-    $(".del-alarm").click(function() {
-        $(".del-alarming").hide();
-    });
     /*确认删除*/
     $("#product_delete").click(function() {
         var data = {
@@ -179,6 +172,13 @@
         });
         return checkVal;
     }
+    /*点击X和取消，删除警告弹框消失*/
+    $(".del-alarming>i").click(function() {
+        $(this).parent().hide();
+    });
+    $(".del-alarm").click(function() {
+        $(".del-alarming").hide();
+    });
     /*点击全选，点击全不选*/
     $("#Selall>span").click(function() {
         if ($(this).hasClass("checkboxChecked")) {

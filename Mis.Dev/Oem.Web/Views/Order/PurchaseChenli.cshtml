@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Order
 
 @{
     ViewBag.Title = "采购衬里";
+    List<PurchaseRepo> list= ViewBag.List as List<PurchaseRepo>;
 }
 
 <style>
@@ -79,25 +81,26 @@
                         <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                         <th>采购状态</th>
                         <th>采购合同编号</th>
-                        <th>采购系统编号</th>
-                        <th>采购年月</th>
+                        <th>采购日期</th>
                         <th>录入日期</th>
                         <th>预计交货日</th>
-                        <th>采购衬里合计</th>
-                        <th>衬里已到货数量</th>
+                        <th>经手人</th>
                     </tr>
-                    <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                        <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
-                        <td>等待材料入库</td>
-                        <td>2016年</td>
-                        <td>DD20170412001</td>
-                        <td>PSY610</td>
-                        <td>JOIX大阪</td>
-                        <td>JOIX</td>
-                        <td>2017-04-12</td>
-                        <td>20：00</td>
-                    </tr>
-
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate"><!-- 说明： 每页数据10条-->
+                                <td class="blankbox"><span class="checkboxStyle checkboxChecked"></span></td>
+                                <td>@item.PurchaseStatus</td>
+                                <td>@item.PurchaseNumber</td>
+                                <td>@item.PurchaseDate.ToString("yyyy-MM-dd")</td>
+                                <td>@item.CreateTime.ToString("yyyy-MM-dd")</td>
+                                <td>@item.DeliveryDate.ToString("yyyy-MM-dd")</td>
+                                <td>@item.Operator</td>
+                            </tr>
+                        }
+                    }
                     <!--}数据列表 -->
                     </tbody>
                 </table>

@@ -88,7 +88,7 @@
                         foreach (var item in list)
                         {
                             <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                                <td class="blankbox"><span class="checkboxStyle"></span></td>
+                                <td class="blankbox"><span class="checkboxStyle context" text="@item.Id"></span></td>
                                 <td>@item.Name</td>
                                 <td>@item.Type</td>
                                 <td>@item.Color</td>
@@ -141,9 +141,49 @@
 <script>
     /*点击删除按钮，删除警示框出现*/
     $(".delInfor").click(function() {
+        var checkVal = getCheckBoxIds();
+        if (checkVal.count == 0) {
+            alert("请至少选择一项");
+            return;
+        }
         $(".del-alarming").show();
     });
-
+    /*确认删除*/
+    $("#product_delete").click(function() {
+        var data = {
+            ids: getCheckBoxIds()
+        }
+        var ajax = {
+            url: "/baseinfo/DeleteOriginalMaterials",
+            data: data,
+            type: 'Post',
+            success: function () {
+                alert('删除成功');
+                window.location.href = '/baseinfo/DeleteOriginalMaterials';
+            },
+            error: function () {
+                alert('删除失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
+    //获取选中记录
+    function getCheckBoxIds(){
+        var checkVal = [];
+        $(".checkboxChecked.context").each(function() {
+            var temp = $(this).attr("text");
+            checkVal.push(temp);
+        });
+        return checkVal;
+    }
+    /*点击X和取消，删除警告弹框消失*/
+    $(".del-alarming>i").click(function() {
+        $(this).parent().hide();
+    });
+    $(".del-alarm").click(function() {
+        $(".del-alarming").hide();
+    });
     /*点击X和取消，删除警告弹框消失*/
     $(".del-alarming>i").click(function() {
         $(this).parent().hide();
@@ -157,7 +197,6 @@
             $(this).removeClass("checkboxChecked");
             $(".checkboxStyle").removeClass("checkboxChecked");
         } else {
-
             $(".checkboxStyle").addClass("checkboxChecked");
         }
     });
@@ -173,11 +212,9 @@
     /*表头上的tab切换*/
     $(".chart-tab>a").click(function() {
         $(this).addClass("current").siblings().removeClass("current");
-
     });
     /*页码切换*/
     $(".section-page>a").click(function() {
         $(this).addClass("current").siblings().removeClass("current");
-
     });
 </script>

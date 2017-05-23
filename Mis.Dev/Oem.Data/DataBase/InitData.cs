@@ -295,11 +295,11 @@ namespace Oem.Data.DataBase
             {
                 dbContext.Log.Add(new LogRepo
                 {
-                    UserId = i,
+                    UserId = 5,
                     UserName = "初始化",
                     Ip = "114.215.158.17"+i,
                     OperationIdType = "登录",
-                    OperationIds = "" + i,
+                    OperationIds = "",
                     OperationResult = "操作成功",
                     OperationDate = DateTime.Now
                 });

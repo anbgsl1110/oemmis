@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Auxiliary
 
 @{
     ViewBag.Title = "扫码管理";
+    List<ScanCodeRepo> list= ViewBag.List as List<ScanCodeRepo>;
 }
 
 <style>
@@ -49,30 +51,21 @@
                 <!-- 数据列表{-->
                 <tbody><tr>
                     <th>派工单号</th>
-                    <th>系列号</th>
-                    <th>款号</th>
-                    <th>品名</th>
-                    <th>颜色</th>
-                    <th>数量</th>
-                    <th>人员姓名</th>
-                    <th>部门名称</th>
-                    <th>派工时间</th>
+                    <th>人员Id</th>
                     <th>扫码时间</th>
                 </tr>
-                <tr class="ListDate" onclick="window.location.href = '/auxiliary/ScanListDetail'">
-                    <!-- 说明： 每页数据10条-->
-                    <td>Y</td>
-                    <td>admin</td>
-                    <td>张三</td>
-                    <td>IT部</td>
-                    <td>6666666666</td>
-                    <td>0571-66666666</td>
-                    <td>xxxxxx@163.com</td>
-                    <td>有效</td>
-                    <td>xxxxxx@163.com</td>
-                    <td>有效</td>
-                </tr>
-
+                @if (list != null && list.Count > 0)
+                {
+                    foreach (var item in list)
+                    {
+                        <tr class="ListDate" onclick="window.location.href = '/auxiliary/ScanListDetail'">
+                            <!-- 说明： 每页数据10条-->
+                            <td>@item.DispatchId</td>
+                            <td>@item.ScanCodeId</td>
+                            <td>@item.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        </tr>
+                    }
+                }
                 <!--}数据列表 -->
                 </tbody>
             </table>

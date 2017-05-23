@@ -16,66 +16,93 @@
         <ul class="info-box1 clearfix info-edit">
             <li class="typeOne-third">
                 <label>名称</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_Name">
             </li>
             <li class="typeOne-third">
                 <label>类型</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_Type">
             </li>
             <li class="typeOne-third">
                 <label>颜色</label>
-                <input type="text" class="form-control">
-
+                <input type="text" class="form-control" id="originalmaterials_Color">
             </li>
             <li class="typeOne-third">
                 <label>单位</label>
-                <input type="text" class="form-control">
-            </li>
-            <li class="typeOne-third">
-                <label>利用率</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_Unit">
             </li>
             <li class="typeOne-third">
                 <label>仓库名称</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_WarehouseName">
             </li>
             <li class="typeOne-third">
                 <label>库位编号</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_WarehouseNumber">
             </li>
             <li class="typeOne-third">
-                <label>皮</label>
-                <input type="text" class="form-control">
+                <label>分类</label>
+                <input type="text" class="form-control" id="originalmaterials_Sort">
             </li>
             <li class="typeOne-third">
                 <label>系列号</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_SerialNumber">
             </li>
             <li class="typeOne-third">
                 <label>供应商</label>
-                <input type="text" class="form-control">
-            </li>
-            <li class="typeOne-third">
-                <label>库存库位</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_SupplerId">
             </li>
             <li class="typeOne-third">
                 <label>在库数量</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_WarehousesAmount">
             </li>
             <li class="typeOne-third">
                 <label>碎料数量</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_ShreddedWarehousesAmount">
             </li>
             <li class="typeOne-third">
                 <label>库存数量</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="originalmaterials_StockWarehouseAmount">
             </li>
         </ul>
         <div class="btn-box">
-            <button type="button" class="btn-default btn-cancel">取消</button>
-            <button type="button" class="btn-default btn-sure">确定</button>
+            <button type="button" class="btn-default btn-cancel" onclick="window.location.href = '/baseinfo/sersiesinfolist'" >取消</button>
+            <button type="button" class="btn-default btn-sure" id = "originalmaterials_add">确定</button>
         </div>
     </div>
 </div>
 <!--} 编辑 end -->
+
+
+<script>
+    /*新增*/
+    $('#originalmaterials_add').click(function() {
+        var data = {
+            Name: $("#originalmaterials_Name").val(),
+            Type: $("#originalmaterials_Type").val(),
+            Color: $("#originalmaterials_Color").val(),
+            Format: $("#originalmaterials_Format").val(),
+            Unit: $("#originalmaterials_Unit").val(),
+            WarehouseName: $("#originalmaterials_WarehouseName").val(),
+            WarehouseNumber: $("#originalmaterials_WarehouseNumber").val(),
+            Sort: $("#originalmaterials_Sort").val(),
+            SerialNumber: $("#originalmaterials_SerialNumber").val(),
+            SupplerId: $("#originalmaterials_SupplerId").val(),
+            WarehousesAmount: $("#originalmaterials_WarehousesAmount").val(),
+            ShreddedWarehousesAmount: $("#originalmaterials_ShreddedWarehousesAmount").val(),
+            StockWarehouseAmount: $("#originalmaterials_StockWarehouseAmount").val()
+        }
+        var ajax = {
+            url: "/baseinfo/AddOriginalMaterials",
+            data: data,
+            type: 'Post',
+            success: function () {
+                alert('新增成功');
+                window.location.href = '/baseinfo/sersiesinfolist';
+            },
+            error: function () {
+                alert('新增失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
+</script>
