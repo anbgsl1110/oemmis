@@ -1,6 +1,6 @@
 namespace Oem.Data.Table.Order
 {
-    public class PurchaseDetails
+    public class PurchaseDetailsRepo
     {
         /// <summary>
         /// 主键

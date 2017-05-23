@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Oem.Data.Table.Auxiliary;
 using Oem.Data.Table.BaseInfo;
+using Oem.Data.Table.Dispatch;
+using Oem.Data.Table.Order;
 using Oem.Data.Table.OrgStructure;
+using Oem.Data.Table.Repertory;
 using Oem.Data.Table.SysSetting;
 
 namespace Oem.Data.DataBase
@@ -122,30 +126,103 @@ namespace Oem.Data.DataBase
         /// 原材料
         /// </summary>
         public DbSet<OriginalMaterialsRepo> OriginalMaterials { get; set; }
-
+        
+        /// <summary>
+        /// 产品信息
+        /// </summary>
+        public DbSet<ProductRepo> Product { get; set; }
+        
+        /// <summary>
+        /// 产品Bom
+        /// </summary>
+        public DbSet<ProductBomRepo> ProductBom { get; set; }
+        
+        
+        /// <summary>
+        /// 供应商
+        /// </summary>
+        public DbSet<SupplerRepo> Suppler { get; set; }
+        
+        /// <summary>
+        /// 公司
+        /// </summary>
+        public DbSet<CompanyRepo> Company { get; set; }
+        
+        /// <summary>
+        /// 仓库信息
+        /// </summary>
+        public DbSet<WarehouseRepo> Warehouse { get; set; }
+        
         #endregion
 
         #region 订单管理
 
+        /// <summary>
+        /// 订单
+        /// </summary>
+        public DbSet<OrderRepo> Order { get; set; }
         
+        /// <summary>
+        /// 订单明细
+        /// </summary>
+        public DbSet<OrderDetailsRepo> OrderDetails { get; set; }
+        
+        /// <summary>
+        /// 申购
+        /// </summary>
+        public DbSet<RequisitionRepo> Requisition { get; set; }
+        
+        /// <summary>
+        /// 申购明细
+        /// </summary>
+        public DbSet<RequisitionDetailsRepo> RequisitionDetails { get; set; }
+        
+        /// <summary>
+        /// 采购
+        /// </summary>
+        public DbSet<PurchaseRepo> Purchase { get; set; }
+        
+        /// <summary>
+        /// 采购明细
+        /// </summary>
+        public DbSet<PurchaseDetailsRepo> PurchaseDetails { get; set; }
 
         #endregion
 
         #region 仓库管理
 
+        /// <summary>
+        /// 仓库流水
+        /// </summary>
+        public DbSet<WarehouseOprationRepo> WarehouseOpration { get; set; }
         
+        /// <summary>
+        /// 仓库流水明细
+        /// </summary>
+        public DbSet<WarehouseManagerDetailRepo> WarehouseManagerDetail { get; set; }
 
         #endregion
 
         #region 派工管理
 
+        /// <summary>
+        /// 派工流水
+        /// </summary>
+        public DbSet<DispatchRepo> Dispatch { get; set; }
         
+        /// <summary>
+        /// 派工明细
+        /// </summary>
+        public DbSet<DispatchDetailRepo> DispatchDetail { get; set; }
 
         #endregion
 
         #region 辅助工具
 
-        
+        /// <summary>
+        /// 扫码流水
+        /// </summary>
+        public DbSet<ScanCodeRepo> ScanCode { get; set; }
 
         #endregion
     

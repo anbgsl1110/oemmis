@@ -3,7 +3,7 @@ using Mysqlx.Expr;
 
 namespace Oem.Data.Table.Order
 {
-    public class Purchase
+    public class PurchaseRepo
     {
         /// <summary>
         /// 主键

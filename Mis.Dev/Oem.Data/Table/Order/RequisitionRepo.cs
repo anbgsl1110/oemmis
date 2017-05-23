@@ -2,7 +2,7 @@ using System;
 
 namespace Oem.Data.Table.Order
 {
-    public class Requisition
+    public class RequisitionRepo
     {
         /// <summary>
         /// 主键
