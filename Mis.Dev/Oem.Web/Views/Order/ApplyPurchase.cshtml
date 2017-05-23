@@ -48,7 +48,7 @@
                     foreach (var item in list)
                     {
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                            <td class="blankbox"><span class="checkboxStyle"></span></td>
+                            <td class="blankbox"><span class="checkboxStyle" context" text="@item.Id"></span></td>
                             <td>@item.RequisitionStatus</td>
                             <td>@item.RequisitionNumber</td>
                             <td>@item.RequisitionDate.ToString("yyyy-MM-dd")</td>

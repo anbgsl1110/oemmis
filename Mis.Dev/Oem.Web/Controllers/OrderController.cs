@@ -34,6 +34,20 @@ namespace Oem.Web.Controllers
             return View();
         }
         
+        /// <summary>
+        /// 删除定单
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteOrder(long[] ids)
+        {       
+            foreach (var id in ids)
+            {
+                OrderService.Delete(new OrderRepo(), id);
+            }
+            return Json(@"删除成功");
+        }
+        
         #endregion
 
         #region 申购
@@ -62,6 +76,20 @@ namespace Oem.Web.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 删除申购
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteApplyPurchase(long[] ids)
+        {       
+            foreach (var id in ids)
+            {
+                RequisitionService.Delete(new RequisitionRepo(), id);
+            }
+            return Json(@"删除成功");
+        }
+        
         #endregion
 
         #region 采购
@@ -121,6 +149,20 @@ namespace Oem.Web.Controllers
         public IActionResult PurchaseChenliAdd()
         {
             return View();
+        }
+        
+        /// <summary>
+        /// 删除采购
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeletePurchaseC(long[] ids)
+        {       
+            foreach (var id in ids)
+            {
+                RequisitionService.Delete(new RequisitionRepo(), id);
+            }
+            return Json(@"删除成功");
         }
 
         #endregion

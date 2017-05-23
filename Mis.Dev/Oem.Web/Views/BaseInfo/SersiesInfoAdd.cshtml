@@ -64,7 +64,7 @@
             </li>
         </ul>
         <div class="btn-box">
-            <button type="button" class="btn-default btn-cancel" onclick="window.location.href = '/baseinfo/sersiesinfolist'" >取消</button>
+            <button type="button" class="btn-default btn-cancel" onclick="window.location.href = '/baseinfo/SeriesInfoList'" >取消</button>
             <button type="button" class="btn-default btn-sure" id = "originalmaterials_add">确定</button>
         </div>
     </div>
@@ -96,7 +96,7 @@
             type: 'Post',
             success: function () {
                 alert('新增成功');
-                window.location.href = '/baseinfo/sersiesinfolist';
+                window.location.href = '/baseinfo/SeriesInfoList';
             },
             error: function () {
                 alert('新增失败,请查看网络状态');
