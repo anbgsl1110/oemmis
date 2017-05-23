@@ -153,7 +153,7 @@ namespace Oem.Data.DataBase
         {
             for (int i = 0; i < 10; i++)
             {
-                dbContext.Order.Add(new OrdersRepo
+                dbContext.Orders.Add(new OrdersRepo
                 {
                     OrderNumber = "定单" + i,
                     SerialNumber = "系列" + i,
