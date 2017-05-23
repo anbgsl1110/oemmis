@@ -306,20 +306,20 @@ namespace Oem.Data.DataBase
             }
             dbContext.User.Add(new UserRepo
             {
+                UserName = "test",
+                Password = "abc123",
+                Phone = "18800000000",
+                Email = "123@ss.space",
+                Remark = "初始化时创建的员工用户"
+            });
+            dbContext.User.Add(new UserRepo
+            {
                 UserName = "admin",
                 Password = "abc123",
                 Phone = "18034648633",
                 Email = "anbgsl1110@gmail.com",
                 Remark = "初始化时创建的admin用户"
             });
-            dbContext.User.Add(new UserRepo
-            {
-                UserName = "test",
-                Password = "abc123",
-                Phone = "18800000000",
-                Email = "123@ss.space",
-                Remark = "初始化时创建的员工用户"
-            }); 
             dbContext.Org.Add(new OrgRepo
             {
                 OrgName = "Xdj",
