@@ -1,6 +1,8 @@
+@using Oem.Data.Table.Dispatch
 
 @{
     ViewBag.Title = "派工管理";
+    List<DispatchRepo> list= ViewBag.List as List<DispatchRepo>;
 }
 
 <!--列表内容 {-->
@@ -15,7 +17,6 @@
     </div>
 
     <div class="section-content4">
-
         <div class="section-box3-head clearfix">
             <div class="chart-tab fl">
                 <a href="#" class="chart-tab-item current">全部</a><!-- current 为选中状态-->
@@ -39,10 +40,8 @@
             <button type="button" class="btn-default icon-button" onclick="window.location.href = '/dispatch/GroupDispatchAdd'">
                 <em class="btn-iconAdd"></em>生产小组派工
             </button>
-        </div>
-        
+        </div>       
         <div class="ListDateTable">
-
             <!-- 列表无数据时显示内容 {-->
             <div class="ListDateNoResult" style="display: none;">无数据</div>
             <!--} 列表无数据时显示内容 -->
@@ -52,43 +51,31 @@
                     <!-- 数据列表{-->
                     <tbody><tr>
                         <th>派工单号</th>
-                        <th>派工日期</th>
-                        <th>派工人员</th>
-                        <th>派工人</th>
                         <th>派工类型</th>
-                        <!--   <th>类型</th>
-                        <th>规格</th>
-                        <th>颜色</th>-->
-                        <!--    <th>数量</th>
-                        <th>经手人</th>
-                        <th>管理员</th>
-                        <th>操作类型</th>
-                        <th>仓库名称</th>
-                        <th>仓库类型</th>
-                        <th>材料类型</th>
-                        <th>系列号</th>-->
+                        <th>被派工人员Id</th>
+                        <th>派工人Id</th>
+                        <th>派工日期</th>
                     </tr>
-                    <tr class="ListDate" onclick="window.location.href = '/dispatch/DispatchListDetail'">
-                        <!-- 说明： 每页数据10条-->
-
-                        <td>Y</td>
-                        <td>admin</td>
-                        <td>张三</td>
-                        <td>IT部</td>
-                        <td>6666666666</td>
-                        <!-- <td>0571-66666666</td>
-                        <td>xxxxxx@163.com</td>
-                        <td>有效</td>-->
-                    </tr>
-
+                    @if (list != null && list.Count > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            <tr class="ListDate" onclick="window.location.href = '/dispatch/DispatchListDetail'">
+                                <!-- 说明： 每页数据10条-->
+                                <td>@item.DispatchNumber</td>
+                                <td>@item.DispatchType</td>
+                                <td>@item.WorkStaff</td>
+                                <td>@item.DispatchStaff</td>
+                                <td>@item.DispatchTime</td>
+                            </tr>
+                        }
+                    }
                     <!--}数据列表 -->
                     </tbody>
                 </table>
             </div>
         </div>
         <!--} 列表 -->
-
-
         <!-- 页码 {-->
         <div class="section-page">
             <a href="#" class="page-previous page-disabled">上一页</a>
@@ -103,10 +90,8 @@
             <span class="page-line"></span>
             <a href="#" class="page-next">下一页</a>
             <!-- 不可用的样式代码如下：<a href="#" class="page-next page-disabled">下一页</a> -->
-
         </div>
         <!--} 页码 -->
-
     </div>
 </div>
 <!--} 列表内容 -->
