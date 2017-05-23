@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Oem.Data.Table.BaseInfo;
 using Oem.Data.Table.OrgStructure;
 using Oem.Data.Table.SysSetting;
 
@@ -57,7 +58,7 @@ namespace Oem.Data.DataBase
             //RoleRepo
             builder.Entity<RoleRepo>().HasKey(p => p.Id);
             builder.Entity<RoleRepo>().Property(p => p.RoleName).HasMaxLength(100);
-
+           
             #endregion
 
         }
@@ -114,5 +115,39 @@ namespace Oem.Data.DataBase
         public DbSet<RoleRepo> Role { get; set; }
 
         #endregion
+
+        #region 基础资料
+
+        /// <summary>
+        /// 原材料
+        /// </summary>
+        public DbSet<OriginalMaterialsRepo> OriginalMaterials { get; set; }
+
+        #endregion
+
+        #region 订单管理
+
+        
+
+        #endregion
+
+        #region 仓库管理
+
+        
+
+        #endregion
+
+        #region 派工管理
+
+        
+
+        #endregion
+
+        #region 辅助工具
+
+        
+
+        #endregion
+    
     }
 }

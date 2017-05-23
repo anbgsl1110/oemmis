@@ -13,4 +13,10 @@
     <PackageReference Include="MySql.Data" Version="7.0.6-IR31" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.6-IR31" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Table\Auxiliary" />
+    <Folder Include="Table\Dispatch" />
+    <Folder Include="Table\Order" />
+    <Folder Include="Table\Repertory" />
+  </ItemGroup>
 </Project>
