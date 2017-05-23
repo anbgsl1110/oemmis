@@ -20,7 +20,6 @@
 
     <div class="section-content4">
         <div class="ListBar clearfix">
-            <label class="textL">全选</label>
             <button type="button" class="btn-default icon-button" onclick="window.location.href = '/order/applypurchaseadd'">
                 <em class="btn-iconAdd"></em>新增
             </button>
@@ -36,7 +35,6 @@
             <table border="0" cellpadding="0" cellspacing="0">
                 <!-- 数据列表{-->
                 <tbody><tr>
-                    <th class="blankbox" id="Selall"><span class="checkboxStyle"></span></th>
                     <th>申购状态</th>
                     <th>申购编号</th>
                     <th>申购时间</th>
@@ -48,7 +46,6 @@
                     foreach (var item in list)
                     {
                         <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                            <td class="blankbox"><span class="checkboxStyle" context" text="@item.Id"></span></td>
                             <td>@item.RequisitionStatus</td>
                             <td>@item.RequisitionNumber</td>
                             <td>@item.RequisitionDate.ToString("yyyy-MM-dd")</td>

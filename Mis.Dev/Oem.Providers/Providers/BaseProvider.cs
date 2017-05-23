@@ -36,8 +36,9 @@ namespace Oem.Providers.Providers
         {
             using (var con = DbFactory.GetNewConnection())
             {
-                return con.Query<T>(
-                    $"SELECT * FROM {GetObjectName(t)} WHERE Id > 0 ORDER BY Id DESC LIMIT {pageIndex},{pageSize};");
+                var sql =
+                    $"SELECT * FROM {GetObjectName(t)} WHERE Id > 0 ORDER BY Id DESC LIMIT {pageIndex},{pageSize};";
+                return con.Query<T>(sql);
             }
         }
 

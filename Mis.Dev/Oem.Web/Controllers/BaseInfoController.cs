@@ -1,4 +1,3 @@
-
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Oem.Common.CacheHelper;
@@ -57,7 +56,7 @@ namespace Oem.Web.Controllers
         {       
             foreach (var id in ids)
             {
-                OriginalMaterialsService.Delete(new ProductRepo(), id);
+                OriginalMaterialsService.Delete(new OriginalMaterialsRepo(), id);
             }
             return Json(@"删除成功");
         }

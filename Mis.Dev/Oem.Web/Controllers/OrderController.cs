@@ -17,8 +17,7 @@ namespace Oem.Web.Controllers
         public IActionResult Order()
         {
             OrderService service = new OrderService();
-            var result = service.Select(new 
-                OrderRepo(),0,1000).Data.ToList();
+            var result = service.Select(new OrdersRepo(),0,1000).Data.ToList();
             var list = result.Where(p => p.Id > 0).Take(10).ToList();
             ViewBag.List = list;
             
@@ -43,7 +42,7 @@ namespace Oem.Web.Controllers
         {       
             foreach (var id in ids)
             {
-                OrderService.Delete(new OrderRepo(), id);
+                OrderService.Delete(new OrdersRepo(), id);
             }
             return Json(@"删除成功");
         }
@@ -156,11 +155,11 @@ namespace Oem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult DeletePurchaseC(long[] ids)
+        public JsonResult DeletePurchase(long[] ids)
         {       
             foreach (var id in ids)
             {
-                RequisitionService.Delete(new RequisitionRepo(), id);
+                PurchaseService.Delete(new PurchaseRepo(), id);
             }
             return Json(@"删除成功");
         }

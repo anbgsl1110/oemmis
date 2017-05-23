@@ -74,14 +74,14 @@ namespace Oem.Web.Controllers
             LogService = new LogService();
         }
         
-        /// <summary>
+/*        /// <summary>
         /// 错误界面
         /// </summary>
         /// <returns></returns>
         public IActionResult Error()
         {
             return View();
-        }
+        }*/
         
         /// <summary>
         /// 记录日志

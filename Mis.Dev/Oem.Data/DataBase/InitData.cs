@@ -153,7 +153,7 @@ namespace Oem.Data.DataBase
         {
             for (int i = 0; i < 10; i++)
             {
-                dbContext.Order.Add(new OrderRepo
+                dbContext.Order.Add(new OrdersRepo
                 {
                     OrderNumber = "定单" + i,
                     SerialNumber = "系列" + i,
@@ -265,6 +265,11 @@ namespace Oem.Data.DataBase
                     DispatchStaff = 1,
                     DispatchType = "生产小组派工"
                 });
+                dbContext.DispatchDetail.Add(new DispatchDetailRepo
+                {
+                    OrderDetailsId = i,
+                    Amount = 1110
+                });
             }
         }
         
@@ -306,20 +311,20 @@ namespace Oem.Data.DataBase
             }
             dbContext.User.Add(new UserRepo
             {
-                UserName = "test",
-                Password = "abc123",
-                Phone = "18800000000",
-                Email = "123@ss.space",
-                Remark = "初始化时创建的员工用户"
-            });
-            dbContext.User.Add(new UserRepo
-            {
                 UserName = "admin",
                 Password = "abc123",
                 Phone = "18034648633",
                 Email = "anbgsl1110@gmail.com",
                 Remark = "初始化时创建的admin用户"
             });
+            dbContext.User.Add(new UserRepo
+            {
+                UserName = "test",
+                Password = "abc123",
+                Phone = "18800000000",
+                Email = "123@ss.space",
+                Remark = "初始化时创建的员工用户"
+            });           
             dbContext.Org.Add(new OrgRepo
             {
                 OrgName = "Xdj",
