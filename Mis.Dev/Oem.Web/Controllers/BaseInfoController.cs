@@ -1,6 +1,7 @@
 
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.BaseInfo;
 using Oem.Services.Services.BaseInfo;
 
@@ -162,5 +163,8 @@ namespace Oem.Web.Controllers
 
         #endregion
 
+        public BaseInfoController(ICacheService cacheService) : base(cacheService)
+        {
+        }
     }
 }

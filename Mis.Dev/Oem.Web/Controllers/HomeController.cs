@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 
 namespace Oem.Web.Controllers
 {
@@ -26,6 +27,10 @@ namespace Oem.Web.Controllers
         public IActionResult Home()
         {
             return View();
+        }
+
+        public HomeController(ICacheService cacheService) : base(cacheService)
+        {
         }
     }
 }

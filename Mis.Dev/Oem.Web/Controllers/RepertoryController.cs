@@ -1,6 +1,7 @@
 
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.Repertory;
 using Oem.Services.Services.Repertory;
 
@@ -136,5 +137,9 @@ namespace Oem.Web.Controllers
         }
 
         #endregion
+
+        public RepertoryController(ICacheService cacheService) : base(cacheService)
+        {
+        }
     }
 }

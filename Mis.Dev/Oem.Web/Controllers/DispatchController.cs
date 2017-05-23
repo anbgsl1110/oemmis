@@ -1,6 +1,7 @@
 
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.Dispatch;
 using Oem.Services.Services.Dispatch;
 
@@ -90,6 +91,10 @@ namespace Oem.Web.Controllers
         public IActionResult ProduceProgressDetail()
         {
             return View();
+        }
+
+        public DispatchController(ICacheService cacheService) : base(cacheService)
+        {
         }
     }
 }

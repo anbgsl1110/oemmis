@@ -85,7 +85,7 @@
                         foreach (var user in users)
                         {
                             <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                                <td class="blankbox"><span class="checkboxStyle"></span></td>
+                                <td class="blankbox"><span class="checkboxStyle context" text="@user.Id"></span></td>
                                 <td>Y</td>
                                 <td>@user.UserName</td>
                                 <td>@user.Phone</td>
@@ -126,7 +126,7 @@
     <p>确定要删除这条信息吗？</p>
     <div class="btn-box" id="add-btn-boxs">
         <button type="button" class="btn-default btn-cancel del-alarm">取消</button>
-        <button type="button" class="btn-default btn-sure">确定</button>
+        <button type="button" class="btn-default btn-sure" id="usermanagement_delete">确定</button>
     </div>
 </div>
 
@@ -143,6 +143,36 @@
     $(".del-alarm").click(function() {
         $(".del-alarming").hide();
     });
+    
+    /*确认删除*/
+    $("#usermanagement_delete").click(function() {
+        var data = {
+            ids: getCheckBoxIds()
+        }
+        var ajax = {
+            url: "/system/DeleteUserManagement",
+            data: data,
+            type: 'Post',
+            success: function () {
+                alert('删除成功');
+                window.location.href = '/system/UserManagement';
+            },
+            error: function () {
+                alert('删除失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
+    //获取选中记录
+    function getCheckBoxIds(){
+        var checkVal = [];
+        $(".checkboxChecked.context").each(function() {
+            var temp = $(this).attr("text");
+            checkVal.push(temp);
+        });
+        return checkVal;
+    }
 
     /*点击全选，点击全不选*/
     $("#Selall>span").click(function() {

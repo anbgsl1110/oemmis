@@ -1,5 +1,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.Order;
 using Oem.Services.Services.Order;
 
@@ -123,5 +124,9 @@ namespace Oem.Web.Controllers
         }
 
         #endregion
+
+        public OrderController(ICacheService cacheService) : base(cacheService)
+        {
+        }
     }
 }

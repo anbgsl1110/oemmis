@@ -1,6 +1,7 @@
 
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.Auxiliary;
 using Oem.Services.Services.Auxiliary;
 
@@ -39,6 +40,10 @@ namespace Oem.Web.Controllers
         public IActionResult ScanListDetail()
         {
             return View();
+        }
+
+        public AuxiliaryController(ICacheService cacheService) : base(cacheService)
+        {
         }
     }
 }

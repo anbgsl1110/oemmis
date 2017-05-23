@@ -84,7 +84,7 @@
                         foreach (var item in list)
                         {
                             <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                                <td class="blankbox"><span class="checkboxStyle xxxxxxx" text="@item.Id"></span></td>
+                                <td class="blankbox"><span class="checkboxStyle context" text="@item.Id"></span></td>
                                 <td>@item.SerialNumber</td>
                                 <td>@item.StyleNumber</td>
                                 <td>@item.BrandName</td>
@@ -143,7 +143,14 @@
         }
         $(".del-alarming").show();
     });
-    /*确认删除删除*/
+    /*点击X和取消，删除警告弹框消失*/
+    $(".del-alarming>i").click(function() {
+        $(this).parent().hide();
+    });
+    $(".del-alarm").click(function() {
+        $(".del-alarming").hide();
+    });
+    /*确认删除*/
     $("#product_delete").click(function() {
         var data = {
             ids: getCheckBoxIds()
@@ -166,20 +173,12 @@
     //获取选中记录
     function getCheckBoxIds(){
         var checkVal = [];
-        $(".checkboxChecked.xxxxxxx").each(function() {
+        $(".checkboxChecked.context").each(function() {
             var temp = $(this).attr("text");
             checkVal.push(temp);
         });
         return checkVal;
     }
-
-    /*点击X和取消，删除警告弹框消失*/
-    $(".del-alarming>i").click(function() {
-        $(this).parent().hide();
-    });
-    $(".del-alarm").click(function() {
-        $(".del-alarming").hide();
-    });
     /*点击全选，点击全不选*/
     $("#Selall>span").click(function() {
         if ($(this).hasClass("checkboxChecked")) {

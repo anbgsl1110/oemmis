@@ -296,6 +296,7 @@ namespace Oem.Data.DataBase
                 dbContext.Log.Add(new LogRepo
                 {
                     UserId = i,
+                    UserName = "初始化",
                     Ip = "114.215.158.17"+i,
                     OperationIdType = "登录",
                     OperationIds = "" + i,

@@ -1,5 +1,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Oem.Common.CacheHelper;
 using Oem.Data.Table.OrgStructure;
 using Oem.Data.Table.SysSetting;
 using Oem.Services.Services.SysSetting;
@@ -62,6 +63,21 @@ namespace Oem.Web.Controllers
             return Json(result);
         }
 
+        /// <summary>
+        /// 删除用户
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteUserManagement(long[] ids)
+        {       
+            UserService service = new UserService();
+            foreach (var id in ids)
+            {
+                service.Delete(new UserRepo(), id);
+            }
+            return Json(@"删除成功");
+        }
+        
         #endregion
 
         #region 日志
@@ -81,5 +97,9 @@ namespace Oem.Web.Controllers
         }
 
         #endregion
+
+        public SystemController(ICacheService cacheService) : base(cacheService)
+        {
+        }
     }
 }

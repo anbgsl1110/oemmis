@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Oem.Models.Response;
 using Oem.Models.Response.Home;
  using Oem.Services.IServices.User;
+ using Oem.Services.Services.SysSetting;
  using Oem.Services.Services.User;
  using Oem.Web.Security;
  using Oem.Web.WebApi;
@@ -55,6 +56,19 @@ namespace Oem.Web.Controllers
             loginUser.UserRole = new []{new RoleRepo()};
             CurrentUser.SetCurrentUserInfo(loginUser.UserId, loginUser.UserName, loginUser.OrgId,
                 loginUser.UserAuthority, loginUser.UserRole);
+            
+            //写入登录日志
+            LogService service = new LogService();
+            service.Insert(new LogRepo
+            {
+                UserId = loginUser.UserId,
+                UserName = loginUser.UserName,
+                Ip = "114.215.158.17",
+                OperationIdType = "登录",
+                OperationIds = "",
+                OperationResult = "操作成功",
+                OperationDate = DateTime.Now
+            });
                 
             return new Response<LoginResponse>(ErrorTypeEnum.NoError,
                 new LoginResponse
