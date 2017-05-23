@@ -50,8 +50,6 @@
                 <!--<button type="button" class="drop-button close">高级筛选条件<em class="btn-iconDrop2"></em></button>
                 默认为收起来，点击展开，close样式改为open，同时显示高级筛选条件栏 -->
             </div>
-
-
         </div>
 
         <div class="section-content4">
@@ -59,9 +57,6 @@
                 <label class="textL">全选</label>
                 <button type="button" class="btn-default icon-button" onclick="window.location.href = '/baseinfo/ProductInfoAdd'">
                     <em class="btn-iconAdd"></em>新增
-                </button>
-                <button type="button" class="btn-default icon-button" onclick="window.location.href = '/baseinfo/ProductInfoAdd'">
-                    <em class="btn-iconEdit"></em>修改
                 </button>
                 <button type="button" class="btn-default icon-button delInfor"><em class="btn-iconDel"></em>删除</button>
 
@@ -89,7 +84,7 @@
                         foreach (var item in list)
                         {
                             <tr class="ListDate"><!-- 说明： 每页数据10条-->
-                                <td class="blankbox"><span class="checkboxStyle"></span></td>
+                                <td class="blankbox"><span class="checkboxStyle xxxxxxx" text="@item.Id"></span></td>
                                 <td>@item.SerialNumber</td>
                                 <td>@item.StyleNumber</td>
                                 <td>@item.BrandName</td>
@@ -103,7 +98,6 @@
                 </table>
             </div>
             <!--} 列表 -->
-
 
             <!-- 页码 {-->
             <div class="section-page">
@@ -135,15 +129,49 @@
     <p>确定要删除这条信息吗？</p>
     <div class="btn-box" id="add-btn-boxs">
         <button type="button" class="btn-default btn-cancel del-alarm">取消</button>
-        <button type="button" class="btn-default btn-sure">确定</button>
+        <button type="button" class="btn-default btn-sure" id = "product_delete">确定</button>
     </div>
 </div>
 
 <script>
     /*点击删除按钮，删除警示框出现*/
     $(".delInfor").click(function() {
+        var checkVal = getCheckBoxIds();
+        if (checkVal.count == 0) {
+            alert("请至少选择一项");
+            return;
+        }
         $(".del-alarming").show();
     });
+    /*确认删除删除*/
+    $("#product_delete").click(function() {
+        var data = {
+            ids: getCheckBoxIds()
+        }
+        var ajax = {
+            url: "/baseinfo/DeleteProductInfo",
+            data: data,
+            type: 'Post',
+            success: function () {
+                alert('删除成功');
+                window.location.href = '/baseinfo/productinfolist';
+            },
+            error: function () {
+                alert('删除失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
+    //获取选中记录
+    function getCheckBoxIds(){
+        var checkVal = [];
+        $(".checkboxChecked.xxxxxxx").each(function() {
+            var temp = $(this).attr("text");
+            checkVal.push(temp);
+        });
+        return checkVal;
+    }
 
     /*点击X和取消，删除警告弹框消失*/
     $(".del-alarming>i").click(function() {
@@ -158,13 +186,11 @@
             $(this).removeClass("checkboxChecked");
             $(".checkboxStyle").removeClass("checkboxChecked");
         } else {
-
             $(".checkboxStyle").addClass("checkboxChecked");
         }
     });
     /*点击复选框的动画效果*/
     $(".blankbox>span").not("#Selall>span").click(function() {
-
         if ($(this).hasClass("checkboxChecked")) {
             $(this).removeClass("checkboxChecked");
         } else{

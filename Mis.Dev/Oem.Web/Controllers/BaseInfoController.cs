@@ -80,12 +80,27 @@ namespace Oem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult AddUserManagement(ProductRepo productRepo)
+        public JsonResult AddProductInfo(ProductRepo productRepo)
         {       
             ProductService service = new ProductService();
             var result = service.Insert(productRepo);
 
             return Json(result);
+        }
+        
+        /// <summary>
+        /// 删除产品
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteProductInfo(long[] ids)
+        {       
+            ProductService service = new ProductService();
+            foreach (var id in ids)
+            {
+                service.Delete(new ProductRepo(), id);
+            }
+            return Json(@"删除成功");
         }
         
         #endregion
@@ -141,6 +156,7 @@ namespace Oem.Web.Controllers
                 WarehouseRepo(),0,1000).Data.ToList();
             var list = result.Where(p => p.Id > 0).Take(10).ToList();
             ViewBag.List = list;
+            
             return View();
         }
 

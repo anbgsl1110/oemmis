@@ -43,26 +43,26 @@
         <ul class="info-box1 clearfix info-edit">
             <li class="typeOne-third">
                 <label>系列</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="product_SerialNumber">
             </li>
             <li class="typeOne-third">
                 <label>款式号</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="product_StyleNumber">
             </li>
             <li class="typeOne-third">
                 <label>品名</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="product_BrandName">
             </li>
             <li class="typeOne-third">
                 <label>颜色</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="product_Color">
             </li>
             <li class="typeOne-third">
                 <label>备注</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="product_Remark">
             </li>
         </ul>
-        <!-- 表格切换-->
+@*        <!-- 表格切换-->
         <div class="tablist">
             <button type="button" class=" btn-actor btn-current">皮明细</button>
             <button type="button" class=" btn-rights ">衬里明细</button>
@@ -123,14 +123,13 @@
                     <td>admin</td>
                     <td>admin</td>
                 </tr>
-
                 <!--}数据列表 -->
                 </tbody>
             </table>
-        </div>
+        </div>*@
         <div class="btn-box">
-            <button type="button" class="btn-default btn-cancel">取消</button>
-            <button type="button" class="btn-default btn-sure">确定</button>
+            <button type="button" class="btn-default btn-cancel"onclick="window.location.href = '/baseinfo/productinfolist'">取消</button>
+            <button type="button" class="btn-default btn-sure" id="product_add">确定</button>
         </div>
     </div>
 </div>
@@ -146,5 +145,28 @@
             $(".tabs").find("table:eq(1)").show().siblings().hide();
         }
     });
-
+    /*新增*/
+    $('#product_add').click(function() {
+        var data = {
+            SerialNumber: $("#product_SerialNumber").val(),
+            StyleNumber: $("#product_StyleNumber").val(),
+            BrandName: $("#product_BrandName").val(),
+            Color: $("#product_Color").val(),
+            Remark: $("#product_Remark").val()
+        }
+        var ajax = {
+            url: "/baseinfo/AddProductInfo",
+            data: data,
+            type: 'Post',
+            success: function () {
+                alert('新增成功');
+                window.location.href = '/baseinfo/productinfolist';
+            },
+            error: function () {
+                alert('新增失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
 </script>
