@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class BaseInfoController : Controller
+    public class BaseInfoController : BaseController
     {
         #region 原材料
 

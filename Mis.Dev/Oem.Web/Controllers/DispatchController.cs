@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class DispatchController : Controller
+    public class DispatchController : BaseController
     {
         /// <summary>
         /// 派工列表

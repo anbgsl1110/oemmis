@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class AuxiliaryController : Controller
+    public class AuxiliaryController : BaseController
     {
         /// <summary>
         /// 扫码流水

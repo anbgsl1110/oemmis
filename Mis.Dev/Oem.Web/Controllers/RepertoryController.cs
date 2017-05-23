@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class RepertoryController : Controller
+    public class RepertoryController : BaseController
     {
         #region 采购入库
 

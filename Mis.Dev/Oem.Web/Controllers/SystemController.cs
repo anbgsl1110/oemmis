@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class SystemController : Controller
+    public class SystemController : BaseController
     {
         #region 角色
 

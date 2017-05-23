@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Oem.Web.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         #region 订单
 
