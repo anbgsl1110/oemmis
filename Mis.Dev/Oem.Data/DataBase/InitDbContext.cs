@@ -160,7 +160,7 @@ namespace Oem.Data.DataBase
         /// <summary>
         /// 订单
         /// </summary>
-        public DbSet<OrdersRepo> Order { get; set; }
+        public DbSet<OrdersRepo> Orders { get; set; }
         
         /// <summary>
         /// 订单明细
