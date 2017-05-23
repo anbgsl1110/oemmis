@@ -3,7 +3,7 @@ using Oem.Data.Table.OrgStructure;
 
 namespace Oem.Providers.IProviders.Admin
 {
-    public interface IUserProvider
+    public interface IUserProvider : IBaseProvider
     {
         /// <summary>
         /// 获取用户列表

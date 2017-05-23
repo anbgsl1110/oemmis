@@ -22,5 +22,20 @@ namespace Oem.Data.Table.OrgStructure
         /// 用户密码
         /// </summary>
         public string Password { get; set; }
+        
+        /// <summary>
+        /// 联系电话
+        /// </summary>
+        public string Phone { get; set; }
+        
+        /// <summary>
+        /// 邮箱
+        /// </summary>
+        public string Email { get; set; }
+        
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { get; set; }
     }
 }

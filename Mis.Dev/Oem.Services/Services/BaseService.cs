@@ -1,7 +1,7 @@
 ﻿using Oem.Providers.IProviders.Admin;
-using Oem.Providers.IProviders.BaseInfo;
 using Oem.Providers.Providers.Admin;
 using Oem.Providers.Providers.BaseInfo;
+using Oem.Providers.Providers.SysSetting;
 
 namespace Oem.Services.Services
 {
@@ -12,11 +12,13 @@ namespace Oem.Services.Services
     {
         protected readonly IUserProvider UserProvider;
         protected readonly OriginalMaterialsProvider OriginalMaterialsProvider;
+        protected readonly RoleProvider RoleProvider;
 
         public BaseService()
         {
             UserProvider = new Userprovider();
             OriginalMaterialsProvider = new OriginalMaterialsProvider();
+            RoleProvider = new RoleProvider();
         }
     }
 }

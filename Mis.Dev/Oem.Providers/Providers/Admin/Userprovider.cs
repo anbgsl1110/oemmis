@@ -6,7 +6,7 @@ using Oem.Providers.IProviders.Admin;
 
 namespace Oem.Providers.Providers.Admin
 {
-    public class Userprovider : IUserProvider
+    public class Userprovider : BaseProvider,IUserProvider
     {
         public List<UserRepo> GetUserList()
         {
@@ -35,6 +35,11 @@ namespace Oem.Providers.Providers.Admin
                                   WHERE Id > 0 AND UserName = @UserName AND Password = @Password;";
                 return dbConnection.Query<UserRepo>(sql,new {UserName = userName,Password = password}).SingleOrDefault();
             }
+        }
+
+        public IEnumerable<T> Select<T>(IDictionary<string, object> parameters)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

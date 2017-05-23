@@ -11,15 +11,18 @@ namespace Oem.Data.Table.SysSetting
         /// 主键Id
         /// </summary>
         public long Id { get; set; }
+
         /// <summary>
         /// 角色Id
         /// </summary>
         /// <returns></returns>
         public long RoleId { get; set; }
+
         /// <summary>
         /// 权限Id
         /// </summary>
         public long AuthorityId { get; set; }
+
         /// <summary>
         /// 机构Id
         /// </summary>

@@ -119,7 +119,7 @@
                     @*<li class="navbar-current"></li>*@
                 </ul>
                 <!-- 个人中心 begin {-->
-                <div class="navbar-nav-right">
+                <div class="navbar-nav-right" id="layout_personCenter" style="display: none">
                     <div class="navbar-account">
                         <span class="navbar-account-head"><img class="face-radius" src="http://www.anbgsl1110-dms-aliang.space/img/jyl-head.png"></span>
                         <ul class="navbar-dropdown-menu">
@@ -213,15 +213,19 @@
     $(function($) {
         $.get('/api/ApiBase',
             function(result) {
-                var currentUser = result.data;
-                //导航功能是后台还是员工
-                if (currentUser.userId === 1) {
-                    $("#adminLimit").show();
+                if (result.type) {
+                    var currentUser = result.data;
+                    //导航功能是后台还是员工
+                    if (currentUser.userId === 1) {
+                        $("#adminLimit").show();
+                        $("#layout_personCenter").show();
+                    }
+                    if (currentUser.userId > 1) {
+                        $("#businessLimit").show();
+                        $("#layout_personCenter").show();
+                    }
+                    $("#currentUser_userName").text(currentUser.userName);
                 }
-                if (currentUser.userId > 1) {
-                    $("#businessLimit").show();
-                }
-                $("#currentUser_userName").text(currentUser.userName);
             });
     });
 </script>
