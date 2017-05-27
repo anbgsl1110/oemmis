@@ -18,7 +18,19 @@
     <PackageReference Include="MySql.Data" Version="7.0.6-IR31" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="IProviders\Auxiliary" />
+    <Folder Include="IProviders\BaseInfo" />
+    <Folder Include="IProviders\Dispatch" />
+    <Folder Include="IProviders\Order" />
     <Folder Include="IProviders\OrgStructure" />
+    <Folder Include="IProviders\Repertory" />
+    <Folder Include="IProviders\SysSetting" />
+    <Folder Include="Providers\Auxiliary" />
+    <Folder Include="Providers\BaseInfo" />
+    <Folder Include="Providers\Dispatch" />
+    <Folder Include="Providers\Order" />
     <Folder Include="Providers\OrgStructure" />
+    <Folder Include="Providers\Repertory" />
+    <Folder Include="Providers\SysSetting" />
   </ItemGroup>
 </Project>
